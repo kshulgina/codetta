@@ -10,7 +10,7 @@ def argument_parsing():
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
-    parser.add_argument('-s', '--summary', help='file path to append one-line result summary (default: genetic_code_summary.txt)', type=str, default=None)
+    parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('-m', '--mito_pfams', help='flag to include Pfam domains commonly found in mitochondria', action="store_true", default=False)
     parser.add_argument('-t', '--transposon_pfams', help='flag to include Pfam domains associated with transposons and other mobile genetic elements', action="store_true", default=False)
     parser.add_argument('-v', '--viral_pfams', help='flag to include Pfam domains associated with viruses', action="store_true", default=False)

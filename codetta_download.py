@@ -22,7 +22,7 @@ def main():
     
     # initialize genetic code with command line args and download genome
     initialize_globals(args.resource_directory)
-    args.summary = None
+    args.results_summary = None
     args.evalue = None
     args.probability_threshold = None
     args.max_fraction = None

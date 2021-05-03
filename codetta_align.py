@@ -18,7 +18,7 @@ def main():
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     
     # initialize genetic code with command line args and download genome
-    args.summary = None
+    args.results_summary = None
     args.identifier = None
     args.download_type = None
     args.evalue = None

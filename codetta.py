@@ -21,7 +21,7 @@ def argument_parsing():
     parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].hmmscan_summary.txt.gz). This can include a path.')
     
     # remaining arguments all are set optionally, otherwise default values
-    parser.add_argument('-s', '--summary', help='file path to append one-line result summary (default: genetic_code_summary.txt)', type=str, default=None)
+    parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('-b', '--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
@@ -137,7 +137,7 @@ class GeneticCode:
         Initializes the object with parameters from the arguments given to the Python script
         """
         
-        self.summary_file = args.summary
+        self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
         self.identifier = args.identifier
         self.e_value_threshold = args.evalue
