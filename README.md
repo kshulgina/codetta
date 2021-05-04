@@ -10,7 +10,7 @@ The analysis can be performed either
 We provide the alignment summary files for over 250,000 bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021). See our preprint for more detail: [link to preprint]
 
 
-## Download and dependencies
+## Download and setup
 
 Codetta was developed for Python version 3.x-3.9 on Linux and MacOS. Type `python --version` into your terminal to check which version of Python you have.
 
@@ -63,7 +63,7 @@ Download Pfam database into the `resources` directory. This may take a few minut
 	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.seed.gz
 	gunzip Pfam-A.seed.gz
 
-Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you 
+Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files from [link] without unexpected errors.
 
 	hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
@@ -73,7 +73,7 @@ Now you're ready to predict some genetic codes!
 
 ## Usage
 
-Codetta consists of four separate programs. If you plan on inferring the genetic code from an alignment summary file, then you only need to use:
+Codetta consists of three main programs. If you plan on inferring the genetic code from an alignment summary file, then you only need to use:
 
 - `codetta_infer`: Infer the genetic code from the alignment summary file.
 
@@ -104,15 +104,15 @@ We can infer the genetic code of _P. tannophilus_ using default parameters using
 
 Notice that the input argument is the prefix of the alignment summary file, without a file extension.
 
-The output to the command line is a one line representation of the genetic code
+An output should appear on the command line. This is a one line representation of the genetic code
 
 	FFLLSSSSYY??CC?WLLLAPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-This corresponds to the inferred translation of each of the 64 codons, in order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 1st base through UCAG). This same one line representation is used on the [NCBI Genetic Codes page](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi). 
+This corresponds to the inferred translation of each of the 64 codons, in order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 1st base through UCAG). This same one line representation of the genetic code is used on the [NCBI Genetic Codes page](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi). 
 
 Notice that the 19th codon (corresponding to CUG) is A instead of L. This means that we have correctly predicted the CUG reassignment to alanine in this yeast genome.
 
-Additionally, a file is created `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`, which contains a detailed summary of the genetic code inference results.
+Additionally, a file is created, named `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters. This file contains a detailed summary of the genetic code inference results:
 
 	# Analysis arguments
 	# arguments
@@ -135,8 +135,8 @@ Additionally, a file is created `examples/GCA_001661245.1.inference_output_1e-10
 	GGG       G           2725                            
 	#
 	# Log decoding probabilities
-	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G)      logP(H)      logP(I) ...
-	TTT        -74503.3438  -76349.0312 -113527.5000 -105288.6562       0.0000 -101927.0625  -74898.6562  -54733.1875 ...
+	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G) ...
+	TTT        -74503.3438  -76349.0312 -113527.5000 -105288.6562       0.0000 -101927.0625 ...
 	...
 	#
 	# Final genetic code inference
@@ -152,7 +152,7 @@ If you plan on running a large number of analyses, you can use `--results_summar
 
 Predicting the genetic code from a nucleotide sequence requires two additional steps.
 
-In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` with the _Nasuia deltocephalinicola_ genome sequence (assembly accession GCA_000442605.1.1). The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
+In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` with the _Nasuia deltocephalinicola_ genome sequence (assembly accession GCA_000442605.1). The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
 
 The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. We can do this with
 
@@ -160,21 +160,20 @@ The first step is to create a six-frame standard genetic code translation of the
 
 Notice that the input argument is the prefix of the fasta file, without the '.fna'.
 
-This python program create several files, which are used by subsequent programs:
+This python program create several files, which are used by the subsequent step:
 
-- `examples/GCA_000442605.1.sequence_pieces.fna` and `.ssi` index: input nucleotide sequence, broken into pieces <100,000 nt
-- `examples/GCA_000442605.1.preliminary_translation.faa` and `.ssi` index: six-frame standard genetic code translation
+- `examples/GCA_000442605.1.sequence_pieces.fna`: input nucleotide sequence, broken into pieces <100,000 nt
+- `examples/GCA_000442605.1.preliminary_translation.faa`: six-frame standard genetic code translation
 - `examples/GCA_000442605.1.temp_files/` is a temporary directory which stores the `hmmscan` result files
 
-This step may take a while, depending on the size of the input nucleotide sequence. Rough estimate of about an hour on a single CPU core to analyze a ~12 Maa six-frame translation of a typical 6 Mb bacterial genome. However, _Nasuia deltocephalinicola_ has a small 112 Kb genome, so this will take only a minute.
+This step may take a while, depending on the size of the input nucleotide sequence. Rough estimate of about an hour on a single CPU core to analyze a ~12 Maa six-frame translation of a typical 6 Mb bacterial genome. However, _N. deltocephalinicola_ has a small 112 Kb genome, so this will take only a minute.
 
-If you intend to analyze a large number of genomes, we recommend parallelizing the computationally-intensize `hmmscan` step of the analysis over many machines on a computing cluster. To do this, you will need to modify the code in the `codetta.py` file. Instructions can be found in the comment at the bottom of the `hmmscan_jobs()` function.
+If you intend to analyze a large number of genomes, we recommend parallelizing the computationally-intensive `hmmscan` step of the analysis over many machines on a computing cluster. To do this, you will need to modify the code in the `codetta.py` file. Instructions can be found in the comment at the bottom of the `hmmscan_jobs()` function. 
 
 Next step is to process the `hmmscan` alignment files into an alignment summary file. This can be simply done with
 
 	python codetta_summary.py examples/GCA_000442605.1	
 And that's it! An alignment summary file is created (called `examples/GCA_000442605.1.alignment_summary.txt.gz`) that can be used as input for the `codetta_infer` program as described above. The `examples/GCA_000442605.1.temp_files/` has also been cleaned and deleted.
-
 
 ### Bonus: downloading nucleotide sequences from GenBank
 
@@ -186,7 +185,7 @@ Let's use this to download the mitochondrial genome of the green algae _Pycnococ
 
 	python codetta_download.py GQ497137.1 c --prefix examples/GQ497137.1
 
-This will download a FASTA file containing the GQ497137.1 sequence into `examples/GQ497137.1.fna`. The argument `c` specifies that this is a nucleotide database accession and not an assembly accession (which would be `a`).
+This will download a FASTA file containing the GQ497137.1 sequence into `examples/GQ497137.1.fna`. Again, notice that the `.fna` file extension should not included in the `--prefix` argument. The argument `c` specifies that this is a nucleotide database accession and not an assembly accession (which would be `a`).
 
 ### Summary
 
@@ -203,7 +202,7 @@ The `-m` argument indicates that we do not want to exclude Pfam domains associat
 
 Comparing to the standard genetic code, you can see that two codons have alternative meanings: the stop codon UGA is now tryptophan codon and the isoleucine codon AUA is now a methionine codon.
 
-	P. provasoii mt code  : FF??S?SSYY??C?WWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
+	P. provasolii mt code : FF??S?SSYY??C?WWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	standard genetic code : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 	                                      ^                   ^
 
