@@ -82,6 +82,7 @@ def initialize_globals(resource_dir):
             emissions = pickle.load(fp)
     # make a look-up dictionary for all the emission probabilities for the Pfam HMMs
     else:
+        print('Pfam emissions dictionary has not been created yet; creating...')
         emissions = {'domain': np.zeros(shape = (100, 20))}
         
         # open file containing HMM information
@@ -294,7 +295,7 @@ class GeneticCode:
                     with open(sequence_pieces_file, 'a') as gpf:
                         gpf.write('>piece_%i\n' % n_piece)
                         gpf.write(seq + '\n')
-
+                    
                     n_piece += 1
                 total_len += len(fasta_string)
         
@@ -499,10 +500,10 @@ class GeneticCode:
                 of.write('%-10s%-12s%-22i%-10s\n' % (''.join(codons[c]), self.gen_code[c], self.n_consensus[c], n_subsampled[c]))
             
             # write all log decoding probabilities
-            of.write('#\n# Log decoding probabilities\n# codon     ')
-            of.write(''.join(['%-11s']*21) % tuple(['logP(%s)' % aa_indices[a] for a in range(21)]) + '\n')
+            of.write('#\n# Log decoding probabilities\n# codon      ')
+            of.write(''.join(['%-13s']*21) % tuple(['logP(%s)' % aa_indices[a] for a in range(21)]) + '\n')
             for c in range(64):
-                of.write('%-6s    %s\n' % (''.join(codons[c]), ' '.join(['%10.4f']*21) % tuple(self.decoding_probs[:,c])))
+                of.write('%-6s    %s\n' % (''.join(codons[c]), ' '.join(['%12.4f']*21) % tuple(self.decoding_probs[:,c])))
             
             # write genetic code string
             of.write('#\n# Final genetic code inference\n%s' % self.gen_code)
@@ -516,7 +517,7 @@ class GeneticCode:
                     sf.write('prefix,evalue_threshold,prob_threshold,max_fraction,excluded_domains,inferred_gencode,inferred_gencode_best_models\n')
             with open(self.summary_file, 'a') as sf:
                 sf.write(summ_line)
-
+    
     def process_hmmscan_results(self):
         """
         Once hmmscan jobs are complete, this function will read them in, process them 
@@ -770,7 +771,7 @@ class GeneticCode:
             pfam_pos_list = list(domain_pos_counts.keys())
             n_pfam_pos = len(domain_pos_counts)
             pruned_domain_pos = list()
-
+            
             # first if statement-- if there are fewer consensus columns than minimum to get ANY position below max fraction if all are set to 1, make all 1
             # second if statement is important-- deals with the case if no Pfam columns observed, then codon needs to be treated at second case
             if n_pfam_pos < 1.0 / self.max_fraction and n_pfam_pos > 0:
