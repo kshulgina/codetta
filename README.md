@@ -96,7 +96,9 @@ Let's see a few examples of how Codetta is used.
 
 In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_(GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
 
-We can infer the genetic code of _Pachysolen tannophilus_ using default parameters using
+_P. tannophilus_ is known to have reassigned the canonical leucine codon CUG to alanine. Let's see if we can predict this reassignment.
+
+We can infer the genetic code of _P. tannophilus_ using default parameters using
 
 	python codetta_infer.py examples/GCA_001661245.1
 
@@ -106,7 +108,9 @@ The output to the command line is a one line representation of the genetic code
 
 	FFLLSSSSYY??CC?WLLLAPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-This corresponds to the inferred translation of each of the 64 codons, in order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 1st base through UCAG). This same one line representation is used on the [NCBI Genetic Codes page](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi).
+This corresponds to the inferred translation of each of the 64 codons, in order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 1st base through UCAG). This same one line representation is used on the [NCBI Genetic Codes page](https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi). 
+
+Notice that the 19th codon (corresponding to CUG) is A instead of L. This means that we have correctly predicted the CUG reassignment to alanine in this yeast genome.
 
 Additionally, a file is created `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`, which contains a detailed summary of the genetic code inference results.
 
