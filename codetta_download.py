@@ -11,7 +11,7 @@ def argument_parsing():
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('--prefix', help='specify prefix of where to download the FASTA file (ie [PREFIX].fna). This can include \
-                                          a path. (default: ./results/[IDENTIFIER].fna)')
+                                          a path. (default: [IDENTIFIER].fna)')
     parser.add_argument('-b', '--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     
     return parser.parse_args()

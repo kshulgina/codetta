@@ -249,7 +249,7 @@ class GeneticCode:
         
         # if we're downloading a sequence and no prefix is specified, using just the identifier
         if args.prefix == None and args.identifier != None:
-            args.prefix = './results/' + args.identifier
+            args.prefix = args.identifier
         
         # Ensure that the provided file prefix is valid and not something like '*'
         unix_safe_name = re.sub(r'[^~/\\.\d\w-]', '_', args.prefix)

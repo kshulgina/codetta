@@ -7,7 +7,7 @@ The analysis can be performed either
 - directly from an alignment summary file (easily downloaded from link) or 
 - from your own nucleotide sequence (more complicated and computationally intensive). 
 
-We provide the alignment summary files for over 250,000 bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021). See our preprint for more detail: [link to preprint]
+We provide the alignment summary files for over 50,000 bacterial and archaeal species analyzed in Shulgina & Eddy (2021) (one genome assembly analyzed per species). See our preprint for more detail: [link to preprint]
 
 
 ## Download and setup
@@ -16,18 +16,19 @@ We provide the alignment summary files for over 250,000 bacterial and archaeal g
 Clone the Codetta repository from GitHub with the command 
 
 	git clone https://github.com/kshulgina/codetta
+	cd codetta
 
 ### Python version and packages
 Codetta was developed for Python version 3.7-3.9 on Linux and MacOS. 
 
-Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you can create a virtual Python 3.9 environment using the commands 
+Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you try creating a virtual Python 3.9 environment using the commands 
 	
 	conda create --name py39 python=3.9
 	conda activate py39
 
 To ensure that the correct Python package versions are installed, use the command
 
-	pip install -r requirements.txt
+	python -m pip install -r requirements.txt
 
 Otherwise, you can manually install the packages listed in the `requirements.txt` file.
 
@@ -35,6 +36,8 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 ### Additional requirements
 Codetta additionally requires:
 
+- `wget`: on Mac, use install command `brew install wget` 
+- `gzip`: on Mac, use install command `brew install gzip`
 - HMMER (v3.1b2) and Easel library: installation commands shown below (following "Quick-ish" installation instructions in [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf)). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021).
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
@@ -45,9 +48,7 @@ Codetta additionally requires:
 		make install
 		cd easel; make install
 	
-	Check that the correct version of HMMER is being used with `which hmmbuild`. 
-- `gzip`: on Mac, use install command `brew install gzip`
-- `wget`
+	Check that the correct version of HMMER is being used with `which hmmbuild`.
 
 If you plan on analyzing your own nucleotide sequences, then you will also need:
 
@@ -58,7 +59,7 @@ We also need to download and build a local version of the Pfam database. We used
 
 Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
 
-	cd codetta/resources
+	cd resources
 	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.seed.gz
 	gunzip Pfam-A.seed.gz
 
@@ -98,7 +99,7 @@ Let's see a few examples of how Codetta is used.
 
 ### Genetic code inference from an alignment summary file
 
-In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
+In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome. Alignment summary files for over 50,000 bacterial and archaeal species can be downloaded from [link].
 
 _P. tannophilus_ is known to have reassigned the canonical leucine codon CUG to alanine. Let's see if we can predict this reassignment.
 
