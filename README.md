@@ -12,7 +12,7 @@ We provide the alignment summary files for over 250,000 bacterial and archaeal g
 
 ## Download and setup
 
-### Cloning GitHub repo
+### Cloning the GitHub repo
 Clone the Codetta repository from GitHub with the command 
 
 	git clone https://github.com/kshulgina/codetta
@@ -20,7 +20,7 @@ Clone the Codetta repository from GitHub with the command
 ### Python version and packages
 Codetta was developed for Python version 3.7-3.9 on Linux and MacOS. 
 
-Type `python --version` into your terminal to check which version of Python you have. If you typically use a different version of Python, you can create a virtual Python 3.9 environment using the commands 
+Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you can create a virtual Python 3.9 environment using the commands 
 	
 	conda create --name py39 python=3.9
 	conda activate py39
@@ -53,7 +53,7 @@ If you plan on analyzing your own nucleotide sequences, then you will also need:
 
 - `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on Linux.
 
-### Building a local Pfam database
+### Building a local version of the Pfam database
 We also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
 
 Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
@@ -93,17 +93,17 @@ Let's see a few examples of how Codetta is used.
 
 ### Genetic code inference from an alignment summary file
 
-In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_(GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
+In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
 
 _P. tannophilus_ is known to have reassigned the canonical leucine codon CUG to alanine. Let's see if we can predict this reassignment.
 
-We can infer the genetic code of _P. tannophilus_ using default parameters using
+We can infer the genetic code of _P. tannophilus_ with default parameters using
 
 	python codetta_infer.py examples/GCA_001661245.1
 
 Notice that the input argument is the prefix of the alignment summary file, without a file extension.
 
-An output should appear on the command line. This is a one line representation of the genetic code
+The output is a one line representation of the genetic code
 
 	FFLLSSSSYY??CC?WLLLAPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
@@ -167,7 +167,7 @@ This python program create several files, which are used by the subsequent step:
 
 This step may take a while, depending on the size of the input nucleotide sequence. Rough estimate of about an hour on a single CPU core to analyze a ~12 Maa six-frame translation of a typical 6 Mb bacterial genome. However, _N. deltocephalinicola_ has a small 112 Kb genome, so this will take only a minute.
 
-If you intend to analyze a large number of genomes, we recommend parallelizing the computationally-intensive `hmmscan` step of the analysis over many machines on a computing cluster. To do this, you will need to modify the code in the `codetta.py` file. Instructions can be found in the comment at the bottom of the `hmmscan_jobs()` function. 
+If you intend to analyze many sequences (or longer sequences), we recommend parallelizing the computationally-intensive `hmmscan` step of the analysis over many machines on a computing cluster. To do this, you will need to modify the code in the `codetta.py` file. Instructions can be found in the comment at the bottom of the `hmmscan_jobs()` function. 
 
 Next step is to process the `hmmscan` alignment files into an alignment summary file. This can be simply done with
 
@@ -176,7 +176,7 @@ And that's it! An alignment summary file is created (called `examples/GCA_000442
 
 ### Bonus: downloading nucleotide sequences from GenBank
 
-We have also provided a simple program for downloading FASTA files from GenBank for either assembly accessions or single nucleotide database accessions. 
+We have also provided a simple program for downloading FASTA files from GenBank by specifying either a genome assembly accession or a single nucleotide database accession. 
 
 - `codetta_download`: Download a genome assembly or nucleotide sequence from GenBank
 
