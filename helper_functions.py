@@ -304,11 +304,8 @@ def download_genbank(species_id, genbank_file, type_download, download_output_fi
     elif type_download == 'c':
         # check if sequence is being downloaded into a directory that exists; if not, create
         download_dir = os.path.dirname(download_output_file)
-        print('output file ' + download_output_file)
-        print('output dir ' + download_dir)
         if download_dir != '':
             os.mkdir(download_dir)
-            print('dir made')
         
         download_url = 'https://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=%s&rettype=fasta&retmode=text' % species_id
         wget_command = "wget -q -O %s '%s'" % (download_output_file, download_url)
