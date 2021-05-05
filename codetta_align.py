@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from codetta import *
 
 def argument_parsing():

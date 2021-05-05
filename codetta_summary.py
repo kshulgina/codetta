@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from codetta import *
 
 def argument_parsing():
@@ -18,7 +20,7 @@ def main():
     if args.resource_directory == None:
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
-    
+
     # initialize genetic code with command line args and download genome
     args.results_summary = None
     args.identifier = None

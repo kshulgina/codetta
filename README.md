@@ -87,6 +87,11 @@ General usage for these programs is
 
 For any of these programs, type `python [program name] --help` for complete usage details.
 
+If you want to be able to run Codetta from anywhere on your machine (without having to invoke python):
+
+	chmod +x codetta_*.py
+	export PATH=$PATH:$(pwd)
+
 ## Tutorial
 
 Let's see a few examples of how Codetta is used.
