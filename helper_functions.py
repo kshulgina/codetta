@@ -256,7 +256,7 @@ def update_genbank(genbank_file):
     
     # if local version of file is younger than the GenBank version, download new version
     if local_time < genbank_time:
-        print('Downloading updated version of GenBank reference file')
+        print('Downloading updated version of GenBank assembly reference file')
         with open(os.devnull, "w") as f:
             dum = call('wget -O %s ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/assembly_summary_genbank.txt' 
                 % (genbank_file), shell=True, stdout=f, stderr=f)
@@ -285,6 +285,11 @@ def download_genbank(species_id, genbank_file, type_download, download_output_fi
         prefix = u.split('/')[-1]
         download_url = '%s/%s_genomic.fna.gz' % (u, prefix)
         
+        # check if sequence is being downloaded into a directory that exists; if not, create
+        download_dir = os.path.dirname(download_output_file)
+        if download_dir != '':
+            os.mkdir(download_dir)
+        
         # download the genome! 
         genome_path = '%s.gz' % download_output_file
         with open(os.devnull, "w") as f:
@@ -294,9 +299,17 @@ def download_genbank(species_id, genbank_file, type_download, download_output_fi
         os.system('gunzip -f %s' % (re.escape(genome_path)))
         
         return download_url
-
+    
     # deal with case where species id is a GenBank accession number
     elif type_download == 'c':
+        # check if sequence is being downloaded into a directory that exists; if not, create
+        download_dir = os.path.dirname(download_output_file)
+        print('output file ' + download_output_file)
+        print('output dir ' + download_dir)
+        if download_dir != '':
+            os.mkdir(download_dir)
+            print('dir made')
+        
         download_url = 'https://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=%s&rettype=fasta&retmode=text' % species_id
         wget_command = "wget -q -O %s '%s'" % (download_output_file, download_url)
         with open(os.devnull, "w") as f:
