@@ -80,6 +80,9 @@ def initialize_globals(resource_dir):
     if os.path.isfile(hmm_dictionary_file):
         with open(hmm_dictionary_file, 'rb') as fp:
             emissions = pickle.load(fp)
+    # make sure Pfam database file is in the expected location
+    elif not os.path.isfile('%s/Pfam-A_enone.hmm' % resource_dir):
+        sys.exit('ERROR: the Pfam database files cannot be found in the resource directory')
     # make a look-up dictionary for all the emission probabilities for the Pfam HMMs
     else:
         print('Pfam emissions dictionary has not been created yet; creating...')
@@ -118,7 +121,9 @@ def initialize_globals(resource_dir):
             pickle.dump(emissions, fp, protocol=2)
     
     # remove bad Pfam domains
-    with open ("%s/bad_pfams.txt"  % resource_dir, "r") as rf:
+    if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
+        sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
+    with open("%s/bad_pfams.txt" % resource_dir, "r") as rf:
         pfam_rem = rf.read().splitlines()
     
     for pfam in pfam_rem:
@@ -137,13 +142,26 @@ class GeneticCode:
         """
         Initializes the object with parameters from the arguments given to the Python script
         """
-        
+        # check if sequence is being downloaded into a directory that exists
+        if args.results_summary != None:
+            summ_dir = os.path.dirname(args.results_summary)
+            if summ_dir != '' and not os.path.isdir(summ_dir):
+                sys.exit('ERROR: the path leading up to output summary file has not been created')
         self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
         self.identifier = args.identifier
-        self.e_value_threshold = args.evalue
-        self.probability_threshold = args.probability_threshold
-        self.max_fraction = args.max_fraction
+        if args.evalue != None and args.evalue < 0:
+            sys.exit('ERROR: e-value threshold must be positive')
+        else:
+            self.e_value_threshold = args.evalue
+        if args.probability_threshold != None and (args.probability_threshold < 0 or args.probability_threshold > 1):
+            sys.exit('ERROR: probability threshold must be in the range [0, 1]')
+        else:
+            self.probability_threshold = args.probability_threshold
+        if args.max_fraction != None and (args.max_fraction < 0 or args.max_fraction > 1):
+            sys.exit('ERROR: max fraction parameter must be in the range [0, 1]')
+        else:
+            self.max_fraction = args.max_fraction
         if args.download_type != None:
             self.download = args.download_type
          
@@ -152,7 +170,10 @@ class GeneticCode:
         
         # if excluding mitochondrial Pfam domains, remove them from analysis
         if args.mito_pfams == False:
-            with open ("%s/mito_pfams.txt" % self.resource_dir, "r") as rf:
+            mito_pfams_file = "%s/mito_pfams.txt" % self.resource_dir
+            if not os.path.isfile(mito_pfams_file):
+                sys.exit('ERROR: mitochondrial Pfams file cannot be found in the resource directory')
+            with open(mito_pfams_file, "r") as rf:
                 pfam_rem = rf.read().splitlines()
             for pfam in pfam_rem:
                 try:
@@ -163,7 +184,10 @@ class GeneticCode:
         
         # if excluding transposon Pfam domains, remove them from analysis
         if args.transposon_pfams == False:
-            with open ("%s/transposon_pfams.txt" % self.resource_dir, "r") as rf:
+            transposon_pfams_file = "%s/transposon_pfams.txt" % self.resource_dir
+            if not os.path.isfile(transposon_pfams_file):
+                sys.exit('ERROR: transposon Pfams file cannot be found in the resource directory')
+            with open(transposon_pfams_file, "r") as rf:
                 pfam_rem = rf.read().splitlines()
             for pfam in pfam_rem:
                 try:
@@ -174,7 +198,10 @@ class GeneticCode:
         
         # if excluding viral Pfam domains, remove them from analysis
         if args.viral_pfams == False:
-            with open ("%s/viral_pfams.txt" % self.resource_dir, "r") as rf:
+            viral_pfams_file = "%s/viral_pfams.txt" % self.resource_dir
+            if not os.path.isfile(viral_pfams_file):
+                sys.exit('ERROR: viral Pfams file cannot be found in the resource directory')
+            with open(viral_pfams_file, "r") as rf:
                 pfam_rem = rf.read().splitlines()
             for pfam in pfam_rem:
                 try:
@@ -185,7 +212,10 @@ class GeneticCode:
         
         # if excluding selenocysteine-containing Pfam domains, remove them from analysis
         if args.selenocysteine_pfams == False:
-            with open ("%s/selenocysteine_pfams.txt" % self.resource_dir, "r") as rf:
+            seleno_pfams_file = "%s/selenocysteine_pfams.txt" % self.resource_dir
+            if not os.path.isfile(seleno_pfams_file):
+                sys.exit('ERROR: selenocysteine Pfams file cannot be found in the resource directory')
+            with open(seleno_pfams_file, "r") as rf:
                 pfam_rem = rf.read().splitlines()
             for pfam in pfam_rem:
                 try:
@@ -196,7 +226,10 @@ class GeneticCode:
         
         # if excluding pyrrolysine-containing Pfam domains, remove them from analysis
         if args.pyrrolysine_pfams == False:
-            with open ("%s/pyrrolysine_pfams.txt" % self.resource_dir, "r") as rf:
+            pyrro_pfams_file = "%s/pyrrolysine_pfams.txt" % self.resource_dir
+            if not os.path.isfile(pyrro_pfams_file):
+                sys.exit('ERROR: pyrrolysine Pfams file cannot be found in the resource directory')
+            with open(pyrro_pfams_file, "r") as rf:
                 pfam_rem = rf.read().splitlines()
             for pfam in pfam_rem:
                 try:
@@ -242,7 +275,7 @@ class GeneticCode:
         file_path = genome_download(self.identifier, self.download, self.resource_dir, self.genome_path)
         
         # if genome is STILL not downloaded, then quit
-        if not os.path.isfile(self.genome_path):
+        if file_path == 1 or not os.path.isfile(self.genome_path):
             sys.exit('This sequence could not be downloaded from Genbank')
         
         # check that sequence file satisfies FASTA format
@@ -530,6 +563,8 @@ class GeneticCode:
         position within domain, genome piece, frame, position, codon at that position
         """
         sequence_pieces_file = '%s.sequence_pieces.fna' % self.prefix
+        if not os.path.isfile(sequence_pieces_file) or not os.path.isfile(sequence_pieces_file + '.ssi'):
+            sys.exit('ERROR: sequence_pieces file (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix and do not include file extensions')
         
         # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
         if self.npieces == None:
@@ -540,6 +575,9 @@ class GeneticCode:
         # create list of all anticipated hmmscan output files
         file_suffixes = ['%i_%i' % (j, i) for j in range(self.npieces) for i in range(6)]
         all_possible_hmm_outs = ['hmm_output_%s' % suff for suff in file_suffixes]
+        
+        if not os.path.isdir(self.scratch_dir):
+            sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix and do not include file extensions')
         
         # get list of all hmmscan output files that exist
         p = Popen('(cd %s && find . -type f -name "hmm_outputs*.tar" | xargs -n1 -I {} gtar --list --file={} | sort | uniq )' % self.scratch_dir, shell=True, stdout=PIPE)
@@ -662,14 +700,17 @@ class GeneticCode:
         This function will step through the aligned Pfam columns (in the gzipped intermediate summary 
         file) and compute for each codon the likelihood and decoding probability of each model.
         """
-        # output file
-        with open(self.inference_file, 'w') as of:
-            pass
-        
         # hmmscan results summary file
+        if (not os.path.isfile(self.alignment_summary + '.gz')) and (not os.path.isfile(self.alignment_summary)):
+            sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct file prefix and do not include file extensions')
+        
         p = Popen('gunzip %s' % (self.alignment_summary + '.gz'), shell=True)
         p.wait()
         
+        # output file
+        with open(self.inference_file, 'w') as of:
+            pass
+
         # running sum of all emissions
         totsum = np.zeros(20) - np.inf    # -inf is log(0)
         
@@ -855,7 +896,8 @@ def main():
     args = argument_parsing()
     if args.resource_directory == None:
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
-    
+    args.resource_directory = os.path.normpath(args.resource_directory)
+
     # initialize genetic code with command line args and download genome
     initialize_globals(args.resource_directory)
     gc = GeneticCode(args)

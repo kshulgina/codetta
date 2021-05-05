@@ -12,32 +12,30 @@ We provide the alignment summary files for over 250,000 bacterial and archaeal g
 
 ## Download and setup
 
-Codetta was developed for Python version 3.x-3.9 on Linux and MacOS. Type `python --version` into your terminal to check which version of Python you have.
-
-We use the following Python packages, with the recommended versions:
-
-	scipy >= 1.6.2
-	argparse >= 1.1
-	numpy >= 1.20.1
-	subprocess
-	os
-	sys
-	re
-	random
-	itertools
-	pickle
-	ftplib
-	datetime
-
-
-
+### Cloning GitHub repo
 Clone the Codetta repository from GitHub with the command 
 
 	git clone https://github.com/kshulgina/codetta
 
+### Python version and packages
+Codetta was developed for Python version 3.7-3.9 on Linux and MacOS. 
+
+Type `python --version` into your terminal to check which version of Python you have. If you typically use a different version of Python, you can create a virtual Python 3.9 environment using the commands 
+	
+	conda create --name py39 python=3.9
+	conda activate py39
+
+To ensure that the correct Python package versions are installed, use the command
+
+	pip install -r requirements.txt
+
+Otherwise, you can manually install the packages listed in the `requirements.txt` file.
+
+
+### Additional requirements
 Codetta additionally requires:
 
-- HMMER (v3.1b2) and Easel library: follow "Quick-ish" installation instructions in [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf) (installation commands shown below). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021).
+- HMMER (v3.1b2) and Easel library: installation commands shown below (following "Quick-ish" installation instructions in [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf)). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021).
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
 		tar xf hmmer-3.1b2.tar.gz
@@ -49,13 +47,14 @@ Codetta additionally requires:
 	
 	Check that the correct version of HMMER is being used with `which hmmbuild`. 
 - `gzip`: on Mac, use install command `brew install gzip`
+- `wget`
 
 If you plan on analyzing your own nucleotide sequences, then you will also need:
 
-- `gtar`: on Mac, use install command `brew install gnutar`
-- `wget`
+- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on Linux.
 
-Before we're done, we also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
+### Building a local Pfam database
+We also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
 
 Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
 

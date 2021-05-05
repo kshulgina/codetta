@@ -1,4 +1,5 @@
 import os
+import sys
 from subprocess import call, Popen, PIPE
 import re
 import numpy as np
@@ -285,11 +286,11 @@ def download_genbank(species_id, genbank_file, type_download, download_output_fi
         prefix = u.split('/')[-1]
         download_url = '%s/%s_genomic.fna.gz' % (u, prefix)
         
-        # check if sequence is being downloaded into a directory that exists; if not, create
+        # check if sequence is being downloaded into a directory that exists
         download_dir = os.path.dirname(download_output_file)
-        if download_dir != '':
-            os.mkdir(download_dir)
-        
+        if download_dir != '' and not os.path.isdir(download_dir):
+            sys.exit('ERROR: the path leading up to prefix has not been created')
+
         # download the genome! 
         genome_path = '%s.gz' % download_output_file
         with open(os.devnull, "w") as f:
@@ -302,10 +303,10 @@ def download_genbank(species_id, genbank_file, type_download, download_output_fi
     
     # deal with case where species id is a GenBank accession number
     elif type_download == 'c':
-        # check if sequence is being downloaded into a directory that exists; if not, create
+        # check if sequence is being downloaded into a directory that exists
         download_dir = os.path.dirname(download_output_file)
-        if download_dir != '':
-            os.mkdir(download_dir)
+        if download_dir != '' and not os.path.isdir(download_dir):
+            sys.exit('ERROR: the path leading up to prefix has not been created')
         
         download_url = 'https://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=%s&rettype=fasta&retmode=text' % species_id
         wget_command = "wget -q -O %s '%s'" % (download_output_file, download_url)
