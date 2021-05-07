@@ -2,13 +2,12 @@
 
 Codetta is a Python program for cracking the genetic code of an organism from nucleotide sequence data.   
 
-The analysis can be performed either 
+The analysis consists of two main steps:
 
-- directly from an alignment summary file (easily downloaded from link) or 
-- from your own nucleotide sequence (more complicated and computationally intensive). 
+1. Align the input nucleotide sequence to the entire Pfam database, generating an alignment summary file
+2. Infer the genetic code from the alignment summary file.
 
-We provide the alignment summary files for over 50,000 bacterial and archaeal species analyzed in Shulgina & Eddy (2021) (one genome assembly analyzed per species). See our preprint for more detail: [link to preprint]
-
+Step 1 (Pfam alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021) upon request.
 
 ## Download and setup
 
@@ -21,7 +20,7 @@ Clone the Codetta repository from GitHub with the command
 ### Python version and packages
 Codetta was developed for Python version 3.7-3.9 on Linux and MacOS. 
 
-Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you try creating a virtual Python 3.9 environment using the commands 
+Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you can try creating a virtual Python 3.9 environment using the commands 
 	
 	conda create --name py39 python=3.9
 	conda activate py39
@@ -63,7 +62,7 @@ Download Pfam database into the `resources` directory. This may take a few minut
 	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.seed.gz
 	gunzip Pfam-A.seed.gz
 
-Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files from [link] without unexpected errors.
+Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files provided by us without unexpected errors.
 
 	hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
@@ -73,14 +72,14 @@ Now you're ready to predict some genetic codes!
 
 ## Usage
 
-Codetta consists of three main programs. If you plan on inferring the genetic code from an alignment summary file, then you only need to use:
+Codetta consists of three main programs. To infer the genetic code from an alignment summary file, you will use:
 
 - `codetta_infer`: Infer the genetic code from the alignment summary file.
 
-If you plan on analyzing your own nucleotide sequence, you will also use:
+To analyzing your own nucleotide sequence and generate an alignment summary file, you will use:
 
-- `codetta_summary`: Summarize Pfam alignments into an alignment summary file.
 - `codetta_align`: Align Pfam profile HMMs to the input nucleotide sequence.
+- `codetta_summary`: Summarize Pfam alignments into an alignment summary file.
 
 General usage for these programs is
 
@@ -99,7 +98,7 @@ Let's see a few examples of how Codetta is used.
 
 ### Genetic code inference from an alignment summary file
 
-In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome. Alignment summary files for over 50,000 bacterial and archaeal species can be downloaded from [link].
+In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
 
 _P. tannophilus_ is known to have reassigned the canonical leucine codon CUG to alanine. Let's see if we can predict this reassignment.
 
@@ -155,7 +154,7 @@ If you plan on running a large number of analyses, you can use `--results_summar
 
 ### Genetic code inference from a nucleotide sequence
 
-Predicting the genetic code from a nucleotide sequence requires two additional steps.
+Generating an alignment summary file from a nucleotide sequence requires two additional steps.
 
 In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` with the _Nasuia deltocephalinicola_ genome sequence (assembly accession GCA_000442605.1). The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
 
@@ -178,11 +177,11 @@ If you intend to analyze many sequences (or longer sequences), we recommend para
 Next step is to process the `hmmscan` alignment files into an alignment summary file. This can be simply done with
 
 	python codetta_summary.py examples/GCA_000442605.1	
-And that's it! An alignment summary file is created (called `examples/GCA_000442605.1.alignment_summary.txt.gz`) that can be used as input for the `codetta_infer` program as described above. The `examples/GCA_000442605.1.temp_files/` has also been cleaned and deleted.
+And that's it! An alignment summary file is created (called `examples/GCA_000442605.1.alignment_summary.txt.gz`) that can be used as input for the `codetta_infer` program as described above. The temporary directory `examples/GCA_000442605.1.temp_files/` has also been cleaned and deleted.
 
 ### Bonus: downloading nucleotide sequences from GenBank
 
-We have also provided a simple program for downloading FASTA files from GenBank by specifying either a genome assembly accession or a single nucleotide database accession. 
+We have also provided a simple program for a downloading FASTA file from GenBank by specifying either a genome assembly accession or a nucleotide accession. 
 
 - `codetta_download`: Download a genome assembly or nucleotide sequence from GenBank
 
