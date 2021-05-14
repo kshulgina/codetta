@@ -336,7 +336,7 @@ class GeneticCode:
         
         # create esl-sfetch SSI index of sequence_pieces file
         with open(os.devnull, "w") as f:
-            pieces_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_directory, sequence_pieces_file)
+            pieces_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_dir, sequence_pieces_file)
             p = Popen(pieces_index_cmd, shell=True, stdout=f, stderr=f)
         
         self.npieces = n_piece
@@ -388,7 +388,7 @@ class GeneticCode:
         
         # create esl-sfetch SSI index
         with open(os.devnull, "w") as f:
-            prelim_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_directory, preliminary_translation_file)
+            prelim_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_dir, preliminary_translation_file)
             p = Popen(prelim_index_cmd, shell=True, stdout=f, stderr=f)
         
         ## checking that translation length is as expected
@@ -450,7 +450,7 @@ class GeneticCode:
             indices_to_analyze.append(suffix)
             
             # get length of this sequence piece
-            length_cmd = '%s/esl-sfetch %s "piece_%s" | wc' % (self.hmmer_directory, preliminary_translation_file, suffix)
+            length_cmd = '%s/esl-sfetch %s "piece_%s" | wc' % (self.hmmer_dir, preliminary_translation_file, suffix)
             p = Popen(length_cmd, shell=True, stdout=PIPE)
             output_l = p.communicate()[0].decode()
             piece_len = int(output_l.split()[2])
@@ -466,7 +466,7 @@ class GeneticCode:
                     batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
                     for indices_str in indices_to_analyze:
                         batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                            (self.hmmer_directory, preliminary_translation_file, indices_str, self.hmmer_directory, self.scratch_dir, indices_str, self.resource_dir))
+                            (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir))
                         batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                         batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
                 
@@ -484,7 +484,7 @@ class GeneticCode:
             batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
             for indices_str in indices_to_analyze:
                 batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                    (self.hmmer_directory, preliminary_translation_file, indices_str, self.hmmer_directory, self.scratch_dir, indices_str, self.resource_dir))
+                    (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir))
                 batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                 batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
         shell_count += 1

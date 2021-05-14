@@ -204,7 +204,7 @@ The `-m` argument indicates that we do not want to exclude Pfam domains associat
 
 	FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 
-Comparing to the standard genetic code, you can see that two codons have alternative meanings: the stop codon UGA is now tryptophan codon and the isoleucine codon AUA is now a methionine codon.
+Comparing to the standard genetic code (below), you can see that two codons have alternative meanings: the stop codon UGA is now tryptophan codon and the isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?) due to few aligned Pfam consensus columns (look at inference output file for more detail).
 
 	P. provasolii mt code : FF??S?SSYY??C?WWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	standard genetic code : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
