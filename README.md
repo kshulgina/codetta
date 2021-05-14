@@ -37,17 +37,17 @@ Codetta additionally requires:
 
 - `wget`: on Mac, use install command `brew install wget` 
 - `gzip`: on Mac, use install command `brew install gzip`
-- HMMER (v3.1b2) and Easel library: installation commands shown below (following "Quick-ish" installation instructions in [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf)). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021).
+- HMMER (v3.1b2) and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021). Codetta may work with other versions of HMMER3, as long as the same version of HMMER is used to build the Pfam database. 
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
 		tar xf hmmer-3.1b2.tar.gz
+		rm hmmer-3.1b2.tar.gz 
 		cd hmmer-3.1b2
-		./configure                   [ specify prefix if you want: --prefix=/your/install/path ]
+		pwd | xargs -I {} ./configure --prefix={}
 		make
 		make install
 		cd easel; make install
-	
-	Check that the correct version of HMMER is being used with `which hmmbuild`.
+		cd ../..
 
 If you plan on analyzing your own nucleotide sequences, then you will also need:
 
@@ -64,9 +64,9 @@ Download Pfam database into the `resources` directory. This may take a few minut
 
 Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files provided by us without unexpected errors.
 
-	hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
+	../hmmer-3.1b2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
-	hmmpress Pfam-A_enone.hmm
+	../hmmer-3.1b2/bin/hmmpress Pfam-A_enone.hmm
 
 Now you're ready to predict some genetic codes!
 

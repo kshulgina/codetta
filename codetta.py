@@ -22,7 +22,8 @@ def argument_parsing():
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
-    parser.add_argument('-b', '--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
+    parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
+    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
@@ -149,6 +150,7 @@ class GeneticCode:
                 sys.exit('ERROR: the path leading up to output summary file has not been created')
         self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
+        self.hmmer_dir = args.hmmer_directory
         self.identifier = args.identifier
         if args.evalue != None and args.evalue < 0:
             sys.exit('ERROR: e-value threshold must be positive')
@@ -334,7 +336,7 @@ class GeneticCode:
         
         # create esl-sfetch SSI index of sequence_pieces file
         with open(os.devnull, "w") as f:
-            pieces_index_cmd = 'esl-sfetch --index %s' % sequence_pieces_file
+            pieces_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_directory, sequence_pieces_file)
             p = Popen(pieces_index_cmd, shell=True, stdout=f, stderr=f)
         
         self.npieces = n_piece
@@ -386,7 +388,7 @@ class GeneticCode:
         
         # create esl-sfetch SSI index
         with open(os.devnull, "w") as f:
-            prelim_index_cmd = 'esl-sfetch --index %s' % preliminary_translation_file
+            prelim_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_directory, preliminary_translation_file)
             p = Popen(prelim_index_cmd, shell=True, stdout=f, stderr=f)
         
         ## checking that translation length is as expected
@@ -448,7 +450,7 @@ class GeneticCode:
             indices_to_analyze.append(suffix)
             
             # get length of this sequence piece
-            length_cmd = 'esl-sfetch %s "piece_%s" | wc' % (preliminary_translation_file, suffix)
+            length_cmd = '%s/esl-sfetch %s "piece_%s" | wc' % (self.hmmer_directory, preliminary_translation_file, suffix)
             p = Popen(length_cmd, shell=True, stdout=PIPE)
             output_l = p.communicate()[0].decode()
             piece_len = int(output_l.split()[2])
@@ -463,8 +465,8 @@ class GeneticCode:
                     batch_file.write('#!/bin/bash\n\n')
                     batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
                     for indices_str in indices_to_analyze:
-                        batch_file.write('esl-sfetch %s "piece_%s" | hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                            (preliminary_translation_file, indices_str, self.scratch_dir, indices_str, self.resource_dir))
+                        batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
+                            (self.hmmer_directory, preliminary_translation_file, indices_str, self.hmmer_directory, self.scratch_dir, indices_str, self.resource_dir))
                         batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                         batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
                 
@@ -481,8 +483,8 @@ class GeneticCode:
             batch_file.write('#!/bin/bash\n\n')
             batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
             for indices_str in indices_to_analyze:
-                batch_file.write('esl-sfetch %s "piece_%s" | hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                    (preliminary_translation_file, indices_str, self.scratch_dir, indices_str, self.resource_dir))
+                batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
+                    (self.hmmer_directory, preliminary_translation_file, indices_str, self.hmmer_directory, self.scratch_dir, indices_str, self.resource_dir))
                 batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                 batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
         shell_count += 1
@@ -894,10 +896,15 @@ class GeneticCode:
 
 def main():
     args = argument_parsing()
+    
     if args.resource_directory == None:
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
-
+    
+    if args.hmmer_directory == None:
+        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2')
+    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
+    
     # initialize genetic code with command line args and download genome
     initialize_globals(args.resource_directory)
     gc = GeneticCode(args)
