@@ -23,7 +23,7 @@ def argument_parsing():
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2)', type=str)
+    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
@@ -902,7 +902,7 @@ def main():
     args.resource_directory = os.path.normpath(args.resource_directory)
     
     if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2')
+        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2/bin')
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     # initialize genetic code with command line args and download genome

@@ -10,7 +10,7 @@ def argument_parsing():
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2)', type=str)
+    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
     
     return parser.parse_args()
 
@@ -23,7 +23,7 @@ def main():
     args.resource_directory = os.path.normpath(args.resource_directory)
     
     if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2')
+        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2/bin')
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     # initialize genetic code with command line args and download genome
