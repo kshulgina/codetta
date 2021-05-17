@@ -20,7 +20,7 @@ Clone the Codetta repository from GitHub with the command
 ### Python version and packages
 Codetta was developed for Python version 3.7-3.9 on Linux and MacOS. 
 
-Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you can try creating a virtual Python 3.9 environment using the commands 
+Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you try using `conda` to create a virtual Python 3.9 environment using the commands 
 	
 	conda create --name py39 python=3.9
 	conda activate py39
@@ -51,7 +51,7 @@ Codetta additionally requires:
 
 If you plan on analyzing your own nucleotide sequences, then you will also need:
 
-- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on Linux.
+- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by putting the alias `alias gtar='tar'` in your `~/.bashrc` file and restarting your terminal.
 
 ### Building a local version of the Pfam database
 We also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
@@ -67,6 +67,7 @@ Then, use HMMER (v3.1b) to build a searchable database, using the `--enone` flag
 	../hmmer-3.1b2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
 	../hmmer-3.1b2/bin/hmmpress Pfam-A_enone.hmm
+	cd ..
 
 Now you're ready to predict some genetic codes!
 
@@ -83,7 +84,7 @@ To analyzing your own nucleotide sequence and generate an alignment summary file
 
 General usage for these programs is
 
-		python [program name].py [input file prefix] [optional arguments]
+	python [program name].py [input file prefix] [optional arguments]
 
 For any of these programs, type `python [program name] --help` for complete usage details.
 
@@ -177,7 +178,17 @@ If you intend to analyze many sequences (or longer sequences), we recommend para
 Next step is to process the `hmmscan` alignment files into an alignment summary file. This can be simply done with
 
 	python codetta_summary.py examples/GCA_000442605.1	
-And that's it! An alignment summary file is created (called `examples/GCA_000442605.1.alignment_summary.txt.gz`) that can be used as input for the `codetta_infer` program as described above. The temporary directory `examples/GCA_000442605.1.temp_files/` has also been cleaned and deleted.
+An alignment summary file is created (called `examples/GCA_000442605.1.alignment_summary.txt.gz`) that can be used as input for the `codetta_infer` program. The temporary directory `examples/GCA_000442605.1.temp_files/` has also been cleaned and deleted.
+
+To infer the genetic code (as described above), just use 
+
+	python codetta_infer.py examples/GCA_000442605.1
+
+And you will see the output inferred genetic code:
+
+	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
+
+And the output file `GCA_000442605.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out` with more detail.
 
 ### Bonus: downloading nucleotide sequences from GenBank
 
