@@ -35,8 +35,7 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 ### Additional requirements
 Codetta additionally requires:
 
-- `wget`: on Mac, use install command `brew install wget` 
-- `gzip`: on Mac, use install command `brew install gzip`
+- `wget` and `gzip`: on Mac, use install command `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool. 
 - HMMER (v3.1b2) and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021). Codetta may work with other versions of HMMER3, as long as the same version of HMMER is used to build the Pfam database. 
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
@@ -51,7 +50,7 @@ Codetta additionally requires:
 
 If you plan on analyzing your own nucleotide sequences, then you will also need:
 
-- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by putting the alias `alias gtar='tar'` in your `~/.bashrc` file and restarting your terminal.
+- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by adding an alias `alias gtar='tar'` in your `~/.bashrc` file (or equivalent for your shell) and restarting your terminal.
 
 ### Building a local version of the Pfam database
 We also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
