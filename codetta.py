@@ -520,7 +520,7 @@ class GeneticCode:
         """
         with open(self.inference_file, 'a') as of:
             # write parameters
-            of.write('# Analysis arguments\n# arguments\n')
+            of.write('# Analysis arguments\n')
             of.write('prefix            %s\n' % self.prefix)
             of.write('output_summary    %s\n' % self.summary_file)
             of.write('evalue_threshold  %s\n' % str(self.e_value_threshold))
