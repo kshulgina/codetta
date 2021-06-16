@@ -58,14 +58,14 @@ def initialize_globals(resource_dir):
         'tca':'S', 'tcc':'S', 'tcg':'S', 'tct':'S', 'ttc':'F', 'ttt':'F', 'tta':'L', 'ttg':'L',
         'tac':'Y', 'tat':'Y', 'taa':'_', 'tag':'_', 'tgc':'C', 'tgt':'C', 'tga':'_', 'tgg':'W'}
     
-    # numerical indicies corresponding to amino acids in most applications, such as column indices in Pfam models
+    # numerical indices corresponding to amino acids in most applications, such as column indices in Pfam models
     global aa_indices
     aa_indices = {
             -2:'?', -1:'*', 0:'A', 1:'C', 2:'D', 3:'E', 4:'F', 5:'G', 6:'H', 7:'I', 8:'K', 
             9:'L', 10:'M', 11:'N', 12:'P', 13:'Q', 14:'R', 15:'S', 16:'T', 17:'V', 18:'W', 19:'Y', 20:'?'}
     
     # dictionary where keys are codons and values are ints, corresponds to order of codons in standard 
-    # codon permutation such as in NCBI, and also order of codons in probability structures
+    # codon permutation such as in NCBI, and also order of codons in decoding probability lists
     global codons
     codons = list(itertools.product('TCAG',repeat=3))
     #
@@ -249,7 +249,7 @@ class GeneticCode:
         self.decoding_probs = np.zeros_like(self.likelihoods)
         self.npieces = None
         
-        # if we're downloading a sequence and no prefix is specified, using just the identifier
+        # if we're downloading a sequence and no prefix is specified, use just the identifier
         if args.prefix == None and args.identifier != None:
             args.prefix = args.identifier
         
@@ -908,9 +908,6 @@ def main():
     # initialize genetic code with command line args and download genome
     initialize_globals(args.resource_directory)
     gc = GeneticCode(args)
-    
-    # infer genetic code
-    #gc.compute_decoding_probabilities()
 
 
 if __name__ == "__main__":

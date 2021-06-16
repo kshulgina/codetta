@@ -30,7 +30,7 @@ def replace_stop(sequence):
     Args:
         sequence (string)
     Returns:
-        string: '_' characters replaces with 'X's
+        string: '_' characters replaced with 'X's
     
     """
     return sequence.replace('_', 'X')
@@ -239,7 +239,7 @@ def update_genbank(genbank_file):
     '''
     Updates the assembly_summary file from GenBank, used to download assembly accessions
     '''
-    # get modification time of local copy of genBank database file (in UTC)
+    # get modification time of local copy of GenBank database file (in UTC)
     UTC_OFFSET = datetime.datetime.utcnow() - datetime.datetime.now()
     if os.path.isfile(genbank_file):
         local_time = int((datetime.datetime.fromtimestamp(os.path.getmtime(genbank_file)) + 
