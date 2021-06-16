@@ -7,7 +7,7 @@ The analysis consists of two main steps:
 1. Aligning the input nucleotide sequence to the entire Pfam database, generating an alignment summary file.
 2. Inferring the genetic code from the alignment summary file.
 
-Step 1 (Pfam alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021) upon request.
+Step 1 (Pfam alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021) upon request. Alternatively, this process can be parallelized across many machines on a computing cluster.
 
 ## Download and setup
 
@@ -51,7 +51,7 @@ Codetta additionally requires:
 	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.1b2/bin` unless otherwise specified as an argument.
 
 
-If you plan on analyzing your own nucleotide sequences, then you will also need:
+If you plan on analyzing your own nucleotide sequences (Step 1), then you will also need:
 
 - `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by adding an alias `alias gtar='tar'` in your `~/.bashrc` file (or equivalent for your shell) and restarting your terminal.
 
@@ -88,7 +88,7 @@ General usage for these programs is
 
 	python [program name].py [input file prefix] [optional arguments]
 
-For any of these programs, type `python [program name] --help` for complete usage details.
+For any of these programs, type `python [program name].py --help` for complete usage details.
 
 If you want to be able to run Codetta from anywhere on your machine (without having to invoke python):
 
@@ -122,7 +122,6 @@ Notice that the 19th codon (corresponding to CUG) is A instead of L. This means 
 Additionally, a file is created, named `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters. This file contains a detailed summary of the genetic code inference results:
 
 	# Analysis arguments
-	# arguments
 	prefix            examples/GCA_001661245.1
 	output_summary    None
 	evalue_threshold  1e-10
@@ -207,7 +206,7 @@ This will download a FASTA file containing the GQ497137.1 sequence into `example
 
 ### Summary
 
-Now let's pull it all together by predicting the genetic code of the _Pycnococcus provasolii_ mitochondrial genome from scratch:
+Now let's pull it all together by predicting the genetic code of the _P. provasolii_ mitochondrial genome from scratch:
 
 	python codetta_download.py GQ497137.1 c --prefix examples/GQ497137.1
 	python codetta_align.py examples/GQ497137.1
@@ -218,7 +217,7 @@ The `-m` argument indicates that we do not want to exclude Pfam domains associat
 
 	FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 
-Comparing to the standard genetic code (below), you can see that two codons have alternative meanings: the stop codon UGA is now tryptophan codon and the isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?) due to few aligned Pfam consensus columns (look at inference output file for more detail).
+Comparing to the standard genetic code (below), you can see that two codons have alternative meanings: the stop codon UGA is now tryptophan codon and the isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?) due to few aligned Pfam consensus columns (look at the inference output file for more detail).
 
 	P. provasolii mt code : FF??S?SSYY??C?WWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	standard genetic code : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
