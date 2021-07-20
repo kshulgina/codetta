@@ -4,10 +4,10 @@ Codetta is a Python program for cracking the genetic code of an organism from nu
 
 The analysis consists of two main steps:
 
-1. Aligning the input nucleotide sequence to the entire Pfam database, generating an alignment summary file.
+1. Aligning the input nucleotide sequence a database of profile Hidden Markov models (HMMs) of proteins (such as the Pfam database), generating an alignment summary file.
 2. Inferring the genetic code from the alignment summary file.
 
-Step 1 (Pfam alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in Shulgina & Eddy (2021) upon request. Alternatively, this process can be parallelized across many machines on a computing cluster.
+Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in [Shulgina & Eddy (2021)](https://www.biorxiv.org/content/10.1101/2021.06.18.448887v1) upon request. Alternatively, this process can be parallelized across many machines on a computing cluster.
 
 ## Download and setup
 
@@ -56,7 +56,7 @@ If you plan on analyzing your own nucleotide sequences (Step 1), then you will a
 - `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by adding an alias `alias gtar='tar'` in your `~/.bashrc` file (or equivalent for your shell) and restarting your terminal.
 
 ### Building a local version of the Pfam database
-You also need to download and build a local version of the Pfam database. We used Pfam version 32.0.
+By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database. We used Pfam version 32.0.
 
 Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
 
@@ -71,6 +71,11 @@ Then, use HMMER to build a searchable database, using the `--enone` flag to turn
 	../hmmer-3.1b2/bin/hmmpress Pfam-A_enone.hmm
 	cd ..
 
+### Building a custom profile HMM database
+To make a custom profile HMM database from a specific set of multiple sequence alignments, you need to follow a similar series of steps.
+
+...
+
 Now you're ready to predict some genetic codes!
 
 ## Usage
@@ -81,8 +86,8 @@ Codetta consists of three main programs. To infer the genetic code from an align
 
 To analyze your own nucleotide sequence and generate an alignment summary file, you will use:
 
-- `codetta_align`: Align Pfam profile HMMs to the input nucleotide sequence.
-- `codetta_summary`: Summarize Pfam alignments into an alignment summary file.
+- `codetta_align`: Align profile HMMs to the input nucleotide sequence.
+- `codetta_summary`: Summarize profile HMM alignments into an alignment summary file.
 
 General usage for these programs is
 
@@ -101,7 +106,7 @@ Let's see a few examples of how Codetta is used.
 
 ### Genetic code inference from an alignment summary file
 
-In the `examples` directory, you will find `GCA_001661245.1.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
+In the `examples` directory, you will find `GCA_001661245.1_Pfam-A_enone.hmm.hmmscan_summary.txt.gz`, an alignment summary file for the yeast _Pachysolen tannophilus_ (GenBank assembly GCA_001661245.1). This file summarizes the result of aligning the entire Pfam database against a six-frame translation of the entire genome.
 
 _P. tannophilus_ is known to have reassigned the canonical leucine codon CUG to alanine. Let's see if we can predict this reassignment.
 
@@ -119,10 +124,11 @@ This corresponds to the inferred translation of each of the 64 codons, in order 
 
 Notice that the 19th codon (corresponding to CUG) is A instead of L. This means that we have correctly predicted the CUG reassignment to alanine in this yeast genome.
 
-Additionally, a file is created, named `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters. This file contains a detailed summary of the genetic code inference results:
+Additionally, a file is created, named `examples/GCA_001661245.1_Pfam-A_enone.hmm.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters. This file contains a detailed summary of the genetic code inference results:
 
 	# Analysis arguments
 	prefix            examples/GCA_001661245.1
+	profile_database  Pfam-A_enone.hmm
 	output_summary    None
 	evalue_threshold  1e-10
 	prob_threshold    0.9999
@@ -160,7 +166,7 @@ Generating an alignment summary file from a nucleotide sequence requires two add
 
 In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` with the _Nasuia deltocephalinicola_ genome sequence (assembly accession GCA_000442605.1). The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
 
-The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. We can do this with
+The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. (To align against a custom profile HMM database, use the `-p` argument). We can do this with
 
 	python codetta_align.py examples/GCA_000442605.1
 
@@ -174,13 +180,13 @@ This python program creates several files, which are used by the subsequent step
 
 - `examples/GCA_000442605.1.sequence_pieces.fna`: input nucleotide sequence, broken into pieces <100,000 nt
 - `examples/GCA_000442605.1.preliminary_translation.faa`: six-frame standard genetic code translation
-- `examples/GCA_000442605.1.temp_files/` is a temporary directory which stores the `hmmscan` result files
+- `examples/GCA_000442605.1_Pfam-A_enone.hmm.temp_files/` is a temporary directory which stores the `hmmscan` result files from alignment against the Pfam database
 
 Next step is to process the `hmmscan` alignment files into an alignment summary file. This can be simply done with
 
 	python codetta_summary.py examples/GCA_000442605.1
 
-This process creates an alignment summary file is created (called `examples/GCA_000442605.1.hmmscan_summary.txt.gz`) and deletes the temporary directory `examples/GCA_000442605.1.temp_files/`.
+This process creates an alignment summary file is created (called `examples/GCA_000442605.1_Pfam-A_enone.hmm.hmmscan_summary.txt.gz`) and deletes the temporary directory `examples/GCA_000442605.1_Pfam-A_enone.hmm.temp_files/`.
 
 To infer the genetic code (as described in the first example), just use 
 
@@ -190,7 +196,7 @@ And you will see the output inferred genetic code:
 
 	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-And the output file `GCA_000442605.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out` is generated.
+And the output file `GCA_000442605.1_Pfam-A_enone.hmm.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out` is generated.
 
 ### Bonus: downloading nucleotide sequences from GenBank
 

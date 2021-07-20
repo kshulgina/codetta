@@ -29,7 +29,7 @@ def main():
     
     if args.profiles == None:
         args.profiles = 'Pfam-A_enone.hmm'
-
+    
     # initialize genetic code with command line args and download genome
     args.results_summary = None
     args.identifier = None
