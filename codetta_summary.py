@@ -9,6 +9,7 @@ def argument_parsing():
                                           a path. Hmmscan alignment summary file will be written to [PREFIX].hmmscan_summary.txt.gz')
     
     # remaining arguments all are set optionally, otherwise default values
+    parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
@@ -27,6 +28,9 @@ def main():
         args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2/bin')
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
+    if args.profiles == None:
+        args.profiles = 'Pfam-A_enone.hmm'
+
     # initialize genetic code with command line args and download genome
     args.results_summary = None
     args.identifier = None
@@ -38,7 +42,7 @@ def main():
     args.viral_pfams = None
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
-    initialize_globals(args.resource_directory)
+    initialize_globals(args.resource_directory, args.profiles)
     gc = GeneticCode(args)
     
     gc.process_hmmscan_results()

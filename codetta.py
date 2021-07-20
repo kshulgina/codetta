@@ -21,12 +21,13 @@ def argument_parsing():
     parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].hmmscan_summary.txt.gz). This can include a path.')
     
     # remaining arguments all are set optionally, otherwise default values
+    parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
-    parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
+    parser.add_argument('-e', '--evalue', help='Profile hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
     parser.add_argument('-m', '--mito_pfams', help='flag to include Pfam domains commonly found in mitochondria', action="store_true", default=False)
@@ -37,7 +38,7 @@ def argument_parsing():
     
     return parser.parse_args()
 
-def initialize_globals(resource_dir):
+def initialize_globals(resource_dir, profile_db):
     # standard genetic code dictionary used for translating nucleotide triplets to amino acids
     global gencode 
     gencode = {
@@ -58,7 +59,7 @@ def initialize_globals(resource_dir):
         'tca':'S', 'tcc':'S', 'tcg':'S', 'tct':'S', 'ttc':'F', 'ttt':'F', 'tta':'L', 'ttg':'L',
         'tac':'Y', 'tat':'Y', 'taa':'_', 'tag':'_', 'tgc':'C', 'tgt':'C', 'tga':'_', 'tgg':'W'}
     
-    # numerical indices corresponding to amino acids in most applications, such as column indices in Pfam models
+    # numerical indices corresponding to amino acids in most applications, such as column indices in profile HMM models
     global aa_indices
     aa_indices = {
             -2:'?', -1:'*', 0:'A', 1:'C', 2:'D', 3:'E', 4:'F', 5:'G', 6:'H', 7:'I', 8:'K', 
@@ -74,23 +75,23 @@ def initialize_globals(resource_dir):
     for cod in range(1, 64):
         codon_order[''.join(codons[cod])] = cod
     
-    # dictionary where keys are Pfam domain names and values are emission probabilities for every position
+    # dictionary where keys are profile HMM names and values are emission probabilities for every position
     # load dictionary if it exists
     global emissions
-    hmm_dictionary_file = '%s/hmm_dict_enone.p' % resource_dir
+    hmm_dictionary_file = '%s/%s.emissions_dict.p' % (resource_dis, profile_db)
     if os.path.isfile(hmm_dictionary_file):
         with open(hmm_dictionary_file, 'rb') as fp:
             emissions = pickle.load(fp)
-    # make sure Pfam database file is in the expected location
-    elif not os.path.isfile('%s/Pfam-A_enone.hmm' % resource_dir):
-        sys.exit('ERROR: the Pfam database files cannot be found in the resource directory')
-    # make a look-up dictionary for all the emission probabilities for the Pfam HMMs
+    # make sure profile HMM database file is in the expected location
+    elif not os.path.isfile(profile_db):
+        sys.exit('ERROR: the profile HMM database does not exist')
+    # make a look-up dictionary for all the emission probabilities for the profile HMMs
     else:
-        print('Pfam emissions dictionary has not been created yet; creating...')
-        emissions = {'domain': np.zeros(shape = (100, 20))}
+        print('Profile HMM database emissions dictionary has not been created yet; creating...')
+        emissions = {'profile_hmm': np.zeros(shape = (100, 20))}
         
         # open file containing HMM information
-        f = open('%s/Pfam-A_enone.hmm' % resource_dir)
+        f = open(profile_db)
         line = f.readline()
         
         # reading line one at a time until the file is empty, store emission probabiltiies into the dictionary
@@ -121,17 +122,17 @@ def initialize_globals(resource_dir):
         with open(hmm_dictionary_file, 'wb') as fp:
             pickle.dump(emissions, fp, protocol=2)
     
-    # remove bad Pfam domains
-    if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
-        sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
-    with open("%s/bad_pfams.txt" % resource_dir, "r") as rf:
-        pfam_rem = rf.read().splitlines()
-    
-    for pfam in pfam_rem:
-        try:
-            del emissions[pfam]
-        except KeyError:
-            pass
+    # if profile databse is Pfam, then remove list of bad Pfam domains
+    if profile_db == 'Pfam-A_enone.hmm':
+        if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
+            sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
+        with open("%s/bad_pfams.txt" % resource_dir, "r") as rf:
+            pfam_rem = rf.read().splitlines()
+        for pfam in pfam_rem:
+            try:
+                del emissions[pfam]
+            except KeyError:
+                pass
 
 class GeneticCode:
     """
@@ -143,11 +144,12 @@ class GeneticCode:
         """
         Initializes the object with parameters from the arguments given to the Python script
         """
-        # check if sequence is being downloaded into a directory that exists
+        #
         if args.results_summary != None:
             summ_dir = os.path.dirname(args.results_summary)
             if summ_dir != '' and not os.path.isdir(summ_dir):
                 sys.exit('ERROR: the path leading up to output summary file has not been created')
+        self.profiles = args.profiles
         self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
         self.hmmer_dir = args.hmmer_directory
@@ -170,75 +172,80 @@ class GeneticCode:
         # string designating which Pfam domain groups are excluded
         self.excluded_string = ''
         
-        # if excluding mitochondrial Pfam domains, remove them from analysis
-        if args.mito_pfams == False:
-            mito_pfams_file = "%s/mito_pfams.txt" % self.resource_dir
-            if not os.path.isfile(mito_pfams_file):
-                sys.exit('ERROR: mitochondrial Pfams file cannot be found in the resource directory')
-            with open(mito_pfams_file, "r") as rf:
-                pfam_rem = rf.read().splitlines()
-            for pfam in pfam_rem:
-                try:
-                    del emissions[pfam]
-                except KeyError:
-                    pass
-            self.excluded_string += 'm'
-        
-        # if excluding transposon Pfam domains, remove them from analysis
-        if args.transposon_pfams == False:
-            transposon_pfams_file = "%s/transposon_pfams.txt" % self.resource_dir
-            if not os.path.isfile(transposon_pfams_file):
-                sys.exit('ERROR: transposon Pfams file cannot be found in the resource directory')
-            with open(transposon_pfams_file, "r") as rf:
-                pfam_rem = rf.read().splitlines()
-            for pfam in pfam_rem:
-                try:
-                    del emissions[pfam]
-                except KeyError:
-                    pass
-            self.excluded_string += 't'
-        
-        # if excluding viral Pfam domains, remove them from analysis
-        if args.viral_pfams == False:
-            viral_pfams_file = "%s/viral_pfams.txt" % self.resource_dir
-            if not os.path.isfile(viral_pfams_file):
-                sys.exit('ERROR: viral Pfams file cannot be found in the resource directory')
-            with open(viral_pfams_file, "r") as rf:
-                pfam_rem = rf.read().splitlines()
-            for pfam in pfam_rem:
-                try:
-                    del emissions[pfam]
-                except KeyError:
-                    pass
-            self.excluded_string += 'v'
-        
-        # if excluding selenocysteine-containing Pfam domains, remove them from analysis
-        if args.selenocysteine_pfams == False:
-            seleno_pfams_file = "%s/selenocysteine_pfams.txt" % self.resource_dir
-            if not os.path.isfile(seleno_pfams_file):
-                sys.exit('ERROR: selenocysteine Pfams file cannot be found in the resource directory')
-            with open(seleno_pfams_file, "r") as rf:
-                pfam_rem = rf.read().splitlines()
-            for pfam in pfam_rem:
-                try:
-                    del emissions[pfam]
-                except KeyError:
-                    pass
-            self.excluded_string += 'u'
-        
-        # if excluding pyrrolysine-containing Pfam domains, remove them from analysis
-        if args.pyrrolysine_pfams == False:
-            pyrro_pfams_file = "%s/pyrrolysine_pfams.txt" % self.resource_dir
-            if not os.path.isfile(pyrro_pfams_file):
-                sys.exit('ERROR: pyrrolysine Pfams file cannot be found in the resource directory')
-            with open(pyrro_pfams_file, "r") as rf:
-                pfam_rem = rf.read().splitlines()
-            for pfam in pfam_rem:
-                try:
-                    del emissions[pfam]
-                except KeyError:
-                    pass
-            self.excluded_string += 'y'
+        # if profile database isn't even Pfam, then don't exclude sets of Pfam domains
+        if self.profiles != 'Pfam-A_enone.hmm':
+            if args.mito_pfams or args.transposon_pfams or args.viral_pfams or args.selenocysteine_pfams or pyrrolysine_pfams:
+                print("Warning: Specified profile HMM database is not Pfam, so will not exclude Pfam domain sets from analysis")
+        else:
+            # if excluding mitochondrial Pfam domains, remove them from analysis
+            if args.mito_pfams == False:
+                mito_pfams_file = "%s/mito_pfams.txt" % self.resource_dir
+                if not os.path.isfile(mito_pfams_file):
+                    sys.exit('ERROR: mitochondrial Pfams file cannot be found in the resource directory')
+                with open(mito_pfams_file, "r") as rf:
+                    pfam_rem = rf.read().splitlines()
+                for pfam in pfam_rem:
+                    try:
+                        del emissions[pfam]
+                    except KeyError:
+                        pass
+                self.excluded_string += 'm'
+            
+            # if excluding transposon Pfam domains, remove them from analysis
+            if args.transposon_pfams == False:
+                transposon_pfams_file = "%s/transposon_pfams.txt" % self.resource_dir
+                if not os.path.isfile(transposon_pfams_file):
+                    sys.exit('ERROR: transposon Pfams file cannot be found in the resource directory')
+                with open(transposon_pfams_file, "r") as rf:
+                    pfam_rem = rf.read().splitlines()
+                for pfam in pfam_rem:
+                    try:
+                        del emissions[pfam]
+                    except KeyError:
+                        pass
+                self.excluded_string += 't'
+            
+            # if excluding viral Pfam domains, remove them from analysis
+            if args.viral_pfams == False:
+                viral_pfams_file = "%s/viral_pfams.txt" % self.resource_dir
+                if not os.path.isfile(viral_pfams_file):
+                    sys.exit('ERROR: viral Pfams file cannot be found in the resource directory')
+                with open(viral_pfams_file, "r") as rf:
+                    pfam_rem = rf.read().splitlines()
+                for pfam in pfam_rem:
+                    try:
+                        del emissions[pfam]
+                    except KeyError:
+                        pass
+                self.excluded_string += 'v'
+            
+            # if excluding selenocysteine-containing Pfam domains, remove them from analysis
+            if args.selenocysteine_pfams == False:
+                seleno_pfams_file = "%s/selenocysteine_pfams.txt" % self.resource_dir
+                if not os.path.isfile(seleno_pfams_file):
+                    sys.exit('ERROR: selenocysteine Pfams file cannot be found in the resource directory')
+                with open(seleno_pfams_file, "r") as rf:
+                    pfam_rem = rf.read().splitlines()
+                for pfam in pfam_rem:
+                    try:
+                        del emissions[pfam]
+                    except KeyError:
+                        pass
+                self.excluded_string += 'u'
+            
+            # if excluding pyrrolysine-containing Pfam domains, remove them from analysis
+            if args.pyrrolysine_pfams == False:
+                pyrro_pfams_file = "%s/pyrrolysine_pfams.txt" % self.resource_dir
+                if not os.path.isfile(pyrro_pfams_file):
+                    sys.exit('ERROR: pyrrolysine Pfams file cannot be found in the resource directory')
+                with open(pyrro_pfams_file, "r") as rf:
+                    pfam_rem = rf.read().splitlines()
+                for pfam in pfam_rem:
+                    try:
+                        del emissions[pfam]
+                    except KeyError:
+                        pass
+                self.excluded_string += 'y'
         
         if len(self.excluded_string) == 0:
             self.excluded_string = 'none'
@@ -263,11 +270,11 @@ class GeneticCode:
             sys.exit('ERROR: [--prefix] is not a valid file path!')
         
         # set some more values that depend on prefix
-        self.inference_file = "%s.inference_output_%s_%s_%s_excl-%s.out" % (self.prefix, str(self.e_value_threshold), 
+        self.inference_file = "%s_%s.inference_output_%s_%s_%s_excl-%s.out" % (self.prefix, self.profiles, str(self.e_value_threshold), 
                                         str(self.probability_threshold), str(self.max_fraction), self.excluded_string)
         self.genome_path = '%s.fna' % self.prefix
-        self.scratch_dir = '%s_temp_files' % self.prefix
-        self.alignment_summary = '%s.hmmscan_summary.txt' % self.prefix
+        self.scratch_dir = '%s_%s_temp_files' % (self.prefix, self.profiles)
+        self.alignment_summary = '%s_%s.hmmscan_summary.txt' % (self.prefix, self.profiles)
     
     def get_genome(self):
         """
@@ -410,7 +417,7 @@ class GeneticCode:
     
     def hmmscan_jobs(self):
         """
-        Runs hmmscan jobs locally to align the entire Pfam database to 6-frame genome translation.
+        Runs hmmscan jobs locally to align the entire profile HMM database to 6-frame genome translation.
         If adapting code to run on computing cluster, see commented-out code at the bottom of function.
         """
         preliminary_translation_file = '%s.preliminary_translation.faa' % self.prefix
@@ -423,6 +430,10 @@ class GeneticCode:
                 if self.npieces != int(self.npieces):
                     raise TypeError('Number of sequences in preliminary translation is not divisible by 6')     
         
+        # check that profile HMM database has been pressed
+        if not os.path.exists('%s/%s.h3m' % (self.hmmer_dir, self.profiles)):
+            sys.exit("ERROR: profile HMM database has not been pressed with hmmpress")
+
         # make a temporary files directory if it does not already exist
         if not os.path.exists(self.scratch_dir):
             os.makedirs(self.scratch_dir)
@@ -465,8 +476,8 @@ class GeneticCode:
                     batch_file.write('#!/bin/bash\n\n')
                     batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
                     for indices_str in indices_to_analyze:
-                        batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                            (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir))
+                        batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                            (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir, self.profiles))
                         batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                         batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
                 
@@ -483,8 +494,8 @@ class GeneticCode:
             batch_file.write('#!/bin/bash\n\n')
             batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
             for indices_str in indices_to_analyze:
-                batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/Pfam-A_enone.hmm -\n' % 
-                    (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir))
+                batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                    (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir, self.profiles))
                 batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
                 batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
         shell_count += 1
@@ -522,6 +533,7 @@ class GeneticCode:
             # write parameters
             of.write('# Analysis arguments\n')
             of.write('prefix            %s\n' % self.prefix)
+            of.write('profile_database  %s\n' % self.profiles)
             of.write('output_summary    %s\n' % self.summary_file)
             of.write('evalue_threshold  %s\n' % str(self.e_value_threshold))
             of.write('prob_threshold    %s\n' % str(self.probability_threshold))
@@ -544,25 +556,25 @@ class GeneticCode:
             of.write('#\n# Final genetic code inference\n%s' % self.gen_code)
         
         # WRITING TO SUMMARY FILE
-        summ_line = "%s,%s,%s,%s,%s,%s,%s\n" % (self.prefix, str(self.e_value_threshold), str(self.probability_threshold), 
+        summ_line = "%s,%s,%s,%s,%s,%s,%s,%s\n" % (self.prefix, self.profiles, str(self.e_value_threshold), str(self.probability_threshold), 
             str(self.max_fraction), self.excluded_string, self.gen_code, gen_code_preconv)
         if self.summary_file:
             if not os.path.isfile(self.summary_file):
                 with open(self.summary_file, 'w') as sf:
-                    sf.write('prefix,evalue_threshold,prob_threshold,max_fraction,excluded_domains,inferred_gencode,inferred_gencode_best_models\n')
+                    sf.write('prefix,profile_db,evalue_threshold,prob_threshold,max_fraction,excluded_domains,inferred_gencode,inferred_gencode_best_models\n')
             with open(self.summary_file, 'a') as sf:
                 sf.write(summ_line)
     
     def process_hmmscan_results(self):
         """
         Once hmmscan jobs are complete, this function will read them in, process them 
-        to figure out which Pfam columns have aligned to what codons in the sequence, 
+        to figure out which profile HMM columns have aligned to what codons in the sequence, 
         and then write these results to the intermediate summary file. Positions are not
-        filtered at this step for Pfam domain membership. Only poorly aligned
-        positions and hits with evalues > threshold are excluded.
+        filtered at this step except for poorly aligned positions and hits with 
+        evalues > threshold are excluded.
         
-        For each aligned Pfam column, write the: Pfam domain name, domain e-value, 
-        position within domain, genome piece, frame, position, codon at that position
+        For each aligned profile HMM column, write the: profile HMM name, hit e-value, 
+        position within profile HMM, genome piece, frame, position, codon at that position
         """
         sequence_pieces_file = '%s.sequence_pieces.fna' % self.prefix
         if not os.path.isfile(sequence_pieces_file) or not os.path.isfile(sequence_pieces_file + '.ssi'):
@@ -579,7 +591,7 @@ class GeneticCode:
         all_possible_hmm_outs = ['hmm_output_%s' % suff for suff in file_suffixes]
         
         if not os.path.isdir(self.scratch_dir):
-            sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix and do not include file extensions')
+            sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database path')
         
         # get list of all hmmscan output files that exist
         p = Popen('(cd %s && find . -type f -name "hmm_outputs*.tar" | xargs -I {} gtar --list --file={} | sort | uniq )' % self.scratch_dir, shell=True, stdout=PIPE)
@@ -640,38 +652,38 @@ class GeneticCode:
                     
                     conserved_regions = extract_hmmscan_output(hmm_file_lines, self.e_value_threshold)
                     
-                    # now I have a list of all the conserved regions in this translated fragment and how they map to Pfam HMMs 
+                    # now I have a list of all the conserved regions in this translated fragment and how they map to profile HMMs 
                     # step through each amino acid site, determine the codon, and accumulate the emission probabilities
                     
-                    # if no Pfam domains found, skip to next genome piece
+                    # if no profile HMM hits found, skip to next genome piece
                     if len(conserved_regions) == 0:  
                         continue
                     
-                    # iterate through each Pfam conserved domain located in genome piece
+                    # iterate through each profile HMM hit located in genome piece
                     for c, con in enumerate(conserved_regions):
                         
-                        # extracting domain name and e-value for Pfam hit
+                        # extracting profile HMM name and e-value for profile HMM hit
                         data = con.split(',')
-                        domain_name = data[0]
-                        domain_eval = float(data[1])
+                        profile_hmm_name = data[0]
+                        profile_hmm_eval = float(data[1])
                         
                         ## Extract emissions data
                         hmm_inds = [int(da) for da in data[4::2]]
                         que_inds = [int(da) for da in data[5::2]]
                         
-                        # iterate through codons in domain hit and add them to position-emission dictionary
+                        # iterate through codons in profile HMM hit and add them to position-emission dictionary
                         for ind, query_index in enumerate(que_inds):
                             # extract identity of codon
                             codon = dna[i][(query_index-1)*3:(query_index-1)*3+3].upper()
                             
-                            # Record: codon at that position, Pfam domain name, domain e-value, 
-                            # position within domain, genome piece, frame, position in query seq
+                            # Record: codon at that position, profile HMM name, hit e-value, 
+                            # position within profile HMM, genome piece, frame, position in query seq
                             try:
                                 codon_index = codon_order[codon]  # this line fails if the codon contains a non-A/T/C/G char
                             except KeyError:
                                 continue
                             cod_line = '%i,%i.%i%06d,%s,%i,%i,%i,%s,%s,%i\n' % (codon_index, x, i, query_index-1, codon, x, i, 
-                                query_index-1, domain_name, str(domain_eval), hmm_inds[ind]-1)
+                                query_index-1, profile_hmm_name, str(profile_hmm_eval), hmm_inds[ind]-1)
                             lines_to_write.append(cod_line)
                 
                 if len(lines_to_write) > 0:
@@ -699,7 +711,7 @@ class GeneticCode:
     
     def compute_decoding_probabilities(self):
         """
-        This function will step through the aligned Pfam columns (in the gzipped intermediate summary 
+        This function will step through the aligned profile HMM columns (in the gzipped intermediate summary 
         file) and compute for each codon the likelihood and decoding probability of each model.
         """
         # hmmscan results summary file
@@ -725,8 +737,8 @@ class GeneticCode:
             codon = ''.join(codons[cod])
             
             ## Read in all results for a given codon at a time
-            codon_lines = list()         # store information of all Pfam columns aligned to this codon
-            domain_pos_counts = dict()   # count how many times each domain contributes a column
+            codon_lines = list()         # store information of all profile HMM columns aligned to this codon
+            profile_hmm_pos_counts = dict()   # count how many times each profile HMM contributes a column
             
             if len(info) > 1:
                 info_codon = info[2]
@@ -735,7 +747,7 @@ class GeneticCode:
             
             while info_codon == codon:  # compare to codon on the line currently being processed
                 e_value = float(info[7])
-                domain_name = info[6]
+                profile_hmm_name = info[6]
                 
                 # filter out hits with e-values above threshold
                 if e_value > self.e_value_threshold:
@@ -746,9 +758,9 @@ class GeneticCode:
                     info_codon = info[2]
                     continue
                 
-                # filter out hits that belong to excluded domains (transposon, viral, etc)
+                # filter out hits that belong to excluded Pfam domains (transposon, viral, etc)
                 try:
-                    emiss = np.float32(emissions[domain_name])
+                    emiss = np.float32(emissions[profile_hmm_name])
                 except KeyError:
                     next_line = sum_f.readline()
                     if len(next_line) == 0:
@@ -767,12 +779,12 @@ class GeneticCode:
                         # compare e-values, if new < old, then remove the old one
                         if e_value < float(last_info[7]):
                             dum = codon_lines.pop()
-                            old_domain = last_info[6]
+                            old_profile_hmm_hit = last_info[6]
                             old_hmm_pos = last_info[8]
-                            old_dict_key = '%s_%s' % (old_domain, old_hmm_pos)
-                            domain_pos_counts[old_dict_key] = domain_pos_counts[old_dict_key] - 1
-                            if domain_pos_counts[old_dict_key] == 0:  # if only observation of codon was removed
-                                del domain_pos_counts[old_dict_key]
+                            old_dict_key = '%s_%s' % (old_profile_hmm_hit, old_hmm_pos)
+                            profile_hmm_pos_counts[old_dict_key] = profile_hmm_pos_counts[old_dict_key] - 1
+                            if profile_hmm_pos_counts[old_dict_key] == 0:  # if only observation of codon was removed
+                                del profile_hmm_pos_counts[old_dict_key]
                         else:
                             next_line = sum_f.readline()
                             if len(next_line) == 0:
@@ -783,14 +795,14 @@ class GeneticCode:
                 except IndexError:
                     pass              # this happens if list is empty, just keep going
                 
-                # tally how many Pfam columns for this codon have come from this domain
+                # tally how many profile HMM columns for this codon have come from this profile HMM
                 hmm_position = int(info[8])
-                dict_key = '%s_%s' % (domain_name, hmm_position)
+                dict_key = '%s_%s' % (profile_hmm_name, hmm_position)
                 try:
-                    pf_counts = domain_pos_counts[dict_key]
+                    pf_counts = profile_hmm_pos_counts[dict_key]
                 except KeyError:
                     pf_counts = 0.0
-                domain_pos_counts[dict_key] = pf_counts + 1
+                profile_hmm_pos_counts[dict_key] = pf_counts + 1
                 
                 # add to set of columns aligning to this codon
                 codon_lines.append(info)
@@ -807,55 +819,55 @@ class GeneticCode:
                 info = next_line.rstrip().split(',')
                 info_codon = info[2]
             
-            ## calculate how much need to reduce subsample each Pfam consensus column due to over-representation
+            ## calculate how much need to reduce subsample each profile HMM consensus column due to over-representation
             # in the case that very few total consensus columns aligned such that none is < max_fraction, give
-            # all domain positions just one observation
-            initial_pfam_counts = np.array(list(domain_pos_counts.values()))
-            pfam_pos_list = list(domain_pos_counts.keys())
-            n_pfam_pos = len(domain_pos_counts)
-            pruned_domain_pos = list()
+            # all profile HMM positions just one observation
+            initial_profile_hmm_counts = np.array(list(profile_hmm_pos_counts.values()))
+            profile_hmm_pos_list = list(profile_hmm_pos_counts.keys())
+            n_profile_hmm_pos = len(profile_hmm_pos_counts)
+            pruned_profile_hmm_pos = list()
             
             # first if statement-- if there are fewer consensus columns than minimum to get ANY position below max fraction if all are set to 1, make all 1
-            # second if statement is important-- deals with the case if no Pfam columns observed, then codon needs to be treated at second case
-            if n_pfam_pos < 1.0 / self.max_fraction and n_pfam_pos > 0:
-                maximum_pfam_counts = dict(zip(pfam_pos_list, [1]*n_pfam_pos))
-                pruned_domain_pos = np.where(initial_pfam_counts > 1)[0]
+            # second if statement is important-- deals with the case if no profile HMM columns observed, then codon needs to be treated at second case
+            if n_profile_hmm_pos < 1.0 / self.max_fraction and n_profile_hmm_pos > 0:
+                maximum_profile_hmm_counts = dict(zip(profile_hmm_pos_list, [1]*n_profile_hmm_pos))
+                pruned_profile_hmm_pos = np.where(initial_profile_hmm_counts > 1)[0]
             else:
-                # find pfam columns where number of observed instances exceeds the max fraction
-                exceed_domains = np.where(initial_pfam_counts / np.sum(initial_pfam_counts) > self.max_fraction)[0]
+                # find profile_hmm columns where number of observed instances exceeds the max fraction
+                exceed_profile_hmms = np.where(initial_profile_hmm_counts / np.sum(initial_profile_hmm_counts) > self.max_fraction)[0]
                 # iteratively "remove" observations and recalculate whether anything exceeds max fraction
-                while len(exceed_domains) > 0:
-                    dum = [pruned_domain_pos.append(ed) for ed in exceed_domains]
-                    max_count = np.floor(self.max_fraction * np.sum(initial_pfam_counts))
-                    initial_pfam_counts[exceed_domains] = max_count
-                    exceed_domains = np.where(initial_pfam_counts / np.sum(initial_pfam_counts) > self.max_fraction)[0]
+                while len(exceed_profile_hmms) > 0:
+                    dum = [pruned_profile_hmm_pos.append(ed) for ed in exceed_profile_hmms]
+                    max_count = np.floor(self.max_fraction * np.sum(initial_profile_hmm_counts))
+                    initial_profile_hmm_counts[exceed_profile_hmms] = max_count
+                    exceed_profile_hmms = np.where(initial_profile_hmm_counts / np.sum(initial_profile_hmm_counts) > self.max_fraction)[0]
                 
-                maximum_pfam_counts = dict(zip(pfam_pos_list, initial_pfam_counts))
+                maximum_profile_hmm_counts = dict(zip(profile_hmm_pos_list, initial_profile_hmm_counts))
             
-            # shuffle list of lines from codon, so when first n lines are chosen for a pruned domain position, they are random
+            # shuffle list of lines from codon, so when first n lines are chosen for a pruned profile HMM position, they are random
             random.shuffle(codon_lines)
             
-            # go through final list of Pfam columns and compute model likelihoods
-            domain_counts_pruned = dict(zip(pfam_pos_list, np.zeros(n_pfam_pos)))
-            for pfam_column in codon_lines:
-                domain_name = pfam_column[6]
-                hmm_position = int(pfam_column[8])
-                dict_key = '%s_%s' % (domain_name, hmm_position)
+            # go through final list of profile_hmm columns and compute model likelihoods
+            profile_hmm_counts_pruned = dict(zip(profile_hmm_pos_list, np.zeros(n_profile_hmm_pos)))
+            for profile_hmm_column in codon_lines:
+                profile_hmm_name = profile_hmm_column[6]
+                hmm_position = int(profile_hmm_column[8])
+                dict_key = '%s_%s' % (profile_hmm_name, hmm_position)
                 
-                # only continue analyzing domain position if not seen max number of times yet
-                if domain_counts_pruned[dict_key] >= maximum_pfam_counts[dict_key]:
+                # only continue analyzing profile HMM position if not seen max number of times yet
+                if profile_hmm_counts_pruned[dict_key] >= maximum_profile_hmm_counts[dict_key]:
                     continue
                 
-                emiss = np.float32(emissions[domain_name])
+                emiss = np.float32(emissions[profile_hmm_name])
                 hmm_probs = emiss[hmm_position]
                 
                 self.likelihoods[:-1,cod] += hmm_probs
                 self.n_consensus[cod] += 1
                 totsum = np.logaddexp(-hmm_probs, totsum)
-                domain_counts_pruned[dict_key] += 1
+                profile_hmm_counts_pruned[dict_key] += 1
             
-            if len(pruned_domain_pos) > 0:
-                self.n_subsampled[cod] = len(set(pruned_domain_pos))
+            if len(pruned_profile_hmm_pos) > 0:
+                self.n_subsampled[cod] = len(set(pruned_profile_hmm_pos))
         
         sum_f.close()
         

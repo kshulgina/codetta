@@ -9,6 +9,7 @@ def argument_parsing():
                                           a path. Inference output will be written to [PREFIX].inference_[string of parameters].txt')
     
     # remaining arguments all are set optionally, otherwise default values
+    parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
@@ -35,11 +36,14 @@ def main():
         args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2/bin')
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
+    if args.profiles == None:
+        args.profiles = 'Pfam-A_enone.hmm'
+
     args.download_type = None
     args.identifier = None
     
     # initialize genetic code with command line args and download genome
-    initialize_globals(args.resource_directory)
+    initialize_globals(args.resource_directory, args.profiles)
     gc = GeneticCode(args)
     
     # infer genetic code
