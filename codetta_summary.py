@@ -5,7 +5,7 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="process hmmscan outputs into a summary file that can be used for genetic code inference")
-    parser.add_argument('prefix', help='specify prefix of output files from gc_alignment (ie [PREFIX].preliminary_translation.faa). This can include \
+    parser.add_argument('prefix', help='specify prefix of output files from codetta_align (ie [PREFIX].preliminary_translation.faa). This can include \
                                           a path. Hmmscan alignment summary file will be written to [PREFIX]_[PROFILE DB FILE].hmmscan_summary.txt.gz')
     
     # remaining arguments all are set optionally, otherwise default values
