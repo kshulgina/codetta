@@ -5,8 +5,8 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="infer the genetic code of an organism from an intermediate file summarizing profile HMM alignments")
-    parser.add_argument('prefix', help='specify prefix to hmmscan alignment summary input file (ie [PREFIX]_[PROFILE DB FILE].hmmscan_summary.txt.gz). This can include \
-                                          a path. Inference output will be written to [PREFIX]_[PROFILE DB FILE].inference_[string of parameters].txt')
+    parser.add_argument('prefix', help='specify prefix to hmmscan alignment summary input file (ie [PREFIX]_[PROFILES FILE].hmmscan_summary.txt.gz). This can include \
+                                          a path. Inference output will be written to [PREFIX]_[PROFILES FILE].inference_[string of parameters].txt')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')

@@ -6,7 +6,7 @@ def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="aligns profile HMM database to six-frame translation of input nucleotide sequence")
     parser.add_argument('prefix', help='specify the file prefix for the input nucleotide sequence in FASTA format (ie [PREFIX].fna). This can include \
-                                          a path. Temporary files will be written to [PREFIX]_[PROFILE DB FILE].temp_files/ and output files will be written to [PREFIX]_[PROFILE DB FILE].[extensions]')
+                                          a path. Temporary files will be written to [PREFIX]_[PROFILES FILE].temp_files/ and output files will be written to [PREFIX]_[PROFILES FILE].[extensions]')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
