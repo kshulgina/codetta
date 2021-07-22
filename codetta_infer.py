@@ -43,7 +43,8 @@ def main():
     args.identifier = None
     
     # initialize genetic code with command line args and download genome
-    initialize_globals(args.resource_directory, args.profiles)
+    initialize_globals()
+    initialize_emissions_dict(args.resource_directory, args.profiles)
     gc = GeneticCode(args)
     
     # infer genetic code

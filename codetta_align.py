@@ -42,7 +42,8 @@ def main():
     args.viral_pfams = None
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
-    initialize_globals(args.resource_directory, args.profiles)
+    initialize_globals()
+    initialize_emissions_dict(args.resource_directory, args.profiles)
     gc = GeneticCode(args)
     
     gc.processing_genome()

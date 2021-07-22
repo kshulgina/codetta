@@ -30,7 +30,7 @@ def main():
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     # initialize genetic code with command line args and download genome
-    initialize_globals(args.resource_directory)
+    args.profiles = 'Pfam-A_enone.hmm'
     args.results_summary = None
     args.evalue = None
     args.probability_threshold = None
@@ -40,6 +40,7 @@ def main():
     args.viral_pfams = None
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
+    initialize_globals()
     gc = GeneticCode(args)
     
     # infer genetic code

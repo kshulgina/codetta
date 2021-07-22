@@ -38,7 +38,7 @@ def argument_parsing():
     
     return parser.parse_args()
 
-def initialize_globals(resource_dir, profile_db):
+def initialize_globals():
     # standard genetic code dictionary used for translating nucleotide triplets to amino acids
     global gencode 
     gencode = {
@@ -74,7 +74,8 @@ def initialize_globals(resource_dir, profile_db):
     codon_order = {''.join(codons[0]):0}
     for cod in range(1, 64):
         codon_order[''.join(codons[cod])] = cod
-    
+
+def initialize_emissions_dict(resource_dir, profile_db):
     # dictionary where keys are profile HMM names and values are emission probabilities for every position
     # load dictionary if it exists
     global emissions
