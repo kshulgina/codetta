@@ -6,7 +6,7 @@ def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="process hmmscan outputs into a summary file that can be used for genetic code inference")
     parser.add_argument('prefix', help='specify prefix of output files from gc_alignment (ie [PREFIX].preliminary_translation.faa). This can include \
-                                          a path. Hmmscan alignment summary file will be written to [PREFIX].hmmscan_summary.txt.gz')
+                                          a path. Hmmscan alignment summary file will be written to [PREFIX]_[PROFILE DB FILE].hmmscan_summary.txt.gz')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')

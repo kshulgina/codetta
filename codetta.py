@@ -18,7 +18,7 @@ np.seterr(over='ignore')
 
 def argument_parsing():
     parser = argparse.ArgumentParser(description="infer genetic code used by an organism from nucleotide sequence")
-    parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].hmmscan_summary.txt.gz). This can include a path.')
+    parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].fna). This can include a path.')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
