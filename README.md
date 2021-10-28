@@ -23,7 +23,7 @@ Codetta was developed for Python version 3.7-3.9 on Linux and MacOS.
 Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you try using `conda` to create a virtual Python 3.9 environment using the commands 
 	
 	conda create --name py39 python=3.9
-	conda activate py39
+	source activate py39
 
 To ensure that the correct Python package versions are installed, use the command
 
