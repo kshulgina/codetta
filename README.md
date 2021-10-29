@@ -1,13 +1,15 @@
-# Codetta
+# Codetta v1.1
 
-Codetta is a Python program for cracking the genetic code of an organism from nucleotide sequence data.   
+Codetta is a Python program for predicting the genetic code (codon table) of an organism from nucleotide sequence data.   
 
 The analysis consists of two main steps:
 
 1. Aligning the input nucleotide sequence a database of profile Hidden Markov models (HMMs) of proteins (such as the Pfam database), generating an alignment summary file.
 2. Inferring the genetic code from the alignment summary file.
 
-Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. We can provide the alignment summary files for any subset of the bacterial and archaeal genomes analyzed in [Shulgina & Eddy (2021)](https://www.biorxiv.org/content/10.1101/2021.06.18.448887v1) upon request. Alternatively, this process can be parallelized across many machines on a computing cluster.
+Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. If you plan to analyze large genomes or many genomes, we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below.
+
+If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://www.biorxiv.org/content/10.1101/2021.06.18.448887v1), please follow the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0). We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request. 
 
 ## Download and setup
 
@@ -36,7 +38,7 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 Codetta additionally requires:
 
 - `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool. 
-- HMMER (v3.1b2) and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). This specific version of HMMER (v3.1b2) is required to reproduce the results in Shulgina & Eddy (2021). Codetta may work with other versions of HMMER3, as long as the same version of HMMER is used to build the Pfam database. 
+- HMMER v3 and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). Note that the same version of HMMER should be used to build the profile HMM database. 
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
 		tar xf hmmer-3.1b2.tar.gz
@@ -56,12 +58,12 @@ If you plan on analyzing your own nucleotide sequences (Step 1), then you will a
 - `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by adding an alias `alias gtar='tar'` in your `~/.bashrc` file (or equivalent for your shell) and restarting your terminal.
 
 ### Building a local version of the Pfam database
-By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database. We used Pfam version 32.0.
+By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database.
 
 Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
 
 	cd resources
-	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam32.0/Pfam-A.seed.gz
+	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.seed.gz
 	gunzip Pfam-A.seed.gz
 
 Then, use HMMER to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files provided by us without unexpected errors.
@@ -76,18 +78,17 @@ To make a custom profile HMM database from a specific set of multiple sequence a
 
 ...
 
+When running a Codetta analysis, you will have to specify the custom profile HMM database with the `-p` option.
+
 Now you're ready to predict some genetic codes!
 
 ## Usage
 
-Codetta consists of three main programs. To infer the genetic code from an alignment summary file, you will use:
-
-- `codetta_infer`: Infer the genetic code from the alignment summary file.
-
-To analyze your own nucleotide sequence and generate an alignment summary file, you will use:
+Codetta consists of three main programs.
 
 - `codetta_align`: Align profile HMMs to the input nucleotide sequence.
 - `codetta_summary`: Summarize profile HMM alignments into an alignment summary file.
+- `codetta_infer`: Infer the genetic code from the alignment summary file.
 
 General usage for these programs is
 
