@@ -109,7 +109,7 @@ Notice that we specify the prefix of the genome, without the `.fna` file extensi
 
 	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-An output file with a detailed summary of the analysis can be found at `examples/GCA_001661245.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters.
+An output file with a detailed summary of the analysis can be found at `examples/GCA_000442605.1.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters.
 
 ### Example with more explanations
 
