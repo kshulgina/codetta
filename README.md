@@ -67,7 +67,7 @@ Download Pfam database into the `resources` directory. This may take a few minut
 	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.seed.gz
 	gunzip Pfam-A.seed.gz
 
-Then, use HMMER to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space. If you use either a different version of HMMER or a different version of the Pfam database, then you will not be able to use the alignment summary files provided by us without unexpected errors.
+Then, use HMMER to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space.
 
 	../hmmer-3.1b2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
