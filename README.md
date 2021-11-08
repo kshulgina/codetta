@@ -51,7 +51,7 @@ Codetta additionally requires:
 		cd easel; make install
 		cd ../..
 
-	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.1b2/bin` unless otherwise specified as an argument.
+	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.1b2/bin` unless otherwise specified in the `--hmmer_directory` argument.
 
 
 If you plan on analyzing your own nucleotide sequences (Step 1), then you will also need:
