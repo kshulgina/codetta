@@ -75,13 +75,22 @@ Then, use HMMER to build a searchable database, using the `--enone` flag to turn
 	cd ..
 
 ### Building a custom profile HMM database
-To make a custom profile HMM database from a specific set of multiple sequence alignments, you need to follow a similar series of steps.
+To make a custom profile HMM database from a set of multiple sequence alignments, you need to follow a similar series of steps.
 
-...
+Here is an example showing how to build a custom profile HMM database from a set of multiple sequence alignments. As an example, we will use metazoan mitochondria, which have only 12 protein coding genes. In the `codetta\examples` directory, you can find a multiple sequence alignment files in Stockholm format for each of the 12 genes. 
+
+The first step is to use `hmmbuild` to create profile HMMs from each of the alignment files.
+
+	cd examples
+	ls metazoan_mito*.msa | xargs -I {} hmmbuild {}
+
+Then we concatenate all of these `.hmm` files into a single database and finally run `hmmpress` to finish
+
+	cat metazoan_mito*.hmm > metazoan_mito_proteins.hmm
+	hmmpress metazoan_mito_proteins.hmm
 
 When running a Codetta analysis, you will have to specify the custom profile HMM database with the `-p` option.
 
-Now you're ready to predict some genetic codes!
 
 ## Usage
 
