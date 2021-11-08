@@ -1,4 +1,15 @@
-# Codetta v1.1
+# Codetta
+
+WARNING: this updated version has not been released yet, so use at your own risk. Some of the planned updates include:
+
+- (implemented here) ability to specify custom profile HMM models (not forced to always use Pfam)
+- (to be done) using the available version of HMMER3, no more local installation of HMMER v3.1b2
+- (to be done) removing requirement for `gtar`
+- (to be done) adding an argument for easier parallelization of hmmscan step on SLURM and LSF schedulers (no more needing to manually modify the Python code) 
+
+
+
+## Description
 
 Codetta is a Python program for predicting the genetic code (codon table) of an organism from nucleotide sequence data.   
 
@@ -8,7 +19,7 @@ The analysis consists of three steps:
 2. Generating an alignment summary file
 3. Inferring the genetic code from the alignment summary file
 
-Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. If you plan to analyze many genomes (or large genomes), we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below.
+Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. If you plan to analyze many genomes (or large genomes), we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below [TBD].
 
 If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://www.biorxiv.org/content/10.1101/2021.06.18.448887v1), please follow the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0). We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request. 
 
@@ -76,6 +87,8 @@ Then, use HMMER to build a searchable database, using the `--enone` flag to turn
 
 ### Building a custom profile HMM database
 To make a custom profile HMM database from a set of multiple sequence alignments, you need to follow a similar series of steps.
+
+[DRAFT]
 
 Here is an example showing how to build a custom profile HMM database from a set of multiple sequence alignments. As an example, we will use metazoan mitochondria, which have only 12 protein coding genes. In the `codetta\examples` directory, you can find a multiple sequence alignment files in Stockholm format for each of the 12 genes. 
 
@@ -228,7 +241,8 @@ This alternative genetic code in _Pycnococcus_ mitochondria has been previously 
 
 ## Parallelizing hmmscan jobs on a computing cluster 
 
-...
+[TBD]
+
 
 
 
