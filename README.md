@@ -3,7 +3,7 @@
 WARNING: this updated version has not been released yet, so use at your own risk. Some of the planned updates include:
 
 - (implemented here) ability to specify custom profile HMM models (not forced to always use Pfam)
-- (to be done) using the available version of HMMER3, no more local installation of HMMER v3.1b2
+- (to be done) changing `prefix` argument to be a temp directory 
 - (to be done) removing requirement for `gtar`
 - (to be done) adding an argument for easier parallelization of hmmscan step on SLURM and LSF schedulers (no more needing to manually modify the Python code) 
 
