@@ -3,7 +3,7 @@
 WARNING: this updated version has not been released yet, so use at your own risk. Some of the planned updates include:
 
 - (implemented here) ability to specify custom profile HMM models (not forced to always use Pfam)
-- (to be done) changing `prefix` argument to be a temp directory 
+- (implemented here) removed `prefix` argument, now specify `sequence_file`, `align_output`, and `inference_output` arguments (with defaults) 
 - (to be done) removing requirement for `gtar`
 - (to be done) adding an argument for easier parallelization of hmmscan step on SLURM and LSF schedulers (no more needing to manually modify the Python code) 
 
@@ -130,39 +130,39 @@ If you want to be able to run Codetta from anywhere on your machine (without hav
 
 The following commands will predict the genetic code of bacteria _Nasuia deltocephalinicola_, whose genome can be found in `examples/GCA_000442605.1.fna`.
 
-	python codetta_align.py examples/GCA_000442605.1
-	python codetta_summary.py examples/GCA_000442605.1
-	python codetta_infer.py examples/GCA_000442605.1
+	python codetta_align.py examples/GCA_000442605.1.fna
+	python codetta_summary.py examples/GCA_000442605.1.fna
+	python codetta_infer.py examples/GCA_000442605.1.fna
 
-Notice that we specify the prefix of the genome, without the `.fna` file extension. The output genetic code (in a one-line representation) is:
+The output genetic code (in a one-line representation) is:
 
 	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-An output file with a detailed summary of the analysis can be found at `examples/GCA_000442605.1_Pfam-A_enone.hmm.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters.
+An output file with a detailed summary of the analysis can be found at `GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters.
 
 ### Example with more explanations
 
 In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` with the _Nasuia deltocephalinicola_ genome sequence (assembly accession GCA_000442605.1). _N. deltocephalinicola_ is known to have reassigned the canonical stop codon UGA to tryptophan. Let's see if we can predict this reassignment. 
 
-The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. (To align against a custom profile HMM database, use the `-p` argument). We can do this with
+The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. (To align against a custom profile HMM database, use the `-p` argument.) We can do this with
 
-	python codetta_align.py examples/GCA_000442605.1
+	python codetta_align.py examples/GCA_000442605.1.fna
 
-Notice that the input argument is the prefix of the fasta file, without the `.fna`. The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
+The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
 
 This step may take a while, depending on the size of the input nucleotide sequence. Rough estimate of about an hour on a single CPU core to analyze a typical 6 Mb bacterial genome. However, _N. deltocephalinicola_ has a small 112 Kb genome, so this will take only a minute.
 
 If you intend to analyze many sequences (or longer sequences), we recommend parallelizing the computationally-intensive `hmmscan` step of the analysis over many machines on a computing cluster. Instructions can be found in the next section.
 
-This Python program creates several files in the `examples` directory with the specified prefix, which are used by the subsequent step, which is to generate an alignment summary file. This can be simply done with
+This Python program creates several files which are used by the subsequent step to generate an alignment summary file. The default location of these files is the same as the input sequence file, with different file extension. However, an alternative location for the alignment output files can be specified with the `--align_output` argument.
 
-	python codetta_summary.py examples/GCA_000442605.1
+The next step is to process these files into an alignment summary file.
 
-This creates an alignment summary file in the `examples` directory with the specified prefix.
+	python codetta_summary.py examples/GCA_000442605.1.fna
 
-We can infer the genetic code of _N. deltocephalinicola_ with default parameters using
+Then, we can infer the genetic code of _N. deltocephalinicola_ with default parameters using
 
-	python codetta_infer.py examples/GCA_000442605.1
+	python codetta_infer.py examples/GCA_000442605.1.fna
 
 The output is a one line representation of the genetic code
 
@@ -172,16 +172,18 @@ This corresponds to the inferred translation of each of the 64 codons, in order 
 
 Notice that the 14th codon (corresponding to UGA) is W instead of ?. This means that we have correctly predicted the UGA reassignment to tryptophan in this bacterial genome.
 
-Additionally, a file is created, named `examples/GCA_000442605.1_Pfam-A_enone.hmm.inference_output_1e-10_0.9999_0.01_excl-mtvuy.out`. The long file extension specifies the inference parameters. This file contains a detailed summary of the genetic code inference results:
+Additionally, a file with detailed information about the run is created, named `GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters, and an alternative output file name can be specified using the `--inference_output` argument. 
+
+This file contains a detailed summary of the genetic code inference results:
 
 	# Analysis arguments
-	prefix            examples/GCA_000442605.1
-	profile_database  Pfam-A_enone.hmm
-	output_summary    None
-	evalue_threshold  1e-10
-	prob_threshold    0.9999
-	max_fraction      0.01
-	excluded_pfams    mtvuy
+	alignment_prefix   examples/GCA_000442605.1.fna
+	profile_database   Pfam-A_enone.hmm
+	output_summary     None
+	evalue_threshold   1e-10
+	prob_threshold     0.9999
+	max_fraction       0.01
+	excluded_pfams     mtvuy
 	#
 	# Codon inferences
 	# codon   inference   N consensus columns   N column types subsampled
@@ -215,17 +217,17 @@ We have also provided a simple program for a downloading FASTA file from GenBank
 
 Let's use this to download the mitochondrial genome of the green algae _Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1
 
-	python codetta_download.py GQ497137.1 c --prefix examples/GQ497137.1
+	python codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
 
-This will download a FASTA file containing the GQ497137.1 sequence into `examples/GQ497137.1.fna`. Again, notice that the `.fna` file extension should not included in the `--prefix` argument. The argument `c` specifies that this is a nucleotide database accession and not an assembly accession (which would be `a`).
+This will download a FASTA file containing the GQ497137.1 sequence into `examples/GQ497137.1.fna`. The argument `c` specifies that this is a nucleotide database accession and not an assembly accession (which would be `a`).
 
 ### Summary
 
 Now let's pull it all together by predicting the genetic code of the _P. provasolii_ mitochondrial genome:
 
-	python codetta_align.py examples/GQ497137.1
-	python codetta_summary.py examples/GQ497137.1
-	python codetta_infer.py examples/GQ497137.1 -m
+	python codetta_align.py examples/GQ497137.1.fna
+	python codetta_summary.py examples/GQ497137.1.fna
+	python codetta_infer.py examples/GQ497137.1.fna -m
 
 The `-m` argument indicates that we do not want to exclude Pfam domains associated with mitochondrial genomes. The output genetic code is:
 
