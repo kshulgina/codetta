@@ -44,6 +44,16 @@ def reverse_complement(sequence):
     """
     return sequence.translate(dna_complements)[::-1]
 
+def validate_file_path(file_path):
+    """
+    Returns true if the string is a valid UNIX file path and false if not
+    """
+    unix_safe_name = re.sub(r'[^~/\\.\d\w-]', '_', file_path)
+    if len(file_path) > 0  and unix_safe_name == file_path:
+        return True
+    else:
+        return False
+
 def validate_codon_line(line):
     '''
     Validates that line in hmmscan_summary file is valid
