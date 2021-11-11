@@ -22,7 +22,7 @@ def argument_parsing():
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('--sequence_file', help='fasta file with input nucleotide sequence')
-    parser.add_argument('--align_output', help='file prefix for files created by codetta_align and codetta_summary. This can include a path. (default: sequence_file.[extensions])')
+    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: sequence_file.[extensions])')
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [align_output].[profiles].[inference parameters].genetic_code.out')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
@@ -275,16 +275,21 @@ class GeneticCode:
         if args.inference_output == None:
             self.inference_file = "%s.%s.%s_%s_%s_excl-%s.genetic_code.out" % (self.prefix, self.profiles, str(self.e_value_threshold), 
                                         str(self.probability_threshold), str(self.max_fraction), self.excluded_string)
+        elif validate_file_path(args.inference_output) == True:
+            self.inference_file = args.inference_output
         else:
-            # check that args.inference_output is a valid path
-            if validate_file_path(args.inference_output) == True:
-                self.inference_file = args.inference_output
-            else:
-                sys.exit('ERROR: [--inference_output] is not a valid file path!')
+            sys.exit('ERROR: [--inference_output] is not a valid file path!')
+
+        if args.align_output == None:
+            self.align_output = self.prefix
+        elif validate_file_path(args.align_output) == True:
+            self.align_output = args.align_output
+        else:
+            sys.exit('ERROR: [--align_output] is not a valid file path!')
 
         self.genome_path = '%s.fna' % self.prefix
         self.scratch_dir = '%s_%s.temp_files' % (self.prefix, self.profiles)
-        self.alignment_summary = '%s_%s.hmmscan_summary.txt' % (self.prefix, self.profiles)
+        self.alignment_summary = '%s.%s.hmmscan_summary.txt' % (self.align_output, self.profiles)
     
     def get_genome(self):
         """
@@ -624,9 +629,12 @@ class GeneticCode:
         
         # initialize intermediate hmmscan summary file
         hmmscan_summary_file = self.alignment_summary + '_unsorted'
-        with open(hmmscan_summary_file, 'w') as hf:
-            pass
-        
+        try:
+            with open(hmmscan_summary_file, 'w') as hf:
+                pass
+        except FileNotFoundError:
+            sys.exit('ERROR: could not open file path %s for writing' % self.alignment_summary)
+
         with open(sequence_pieces_file, 'r') as gpf:
             for x in range(self.npieces):
                 
@@ -722,7 +730,7 @@ class GeneticCode:
         file) and compute for each codon the likelihood and decoding probability of each model.
         """
         # hmmscan results summary file
-        if (not os.path.isfile(self.alignment_summary)) and (not os.path.isfile(self.alignment_summary)):
+        if not os.path.isfile(self.alignment_summary):
             sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database file.')
         
         # output file
@@ -731,7 +739,7 @@ class GeneticCode:
                 pass
         except FileNotFoundError:
             sys.exit('ERROR: could not open file path %s for writing' % self.inference_file)
-        
+
         # running sum of all emissions
         totsum = np.zeros(20) - np.inf    # -inf is log(0)
         
