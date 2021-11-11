@@ -18,12 +18,11 @@ np.seterr(over='ignore')
 
 def argument_parsing():
     parser = argparse.ArgumentParser(description="infer genetic code used by an organism from nucleotide sequence")
-    parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].fna). This can include a path.')
     
     # remaining arguments all are set optionally, otherwise default values
-    parser.add_argument('--sequence_file', help='fasta file with input nucleotide sequence')
-    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: sequence_file.[extensions])')
-    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [align_output].[profiles].[inference parameters].genetic_code.out')
+    parser.add_argument('--sequence_file', help='specify the input nucleotide sequence file in FASTA format.')
+    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
+    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
@@ -260,35 +259,37 @@ class GeneticCode:
         self.decoding_probs = np.zeros_like(self.likelihoods)
         self.npieces = None
         
-        # if we're downloading a sequence and no prefix is specified, use just the identifier
-        if args.prefix == None and args.identifier != None:
-            args.prefix = args.identifier
+        # if we're downloading a sequence and target file name is specified, use just the identifier
+        if args.sequence_file == None and args.identifier != None:
+            args.sequence_file = args.identifier + '.fna'
+            if validate_file_path(args.sequence_file)==False:
+                sys.exit('ERROR: default sequence_file is not a valid file path!')
         
-        # Ensure that the provided file prefix is valid and not something like '*'
-        unix_safe_name = re.sub(r'[^~/\\.\d\w-]', '_', args.prefix)
-        if validate_file_path(args.prefix)==True:
-            self.prefix = args.prefix
+        # check that user-provided target sequence file name is valid
+        if validate_file_path(args.sequence_file)==True:
+            self.genome_path = args.sequence_file
         else:
-            sys.exit('ERROR: [--prefix] is not a valid file path!')
-        
-        # set some file paths
-        if args.inference_output == None:
-            self.inference_file = "%s.%s.%s_%s_%s_excl-%s.genetic_code.out" % (self.prefix, self.profiles, str(self.e_value_threshold), 
-                                        str(self.probability_threshold), str(self.max_fraction), self.excluded_string)
-        elif validate_file_path(args.inference_output) == True:
-            self.inference_file = args.inference_output
-        else:
-            sys.exit('ERROR: [--inference_output] is not a valid file path!')
+            sys.exit('ERROR: [--sequence_file] is not a valid file path!')
 
+        # set path prefix for alignment output files and check validity 
         if args.align_output == None:
-            self.align_output = self.prefix
+            self.align_output = self.genome_path
         elif validate_file_path(args.align_output) == True:
             self.align_output = args.align_output
         else:
             sys.exit('ERROR: [--align_output] is not a valid file path!')
+        
+        # set path for inference output file and check validity 
+        if args.inference_output == None:
+            self.inference_file = "%s.%s.%s_%s_%s_excl-%s.genetic_code.out" % (self.align_output, self.profiles, str(self.e_value_threshold), 
+                                        str(self.probability_threshold), str(self.max_fraction), self.excluded_string)
+        else:
+            self.inference_file = args.inference_output
 
-        self.genome_path = '%s.fna' % self.prefix
-        self.scratch_dir = '%s_%s.temp_files' % (self.prefix, self.profiles)
+        if validate_file_path(self.inference_file) == False:
+            sys.exit('ERROR: [--inference_output] is not a valid file path!')
+
+        self.scratch_dir = '%s.%s.temp_files' % (self.align_output, self.profiles)
         self.alignment_summary = '%s.%s.hmmscan_summary.txt' % (self.align_output, self.profiles)
     
     def get_genome(self):
@@ -314,19 +315,22 @@ class GeneticCode:
         """
         # if genome file does not exist
         if not os.path.isfile(self.genome_path):
-            sys.exit('ERROR: Input FASTA file does not exist. Make sure you provide file prefix and do not include .fna extension')
+            sys.exit('ERROR: Input FASTA file does not exist.')
         
         # check that sequence file satisfies FASTA format
         if not validate_fasta(self.genome_path):
             sys.exit('ERROR: Input sequence file is not in FASTA format')
         
         ## Now, break any sequences that are >100,000 nt in half
-        sequence_pieces_file = '%s.sequence_pieces.fna' % self.prefix
+        sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
         
         # initialize pieces file
-        with open(sequence_pieces_file, 'w') as gpf:
-            pass
-        
+        try:
+            with open(sequence_pieces_file, 'w') as gpf:
+                pass
+        except FileNotFoundError:
+            sys.exit('ERROR: could not open file path %s for writing' % sequence_pieces_file)
+
         # open sequence file, read sequences in as FASTA, and break into genome pieces
         print('Breaking sequences into pieces shorter than 100,000 nt')
         with open(self.genome_path) as f:
@@ -367,10 +371,10 @@ class GeneticCode:
         """
         Creates preliminary 6-frame SGC translation of nucleotide sequence, previously broken into pieces.
         """
-        sequence_pieces_file = '%s.sequence_pieces.fna' % self.prefix
-        preliminary_translation_file = '%s.preliminary_translation.faa' % self.prefix
+        sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
+        preliminary_translation_file = '%s.preliminary_translation.faa' % self.align_output
         
-        # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
+        # if processing_genome wasn't run before this, then the number of sequence pieces wasn't set
         if self.npieces == None:
             if os.path.isfile(sequence_pieces_file + '.ssi'):
                 p = Popen('grep ">" %s | wc' % sequence_pieces_file, shell=True, stdout=PIPE)
@@ -379,8 +383,11 @@ class GeneticCode:
         print('Creating six-frame preliminary translation')
         
         # initialize the preliminary translation file
-        with open(preliminary_translation_file, 'w') as ptf:
-            pass
+        try:
+            with open(preliminary_translation_file, 'w') as ptf:
+                pass
+        except FileNotFoundError:
+            sys.exit('ERROR: could not open file path %s for writing' % preliminary_translation_file)
         
         # iterate through all sequence pieces and create preliminary 6-frame translation
         with open(sequence_pieces_file, 'r') as gpf:
@@ -435,7 +442,7 @@ class GeneticCode:
         Runs hmmscan jobs locally to align the entire profile HMM database to 6-frame genome translation.
         If adapting code to run on computing cluster, see commented-out code at the bottom of function.
         """
-        preliminary_translation_file = '%s.preliminary_translation.faa' % self.prefix
+        preliminary_translation_file = '%s.preliminary_translation.faa' % self.align_output
         
         # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
         if self.npieces == None:
@@ -547,13 +554,13 @@ class GeneticCode:
         with open(self.inference_file, 'a') as of:
             # write parameters
             of.write('# Analysis arguments\n')
-            of.write('prefix            %s\n' % self.prefix)
-            of.write('profile_database  %s\n' % self.profiles)
-            of.write('output_summary    %s\n' % self.summary_file)
-            of.write('evalue_threshold  %s\n' % str(self.e_value_threshold))
-            of.write('prob_threshold    %s\n' % str(self.probability_threshold))
-            of.write('max_fraction      %s\n' % str(self.max_fraction))
-            of.write('excluded_pfams    %s\n' % self.excluded_string)
+            of.write('alignment_prefix   %s\n' % self.align_output)
+            of.write('profile_database   %s\n' % self.profiles)
+            of.write('output_summary     %s\n' % self.summary_file)
+            of.write('evalue_threshold   %s\n' % str(self.e_value_threshold))
+            of.write('prob_threshold     %s\n' % str(self.probability_threshold))
+            of.write('max_fraction       %s\n' % str(self.max_fraction))
+            of.write('excluded_pfams     %s\n' % self.excluded_string)
             
             # write N consensus cols and AA for each codon
             n_subsampled = ['%i' % ss if ss>0 else '' for ss in self.n_subsampled]
@@ -571,7 +578,7 @@ class GeneticCode:
             of.write('#\n# Final genetic code inference\n%s' % self.gen_code)
         
         # WRITING TO SUMMARY FILE
-        summ_line = "%s,%s,%s,%s,%s,%s,%s,%s\n" % (self.prefix, self.profiles, str(self.e_value_threshold), str(self.probability_threshold), 
+        summ_line = "%s,%s,%s,%s,%s,%s,%s,%s\n" % (self.align_output, self.profiles, str(self.e_value_threshold), str(self.probability_threshold), 
             str(self.max_fraction), self.excluded_string, self.gen_code, gen_code_preconv)
         if self.summary_file:
             if not os.path.isfile(self.summary_file):
@@ -591,9 +598,9 @@ class GeneticCode:
         For each aligned profile HMM column, write the: profile HMM name, hit e-value, 
         position within profile HMM, genome piece, frame, position, codon at that position
         """
-        sequence_pieces_file = '%s.sequence_pieces.fna' % self.prefix
+        sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
         if not os.path.isfile(sequence_pieces_file) or not os.path.isfile(sequence_pieces_file + '.ssi'):
-            sys.exit('ERROR: sequence_pieces file (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix and do not include file extensions')
+            sys.exit('ERROR: sequence_pieces file (generated by codetta_align) cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions)')
         
         # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
         if self.npieces == None:
@@ -606,7 +613,7 @@ class GeneticCode:
         all_possible_hmm_outs = ['hmm_output_%s' % suff for suff in file_suffixes]
         
         if not os.path.isdir(self.scratch_dir):
-            sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database file.')
+            sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions) and correct profile HMM database file.')
         
         # get list of all hmmscan output files that exist
         p = Popen('(cd %s && find . -type f -name "hmm_outputs*.tar" | xargs -I {} gtar --list --file={} | sort | uniq )' % self.scratch_dir, shell=True, stdout=PIPE)
@@ -731,7 +738,7 @@ class GeneticCode:
         """
         # hmmscan results summary file
         if not os.path.isfile(self.alignment_summary):
-            sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database file.')
+            sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions) and correct profile HMM database file.')
         
         # output file
         try:

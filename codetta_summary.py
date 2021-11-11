@@ -5,8 +5,9 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="process hmmscan outputs into a summary file that can be used for genetic code inference")
-    parser.add_argument('prefix', help='specify prefix of output files from codetta_align (ie [PREFIX].preliminary_translation.faa). This can include \
-                                          a path. Hmmscan alignment summary file will be written to [PREFIX]_[PROFILES FILE].hmmscan_summary.txt.gz')
+
+    parser.add_argument('align_output', help='specify prefix of files created by codetta_align. This can include a path. Hmmscan alignment summary \
+                                              file will be written to [ALIGN_OUTPUT].[PROFILES FILE].hmmscan_summary.txt.gz')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
@@ -32,6 +33,8 @@ def main():
         args.profiles = 'Pfam-A_enone.hmm'
 
     # initialize genetic code with command line args and download genome
+    args.sequence_file = args.align_output  # it's not used here so doesn't matter
+    args.inference_output = None
     args.results_summary = None
     args.identifier = None
     args.download_type = None

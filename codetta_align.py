@@ -5,10 +5,12 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="aligns profile HMM database to six-frame translation of input nucleotide sequence")
-    parser.add_argument('prefix', help='specify the file prefix for the input nucleotide sequence in FASTA format (ie [PREFIX].fna). This can include \
-                                          a path. Temporary files will be written to [PREFIX]_[PROFILES FILE].temp_files/ and output files will be written to [PREFIX]_[PROFILES FILE].[extensions]')
+    parser.add_argument('sequence_file', help='specify the input nucleotide sequence file in FASTA format.')
     
-    # remaining arguments all are set optionally, otherwise default values
+    # remaining arguments all are set optionally, otherwise default values    
+    parser.add_argument('--align_output', help='specify prefix of files created by codetta_align. This can include a path. Temporary files will be written \
+                                                to [ALIGN_OUTPUT].[PROFILES FILE].temp_files/ and output files will be written to \
+                                                [ALIGN_OUTPUT].[PROFILES FILE].[extensions]. (default: [SEQUENCE_FILE])')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
@@ -31,6 +33,7 @@ def main():
         args.profiles = 'Pfam-A_enone.hmm'
     
     # initialize genetic code with command line args and download genome
+    args.inference_output = None
     args.results_summary = None
     args.identifier = None
     args.download_type = None
