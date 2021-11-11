@@ -8,9 +8,9 @@ The analysis consists of three steps:
 2. Generating an alignment summary file
 3. Inferring the genetic code from the alignment summary file
 
-Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. If you plan to analyze many genomes (or large genomes), we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below.
+Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. Currently, the alignment is set up to run locally, which for a 4 Mb genome would take about 10 minutes (on a MacBook Pro). If you plan to analyze many genomes (or large genomes), we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below.
 
-If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://www.biorxiv.org/content/10.1101/2021.06.18.448887v1), please follow the README at [this git tag](https://github.com/kshulgina/codetta/releases/tag/v1.0) which has more specific instructions. We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request. 
+If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402), please follow the README at [this git tag](https://github.com/kshulgina/codetta/releases/tag/v1.0) which has more specific instructions. We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request. 
 
 ## Download and setup
 
