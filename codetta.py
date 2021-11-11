@@ -266,9 +266,7 @@ class GeneticCode:
         
         # Ensure that the provided file prefix is valid and not something like '*'
         unix_safe_name = re.sub(r'[^~/\\.\d\w-]', '_', args.prefix)
-        if len(args.prefix) > 4 and args.prefix[-4:] == '.fna':
-            print('Warning: supplied prefix ends in \'.fna\', make sure that this is indeed the PREFIX and not the nucleotide input file!')
-        if len(args.prefix) > 0  and unix_safe_name == args.prefix:
+        if validate_file_path(args.prefix)==True:
             self.prefix = args.prefix
         else:
             sys.exit('ERROR: [--prefix] is not a valid file path!')
@@ -728,9 +726,12 @@ class GeneticCode:
             sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database file.')
         
         # output file
-        with open(self.inference_file, 'w') as of:
-            pass
-
+        try:
+            with open(self.inference_file, 'w') as of:
+                pass
+        except FileNotFoundError:
+            sys.exit('ERROR: could not open file path %s for writing' % self.inference_file)
+        
         # running sum of all emissions
         totsum = np.zeros(20) - np.inf    # -inf is log(0)
         
