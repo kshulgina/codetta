@@ -9,6 +9,7 @@ def argument_parsing():
                                           a path. Inference output will be written to [PREFIX]_[PROFILES FILE].inference_[string of parameters].txt')
     
     # remaining arguments all are set optionally, otherwise default values
+    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [align_output].[profiles].[inference parameters].genetic_code.out')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)

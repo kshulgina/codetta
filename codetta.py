@@ -21,6 +21,9 @@ def argument_parsing():
     parser.add_argument('--prefix', help='specify prefix for all input and generated files (ie [PREFIX].fna). This can include a path.')
     
     # remaining arguments all are set optionally, otherwise default values
+    parser.add_argument('--sequence_file', help='fasta file with input nucleotide sequence')
+    parser.add_argument('--align_output', help='file prefix for files created by codetta_align and codetta_summary. This can include a path. (default: sequence_file.[extensions])')
+    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [align_output].[profiles].[inference parameters].genetic_code.out')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
@@ -270,9 +273,17 @@ class GeneticCode:
         else:
             sys.exit('ERROR: [--prefix] is not a valid file path!')
         
-        # set some more values that depend on prefix
-        self.inference_file = "%s_%s.inference_output_%s_%s_%s_excl-%s.out" % (self.prefix, self.profiles, str(self.e_value_threshold), 
+        # set some file paths
+        if args.inference_output == None:
+            self.inference_file = "%s.%s.%s_%s_%s_excl-%s.genetic_code.out" % (self.prefix, self.profiles, str(self.e_value_threshold), 
                                         str(self.probability_threshold), str(self.max_fraction), self.excluded_string)
+        else:
+            # check that args.inference_output is a valid path
+            if validate_file_path(args.inference_output) == True:
+                self.inference_file = args.inference_output
+            else:
+                sys.exit('ERROR: [--inference_output] is not a valid file path!')
+
         self.genome_path = '%s.fna' % self.prefix
         self.scratch_dir = '%s_%s.temp_files' % (self.prefix, self.profiles)
         self.alignment_summary = '%s_%s.hmmscan_summary.txt' % (self.prefix, self.profiles)
@@ -706,21 +717,15 @@ class GeneticCode:
         
         p = Popen('rmdir %s' % self.scratch_dir, shell=True)
         p.wait()
-        
-        p = Popen('gzip -f %s' % (self.alignment_summary), shell=True)
-        p.wait()
     
     def compute_decoding_probabilities(self):
         """
-        This function will step through the aligned profile HMM columns (in the gzipped intermediate summary 
+        This function will step through the aligned profile HMM columns (in the intermediate summary 
         file) and compute for each codon the likelihood and decoding probability of each model.
         """
         # hmmscan results summary file
-        if (not os.path.isfile(self.alignment_summary + '.gz')) and (not os.path.isfile(self.alignment_summary)):
+        if (not os.path.isfile(self.alignment_summary)) and (not os.path.isfile(self.alignment_summary)):
             sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct file prefix (do not include file extensions) and correct profile HMM database file.')
-        
-        p = Popen('gunzip %s' % (self.alignment_summary + '.gz'), shell=True)
-        p.wait()
         
         # output file
         with open(self.inference_file, 'w') as of:
@@ -872,8 +877,6 @@ class GeneticCode:
         
         sum_f.close()
         
-        p = Popen('gzip %s' % (self.alignment_summary), shell=True)
-        p.wait()
         # normalize likelihoods
         for c in range(64):
             m = self.n_consensus[c]
