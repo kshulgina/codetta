@@ -8,7 +8,6 @@ WARNING: this updated version has not been released yet, so use at your own risk
 - (to be done) adding an argument for easier parallelization of hmmscan step on SLURM and LSF schedulers (no more needing to manually modify the Python code) 
 
 
-
 ## Description
 
 Codetta is a Python program for predicting the genetic code (codon table) of an organism from nucleotide sequence data.   
@@ -49,7 +48,7 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 ### Additional requirements
 Codetta additionally requires:
 
-- `wget`: on Mac, use install commands `brew install wget`. For Linux, you'll have to use your system's package management tool. 
+- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool.
 - HMMER v3 and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). Note that the same version of HMMER should be used to build the profile HMM database. 
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
