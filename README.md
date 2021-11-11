@@ -48,7 +48,7 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 ### Additional requirements
 Codetta additionally requires:
 
-- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool.
+- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool. These programs are just needed to download genomes using codetta_download.py so not required if you're not using those functionalities.
 - HMMER v3 and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). Note that the same version of HMMER should be used to build the profile HMM database. 
 
 		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
