@@ -66,7 +66,7 @@ Codetta additionally requires:
 ### Building a local version of the Pfam database
 By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database.
 
-Download Pfam database into the `resources` directory. This may take a few minutes because this a ~19 Mb file.
+Download Pfam database into the `resources` directory. This may take a few minutes because this a ~140 Mb file.
 
 	cd resources
 	wget http://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.seed.gz
