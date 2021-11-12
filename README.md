@@ -109,7 +109,7 @@ Codetta consists of three main programs.
 
 General usage for these programs is
 
-	python [program name].py [input file prefix] [optional arguments]
+	python [program name].py [input file or prefix] [optional arguments]
 
 For any of these programs, type `python [program name].py --help` for complete usage details.
 
