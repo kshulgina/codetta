@@ -48,20 +48,20 @@ Otherwise, you can manually install the packages listed in the `requirements.txt
 ### Additional requirements
 Codetta additionally requires:
 
-- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool. These programs are just needed to download genomes using codetta_download.py so not required if you're not using those functionalities.
-- HMMER v3 and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.1b2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). Note that the same version of HMMER should be used to build the profile HMM database. 
+- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew install gzip`. For Linux, you'll have to use your system's package management tool. 
+- HMMER v3 and Easel library: the commands shown below will install these programs into `codetta/hmmer-3.3.2`. For more detail on installation, see the [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf). Note that the same version of HMMER should be used to build the profile HMM database. 
 
-		wget http://eddylab.org/software/hmmer/hmmer-3.1b2.tar.gz
-		tar xf hmmer-3.1b2.tar.gz
-		rm hmmer-3.1b2.tar.gz 
-		cd hmmer-3.1b2
+		wget http://eddylab.org/software/hmmer/hmmer-3.3.2.tar.gz
+		tar xf hmmer-3.3.2.tar.gz
+		rm hmmer-3.3.2.tar.gz 
+		cd hmmer-3.3.2
 		pwd | xargs -I {} ./configure --prefix={}
 		make
 		make install
 		cd easel; make install
 		cd ../..
 
-	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.1b2/bin` unless otherwise specified as an argument.
+	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.3.2/bin` unless otherwise specified as an argument.
 
 ### Building a local version of the Pfam database
 By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database.
@@ -74,9 +74,9 @@ Download Pfam database into the `resources` directory. This may take a few minut
 
 Then, use HMMER to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space.
 
-	../hmmer-3.1b2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
+	../hmmer-3.3.2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
 	rm Pfam-A.seed
-	../hmmer-3.1b2/bin/hmmpress Pfam-A_enone.hmm
+	../hmmer-3.3.2/bin/hmmpress Pfam-A_enone.hmm
 	cd ..
 
 ### Building a custom profile HMM database
