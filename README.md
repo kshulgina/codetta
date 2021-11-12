@@ -4,7 +4,7 @@ WARNING: this updated version has not been released yet, so use at your own risk
 
 - (implemented here) ability to specify custom profile HMM models (not forced to always use Pfam)
 - (implemented here) removed `prefix` argument, now specify `sequence_file`, `align_output`, and `inference_output` arguments (with defaults) 
-- (to be done) removing requirement for `gtar`
+- (implemented here) removed requirement for `gtar`
 - (to be done) adding an argument for easier parallelization of hmmscan step on SLURM and LSF schedulers (no more needing to manually modify the Python code) 
 
 
