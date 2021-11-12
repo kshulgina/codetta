@@ -105,21 +105,20 @@ def validate_fasta(fasta_file_path):
     
     return True
 
-def validate_hmm_output(hmm_output_files, hmm_file_name):
+def validate_hmm_output(hmm_output_lines, piece_name):
     """
     Checks that the content of an hmmscan output are not corrupted. Arg is a list of 
     line-by-line hmmscan outfile file contents. Returns True or False.
     """
-    if len(hmm_output_files) < 20: # somewhat arbitrary
+    if len(hmm_output_lines) < 20: # somewhat arbitrary
         return False
-    # check that this is the output for the right file
-    if not (hmm_file_name in hmm_output_files[7]):
+    
+    # check that this is output has info for the right sequence piece
+    if not any('%s ' % piece_name in string for string in hmm_output_lines):
         return False
-    # first line always is a comment with name of program
-    if hmm_output_files[0] != '# hmmscan :: search sequence(s) against a profile database':
-        return False
-    # last line always says // (not [ok] because I split on that)
-    if hmm_output_files[-1] != '//':
+    
+    # always has search summary at the end
+    if not any('Internal pipeline statistics summary:' in string for string in hmm_output_lines):
         return False
     
     return True

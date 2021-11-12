@@ -264,7 +264,7 @@ class GeneticCode:
             args.sequence_file = args.identifier + '.fna'
             if validate_file_path(args.sequence_file)==False:
                 sys.exit('ERROR: default sequence_file is not a valid file path!')
-        
+
         # check that user-provided target sequence file name is valid
         if validate_file_path(args.sequence_file)==True:
             self.genome_path = args.sequence_file
@@ -460,12 +460,6 @@ class GeneticCode:
         if not os.path.exists(self.scratch_dir):
             os.makedirs(self.scratch_dir)
         
-        # creating a tar archive for hmmscan output jobs to be appended to
-        hmm_outputs_tar = '%s/hmm_outputs.tar' % self.scratch_dir
-        if not os.path.isfile(hmm_outputs_tar):
-            with open(os.devnull, "w") as f:
-                p = Popen('gtar -cf %s -T /dev/null' % hmm_outputs_tar, shell=True, stdout=f, stderr=f)
-        
         # make set of all possible hmm_output file suffixes
         file_suffixes = ['%i_%i' % (j, i) for j in range(self.npieces) for i in range(6)]
         
@@ -493,16 +487,15 @@ class GeneticCode:
             if len_analyzed > 2000000 or n_hmm > 2000:
                 # copy template batch script and add hmmscan commands
                 shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
-                hmm_outputs_tar_indexed = 'hmm_outputs_%i.tar' % (shell_count)
+                seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
+                with open(seq_names_file, 'w') as snf:
+                    for indices_str in indices_to_analyze:
+                        snf.write('piece_%s\n' % indices_str)
                 with open(shell_script, 'w') as batch_file:
                     batch_file.write('#!/bin/bash\n\n')
-                    batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
-                    for indices_str in indices_to_analyze:
-                        batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
-                            (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir, self.profiles))
-                        batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
-                        batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
-                
+                    batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                            (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
+
                 # reset 
                 indices_to_analyze = list()
                 len_analyzed = 0
@@ -511,15 +504,14 @@ class GeneticCode:
         
         # add remaining hmmscan commands to batch script 
         shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
-        hmm_outputs_tar_indexed = 'hmm_outputs_%i.tar' % shell_count
+        seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
+        with open(seq_names_file, 'w') as snf:
+            for indices_str in indices_to_analyze:
+                snf.write('piece_%s\n' % indices_str)
         with open(shell_script, 'w') as batch_file:
             batch_file.write('#!/bin/bash\n\n')
-            batch_file.write('(cd %s && gtar -cf %s -T /dev/null) \n\n' % (self.scratch_dir, hmm_outputs_tar_indexed))
-            for indices_str in indices_to_analyze:
-                batch_file.write('%s/esl-sfetch %s "piece_%s" | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
-                    (self.hmmer_dir, preliminary_translation_file, indices_str, self.hmmer_dir, self.scratch_dir, indices_str, self.resource_dir, self.profiles))
-                batch_file.write('(cd %s && gtar --append --file=%s hmm_output_%s)\n' % (self.scratch_dir, hmm_outputs_tar_indexed, indices_str))
-                batch_file.write('find %s -name hmm_output_%s -delete \n' % (self.scratch_dir, indices_str))
+            batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
         shell_count += 1
         
         # Run hmmscan shell scripts one at a time [comment out this section if submitting jobs to scheduler]
@@ -610,29 +602,28 @@ class GeneticCode:
         
         # create list of all anticipated hmmscan output files
         file_suffixes = ['%i_%i' % (j, i) for j in range(self.npieces) for i in range(6)]
-        all_possible_hmm_outs = ['hmm_output_%s' % suff for suff in file_suffixes]
+        all_possible_hmm_outs = ['piece_%s' % suff for suff in file_suffixes]
         
         if not os.path.isdir(self.scratch_dir):
             sys.exit('ERROR: scratch directory of hmmscan results (generated by codetta_align) cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions) and correct profile HMM database file.')
         
         # get list of all hmmscan output files that exist
-        p = Popen('(cd %s && find . -type f -name "hmm_outputs*.tar" | xargs -I {} gtar --list --file={} | sort | uniq )' % self.scratch_dir, shell=True, stdout=PIPE)
+        p = Popen('grep "^Query:" %s/hmm_output_* | grep -o "piece_[0-9]*_[0-9]*"' % self.scratch_dir, shell=True, stdout=PIPE)
         created_files = p.communicate()[0].decode().split()
         
         # if not all files have been created, exit
         if len(set(created_files)) != len(set(all_possible_hmm_outs)):
             sys.exit('ERROR: Not all hmmscan jobs have completed')
         
-        # put all files into the main tar archive
-        p = Popen('(cd %s && find . -type f -name "hmm_outputs_*.tar")' % self.scratch_dir, shell=True, stdout=PIPE)
-        tar_sub_archives = p.communicate()[0].decode().split()
-        tar_sub_archives = [arch.split('./')[1] for arch in tar_sub_archives]
-        for sub_archive in tar_sub_archives:
-            with open(os.devnull, "w") as f:
-                p = Popen('(cd %s && gtar --concatenate --file=hmm_outputs.tar %s)' % (self.scratch_dir, sub_archive), shell=True, stdout=f, stderr=f)
-                dum = p.wait()
-                p = Popen('find %s -name %s -delete' % (self.scratch_dir, sub_archive), shell=True, stdout=f, stderr=f)
-                dum = p.wait()
+        # concantenate all hmmscan outputs into a single file
+        p = Popen('find %s -type f -name "hmm_output_*"' % self.scratch_dir, shell=True, stdout=PIPE)
+        n_hmm_output_files = len(p.communicate()[0].decode().split())
+        concat_hmm_output_file = '%s/concatentated_hmm_output' % self.scratch_dir
+        with open(concat_hmm_output_file, 'w') as concat_file:
+            for ind in range(n_hmm_output_files):
+                hmm_output_file = '%s/hmm_output_%i' % (self.scratch_dir, ind)
+                with open(hmm_output_file, 'r') as source_file:
+                    dum = concat_file.write(source_file.read()) 
         
         # initialize intermediate hmmscan summary file
         hmmscan_summary_file = self.alignment_summary + '_unsorted'
@@ -641,7 +632,10 @@ class GeneticCode:
                 pass
         except FileNotFoundError:
             sys.exit('ERROR: could not open file path %s for writing' % self.alignment_summary)
-
+        
+        # opening file of all hmm_outputs for reading
+        concat_hmm_outputs = open(concat_hmm_output_file, 'r')
+        
         with open(sequence_pieces_file, 'r') as gpf:
             for x in range(self.npieces):
                 
@@ -659,20 +653,20 @@ class GeneticCode:
                 
                 lines_to_write = list()
                 
-                # every 50 pieces, extract another batch of hmmscan outputs from the tar archive
-                if x % 50 == 0:
-                    hmm_files = ["hmm_output_%s_%s" % (str(x+xx), str(ii)) for ii in range(6) for xx in range(min(50, self.npieces-x))]
-                    p = Popen('cd %s && gtar xfO hmm_outputs.tar %s' % (self.scratch_dir, ' '.join(hmm_files)), shell=True, stdout=PIPE)
-                    hmm_multiple_file_lines = p.communicate()[0].decode().split('[ok]\n')
-                
                 # step through each of six frames
                 for i in range(0,6):
                     
-                    expected_file_name = '%s/hmm_output_%i_%i' % (self.scratch_dir, x, i)
-                    files_index = np.where([expected_file_name in hmf for hmf in hmm_multiple_file_lines])[0][0]
-                    hmm_file_lines = hmm_multiple_file_lines[files_index].rstrip().split('\n')
+                    # read in hmmscan output lines that correspond to the next output file
+                    hmm_file_lines = ''
+                    line = concat_hmm_outputs.readline()
+                    while line[:2] != '//':
+                        hmm_file_lines += line
+                        line = concat_hmm_outputs.readline()
+                    hmm_file_lines = hmm_file_lines.split('\n')
+                    
                     # validate that not corrupted
-                    if not validate_hmm_output(hmm_file_lines, expected_file_name):
+                    piece_name = 'piece_%i_%i' % (x, i)
+                    if not validate_hmm_output(hmm_file_lines, piece_name):
                         raise TypeError('Hmmscan output file %i %i does not follow expected format' % (x, i))
                     
                     conserved_regions = extract_hmmscan_output(hmm_file_lines, self.e_value_threshold)
@@ -714,7 +708,9 @@ class GeneticCode:
                 if len(lines_to_write) > 0:
                     with open(hmmscan_summary_file, 'a') as hf:
                         for line in lines_to_write:
-                            hf.write(line)
+                            dum = hf.write(line)
+        
+        concat_hmm_outputs.close()
         
         # sort results file using a Unix command
         with open(self.alignment_summary, 'w') as f:
