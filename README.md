@@ -63,11 +63,6 @@ Codetta additionally requires:
 
 	Codetta will expect to find the HMMER and Easel programs in the directory `codetta/hmmer-3.1b2/bin` unless otherwise specified as an argument.
 
-
-If you plan on analyzing your own nucleotide sequences (Step 1), then you will also need:
-
-- `gtar`: on Mac, use install command `brew install gnutar`. `gtar` is the default version of tar on most Linux machines. You can check which version of `tar` you have by typing `man tar` and looking at the first line. If you have gnutar but the command `gtar` does not work, you can map it by adding an alias `alias gtar='tar'` in your `~/.bashrc` file (or equivalent for your shell) and restarting your terminal.
-
 ### Building a local version of the Pfam database
 By default, Codetta will assume that the Pfam database is the source of profile HMMs. You will need to download and build a local version of the Pfam database.
 
