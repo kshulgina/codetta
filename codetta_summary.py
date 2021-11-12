@@ -34,6 +34,7 @@ def main():
 
     # initialize genetic code with command line args and download genome
     args.sequence_file = args.align_output  # it's not used here so doesn't matter
+    args.parallelize_hmmscan = None
     args.inference_output = None
     args.results_summary = None
     args.identifier = None

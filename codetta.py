@@ -29,6 +29,7 @@ def argument_parsing():
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
+    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s) or LSF (l). Remeber to modify the template file in resources directory accordingly.', type=str, choices=['s', 'l'])
     parser.add_argument('-e', '--evalue', help='Profile hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
@@ -157,6 +158,7 @@ class GeneticCode:
         self.resource_dir = args.resource_directory
         self.hmmer_dir = args.hmmer_directory
         self.identifier = args.identifier
+        self.parallelize_hmmscan = args.parallelize_hmmscan
         if args.evalue != None and args.evalue < 0:
             sys.exit('ERROR: e-value threshold must be positive')
         else:
@@ -171,7 +173,7 @@ class GeneticCode:
             self.max_fraction = args.max_fraction
         if args.download_type != None:
             self.download = args.download_type
-         
+        
         # string designating which Pfam domain groups are excluded
         self.excluded_string = ''
         
@@ -514,30 +516,30 @@ class GeneticCode:
                 (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
         shell_count += 1
         
-        # Run hmmscan shell scripts one at a time [comment out this section if submitting jobs to scheduler]
-        for shell_i in range(shell_count):
-            print('Running hmmscan shell script %i out of %i' % (shell_i + 1, shell_count))
-            shell_script = '%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i)
-            dum = call(["chmod", "777", shell_script])
-            dum = call([shell_script])
-        
-        '''
-        ## Alternatively, write a job array file and submit to job scheduler
-        # 1. comment out the for-loop directly above, and uncomment this section.
-        # 2. adapt code and template_job_array.sh file to your local job scheduler
-        #    the template below should work with a SLURM scheduler and you might only 
-        #    need to change the partition name in the resources/template_job_array.sh file
-        
-        job_array_script = '%s/hmmscan_jobarray.sh' % self.scratch_dir
-        dum = call(["cp", "%s/template_jobarray.sh" % self.resource_dir, job_array_script])
-        with open(job_array_script, 'a') as jf:
-            jf.write('#SBATCH --array=0-%i' % shell_count)
-            jf.write('\n\nchmod 777 %s/hmmscan_${SLURM_ARRAY_TASK_ID}.sh' % self.scratch_dir)
-            jf.write('\n%s/hmmscan_${SLURM_ARRAY_TASK_ID}.sh' % self.scratch_dir)
-        with open(job_array_script) as f:
-            p = Popen(['sbatch'], stdin=f, stdout=PIPE, stderr=PIPE)
-            p.wait()
-        '''
+        # Run hmmscan shell scripts one at a time
+        if self.parallelize_hmmscan == None:
+            for shell_i in range(shell_count):
+                print('Running hmmscan shell script %i out of %i' % (shell_i + 1, shell_count))
+                shell_script = '%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i)
+                dum = call(["chmod", "777", shell_script])
+                dum = call([shell_script])
+        # If SLURM parallelization is turned on
+        elif self.parallelize_hmmscan == 's':
+            # remember to change the partition name in the resources/template_job_array.sh file!
+            print('Submitting a SLURM job array of %i hmmscan jobs' % shell_count)
+            job_array_script = '%s/hmmscan_jobarray.sh' % self.scratch_dir
+            dum = call(["cp", "%s/template_jobarray.sh" % self.resource_dir, job_array_script])
+            with open(job_array_script, 'a') as jf:
+                jf.write('#SBATCH --array=0-%i' % shell_count)
+                jf.write('\n\nchmod 777 %s/hmmscan_${SLURM_ARRAY_TASK_ID}.sh' % self.scratch_dir)
+                jf.write('\n%s/hmmscan_${SLURM_ARRAY_TASK_ID}.sh' % self.scratch_dir)
+            with open(job_array_script) as f:
+                p = Popen(['sbatch'], stdin=f, stdout=PIPE, stderr=PIPE)
+                p.wait()
+        # If LSF parallelization is turned on
+        elif self.parallelize_hmmscan == 'l':
+            ## stuff
+            dum = 1
     
     def write_outputs(self,  gen_code_preconv):
         """

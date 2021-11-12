@@ -29,6 +29,7 @@ def main():
     args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     # initialize genetic code with command line args and download genome
+    args.parallelize_hmmscan = None
     args.align_output = None
     args.inference_output = None
     args.profiles = 'Pfam-A_enone.hmm'

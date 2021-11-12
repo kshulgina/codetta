@@ -43,6 +43,7 @@ def main():
     args.sequence_file = args.align_output  # it's not used here so doesn't matter
     args.download_type = None
     args.identifier = None
+    args.parallelize_hmmscan = None
     
     # initialize genetic code with command line args and download genome
     initialize_globals()
