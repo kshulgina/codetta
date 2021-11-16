@@ -74,6 +74,10 @@ Then, use HMMER to build a searchable database, using the `--enone` flag to turn
 	cd ..
 
 ### Building a custom profile HMM database
+[TBD]
+
+<!---
+
 To make a custom profile HMM database from a set of multiple sequence alignments, you need to follow a similar series of steps.
 
 [DRAFT]
@@ -91,7 +95,7 @@ Then we concatenate all of these `.hmm` files into a single database and finally
 	hmmpress metazoan_mito_proteins.hmm
 
 When running a Codetta analysis, you will have to specify the custom profile HMM database with the `-p` option.
-
+-->
 
 ## Usage
 
