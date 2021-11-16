@@ -29,7 +29,7 @@ def argument_parsing():
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
-    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s) or LSF (l). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s', 'l'])
+    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
     parser.add_argument('-e', '--evalue', help='Profile hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
@@ -537,9 +537,9 @@ class GeneticCode:
                 p = Popen(['sbatch'], stdin=f, stdout=PIPE, stderr=PIPE)
                 p.wait()
         # If LSF parallelization is turned on
-        elif self.parallelize_hmmscan == 'l':
-            ## stuff
-            dum = 1
+        #elif self.parallelize_hmmscan == 'l':
+        #    ## stuff
+        #    dum = 1
     
     def write_outputs(self,  gen_code_preconv):
         """

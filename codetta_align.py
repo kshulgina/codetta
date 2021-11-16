@@ -12,7 +12,7 @@ def argument_parsing():
                                                 to [ALIGN_OUTPUT].[PROFILES FILE].temp_files/ and output files will be written to \
                                                 [ALIGN_OUTPUT].[PROFILES FILE].[extensions]. (default: [SEQUENCE_FILE])')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
-    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster. Specify SLURM (s) or LSF (l), and modify template file in resources directory accordingly.', type=str, choices=['s', 'l'])
+    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster. Specify SLURM (s), and modify template file in resources directory accordingly.', type=str, choices=['s'])
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
     parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
     
