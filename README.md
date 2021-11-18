@@ -335,11 +335,9 @@ database accession and not an assembly accession (which would be `a`).
 Now let's pull it all together by predicting the genetic code of the 
 _P. provasolii_ mitochondrial genome:
 
-	./codetta_align.py examples/GQ497137.1.fna --align_output examples/
-	Pprovasolii_mito
+	./codetta_align.py examples/GQ497137.1.fna --align_output examples/Pprovasolii_mito
 	./codetta_summary.py examples/Pprovasolii_mito
-	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/
-	Pprovasolii_mito_Pfam_genetic_code.out
+	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
 Notice how we specified that the alignment output files are written with a more 
 informative prefix `Pprovasolii_mito` and the inference output file is written 
