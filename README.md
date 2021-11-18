@@ -14,7 +14,9 @@ The analysis consists of three steps:
 
 Step 1 (profile HMM alignment) is by far the more computationally intensive step of the analysis. By default, the alignment is set up to run locally, which for a 4 Mb genome would take about 10 minutes (on a MacBook Pro). If you plan to analyze many genomes (or large genomes), we recommend parallelizing across many machines on a computing cluster. We provide instructions on how to do this below.
 
-If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402), please follow the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0). We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request. 
+If you are looking to reproduce results from [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402), please follow the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0). We can also provide the alignment summary files for any genomes analyzed in Shulgina & Eddy (2021) upon request.
+
+If you encounter any problems in the installation or usage of Codetta, please leave a Github issue or email me at shulgina@g.harvard.edu!
 
 ## Download and setup
 
@@ -25,18 +27,7 @@ Clone the Codetta repository from GitHub with the command
 	cd codetta
 
 ### Python version and packages
-Codetta was developed for Python versions 3.5+ on Linux and MacOS. 
-
-Type `python --version` into your terminal to check which version of Python you have. If you don't want to update your version of Python, you use `conda` to create a virtual Python 3.9 environment using the commands 
-	
-	conda create --name py39 python=3.9
-	source activate py39
-
-To ensure that the correct Python package versions are installed, use the command
-
-	python -m pip install -r requirements.txt
-
-Otherwise, you can manually install the packages listed in the `requirements.txt` file.
+Codetta was developed for Python versions 3.5+ on Linux and MacOS. Required Python packages are `numpy` and `scipy`.
 
 
 ### Additional requirements
@@ -69,8 +60,8 @@ Download Pfam database into the `resources` directory. This may take a few minut
 Then, use HMMER to build a searchable database, using the `--enone` flag to turn off entropy weighting. This will also take a few minutes. This process creates 3 Gb worth of files, so make sure you have sufficient disk space.
 
 	../hmmer-3.3.2/bin/hmmbuild --enone Pfam-A_enone.hmm Pfam-A.seed
-	rm Pfam-A.seed
 	../hmmer-3.3.2/bin/hmmpress Pfam-A_enone.hmm
+	rm Pfam-A.seed
 	cd ..
 
 ### Building a custom profile HMM database
@@ -107,14 +98,9 @@ Codetta consists of three main programs.
 
 General usage for these programs is
 
-	python [program name].py [input file or prefix] [optional arguments]
+	./[program name].py [input file or prefix] [optional arguments]
 
-For any of these programs, type `python [program name].py --help` for complete usage details.
-
-If you want to be able to run Codetta from anywhere on your machine (without having to invoke python):
-
-	chmod +x codetta_*.py
-	export PATH=$PATH:$(pwd)
+For any of these programs, type `./[program name].py --help` for complete usage details.
 
 ## Tutorial
 
@@ -122,15 +108,17 @@ If you want to be able to run Codetta from anywhere on your machine (without hav
 
 The following commands will predict the genetic code of bacteria _Nasuia deltocephalinicola_, whose genome can be found in `examples/GCA_000442605.1.fna`.
 
-	python codetta_align.py examples/GCA_000442605.1.fna
-	python codetta_summary.py examples/GCA_000442605.1.fna
-	python codetta_infer.py examples/GCA_000442605.1.fna
+	./codetta_align.py examples/GCA_000442605.1.fna
+	./codetta_summary.py examples/GCA_000442605.1.fna
+	./codetta_infer.py examples/GCA_000442605.1.fna
 
 The output genetic code (in a one-line representation) is:
 
 	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTT?NNKKS?RRVVVVAAAADDEEGGGG
 
-An output file with a detailed summary of the analysis can be found at `GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters.
+This corresponds to the inferred translation of each of the 64 codons, in order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 1st base through UCAG). 
+
+An output file with a detailed summary of the analysis can be found at `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters.
 
 ### Example with more explanations
 
@@ -138,7 +126,7 @@ In the `examples` directory, there is a FASTA file called `GCA_000442605.1.fna` 
 
 The first step is to create a six-frame standard genetic code translation of the genome and align it to the entire Pfam database. (To align against a custom profile HMM database, use the `-p` argument.) We can do this with
 
-	python codetta_align.py examples/GCA_000442605.1.fna
+	./codetta_align.py examples/GCA_000442605.1.fna
 
 The input nucleotide sequence must a valid FASTA file as a DNA sequence (T instead of U).
 
@@ -150,11 +138,11 @@ This Python program creates several files which are used by the subsequent step 
 
 The next step is to process these files into an alignment summary file. The only required argument is the location of the alignment output files (either the default or what was specified by the `--align_output` argument.
 
-	python codetta_summary.py examples/GCA_000442605.1.fna
+	./codetta_summary.py examples/GCA_000442605.1.fna
 
 Then, we can infer the genetic code of _N. deltocephalinicola_ with default parameters using
 
-	python codetta_infer.py examples/GCA_000442605.1.fna
+	./codetta_infer.py examples/GCA_000442605.1.fna
 
 The output is a one line representation of the genetic code
 
@@ -164,7 +152,7 @@ This corresponds to the inferred translation of each of the 64 codons, in order 
 
 Notice that the 14th codon (corresponding to UGA) is W instead of ?. This means that we have correctly predicted the UGA reassignment to tryptophan in this bacterial genome.
 
-Additionally, a file with detailed information about the run is created, named `GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters. You can specify an alternative output file name using the `--inference_output` argument. 
+Additionally, a file with detailed information about the run is created, named `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. The long file extension specifies the inference parameters. You can specify an alternative output file name using the `--inference_output` argument. 
 
 This file contains a detailed summary of the genetic code inference results:
 
@@ -234,7 +222,7 @@ We have also provided a simple program for a downloading FASTA file from GenBank
 
 Let's use this to download the mitochondrial genome of the green algae _Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1
 
-	python codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
+	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
 
 This will download a FASTA file containing the GQ497137.1 sequence into `examples/GQ497137.1.fna`. The argument `c` specifies that this is a nucleotide database accession and not an assembly accession (which would be `a`).
 
@@ -242,9 +230,9 @@ This will download a FASTA file containing the GQ497137.1 sequence into `example
 
 Now let's pull it all together by predicting the genetic code of the _P. provasolii_ mitochondrial genome:
 
-	python codetta_align.py examples/GQ497137.1.fna --align_output examples/Pprovasolii_mito
-	python codetta_summary.py examples/Pprovasolii_mito
-	python codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
+	./codetta_align.py examples/GQ497137.1.fna --align_output examples/Pprovasolii_mito
+	./codetta_summary.py examples/Pprovasolii_mito
+	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
 Notice how we specified that the alignment output files are written with a more informative prefix `Pprovasolii_mito` and the inference output file is written to `examples/Pprovasolii_mito_Pfam_genetic_code.out`.
 The `-m` argument indicates that we do not want to exclude Pfam domains associated with mitochondrial genomes. The output genetic code is:
