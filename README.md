@@ -155,9 +155,8 @@ from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then
 1st base through UCAG). 
 
 An output file with a detailed summary of the analysis can be found at 
-`examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_
-excl-mtvuy.genetic_code.out`. The long file extension specifies the inference 
-parameters.
+`examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
+The long file extension specifies the inference parameters.
 
 ### Example with more explanations
 
@@ -234,16 +233,16 @@ This file contains a detailed summary of the genetic code inference results:
 	max_fraction       0.01
 	excluded_pfams     mtvuy
 	#
-	# Codon inferences
-	# codon   inference   N consensus columns   N column types subsampled
-	TTT       F           443                             
-	TTC       F           35                              
-	TTA       L           575                             
-	TTG       L           73                              
-	TCT       S           264 
+	# Codon inferences                      Consensus columns
+	# codon   inference  std code  diff?    N aligned  N used
+	TTT       F          F         N        443        443       
+	TTC       F          F         N        35         35        
+	TTA       L          L         N        575        575       
+	TTG       L          L         N        73         73        
+	TCT       S          S         N        264        264  
 	...
-	GGA       G           244                             
-	GGG       G           61                              
+	GGA       G          G         N        244        244       
+	GGG       G          G         N        61         61                               
 	#
 	# Log decoding probabilities
 	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G)   ...
