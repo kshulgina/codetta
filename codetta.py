@@ -77,6 +77,9 @@ def initialize_globals():
     codon_order = {''.join(codons[0]):0}
     for cod in range(1, 64):
         codon_order[''.join(codons[cod])] = cod
+    
+    global std_gen_code
+    std_gen_code = ''.join([gencode[''.join(codon)] for codon in codons]).replace('_', '*')
 
 def initialize_emissions_dict(resource_dir, profile_db):
     # dictionary where keys are profile HMM names and values are emission probabilities for every position
@@ -563,10 +566,12 @@ class GeneticCode:
             of.write('excluded_pfams     %s\n' % self.excluded_string)
             
             # write N consensus cols and AA for each codon
-            n_subsampled = ['%i' % ss if ss>0 else '' for ss in self.n_subsampled]
-            of.write('#\n# Codon inferences\n# codon   inference   N consensus columns   N column types subsampled\n')
+            gencode_diff = ''.join(['?' if self.gen_code[c] == '?' else 'N' if self.gen_code[c] == std_gen_code[c] else 'Y' for c in range(64)])
+            of.write('#\n# Codon inferences                      Consensus columns\n')
+            of.write('# codon   inference  std code  diff?    N aligned  N used\n')
             for c in range(64):
-                of.write('%-10s%-12s%-22i%-10s\n' % (''.join(codons[c]), self.gen_code[c], self.n_consensus[c], n_subsampled[c]))
+                of.write('%-10s%-11s%-10s%-9s%-11i%-10i\n' % (''.join(codons[c]), self.gen_code[c], std_gen_code[c], gencode_diff[c], \
+                                                              self.original_n_cols[c], self.n_consensus[c]))
             
             # write all log decoding probabilities
             of.write('#\n# Log decoding probabilities\n# codon      ')
@@ -762,7 +767,7 @@ class GeneticCode:
         
         sum_f = open(self.alignment_summary, 'r')
         info = sum_f.readline().rstrip().split(',')
-        self.n_subsampled = np.zeros(64)
+        self.original_n_cols = np.zeros(64)
         # iterate through each codon
         for cod in range(64):
             # get string for this codon
@@ -898,8 +903,9 @@ class GeneticCode:
                 totsum = np.logaddexp(-hmm_probs, totsum)
                 profile_hmm_counts_pruned[dict_key] += 1
             
-            if len(pruned_profile_hmm_pos) > 0:
-                self.n_subsampled[cod] = len(set(pruned_profile_hmm_pos))
+            self.original_n_cols[cod] = len(codon_lines)
+            #if len(pruned_profile_hmm_pos) > 0:
+            #    self.n_subsampled[cod] = len(set(pruned_profile_hmm_pos))
         
         sum_f.close()
         
