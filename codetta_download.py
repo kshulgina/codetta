@@ -47,6 +47,7 @@ def main():
     
     # infer genetic code
     gc.get_genome()
+    print('Done.')
 
 
 if __name__ == "__main__":

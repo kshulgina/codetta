@@ -51,6 +51,7 @@ def main():
     gc = GeneticCode(args)
     
     gc.process_hmmscan_results()
+    print('Done.')
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -53,6 +53,7 @@ def main():
     gc.processing_genome()
     gc.create_preliminary_translation()
     gc.hmmscan_jobs()
+    print('Done.')
 
 if __name__ == "__main__":
     sys.exit(main())
