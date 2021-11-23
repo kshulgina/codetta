@@ -32,23 +32,32 @@ leave a Github issue or email me at shulgina@g.harvard.edu!
 
 ## Download and setup
 
+<!---
 ### Cloning the GitHub repo
 Clone the Codetta repository from GitHub with the command 
 
 	git clone https://github.com/kshulgina/codetta
 	cd codetta
+--->
 
 ### Python version and packages
 Codetta was developed for Python versions 3.5+ on Linux and MacOS. Required 
 Python packages are `numpy` and `scipy`.
 
+Set up Codetta by running the setup script
+	
+	./setup.sh
+
+This will check Python requirements and install a local version of HMMER.
 
 ### Additional requirements
 Codetta additionally requires:
 
 - `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew 
 install gzip`. For Linux, you'll have to use your system's package management 
-tool. 
+tool.
+ 
+<!---
 - HMMER v3 and Easel library: the commands shown below will install these 
 programs into `codetta/hmmer-3.3.2`. For more detail on installation, see the 
 [HMMER user's guide](http://eddylab.org/software/hmmer/Userguide.pdf).
@@ -65,6 +74,7 @@ programs into `codetta/hmmer-3.3.2`. For more detail on installation, see the
 
 	Codetta will expect to find the HMMER and Easel programs in the directory 
 	`codetta/hmmer-3.3.2/bin` unless otherwise specified as an argument.
+--->
 
 ### Building a local version of the Pfam database
 By default, Codetta will assume that the Pfam database is the source of profile 
