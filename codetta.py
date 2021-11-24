@@ -18,18 +18,14 @@ np.seterr(over='ignore')
 
 def argument_parsing():
     parser = argparse.ArgumentParser(description="infer genetic code used by an organism from nucleotide sequence")
+    parser.add_argument('sequence_file', help='specify the input nucleotide sequence file in FASTA format.')
     
     # remaining arguments all are set optionally, otherwise default values
-    parser.add_argument('--sequence_file', help='specify the input nucleotide sequence file in FASTA format.')
-    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
-    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
-    parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
-    parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
-    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
-    parser.add_argument('-e', '--evalue', help='Profile hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
+    #parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
+    #parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
+    parser.add_argument('-e', '--evalue', help='profile HMM hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
     parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
     parser.add_argument('-m', '--mito_pfams', help='flag to include Pfam domains commonly found in mitochondria', action="store_true", default=False)
@@ -37,6 +33,10 @@ def argument_parsing():
     parser.add_argument('-v', '--viral_pfams', help='flag to include Pfam domains associated with viruses', action="store_true", default=False)
     parser.add_argument('-u', '--selenocysteine_pfams', help='flag to include Pfam domains known to contain selenocysteine', action="store_true", default=False)
     parser.add_argument('-y', '--pyrrolysine_pfams', help='flag to include Pfam domains known to contain pyrrolysine', action="store_true", default=False)
+    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
+    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
+    parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
+    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
     
     return parser.parse_args()
 
@@ -949,9 +949,30 @@ def main():
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
     
+    if args.profiles == None:
+        args.profiles = 'Pfam-A_enone.hmm'
+    
+    args.identifier = None
+    args.download_type = None
+
     # initialize genetic code with command line args and download genome
-    initialize_globals(args.resource_directory)
+    initialize_globals()
+    initialize_emissions_dict(args.resource_directory, args.profiles)
     gc = GeneticCode(args)
+    
+    # do codetta align
+    print('\nSTEP 1-- codetta_align. Aligning profile HMM database to input nucleotide sequence')
+    gc.processing_genome()
+    gc.create_preliminary_translation()
+    gc.hmmscan_jobs()
+    
+    # do codetta summary
+    print('\nSTEP 2-- codetta_summary. Summarizing alignments')
+    gc.process_hmmscan_results()
+
+    # do codetta infer
+    print('\nSTEP 3-- codetta_infer. Inferring the genetic code')
+    gc.compute_decoding_probabilities()
 
 
 if __name__ == "__main__":
