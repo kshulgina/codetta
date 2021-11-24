@@ -949,10 +949,6 @@ def main():
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
     
-    if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin')
-    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
-    
     # initialize genetic code with command line args and download genome
     initialize_globals(args.resource_directory)
     gc = GeneticCode(args)
