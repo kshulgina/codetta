@@ -9,13 +9,15 @@ python check_requirements.py
 tar xf hmmer.tar.gz
 
 # compile HMMER
+echo Installing local HMMER
 cd hmmer-3.3.2
 pwd | xargs -I {} ./configure --prefix={}
-make
-make install
+make --quiet
+make install --quiet
 
 # compile Easel
-cd easel; make install
+echo Installing local Easel
+cd easel; make install --quiet
 cd ../..
 
 # download Pfam database built with --enone option
