@@ -338,7 +338,7 @@ class GeneticCode:
             sys.exit('ERROR: could not open file path %s for writing' % sequence_pieces_file)
 
         # open sequence file, read sequences in as FASTA, and break into genome pieces
-        print('Breaking sequences into pieces shorter than 100,000 nt; writing to %s' % sequence_pieces_file)
+        print('Breaking into pieces shorter than 100,000 nt; writing to %s' % sequence_pieces_file)
         with open(self.genome_path) as f:
             n_piece = 0
             total_len = 0
