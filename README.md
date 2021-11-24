@@ -162,7 +162,7 @@ For any of these programs, type `./[program name] --help` for complete usage det
 
 
 ## Tutorials
-### For novices...
+### Starting out...
 
 The simplest way to run Codetta is by using the `codetta.py` program. 
 
@@ -240,10 +240,10 @@ from a single profile HMM position (default is 0.01).
 a file to which a one-line summary of the results will be appended to.
 
 
-### For experienced users...
+### Now that you're comfortable...
 
 The basic usage of Codetta is to use `codetta.py`, which rolls the three main steps of 
-the analysis into a single program. See the "For novices..." section above for an 
+the analysis into a single program. See the "Starting out..." section above for an 
 example and description of the output.
 
 If, for any reason, you want to run the three Codetta analysis steps separately, you
@@ -262,7 +262,9 @@ can be also run by breaking the steps up as
 You might want to do this if:
 
 - You want to infer the genetic code multiple times using different parameters without 
-having to re-align the profile HMMs to your input sequence.
+having to re-align the profile HMMs to your input sequence. In this case, you would 
+run `codetta_align.py` and `codetta_summary.py` once and then `codetta_infer.py` several
+times with different parameters.
 - You want to parallelize the computationally expensive alignment step on a computing 
 cluster. See the next section.
 
@@ -460,9 +462,10 @@ Alternatively, we could also run the same analysis as
 	./codetta_summary.py examples/Pprovasolii_mito
 	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
-Here we are showing that the `--align_output` argument can be used to specify the 
-alignment output files to be written with a more informative prefix `Pprovasolii_mito` 
-and the inference output file is written to `examples/Pprovasolii_mito_Pfam_genetic_code.out`.
+Here we are using the `--align_output` argument to write the 
+alignment output files with a more informative prefix `Pprovasolii_mito` 
+and the `--inference_output` argument to write the inference output file 
+`examples/Pprovasolii_mito_Pfam_genetic_code.out`.
 
 The output genetic code is:
 
