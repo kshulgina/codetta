@@ -1,4 +1,4 @@
-# Codetta
+# Codetta v1.1
 
 WARNING: this branch is under active development, use at your own risk.
 
