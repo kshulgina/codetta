@@ -73,7 +73,7 @@ programs into `codetta/hmmer-3.3.2`. For more detail on installation, see the
 		cd ../..
 
 	Codetta will expect to find the HMMER and Easel programs in the directory 
-	`codetta/hmmer-3.3.2/bin` unless otherwise specified as an argument.
+	`codetta/hmmer-3.3.2/bin`.
 --->
 
 ### Building a local version of the Pfam database

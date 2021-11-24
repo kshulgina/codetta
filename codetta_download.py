@@ -12,8 +12,7 @@ def argument_parsing():
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('--sequence_file', help='specify where to download the FASTA file. This can include a path. (default: [IDENTIFIER].fna)')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
-
+    
     return parser.parse_args()
 
 def main():
@@ -23,10 +22,6 @@ def main():
     if args.resource_directory == None:
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
-    
-    if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin')
-    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     # initialize genetic code with command line args and download genome
     args.parallelize_hmmscan = None

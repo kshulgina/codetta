@@ -14,8 +14,7 @@ def argument_parsing():
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster. Specify SLURM (s), and modify template file in resources directory accordingly.', type=str, choices=['s'])
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
-    
+        
     return parser.parse_args()
 
 def main():
@@ -25,10 +24,6 @@ def main():
     if args.resource_directory == None:
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
-    
-    if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin')
-    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
     
     if args.profiles == None:
         args.profiles = 'Pfam-A_enone.hmm'

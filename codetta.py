@@ -26,7 +26,7 @@ def argument_parsing():
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
+    #parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
     parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
     parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
@@ -159,7 +159,7 @@ class GeneticCode:
         self.profiles = args.profiles
         self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
-        self.hmmer_dir = args.hmmer_directory
+        self.hmmer_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin'))
         self.identifier = args.identifier
         self.parallelize_hmmscan = args.parallelize_hmmscan
         if args.evalue != None and args.evalue < 0:

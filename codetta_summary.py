@@ -5,7 +5,7 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="process hmmscan outputs into a summary file that can be used for genetic code inference")
-
+    
     parser.add_argument('align_output', help='specify prefix of files created by codetta_align. This can include a path. Hmmscan alignment summary \
                                               file will be written to [ALIGN_OUTPUT].[PROFILES FILE].hmmscan_summary.txt.gz')
     
@@ -13,8 +13,7 @@ def argument_parsing():
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-e', '--evalue', help='Pfam e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.3.2/bin)', type=str)
-    
+        
     return parser.parse_args()
 
 def main():
@@ -25,13 +24,9 @@ def main():
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
     
-    if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin')
-    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
-    
     if args.profiles == None:
         args.profiles = 'Pfam-A_enone.hmm'
-
+    
     # initialize genetic code with command line args and download genome
     args.sequence_file = args.align_output  # it's not used here so doesn't matter
     args.parallelize_hmmscan = None
