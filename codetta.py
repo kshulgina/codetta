@@ -938,8 +938,9 @@ class GeneticCode:
         gen_code_preconv = ''.join(gen_code_preconv)
         
         # write final genetic code to file and print to stdout
+        print('Writing detailed inference output to %s' % self.inference_file)
         self.write_outputs(gen_code_preconv)
-        print(self.gen_code)
+        print('Genetic code: %s' % self.gen_code)
 
 
 def main():
