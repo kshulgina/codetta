@@ -21,9 +21,9 @@ to analyze many genomes (or large genomes), we recommend parallelizing across
 many machines on a computing cluster. We provide instructions on how to do this 
 below. --->
 
-If you are looking to reproduce results from [Shulgina & Eddy (2021)]
-(https://elifesciences.org/articles/71402), please follow the README for 
-[Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
+If you are looking to reproduce results from 
+[Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402), please follow 
+the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
 
 If you encounter any problems in the installation or usage of Codetta, please 
 leave a Github issue or email me at shulgina@g.harvard.edu!
