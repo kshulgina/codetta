@@ -26,7 +26,7 @@ If you are looking to reproduce results from
 the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
 
 If you encounter any problems in the installation or usage of Codetta, please 
-leave a Github issue or email me at shulgina@g.harvard.edu!
+leave a Github issue or email me at shulgina@g.harvard.edu
 
 ## Download and setup
 
