@@ -12,12 +12,12 @@ tar xf hmmer.tar.gz
 echo Installing local HMMER
 cd hmmer-3.3.2
 pwd | xargs -I {} ./configure --prefix={}
-make --quiet
-make install --quiet
+make
+make install
 
 # compile Easel
 echo Installing local Easel
-cd easel; make install --quiet
+cd easel; make install 
 cd ../..
 
 # download Pfam database built with --enone option
