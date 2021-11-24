@@ -44,7 +44,8 @@ Codetta aligns the input sequence to a database of profile HMM models of protein
 
 By default, Codetta will use the Pfam database. You can download a version of 
 Pfam 35.0 specially built for Codetta from our website. From the `codetta` directory, 
-use this command to download
+use this command to download and uncompress it (note: this will take about 3 Gb of 
+disk space)
 
 	cd resources/
 	wget Pfam_url
