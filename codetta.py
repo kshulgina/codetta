@@ -36,7 +36,7 @@ def argument_parsing():
     parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
+    #parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
     
     return parser.parse_args()
 
@@ -937,7 +937,7 @@ class GeneticCode:
         gen_code_preconv = ''.join(gen_code_preconv)
         
         # write final genetic code to file and print to stdout
-        print('Writing detailed inference output to %s' % self.inference_file)
+        print('Writing detailed inference output to %s\n' % self.inference_file)
         self.write_outputs(gen_code_preconv)
         print('Genetic code: %s' % self.gen_code)
 
@@ -954,6 +954,7 @@ def main():
     
     args.identifier = None
     args.download_type = None
+    args.parallelize_hmmscan = None
 
     # initialize genetic code with command line args and download genome
     initialize_globals()
