@@ -81,7 +81,7 @@ By default, Codetta will assume that the Pfam database is the source of profile
 HMMs. Unless you intend to use a custom profile HMM database, you will need to 
 download and build a local version of the Pfam database.
 
-Download Pfam database into the `resources` directory. This may take a few 
+Download current Pfam database into the `resources` directory. This may take a few 
 minutes because this a ~140 Mb file.
 
 	cd resources
@@ -96,6 +96,8 @@ creates 3 Gb worth of files, so make sure you have sufficient disk space.
 	../hmmer-3.3.2/bin/hmmpress Pfam-A_enone.hmm
 	rm Pfam-A.seed
 	cd ..
+
+Pfam 35.0 download from website.
 
 ### Building a custom profile HMM database
 [TBD]
@@ -214,7 +216,7 @@ parameters using
 
 The output is a one line representation of the genetic code
 
-	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTT?NNKKS?RRVVVVAAAADDEEGGGG
+	Genetic code: FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTT?NNKKS?RRVVVVAAAADDEEGGGG
 
 This corresponds to the inferred translation of each of the 64 codons, in order 
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
@@ -245,18 +247,18 @@ This file contains a detailed summary of the genetic code inference results:
 	#
 	# Codon inferences                      Consensus columns
 	# codon   inference  std code  diff?    N aligned  N used
-	TTT       F          F         N        443        443       
-	TTC       F          F         N        35         35        
-	TTA       L          L         N        575        575       
-	TTG       L          L         N        73         73        
-	TCT       S          S         N        264        264  
+	TTT       F          F         N        433        433       
+	TTC       F          F         N        36         36        
+	TTA       L          L         N        572        572       
+	TTG       L          L         N        77         77        
+	TCT       S          S         N        257        257    
 	...
-	GGA       G          G         N        244        244       
-	GGG       G          G         N        61         61                               
+	GGA       G          G         N        236        236       
+	GGG       G          G         N        60         60                               
 	#
 	# Log decoding probabilities
 	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G)   ...
-	TTT         -1093.2048   -1227.7571   -1912.3596   -1650.0266       0.0000   -1822.9573 ...  
+	TTT         -1015.4800   -1150.8584   -1756.1719   -1531.7520       0.0000   -1670.3149 ...  
 	...
 	#
 	# Final genetic code inference
@@ -355,16 +357,16 @@ The `-m` argument indicates that we do not want to exclude Pfam domains
 associated with mitochondrial genomes. The output genetic code is:
 
 	FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
-
+	
 Comparing to the standard genetic code (below), you can see that two codons 
 have alternative meanings: the stop codon UGA is now tryptophan codon and the 
 isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?) 
 due to few aligned Pfam consensus columns (look at the inference output file 
 for more detail).
 
-	P mt code : FF??S?SSYY??C?WWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
+	P mt code : FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	std code  : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
-	                                      ^                   ^
+	                          ^                   ^
 
 This alternative genetic code in _Pycnococcus_ mitochondria is summarized in 
 [Noutahi et al (2019)](https://pubmed.ncbi.nlm.nih.gov/30698742/).
