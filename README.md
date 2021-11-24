@@ -81,8 +81,11 @@ By default, Codetta will use the Pfam database. You can download a version of
 Pfam 35.0 specially built for Codetta from our website. From the `codetta` directory, 
 use this command to download
 
-	wget Pfam_url resources/...
-	tar xf ...
+	cd resources/
+	wget Pfam_url
+	tar xf Pfam-A_enone.tar.gz
+	rm Pfam-A_enone.tar.gz
+	cd ..
 
 If you want to build your own custom profile HMM database, this will be described in a 
 later section. 
@@ -170,7 +173,7 @@ This program performs the three analysis steps in order. All you have
 to do is specify an input nucleotide sequence file.
 
 In the `examples/` directory, you will find the file `examples/GCA_000442605.1.fna`
- which contains the genome of the bacterium _Nasuia deltocephalinicola_ .
+ which contains the genome of the bacterium _Nasuia deltocephalinicola_.
 
 We can predict the genetic code of this bacterium simply by running
 
@@ -239,6 +242,7 @@ from a single profile HMM position (default is 0.01).
 - If you're running several Codetta analyses, you can use `--results_summary` to specify 
 a file to which a one-line summary of the results will be appended to.
 
+See the full list of options with `./codetta.py --help`
 
 ### Now that you're comfortable...
 
@@ -281,13 +285,12 @@ following the usual steps. Then, manually edit the
 computing cluster. The `template_jobarray.sh` file looks like this:
 
 	#!/bin/bash
-	                                                                                                                                                                                              
-	#SBATCH -p [SPECIFY PARTITION NAME]      # queue
-	#SBATCH --time=8:30:00                   # wall-clock time (mins:secs) 
-	#SBATCH -c 1                             # requesting 1 core      
+	
+	#SBATCH -p [SPECIFY PARTITION NAME]      # partition
+	#SBATCH --time=8:30:00                   # wall-clock time (mins:secs)
+	#SBATCH -c 1                             # requesting 1 core
 	#SBATCH --mem=4000M
-	#SBATCH -o /dev/null                     # File to which STDOUT + STDERR 
-	will be written  
+	#SBATCH -o /dev/null                     # file to which STDOUT + STDERR will be written
 
 You'll probably only need to specify a partition name.
 
@@ -435,14 +438,22 @@ accession.
 - `codetta_download`: Download a genome assembly or nucleotide sequence from 
 GenBank
 
-Let's use this to download the mitochondrial genome of the green algae 
-_Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1
+We can download the _Nasuia deltocephalinicola_ genome using the Genbank 
+genome assembly accession by
+
+	./codetta_download.py GCA_000442605.1 a --sequence_file examples/GCA_000442605.1.fna
+
+This will download a FASTA file containing the GCA_000442605.1 sequence into 
+`examples/GCA_000442605.1.fna`. The argument `a` specifies that this is an assembly 
+database accession and not a nucleotide accession (which would be `c`).
+
+We can download the mitochondrial genome of the green algae 
+_Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1 by
 
 	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
 
-This will download a FASTA file containing the GQ497137.1 sequence into 
-`examples/GQ497137.1.fna`. The argument `c` specifies that this is a nucleotide 
-database accession and not an assembly accession (which would be `a`).
+Notice the argument `c` specifying that this is a nucleotide 
+database accession.
 
 ### Summary, with one more example
 
@@ -450,7 +461,7 @@ Now let's pull it all together by predicting the genetic code of the
 _P. provasolii_ mitochondrial genome:
 
 	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
-	./codetta.py examples/GQ497137.1.fna
+	./codetta.py examples/GQ497137.1.fna -m
 
 Notice how we specified the `-m` argument to indicate that we do not want to 
 exclude Pfam domains associated with mitochondrial genomes. 
