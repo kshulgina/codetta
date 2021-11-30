@@ -87,7 +87,7 @@ The simplest way to run Codetta is by using the `codetta.py` program.
 This program performs the three analysis steps in order. All you have 
 to do is specify an input nucleotide sequence file.
 
-In the `examples/` directory, you will find the file `examples/GCA_000442605.1.fna`
+In the `examples/` directory, you will find the file `GCA_000442605.1.fna`
  which contains the genome of the bacterium _Nasuia deltocephalinicola_.
 
 We can predict the genetic code of this bacterium simply by running
@@ -105,7 +105,7 @@ This corresponds to the inferred translation of each of the 64 codons, in order
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
 1st base through UCAG). 
 
-An output file with a detailed summary of the analysis can be found at 
+A detailed summary of the analysis can be found at 
 `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
 The long file extension specifies the inference parameters.
 
@@ -232,8 +232,8 @@ database.
 
 In this example, we will build a profile HMM database tailored for metazoan 
 mitochondria which have only 13 protein coding genes. In the 
-`codetta\examples\mito-db\` directory, you can find multiple sequence alignment files 
-in Stockholm format for each of the 13 genes*.  
+`examples\mito-db\` directory, you can find multiple sequence alignment files 
+in Stockholm format for each of the 13 genes. *  
 
 The first step is to use `hmmbuild` to create profile HMMs from each of the 
 alignment files.
@@ -250,8 +250,8 @@ finally run `hmmpress` to finish
 
 At the end, the profile HMM database is moved into the resources directory, 
 where Codetta expects to find all profile HMM databases. When running a Codetta 
-analysis, you will have to specify the custom profile HMM database with  
-`-p [name of profile HMM db]`.
+analysis, you will have to specify the custom profile HMM database 
+with `-p [name of profile HMM db]`.
 
 *These alignments were created by searching the human mitochondrial protein 
 sequences against SwissProt with `jackhmmer`
