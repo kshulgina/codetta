@@ -1,0 +1,738 @@
+# STOCKHOLM 1.0
+#=GF ID NC_012920.1_prot_YP_003024034.1_9-i5
+#=GF AU jackhmmer (HMMER 3.2.1)
+
+#=GS sp|P03902|NU4LM_BOVIN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Bos taurus OX=9913 GN=MT-ND4L PE=1 SV=1
+#=GS sp|Q6EMS3|NU4LM_BOSIN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Bos indicus OX=9915 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B985|NU4LM_HYDIN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hydropotes inermis OX=9883 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O78754|NU4LM_SHEEP/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ovis aries OX=9940 GN=MT-ND4L PE=1 SV=1
+#=GS sp|Q7HLD2|NU4LM_OVICA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ovis canadensis OX=37174 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q072K5|NU4LM_NEONE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Neofelis nebulosa OX=61452 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P56632|NU4LM_PIG/1-98          DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Sus scrofa OX=9823 GN=MT-ND4L PE=1 SV=1
+#=GS sp|Q5Y4Q2|NU4LM_BOSMU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Bos mutus grunniens OX=30521 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08H50|NU4LM_PHOFA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phoca fasciata OX=39088 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B1|NU4LM_NEOSC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Neomonachus schauinslandi OX=29088 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P68309|NU4LM_HALGR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Halichoerus grypus OX=9711 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P68310|NU4LM_PHOVI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phoca vitulina OX=9720 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08GY5|NU4LM_PUSSI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pusa sibirica OX=9719 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A5|NU4LM_PHOLR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phoca largha OX=39090 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6Z6|NU4LM_PUMCO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Puma concolor OX=9696 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9MEI2|NU4LM_VICPA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vicugna pacos OX=30538 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B2|NU4LM_MIRLE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mirounga leonina OX=9715 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B3|NU4LM_MIRAN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mirounga angustirostris OX=9716 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7YBC1|NU4LM_CAPHI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Capra hircus OX=9925 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q71RU5|NU4LM_ACIJB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Acinonyx jubatus OX=32536 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L708|NU4LM_LYNCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lynx canadensis OX=61383 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B987|NU4LM_ELACE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Elaphodus cephalophus OX=109298 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q2V0A4|NU4LM_RANTA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rangifer tarandus OX=9870 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HL9|NU4LM_CALUR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Callorhinus ursinus OX=34884 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B6|NU4LM_LEPWE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Leptonychotes weddellii OX=9713 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B8|NU4LM_HYDLE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hydrurga leptonyx OX=29086 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679C1|NU4LM_LOBCR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lobodon carcinophaga OX=101849 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B9|NU4LM_OMMRO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ommatophoca rossii OX=207342 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3LR84|NU4LM_PANHO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pantholops hodgsonii OX=59538 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O03203|NU4LM_CERSI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ceratotherium simum OX=9807 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A3|NU4LM_OTABY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Otaria byronia OX=161932 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8SJG7|NU4LM_URSMA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ursus maritimus OX=29073 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B76|NU4LM_DELLE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Delphinapterus leucas OX=9749 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HI0|NU4LM_PHOHO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phocarctos hookeri OX=34888 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9ZZY3|NU4LM_HIPAM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hippopotamus amphibius OX=9833 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679B0|NU4LM_MONMN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Monachus monachus OX=248254 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7IVV2|NU4LM_MUNGO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Muntiacus gongshanensis OX=145526 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7IVV3|NU4LM_MUNFE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Muntiacus feae OX=71855 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B1C5|NU4LM_MUNCR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Muntiacus crinifrons OX=71854 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8SJJ1|NU4LM_URSAM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ursus americanus OX=9643 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70S06|NU4LM_ESCRO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eschrichtius robustus OX=9764 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HF4|NU4LM_ARCTO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Arctocephalus townsendi OX=161921 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A2|NU4LM_ARCAU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Arctocephalus australis OX=161928 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8M154|NU4LM_ARCFO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Arctocephalus forsteri OX=29084 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8SJH9|NU4LM_URSAR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ursus arctos OX=9644 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q598U3|NU4LM_EUBJA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eubalaena japonica OX=302098 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B78|NU4LM_EUBAS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eubalaena australis OX=160595 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B80|NU4LM_EUBGL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eubalaena glacialis OX=27606 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5I195|NU4LM_HERJA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Herpestes javanicus OX=140016 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HK6|NU4LM_ZALCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Zalophus californianus OX=9704 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6P5|NU4LM_HELMA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Helarctos malayanus OX=9634 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RM6|NU4LM_PHOPH/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phocoena phocoena OX=9742 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LWS1|NU4LM_ODORR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Odobenus rosmarus rosmarus OX=62698 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RW7|NU4LM_HYPAP/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hyperoodon ampullatus OX=48744 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B84|NU4LM_MEGNO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Megaptera novaeangliae OX=9773 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9MJA8|NU4LM_TALEU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Talpa europaea OX=9375 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6W1|NU4LM_AILFU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ailurus fulgens OX=9649 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7Y8E7|NU4LM_MOGWO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mogera wogura OX=62295 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q96067|NU4LM_RHIUN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rhinoceros unicornis OX=9809 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70S32|NU4LM_BALMY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaena mysticetus OX=27602 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08GZ8|NU4LM_PUSCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pusa caspica OX=693431 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LX40|NU4LM_EUMJU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eumetopias jubatus OX=34886 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RV4|NU4LM_BERBI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Berardius bairdii OX=48742 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O79435|NU4LM_RABIT/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Oryctolagus cuniculus OX=9986 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HK43|NU4LM_CANLA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Canis latrans OX=9614 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6X2|NU4LM_VULLA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vulpes lagopus OX=494514 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6Y4|NU4LM_CANLU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Canis lupus OX=9612 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9ZZ59|NU4LM_CANLF/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Canis lupus familiaris OX=9615 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A8|NU4LM_CYSCR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Cystophora cristata OX=39293 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q09EG3|NU4LM_RUSUS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rusa unicolor swinhoei OX=399782 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q2V091|NU4LM_CEREL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Cervus elaphus OX=9860 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q2YG58|NU4LM_LIPVE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lipotes vexillifer OX=118797 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P48931|NU4LM_FELCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Felis catus OX=9685 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6R7|NU4LM_TAXTA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Taxidea taxus OX=30554 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08H76|NU4LM_ERIBA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Erignathus barbatus OX=39304 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B996|NU4LM_MUNVU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Muntiacus vuquangensis OX=109296 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RN9|NU4LM_MONMO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Monodon monoceros OX=40151 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94YD6|NU4LM_SORUN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Sorex unguiculatus OX=62275 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P24976|NU4LM_BALPH/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaenoptera physalus OX=9770 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08GV9|NU4LM_PUSHI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pusa hispida OX=9718 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LWW8|NU4LM_LEPEU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lepus europaeus OX=9983 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q25CE8|NU4LM_BALOM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaenoptera omurai OX=255217 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70S19|NU4LM_CAPMR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Caperea marginata OX=27604 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7Y8D5|NU4LM_UROTA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Urotrichus talpoides OX=106106 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XMJ3|NU4LM_ORYAF/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Orycteropus afer OX=9818 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RQ2|NU4LM_LAGAL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lagenorhynchus albirostris OX=27610 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q58F60|NU4LM_MYSTU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mystacina tuberculata OX=94961 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8SJ54|NU4LM_CEPBA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Cephalopachus bancanus OX=9477 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B86|NU4LM_ZIPCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ziphius cavirostris OX=9760 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6S8|NU4LM_LONCN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lontra canadensis OX=76717 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6Q6|NU4LM_PROLO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Procyon lotor OX=9654 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HJ3|NU4LM_ARCPU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Arctocephalus pusillus OX=37191 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P48658|NU4LM_HORSE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Equus caballus OX=9796 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08GU6|NU4LM_VULVU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vulpes vulpes OX=9627 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A1|NU4LM_GULGU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Gulo gulo OX=48420 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q34572|NU4LM_GORGO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Gorilla gorilla gorilla OX=9595 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6V0|NU4LM_MEPME/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mephitis mephitis OX=30548 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q69B66|NU4LM_BALBN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaenoptera bonaerensis OX=33556 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A7|NU4LM_PAGGO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pagophilus groenlandicus OX=39089 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q3L6T9|NU4LM_MARAM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Martes americana OX=9660 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08HG7|NU4LM_NEOCN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Neophoca cinerea OX=161930 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV29|NU4LM_VAMBI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa bidens OX=148039 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV35|NU4LM_CHITR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chiroderma trinitatum OX=27647 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV38|NU4LM_CHIVL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chiroderma villosum OX=33546 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O99602|NU4LM_ARTJA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Artibeus jamaicensis OX=9417 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P92483|NU4LM_EQUAS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Equus asinus OX=9793 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RS8|NU4LM_INIGE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Inia geoffrensis OX=9725 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV53|NU4LM_STERU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Stenoderma rufum OX=148093 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q953I6|NU4LM_EPIFU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Episoriculus fumidus OX=150090 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q598Z5|NU4LM_BALBO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaenoptera borealis OX=9768 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUW0|NU4LM_VAMTH/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa thyone OX=362826 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUX2|NU4LM_VAMPU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa pusilla OX=148040 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1EG09|NU4LM_GALPY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Galemys pyrenaicus OX=202257 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RR5|NU4LM_PONBL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pontoporia blainvillei OX=48723 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUY4|NU4LM_MESMC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mesophylla macconnelli OX=148094 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUX8|NU4LM_VAMME/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa melissa OX=362825 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV05|NU4LM_VAMCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyrodes caraccioli OX=148041 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21787|NU4LM_TRAPO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Trachypithecus poliocephalus OX=465719 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV11|NU4LM_UROBI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Uroderma bilobatum OX=27663 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q35588|NU4LM_PANPA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pan paniscus OX=9597 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV59|NU4LM_STULI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Sturnira lilium OX=27660 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q37809|NU4LM_PANTR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pan troglodytes OX=9598 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUZ9|NU4LM_PLADO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Platyrrhinus dorsalis OX=362823 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV14|NU4LM_VAMNY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa nymphaea OX=362824 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV23|NU4LM_VAMBR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vampyressa brocki OX=196701 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LWN4|NU4LM_TAMTE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Tamandua tetradactyla OX=48850 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HUZ6|NU4LM_PLABC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Platyrrhinus brachycephalus OX=249009 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV02|NU4LM_PLAHE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Platyrrhinus helleri OX=27658 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q85DA4|NU4LM_OTOCR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Otolemur crassicaudatus OX=9463 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P03901|NU4LM_HUMAN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Homo sapiens OX=9606 GN=MT-ND4L PE=1 SV=1
+#=GS sp|Q1HV56|NU4LM_RHIPM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rhinophylla pumilio OX=138707 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7ISH5|NU4LM_PROTA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Propithecus tattersalli OX=30601 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5BU90|NU4LM_TRAOB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Trachypithecus obscurus OX=54181 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94XZ1|NU4LM_EULRU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eulemur rubriventer OX=34829 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q679A0|NU4LM_NEOVI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Neovison vison OX=452646 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7Y8J9|NU4LM_PROCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Procavia capensis OX=9813 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q85DA0|NU4LM_GALSE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Galago senegalensis OX=9465 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RY0|NU4LM_KOGBR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Kogia breviceps OX=27615 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7IT44|NU4LM_EULMO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eulemur mongoz OX=34828 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B8T5|NU4LM_PRODD/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Propithecus diadema diadema OX=171945 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7J3B5|NU4LM_MACPG/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca pagensis OX=230653 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q401Y8|NU4LM_ROUAE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rousettus aegyptiacus OX=9407 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21333|NU4LM_DASNO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Dasypus novemcinctus OX=9361 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9TA21|NU4LM_LOXAF/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Loxodonta africana OX=9785 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8W9M8|NU4LM_DUGDU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Dugong dugon OX=29137 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XJY3|NU4LM_MACMR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca maura OX=90383 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70RU1|NU4LM_PLAMN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Platanista minor OX=48752 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8HC89|NU4LM_HAPAU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hapalemur aureus OX=122222 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XL62|NU4LM_MACOC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca ochreata OX=90385 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8HC87|NU4LM_PROSS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Prolemur simus OX=1328070 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94Y87|NU4LM_LEMCA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lemur catta OX=9447 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94PA4|NU4LM_MIRCO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mirza coquereli OX=47180 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q95709|NU4LM_HYLLA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hylobates lar OX=9580 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9MES8|NU4LM_PHYMC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Physeter macrocephalus OX=9755 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q2I3G6|NU4LM_ELEMA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Elephas maximus OX=9783 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7Y8I6|NU4LM_CHRAS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chrysochloris asiatica OX=185453 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q38PR4|NU4LM_MAMPR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mammuthus primigenius OX=37349 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1HV41|NU4LM_ECTAL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ectophylla alba OX=148036 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q591P2|NU4LM_MICGI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus griseorufus OX=143354 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9G6M7|NU4LM_PTEDA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pteropus dasymallus OX=126282 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P61795|NU4LM_PONAB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pongo abelii OX=9601 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P61796|NU4LM_PONPY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pongo pygmaeus OX=9600 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q15GS3|NU4LM_SEMEN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Semnopithecus entellus OX=88029 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XL66|NU4LM_MACOB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca ochreata subsp. brunnescens OX=90381 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94Z64|NU4LM_NYCCO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Nycticebus coucang OX=9470 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7YEL1|NU4LM_AOTTR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Aotus trivirgatus OX=9505 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7I5M1|NU4LM_RHIMO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rhinolophus monoceros OX=169756 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94N24|NU4LM_RHIPI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rhinolophus pumilus OX=159859 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q591M6|NU4LM_MICSI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus simmonsi OX=236272 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LWT4|NU4LM_MANTE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Manis tetradactyla OX=73815 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94XZ5|NU4LM_EULCO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Eulemur coronatus OX=13514 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q15GP7|NU4LM_PREME/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Presbytis melalophos OX=78451 GN=MT-ND4L PE=3 SV=1
+#=GS sp|A8DQK8|NU4LM_AVACL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Avahi cleesei OX=402244 GN=MT-ND4L PE=3 SV=1
+#=GS sp|A8DQI8|NU4LM_AVAUN/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Avahi unicolor OX=402239 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q15GM1|NU4LM_PILBA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Piliocolobus badius OX=164648 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5BU77|NU4LM_COLGU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Colobus guereza OX=33548 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q15GR0|NU4LM_NASLA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Nasalis larvatus OX=43780 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q58F73|NU4LM_CHODI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Choloepus didactylus OX=27675 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9G3S8|NU4LM_PTESA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pteropus scapulatus OX=94117 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q591Y8|NU4LM_MICSM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus sambiranensis OX=143353 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5G7X0|NU4LM_CRORS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Crocidura russula OX=36802 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7J3C3|NU4LM_MACFA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca fascicularis OX=9541 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q05F77|NU4LM_CHEME/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Cheirogaleus medius OX=9460 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9G385|NU4LM_ECHTE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Echinops telfairi OX=9371 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q591V2|NU4LM_MICJO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus jollyae OX=236275 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1AL67|NU4LM_CHLSB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chlorocebus sabaeus OX=60711 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XK21|NU4LM_MACHE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca hecki OX=90382 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XL48|NU4LM_MACNR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca nigrescens OX=90384 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P41301|NU4LM_BALMU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Balaenoptera musculus OX=9771 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q05F85|NU4LM_AVAOC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Avahi occidentalis OX=132108 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8HBG1|NU4LM_VARVV/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Varecia variegata variegata OX=87289 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8HBG2|NU4LM_VARRB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Varecia rubra OX=554167 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q591Y0|NU4LM_MICMI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus mittermeieri OX=236274 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q05EQ4|NU4LM_LEPMS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lepilemur mitsinjoensis OX=236287 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XL45|NU4LM_MACNG/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca nigra OX=54600 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q955T4|NU4LM_ALLTR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Allocebus trichotis OX=122248 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q6IYH0|NU4LM_MACMU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca mulatta OX=9544 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q953J9|NU4LM_OCHCO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ochotona collaris OX=134600 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94Q33|NU4LM_MICRA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus ravelobensis OX=122231 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B8T9|NU4LM_AVALA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Avahi laniger OX=122246 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94YC5|NU4LM_PIPAB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Pipistrellus abramus OX=105295 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LX57|NU4LM_GALVR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Galeopterus variegatus OX=482537 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70UT9|NU4LM_OCHPR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Ochotona princeps OX=9978 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94ZL2|NU4LM_CEBAL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Cebus albifrons OX=9514 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q94NY9|NU4LM_DAUMA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Daubentonia madagascariensis OX=31869 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q50DL2|NU4LM_CHLAE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chlorocebus aethiops OX=9534 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21783|NU4LM_CALLC/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Calomys laucha OX=56211 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7GF83|NU4LM_CALMU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Calomys musculinus OX=56212 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9ZXX6|NU4LM_PAPHA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Papio hamadryas OX=9557 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q00GF0|NU4LM_MICMM/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microcebus mamiratra OX=415757 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9XL36|NU4LM_MACSY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macaca sylvanus OX=9546 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21558|NU4LM_NEPAB/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Nephelomys albigularis OX=530178 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21514|NU4LM_PHOSU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phodopus sungorus OX=10044 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P03903|NU4LM_MOUSE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Mus musculus OX=10090 GN=Mtnd4l PE=1 SV=2
+#=GS sp|Q00HT4|NU4LM_LEPSL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lepilemur seali OX=236288 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q953H3|NU4LM_MICKK/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microtus kikuchii OX=100899 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9G3R5|NU4LM_CHATU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Chalinolobus tuberculatus OX=143942 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21517|NU4LM_OXYRU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Oxymycterus rufus OX=56230 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q00GQ9|NU4LM_LEPSH/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lepilemur sahamalazensis OX=342398 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P05507|NU4LM_RAT/1-98          DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Rattus norvegicus OX=10116 GN=Mtnd4l PE=3 SV=3
+#=GS sp|O21520|NU4LM_MICPE/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Microtus pennsylvanicus OX=10058 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q58F86|NU4LM_BRATR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Bradypus tridactylus OX=9354 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1MWD9|NU4LM_PHAVS/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Phalanger vestitus OX=175809 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q953L2|NU4LM_ECHGY/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Echinosorex gymnura OX=162630 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q70XG4|NU4LM_THYEL/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Thylamys elegans OX=191871 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21535|NU4LM_NYCSU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Nyctomys sumichrasti OX=56227 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8LWU8|NU4LM_MACPR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macroscelides proboscideus OX=29082 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5QS06|NU4LM_POTTR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Potorous tridactylus OX=9310 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q952R8|NU4LM_TRIVU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Trichosurus vulpecula OX=9337 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q65CI5|NU4LM_MONDO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Monodelphis domestica OX=13616 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1MWH8|NU4LM_DACTR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Dactylopsila trivirgata OX=38616 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q7Y8G0|NU4LM_HEMAU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Hemiechinus auritus OX=217708 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5QS19|NU4LM_PERGU/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Perameles gunnii OX=37737 GN=MT-ND4L PE=3 SV=1
+#=GS sp|O21567|NU4LM_SIGHI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Sigmodon hispidus OX=42415 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P92667|NU4LM_MACRO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Macropus robustus OX=9319 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q08GM0|NU4LM_LAGFA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lagostrophus fasciatus OX=65634 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q8W9B6|NU4LM_VOMUR/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Vombatus ursinus OX=29139 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q9B2G1|NU4LM_ISOMA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Isoodon macrourus OX=37698 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q32UT4|NU4LM_DASHA/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Dasyurus hallucatus OX=9280 GN=MT-ND4L PE=3 SV=1
+#=GS sp|P41307|NU4LM_DIDVI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Didelphis virginiana OX=9267 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q1MWF2|NU4LM_LAGHI/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Lagorchestes hirsutus OX=65632 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5QS71|NU4LM_TARRO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Tarsipes rostratus OX=38632 GN=MT-ND4L PE=3 SV=1
+#=GS sp|Q5QS84|NU4LM_SMIDO/1-98        DE [subseq from] NADH-ubiquinone oxidoreductase chain 4L OS=Sminthopsis douglasi OX=90758 GN=MT-ND4L PE=3 SV=1
+
+NC_012920.1_prot_YP_003024034.1_9         MPLIYMNIMLAFTISLLGMLVYRSHLMSSLLCLEGMMLSLFIMATLMTLNTHSLLANIVPIAMLVFAACEAAVGLALLVSISNTYGLDYVHNLNLLQC
+sp|P03902|NU4LM_BOVIN/1-98                MSMVYMNIMMAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMAALTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P03902|NU4LM_BOVIN/1-98        PP 99************************************************************************************************
+sp|Q6EMS3|NU4LM_BOSIN/1-98                MSMVYMNIMMAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMAALTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q6EMS3|NU4LM_BOSIN/1-98        PP 99************************************************************************************************
+sp|Q9B985|NU4LM_HYDIN/1-98                MSLVYMNIMTAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q9B985|NU4LM_HYDIN/1-98        PP 89************************************************************************************************
+sp|O78754|NU4LM_SHEEP/1-98                MSLVYMNIMMAFTVSLTGLLMYRSHLMSSLLCLEGMMLSLFILATLMILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|O78754|NU4LM_SHEEP/1-98        PP 89************************************************************************************************
+sp|Q7HLD2|NU4LM_OVICA/1-98                MSLVYMNIMMAFTVSLTGLLMYRSHLMSSLLCLEGMMLSLFILATLMILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q7HLD2|NU4LM_OVICA/1-98        PP 89************************************************************************************************
+sp|Q072K5|NU4LM_NEONE/1-98                MSTVYINIFLAFTMSLMGLLMYRSHLMSSLLCLEGMMLSLFIMMTVAILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q072K5|NU4LM_NEONE/1-98        PP 899***********************************************************************************************
+sp|P56632|NU4LM_PIG/1-98                  MPLVYMNIIMAFAIALAGLLMYRSHLMSSLLCLEGMMLSLFIMSTLIILNTHFTLANMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P56632|NU4LM_PIG/1-98          PP 899***********************************************************************************************
+sp|Q5Y4Q2|NU4LM_BOSMU/1-98                MSMVHMNIMMAFAVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMAALTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q5Y4Q2|NU4LM_BOSMU/1-98        PP 99************************************************************************************************
+sp|Q08H50|NU4LM_PHOFA/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08H50|NU4LM_PHOFA/1-98        PP 89************************************************************************************************
+sp|Q679B1|NU4LM_NEOSC/1-98                MTMVYANIFLAFTTSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B1|NU4LM_NEOSC/1-98        PP 89************************************************************************************************
+sp|P68309|NU4LM_HALGR/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P68309|NU4LM_HALGR/1-98        PP 89************************************************************************************************
+sp|P68310|NU4LM_PHOVI/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P68310|NU4LM_PHOVI/1-98        PP 89************************************************************************************************
+sp|Q08GY5|NU4LM_PUSSI/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08GY5|NU4LM_PUSSI/1-98        PP 89************************************************************************************************
+sp|Q679A5|NU4LM_PHOLR/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679A5|NU4LM_PHOLR/1-98        PP 89************************************************************************************************
+sp|Q3L6Z6|NU4LM_PUMCO/1-98                MSMVYINIFLAFTMSLMGLLMYRSHLMSSLLCLEGMMLSLFIMMAVAILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6Z6|NU4LM_PUMCO/1-98        PP 99************************************************************************************************
+sp|Q9MEI2|NU4LM_VICPA/1-98                MSMVYMNIMLAFTMSLIGLLMYRSHLMSSLLCLEGMMLSLFVMASLMILSTHFTLASMMPIILLVFAACEAALGLALLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q9MEI2|NU4LM_VICPA/1-98        PP 99************************************************************************************************
+sp|Q679B2|NU4LM_MIRLE/1-98                MTMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B2|NU4LM_MIRLE/1-98        PP 89************************************************************************************************
+sp|Q679B3|NU4LM_MIRAN/1-98                MTMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B3|NU4LM_MIRAN/1-98        PP 89************************************************************************************************
+sp|Q7YBC1|NU4LM_CAPHI/1-98                MSLVYMNIMTAFAVSLTGLLMYRSHLMSSLLCLEGMMLSLFIMATLMILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q7YBC1|NU4LM_CAPHI/1-98        PP 89************************************************************************************************
+sp|Q71RU5|NU4LM_ACIJB/1-98                MSMVYINIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFIMMTMVVLNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q71RU5|NU4LM_ACIJB/1-98        PP 99************************************************************************************************
+sp|Q3L708|NU4LM_LYNCA/1-98                MSMVYINIFMAFTVSLMGLLVYRSHLMSSLLCLEGMMLSLFIMMTMAILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L708|NU4LM_LYNCA/1-98        PP 99************************************************************************************************
+sp|Q9B987|NU4LM_ELACE/1-98                MSLVYMNIMTAFTVSLTGLLMYRSHLMSSLLCLEGMMLALFVMATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q9B987|NU4LM_ELACE/1-98        PP 89************************************************************************************************
+sp|Q2V0A4|NU4LM_RANTA/1-98                MSLVYMNIMTAFMVSLAGLLMYRSHLMSSLLCLEGMMLSLFVMATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q2V0A4|NU4LM_RANTA/1-98        PP 89************************************************************************************************
+sp|Q08HL9|NU4LM_CALUR/1-98                MSMVYFNIFLAFIVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08HL9|NU4LM_CALUR/1-98        PP 99************************************************************************************************
+sp|Q679B6|NU4LM_LEPWE/1-98                MTMVYANIFLAFITSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B6|NU4LM_LEPWE/1-98        PP 89************************************************************************************************
+sp|Q679B8|NU4LM_HYDLE/1-98                MTMVYANIFLAFITSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B8|NU4LM_HYDLE/1-98        PP 89************************************************************************************************
+sp|Q679C1|NU4LM_LOBCR/1-98                MTMVYANIFLAFITSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679C1|NU4LM_LOBCR/1-98        PP 89************************************************************************************************
+sp|Q679B9|NU4LM_OMMRO/1-98                MTMVYANIFLAFITSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTITILNSHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B9|NU4LM_OMMRO/1-98        PP 89************************************************************************************************
+sp|Q3LR84|NU4LM_PANHO/1-98                MSLVYMNIMTAFAVSLTGLLMYRSHLMSSLLCLEGMMLSLFVMATLMILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3LR84|NU4LM_PANHO/1-98        PP 89************************************************************************************************
+sp|O03203|NU4LM_CERSI/1-98                MSLIHINVFLAFTTSLMGLLMYRSHLMSSLLCLEGMMLSLFIMATMMVLNSHFTLASMMPIILLVFAACEAALGLSLLVMISNTYGTDYVQNLNLLQC
+#=GR sp|O03203|NU4LM_CERSI/1-98        PP 899***********************************************************************************************
+sp|Q679A3|NU4LM_OTABY/1-98                MSMVYFNIFMAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVLMSMTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679A3|NU4LM_OTABY/1-98        PP 99************************************************************************************************
+sp|Q8SJG7|NU4LM_URSMA/1-98                MPVVYVNIFLAFIVSLVGLLIYRSHLMSSLLCLEGMMLSLFVMLTVTVLNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8SJG7|NU4LM_URSMA/1-98        PP 899***********************************************************************************************
+sp|Q69B76|NU4LM_DELLE/1-98                MSLVHINILMAFIMSLTGLLMYRSHLMSALLCLEGMMLSLFVLATLTILNSHFTLANMMPIILLVFAACEAAIGLALLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q69B76|NU4LM_DELLE/1-98        PP 899***********************************************************************************************
+sp|Q08HI0|NU4LM_PHOHO/1-98                MSMVYFNIFMAFTVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTILNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08HI0|NU4LM_PHOHO/1-98        PP 99************************************************************************************************
+sp|Q9ZZY3|NU4LM_HIPAM/1-98                MSLVYMNIIMAFTTSLVGLLMYRSHLMSSLLCLEGMMLSLFIMATLIILNAHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQSLNLLQC
+#=GR sp|Q9ZZY3|NU4LM_HIPAM/1-98        PP 89************************************************************************************************
+sp|Q679B0|NU4LM_MONMN/1-98                MTMVYANIFLAFITSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLANMAPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679B0|NU4LM_MONMN/1-98        PP 89************************************************************************************************
+sp|Q7IVV2|NU4LM_MUNGO/1-98                MSLVYMNIMTAFMVSLAGLLMYRSHLMSSLLCLEGMMLSLFVLATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q7IVV2|NU4LM_MUNGO/1-98        PP 89************************************************************************************************
+sp|Q7IVV3|NU4LM_MUNFE/1-98                MSLVYMNIMTAFMVSLAGLLMYRSHLMSSLLCLEGMMLSLFVLATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q7IVV3|NU4LM_MUNFE/1-98        PP 89************************************************************************************************
+sp|Q9B1C5|NU4LM_MUNCR/1-98                MSLVYMNIMTAFMVSLAGLLMYRSHLMSSLLCLEGMMLSLFVLATLTILNSHFTLASMMPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q9B1C5|NU4LM_MUNCR/1-98        PP 89************************************************************************************************
+sp|Q8SJJ1|NU4LM_URSAM/1-98                MPVVYVNIFLAFIVSLMGLLIYRSHLMSSLLCLEGMMLSLFVMLTVTVLNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8SJJ1|NU4LM_URSAM/1-98        PP 899***********************************************************************************************
+sp|Q70S06|NU4LM_ESCRO/1-98                MTLIHMNILMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q70S06|NU4LM_ESCRO/1-98        PP 899***********************************************************************************************
+sp|Q08HF4|NU4LM_ARCTO/1-98                MSMVYFNIFMAFTVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08HF4|NU4LM_ARCTO/1-98        PP 99************************************************************************************************
+sp|Q679A2|NU4LM_ARCAU/1-98                MSMVYFNIFMAFTVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679A2|NU4LM_ARCAU/1-98        PP 99************************************************************************************************
+sp|Q8M154|NU4LM_ARCFO/1-98                MSMVYFNIFMAFTVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8M154|NU4LM_ARCFO/1-98        PP 99************************************************************************************************
+sp|Q8SJH9|NU4LM_URSAR/1-98                MPVVYVNIFLAFIVSLMGLLVYRSHLMSSLLCLEGMMLSLFVMLTVTVLNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8SJH9|NU4LM_URSAR/1-98        PP 899***********************************************************************************************
+sp|Q598U3|NU4LM_EUBJA/1-98                MTLIHMNIIMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVTISNTYGTDYVQNLNLLQC
+#=GR sp|Q598U3|NU4LM_EUBJA/1-98        PP 899***********************************************************************************************
+sp|Q69B78|NU4LM_EUBAS/1-98                MTLIHMNIIMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVTISNTYGTDYVQNLNLLQC
+#=GR sp|Q69B78|NU4LM_EUBAS/1-98        PP 899***********************************************************************************************
+sp|Q69B80|NU4LM_EUBGL/1-98                MTLIHMNIIMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVTISNTYGTDYVQNLNLLQC
+#=GR sp|Q69B80|NU4LM_EUBGL/1-98        PP 899***********************************************************************************************
+sp|Q5I195|NU4LM_HERJA/1-98                MSIVYINIFLAFIMSLLGMLIYRSHLMSSLLCLEGMMLSLFVMITLIILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGNDYVQNLNLLQC
+#=GR sp|Q5I195|NU4LM_HERJA/1-98        PP 899***********************************************************************************************
+sp|Q08HK6|NU4LM_ZALCA/1-98                MSMMYFNIFMAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08HK6|NU4LM_ZALCA/1-98        PP 89************************************************************************************************
+sp|Q3L6P5|NU4LM_HELMA/1-98                MPVVYVNIFLAFIVSLTGLLIYRSHLMSSLLCLEGMMLSLFVMLTVTVLNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6P5|NU4LM_HELMA/1-98        PP 899***********************************************************************************************
+sp|Q70RM6|NU4LM_PHOPH/1-98                MSLIHINILMAFTMSLVGLLMYRSHLMSALLCLEGMVLSLFILMTLTILNSHFTLANMVPIILLVFAACEAAIGLALLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q70RM6|NU4LM_PHOPH/1-98        PP 899***********************************************************************************************
+sp|Q8LWS1|NU4LM_ODORR/1-98                MSMVYANIFMAFVVSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHFTLANMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8LWS1|NU4LM_ODORR/1-98        PP 89************************************************************************************************
+sp|Q70RW7|NU4LM_HYPAP/1-98                MSLIHMNIIMAFTLSLVGLLMYRSHLMSALLCMEGMMLSLFILATLTALNLHFTLANMMPIILLVFAACEAAIGLALLVKISNTYGTDYVQNLNLLQC
+#=GR sp|Q70RW7|NU4LM_HYPAP/1-98        PP 89************************************************************************************************
+sp|Q69B84|NU4LM_MEGNO/1-98                MTLIHMNILMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLATLTILSSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q69B84|NU4LM_MEGNO/1-98        PP 899***********************************************************************************************
+sp|Q9MJA8|NU4LM_TALEU/1-98                MSLVYMNIMIAFSISLLGLLMYRSHLMSSLLCLEGMMLALFILSTIMILNIHFTLASMIPIILLVFAACEAAVGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q9MJA8|NU4LM_TALEU/1-98        PP 89************************************************************************************************
+sp|Q3L6W1|NU4LM_AILFU/1-98                MSMVYINIFLAFAISFVGLLMYRSHLMSSLLCLEGMMLSLFVMLTITILSNHFTLASMIPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6W1|NU4LM_AILFU/1-98        PP 99************************************************************************************************
+sp|Q7Y8E7|NU4LM_MOGWO/1-98                MSLVYMNIMIAFLTSLLGLLMYRSHLMSSLLCLEGMMLSLFILSTIMILNIHFTLASMIPIILLVFAACEAAIGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q7Y8E7|NU4LM_MOGWO/1-98        PP 89************************************************************************************************
+sp|Q96067|NU4LM_RHIUN/1-98                MSLIHINIFLAFTVSLMGLLMYRSHLMSSLLCLEGMMLSLFIMATMMVLNSHFTLAIMMPIILLVFAACEAALGLSLLVMISNTYGMDYVQNLNLLQC
+#=GR sp|Q96067|NU4LM_RHIUN/1-98        PP 899***********************************************************************************************
+sp|Q70S32|NU4LM_BALMY/1-98                MTLTHMNIIMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVTISNTYGTDYVQNLNLLQC
+#=GR sp|Q70S32|NU4LM_BALMY/1-98        PP 899***********************************************************************************************
+sp|Q08GZ8|NU4LM_PUSCA/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTATILNNHFTLASMAPIILLVFAACEAALGLSLLVTVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08GZ8|NU4LM_PUSCA/1-98        PP 89************************************************************************************************
+sp|Q8LX40|NU4LM_EUMJU/1-98                MSMVYFNILMAFIVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q8LX40|NU4LM_EUMJU/1-98        PP 99************************************************************************************************
+sp|Q70RV4|NU4LM_BERBI/1-98                MSLIYMNVMMAFTMSLTGLLMYRSHLMSALLCMEGMMLSLFILAALTILNSHFTLANMAPIILLVFAACEAAIGLALLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q70RV4|NU4LM_BERBI/1-98        PP 89************************************************************************************************
+sp|O79435|NU4LM_RABIT/1-98                MPSIYINIFLAFILALLGMLVYRSHLMSSLLCLEGMMLSLFVLITLTALNTHFTLSFMFPIILLVFAACEAAVGLALLVMVSNTYGMDYVQNLNLLQC
+#=GR sp|O79435|NU4LM_RABIT/1-98        PP 899***********************************************************************************************
+sp|Q1HK43|NU4LM_CANLA/1-98                MSMVYINIFLAFILSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHLTLASMMPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q1HK43|NU4LM_CANLA/1-98        PP 99************************************************************************************************
+sp|Q3L6X2|NU4LM_VULLA/1-98                MSMVYINIFLAFILSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHLTLASMMPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6X2|NU4LM_VULLA/1-98        PP 99************************************************************************************************
+sp|Q3L6Y4|NU4LM_CANLU/1-98                MSMVYINIFLAFILSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHLTLASMMPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6Y4|NU4LM_CANLU/1-98        PP 99************************************************************************************************
+sp|Q9ZZ59|NU4LM_CANLF/1-98                MSMVYINIFLAFILSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHLTLASMMPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q9ZZ59|NU4LM_CANLF/1-98        PP 99************************************************************************************************
+sp|Q679A8|NU4LM_CYSCR/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILSNHFTLASMAPIVLLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679A8|NU4LM_CYSCR/1-98        PP 89************************************************************************************************
+sp|Q09EG3|NU4LM_RUSUS/1-98                MSLVYMNIMTAFMVALAGLLMYRSHLMSSLLCLEGMMLSLFVMASLTILNSHFTLASMMPIILLVFAACEAALGLSLLVKVSNTYGTDYVQNLNLLQC
+#=GR sp|Q09EG3|NU4LM_RUSUS/1-98        PP 89************************************************************************************************
+sp|Q2V091|NU4LM_CEREL/1-98                MSLVYMNIMTAFMVALAGLLMYRSHLMSSLLCLEGMMLSLFVMASLTILNSHFTLASMMPIILLVFAACEAALGLSLLVKVSNTYGTDYVQNLNLLQC
+#=GR sp|Q2V091|NU4LM_CEREL/1-98        PP 89************************************************************************************************
+sp|Q2YG58|NU4LM_LIPVE/1-98                MSLVHMNILLAFTMSLTGLLMYRSHLMSALLCLEGMMLSLFILMTITILNMHFTLASMTPIILLVFAACEAAVGLALLVKISNTYGTDHVQNLNLLQC
+#=GR sp|Q2YG58|NU4LM_LIPVE/1-98        PP 899***********************************************************************************************
+sp|P48931|NU4LM_FELCA/1-98                MSMVYINIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFIMMAVAILNNHLTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P48931|NU4LM_FELCA/1-98        PP 99************************************************************************************************
+sp|Q3L6R7|NU4LM_TAXTA/1-98                MSMVYINIFLAFTLSFMGLLIYRSHLMSSLLCLEGMMLSLFVLMTVTILSNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6R7|NU4LM_TAXTA/1-98        PP 99************************************************************************************************
+sp|Q08H76|NU4LM_ERIBA/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLASMTPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLPC
+#=GR sp|Q08H76|NU4LM_ERIBA/1-98        PP 89**********************************************************************************************99
+sp|Q9B996|NU4LM_MUNVU/1-98                MSLVYMNIMTAFMVSLAGLLMYRSHLMSSLLCLEGMMLSLFVLATLTILNSHFTLASMMPIILLVFGACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q9B996|NU4LM_MUNVU/1-98        PP 89************************************************************************************************
+sp|Q70RN9|NU4LM_MONMO/1-98                MSLVHINILMAFTMSLTGLLMYRSHLMSALLCLEGMVLSLFILATLTILNSHFTLANMMPIILLVFAACEAAIGLALLIMISNTYGTDYVQNLNLLQC
+#=GR sp|Q70RN9|NU4LM_MONMO/1-98        PP 899***********************************************************************************************
+sp|Q94YD6|NU4LM_SORUN/1-98                MSLVHMNIALAFTVALLGLLMYRSHLMSSLLCLEGMMLTLFIMGTIMILNTHFTLASMLPIILLVFAACEAAVGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q94YD6|NU4LM_SORUN/1-98        PP 899***********************************************************************************************
+sp|P24976|NU4LM_BALPH/1-98                MTLIHMNILMAFSMSLMGLLMYRSHLMSALLCLEGMMLSLFVLAALTILSSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|P24976|NU4LM_BALPH/1-98        PP 899***********************************************************************************************
+sp|Q08GV9|NU4LM_PUSHI/1-98                MSMVYANIFLAFIMSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMTVTILNNHFTLANMAPIILLVFAACEAALGLLLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08GV9|NU4LM_PUSHI/1-98        PP 89************************************************************************************************
+sp|Q8LWW8|NU4LM_LEPEU/1-98                MPSIYVNIFLAFIFALLGMLIYRSHLMSSLLCLEGMMLSLFILITLTALNMHFTLSFMFPIVLLVFAACEAAIGLALLVMVSNTYGMDYVQNLNLLQC
+#=GR sp|Q8LWW8|NU4LM_LEPEU/1-98        PP 899***********************************************************************************************
+sp|Q25CE8|NU4LM_BALOM/1-98                MTLIHMNILMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFILAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQSLNLLQC
+#=GR sp|Q25CE8|NU4LM_BALOM/1-98        PP 899***********************************************************************************************
+sp|Q70S19|NU4LM_CAPMR/1-98                MTLIHMNIIMAFSMSLVGLLMYRSHLMSALLCLESMMLSLFILATLTVLNSHFTLANIMPIILLVFAACEAAIGLALLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q70S19|NU4LM_CAPMR/1-98        PP 899***********************************************************************************************
+sp|Q7Y8D5|NU4LM_UROTA/1-98                MSLVYVNVMIAFLISLLGLLMYRSHLMSSLLCLEGMMLSLFILGTIMILNIHFTLASMIPIILLVFAACEAAIGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q7Y8D5|NU4LM_UROTA/1-98        PP 89************************************************************************************************
+sp|Q9XMJ3|NU4LM_ORYAF/1-98                MPPIYMNIILAFTLSLMGMLVYRSHLMSSLLCLEGMMLSLFILGTTMALNMHFTLMTMLPIVLLVFAACEAAVGLSLLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q9XMJ3|NU4LM_ORYAF/1-98        PP 889***********************************************************************************************
+sp|Q70RQ2|NU4LM_LAGAL/1-98                MSLVHINVLIAFTVSLTGLLMYRSHLMSALLCLEGMVLSLFILAALTILNTHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q70RQ2|NU4LM_LAGAL/1-98        PP 899***********************************************************************************************
+sp|Q58F60|NU4LM_MYSTU/1-98                MSLTYMNILVAFVISLTGLLMYRSHMMSSLLCLEGMMLSLFVMVTITILNTHLTLASMMPIILLVFAACEAALGLALLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q58F60|NU4LM_MYSTU/1-98        PP 899***********************************************************************************************
+sp|Q8SJ54|NU4LM_CEPBA/1-98                MPYIYTNLFLAFLTSLLGMLIYRSHLMSSLLCLEGMMLSMFIMTSLTILNLHFTLSNMIPIILLVFAACEAAVGLALLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q8SJ54|NU4LM_CEPBA/1-98        PP 899***********************************************************************************************
+sp|Q69B86|NU4LM_ZIPCA/1-98                MSLVHMNVIVAFTLSLVGLLMYRSHLMSALLCMEGMMLSLFVLAALTILNSHFTLASMMPIILLVFAACEAAIGLALLVTISNTYGTDYVQNLNLLQC
+#=GR sp|Q69B86|NU4LM_ZIPCA/1-98        PP 899***********************************************************************************************
+sp|Q3L6S8|NU4LM_LONCN/1-98                MSVVYINIFLAFILSFMGLLVYRSHLMSSLLCLEGMMLSLFVMMTITVLTNHFTLASMTPIILLVFAACEAALGLSLLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6S8|NU4LM_LONCN/1-98        PP 899***********************************************************************************************
+sp|Q3L6Q6|NU4LM_PROLO/1-98                MSMVYVNISLAFTLSLMGLLMYRSHLMSSLLCLEGMMLSLFVMMSITIMSNHFTLASMAPIILLVFAACEAALGLSLLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6Q6|NU4LM_PROLO/1-98        PP 99************************************************************************************************
+sp|Q08HJ3|NU4LM_ARCPU/1-98                MSMVYFNIFMAFIVSFMGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTILSNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q08HJ3|NU4LM_ARCPU/1-98        PP 99************************************************************************************************
+sp|P48658|NU4LM_HORSE/1-98                MSLVHINIFLAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMATMMVLNTHFTLASMMPIILLVFAACERALGLSLLVMVSNTYGVDHVQNLNLLQC
+#=GR sp|P48658|NU4LM_HORSE/1-98        PP 899***********************************************************************************************
+sp|Q08GU6|NU4LM_VULVU/1-98                MSMVYINIFLAFILSLMGMLVYRSHLMSSLLCLEGMMLSLFVMMSVTILNNHLTLASMMPIVLLVFAACEAALGLSLLVMVSNTYGTDHVQNLNLLQC
+#=GR sp|Q08GU6|NU4LM_VULVU/1-98        PP 99************************************************************************************************
+sp|Q679A1|NU4LM_GULGU/1-98                MSMVYINIFLAFTLSFMGLLIYRSHLMSSLLCLEGMMLSLFVMMTVTILTNHLTLASMTPIILLVFAACEAALGLSLLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q679A1|NU4LM_GULGU/1-98        PP 99************************************************************************************************
+sp|Q34572|NU4LM_GORGO/1-98                MPLIYMNIMLAFTISLLGMLVYRSHLMSSLLCLEGMMLSLFIMATLMTLNTHFLLANIVPITMLVFAACEAAVGLALLVSISNTYGLDYVQNLNLLQC
+#=GR sp|Q34572|NU4LM_GORGO/1-98        PP 899***********************************************************************************************
+sp|Q3L6V0|NU4LM_MEPME/1-98                MSMVYINLFLAFIMSLMGLLVYRSHLMSSLLCLEGMMLSLFIMISITILSNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6V0|NU4LM_MEPME/1-98        PP 99************************************************************************************************
+sp|Q69B66|NU4LM_BALBN/1-98                MTLIHMNILMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLATLTILSSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQSLNLLQC
+#=GR sp|Q69B66|NU4LM_BALBN/1-98        PP 899***********************************************************************************************
+sp|Q679A7|NU4LM_PAGGO/1-98                MSMVYANIFLAFIMSLMGLLVYRSHLMSSLLCLEGMMLSLFVMMTVTILINHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDYVQNLNLLQC
+#=GR sp|Q679A7|NU4LM_PAGGO/1-98        PP 89************************************************************************************************
+sp|Q3L6T9|NU4LM_MARAM/1-98                MSMVYINIFLAFILSFMGLLIYRSHLMSSLLCLEGMMLSLFIMMTVTILTNHLTLASMTPIILLVFAACEAALGLSLLVMISNTYGTDYVQNLNLLQC
+#=GR sp|Q3L6T9|NU4LM_MARAM/1-98        PP 99************************************************************************************************
+sp|Q08HG7|NU4LM_NEOCN/1-98                MSMVYFNILMAFSVSFVGLLMYRSHLMSSLLCLEGMMLSLFVMMSMTVLNNHFTLASMAPIILLVFAACEAALGLSLLVMVSNTYGTDHVQNLNLLQC
+#=GR sp|Q08HG7|NU4LM_NEOCN/1-98        PP 99************************************************************************************************
+sp|Q1HV29|NU4LM_VAMBI/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV29|NU4LM_VAMBI/1-98        PP 899***********************************************************************************************
+sp|Q1HV35|NU4LM_CHITR/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV35|NU4LM_CHITR/1-98        PP 899***********************************************************************************************
+sp|Q1HV38|NU4LM_CHIVL/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV38|NU4LM_CHIVL/1-98        PP 899***********************************************************************************************
+sp|O99602|NU4LM_ARTJA/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTITILNTHLTLASMLPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|O99602|NU4LM_ARTJA/1-98        PP 899***********************************************************************************************
+sp|P92483|NU4LM_EQUAS/1-98                MSLAHINIFLAFTVSLVGLLMYRSHLMSSLLCLEGMMLSLFVMATMVVLNTHFTLASMMPIILLVFAACERALGLSLLVMVSNTYGVDHVQNLNLLQC
+#=GR sp|P92483|NU4LM_EQUAS/1-98        PP 8999**********************************************************************************************
+sp|Q70RS8|NU4LM_INIGE/1-98                MTLIHMNIFMAFTMSLTGFLMYRSHLMSALLCLEGMILSLFILVTLTVLNLHLTLAKMMPIILLVFAACEAAIGLALLVKISNTYGTDYVQNLNLLQC
+#=GR sp|Q70RS8|NU4LM_INIGE/1-98        PP 899***********************************************************************************************
+sp|Q1HV53|NU4LM_STERU/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMLPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV53|NU4LM_STERU/1-98        PP 899***********************************************************************************************
+sp|Q953I6|NU4LM_EPIFU/1-98                MSLVHMNIGLAFTVAFLGLLMYRSHLMSSLLCLEGMMLTLFIMSSIMVLNMHFTLASMLPIILLVFAACEAAVGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q953I6|NU4LM_EPIFU/1-98        PP 899***********************************************************************************************
+sp|Q598Z5|NU4LM_BALBO/1-98                MTLIHMNVLMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFTLAALTILNSHFTLANMMPIILLVFAACEAAIGLALLVMVSNTYGTDYVQSLNLLQC
+#=GR sp|Q598Z5|NU4LM_BALBO/1-98        PP 899***********************************************************************************************
+sp|Q1HUW0|NU4LM_VAMTH/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMVILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUW0|NU4LM_VAMTH/1-98        PP 899***********************************************************************************************
+sp|Q1HUX2|NU4LM_VAMPU/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMVILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUX2|NU4LM_VAMPU/1-98        PP 899***********************************************************************************************
+sp|Q1EG09|NU4LM_GALPY/1-98                MSLVYVNIMIAFSVSFLGLLMFRSHLMSSLLCLEGMMLSLFILGTILILNFHFTLASMAPIIMLVFAACEAAVGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q1EG09|NU4LM_GALPY/1-98        PP 89************************************************************************************************
+sp|Q70RR5|NU4LM_PONBL/1-98                MTLVHMNLLLAFAMSLTGLLMYRSHLMSALLCLEGMVLSLFILATITTLNSHFTLANMMPIILLVFAACEAAIGLALLVKISNTYGTDHVQNLNLLQC
+#=GR sp|Q70RR5|NU4LM_PONBL/1-98        PP 899***********************************************************************************************
+sp|Q1HUY4|NU4LM_MESMC/1-98                MSITYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMAILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUY4|NU4LM_MESMC/1-98        PP 899***********************************************************************************************
+sp|Q1HUX8|NU4LM_VAMME/1-98                MSLTYMNMFMAFTISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTMAILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUX8|NU4LM_VAMME/1-98        PP 899***********************************************************************************************
+sp|Q1HV05|NU4LM_VAMCA/1-98                MSLTYMNMFMAFTISLLGLLLYRSHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV05|NU4LM_VAMCA/1-98        PP 899***********************************************************************************************
+sp|O21787|NU4LM_TRAPO/1-98                MPIIYMNIMLAFLISLLGMLIYRSHLMSSLLCLEGMMLSLFIMSTLMALNMHFPLANIVPIALLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|O21787|NU4LM_TRAPO/1-98        PP 899***********************************************************************************************
+sp|Q1HV11|NU4LM_UROBI/1-98                MSLTYMNMFMAFMISLLGLLMYRSHMMSSLLCLEGMMLSLFVMMTVIILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV11|NU4LM_UROBI/1-98        PP 899***********************************************************************************************
+sp|Q35588|NU4LM_PANPA/1-98                MPLIYMNIMLAFTISLLGMLVYRSHLMSSLLCLEGMMLSLFIMTTLMTLNTHSLLANIVPITMLVFAACEAAVGLALLVSISNTYGLDYVHNLNLLQC
+#=GR sp|Q35588|NU4LM_PANPA/1-98        PP 899***********************************************************************************************
+sp|Q1HV59|NU4LM_STULI/1-98                MSLTYMNMLLAFMISLMGLLMYRSHMMSSLLCLEGMMLSLFVMMTVTILNTHMTLASMLPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV59|NU4LM_STULI/1-98        PP 899***********************************************************************************************
+sp|Q37809|NU4LM_PANTR/1-98                MPLIYMNIMLAFTISLLGMLVYRSHLMSSLLCLEGMMLSLFIMATLMTLNTHSLLANIVPITMLVFAACEAAVGLALLVSISNTYGLDYVHNLNLLQC
+#=GR sp|Q37809|NU4LM_PANTR/1-98        PP 899***********************************************************************************************
+sp|Q1HUZ9|NU4LM_PLADO/1-98                MSITYMNMFMAFTISLLGLLLYRSHMMSSLLCLEGMMLSLFVMMTMIILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUZ9|NU4LM_PLADO/1-98        PP 899***********************************************************************************************
+sp|Q1HV14|NU4LM_VAMNY/1-98                MSLTYMNMFMAFTISLLGLLMYRAHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV14|NU4LM_VAMNY/1-98        PP 899***********************************************************************************************
+sp|Q1HV23|NU4LM_VAMBR/1-98                MSLTYMNMFMAFTISLLGLLMYRAHMMSSLLCLEGMMLSLFVMMTMTILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV23|NU4LM_VAMBR/1-98        PP 899***********************************************************************************************
+sp|Q8LWN4|NU4LM_TAMTE/1-98                MSSIYMNILLAFTMALLGLLMYRSHLMSSLLCLEGMMLSLFILSTVTMLNTSFTLSSMMPVMLMVFAACEAAVGLALLVTVSNTYGLDYVQNLNLLQC
+#=GR sp|Q8LWN4|NU4LM_TAMTE/1-98        PP 899***********************************************************************************************
+sp|Q1HUZ6|NU4LM_PLABC/1-98                MSLTYMNMFMAFTISLLGLLLYRSHMMSSLLCLEGMMLSLFVMMTMIILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HUZ6|NU4LM_PLABC/1-98        PP 899***********************************************************************************************
+sp|Q1HV02|NU4LM_PLAHE/1-98                MSLTYMNMFMAFTISLLGLLLYRSHMMSSLLCLEGMMLSLFVMMTMVILNTHLTLASMIPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV02|NU4LM_PLAHE/1-98        PP 899***********************************************************************************************
+sp|Q85DA4|NU4LM_OTOCR/1-98                MPSISTNIILAFTTALLGTLIYRSHLMSSLLCLEGMMLSMFILTSLTTLNLHFSLTTMAPIILLVFAACEAAIGLALLVMVSNTYGMDYIQNLNLLQC
+#=GR sp|Q85DA4|NU4LM_OTOCR/1-98        PP 889***********************************************************************************************
+sp|P03901|NU4LM_HUMAN/1-98                MPLIYMNIMLAFTISLLGMLVYRSHLMSSLLCLEGMMLSLFIMATLMTLNTHSLLANIVPIAMLVFAACEAAVGLALLVSISNTYGLDYVHNLNLLQC
+#=GR sp|P03901|NU4LM_HUMAN/1-98        PP 899***********************************************************************************************
+sp|Q1HV56|NU4LM_RHIPM/1-98                MSLTYMNMFLAFTISLVGLLMYRSHMMSALLCLEGMMLSLFVMMTITILNIHLTLASMTPIILLVFAACEAALGLSLLVMVSTTYGMDYVQNLNLLQC
+#=GR sp|Q1HV56|NU4LM_RHIPM/1-98        PP 899***********************************************************************************************
+sp|Q7ISH5|NU4LM_PROTA/1-98                MPSIFINIILAFATALLGTLVFRSHLMSSLLCLEGMMLSMFILSTLIILNMHFTMSFMMPILLLVFAACEAAVGLALLVMVSNTYGLDYIQNLNLLQC
+#=GR sp|Q7ISH5|NU4LM_PROTA/1-98        PP 899***********************************************************************************************
+sp|Q5BU90|NU4LM_TRAOB/1-98                MPIIYMNIMLAFLISLLGMLFYRSHLMSSLLCLEGMMLSLFIMSTLMALNMHFPLANIVPIALLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q5BU90|NU4LM_TRAOB/1-98        PP 899***********************************************************************************************
+sp|Q94XZ1|NU4LM_EULRU/1-98                MPSISTNIVLAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILNLHFTTSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q94XZ1|NU4LM_EULRU/1-98        PP 889***********************************************************************************************
+sp|Q679A0|NU4LM_NEOVI/1-98                MSMVYINIFLAFTLSFMGLLIYRSHLMSSLLCLEGMMLSLFVMMTITILINHLTLASMTPIILLVFAACEAALGLSLLVMISTTYGTDYVQNLNLLQC
+#=GR sp|Q679A0|NU4LM_NEOVI/1-98        PP 99************************************************************************************************
+sp|Q7Y8J9|NU4LM_PROCA/1-98                MHYIYINIIIAFSMSLLGALLYRSHIMSSLLCLEGMMLALFVLSTLIALNMQFTLATMMPIILLVFAACEAAIGLSLLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q7Y8J9|NU4LM_PROCA/1-98        PP 889***********************************************************************************************
+sp|Q85DA0|NU4LM_GALSE/1-98                MPSISTNIILAFTTALLGVLIYRSHLMSSLLCLEGMMLSMFILVSLTTLNLHFSLATVTPIILLVFAACEAAVGLALLVMVSNTYGMDYIQNLNLLQC
+#=GR sp|Q85DA0|NU4LM_GALSE/1-98        PP 889***********************************************************************************************
+sp|Q70RY0|NU4LM_KOGBR/1-98                MPLIHINIMMAFIMSLVGLLMYRSHLMSALLCLEGMMLSLFILTALLALDSHFILASMIPIILLVFAACEAAIGLALLVMISSTYGTDYVQNLNLLRC
+#=GR sp|Q70RY0|NU4LM_KOGBR/1-98        PP 899**********************************************************************************************9
+sp|Q7IT44|NU4LM_EULMO/1-98                MPSISTNIILAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILNLHFTASFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q7IT44|NU4LM_EULMO/1-98        PP 889***********************************************************************************************
+sp|Q9B8T5|NU4LM_PRODD/1-98                MPSIFTNIILAFATALLGTLVFRSHLMSSLLCLEGMMLSMFVLSTLIILNMHFTMSFMMPILLLVFAACEAAVGLALLVMVSNTYGLDYIQNLNLLQC
+#=GR sp|Q9B8T5|NU4LM_PRODD/1-98        PP 889***********************************************************************************************
+sp|Q7J3B5|NU4LM_MACPG/1-98                MTPTYMNIMLAFTISLLGMLTYRSHLMASLLCLEGMMMSLFIMTTLIALNTHSPLINIMPIILLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q7J3B5|NU4LM_MACPG/1-98        PP 7899**********************************************************************************************
+sp|Q401Y8|NU4LM_ROUAE/1-98                MTLVYMNMALAFTISLLGLLMYRSHLMSSLLCLEGMMLSLFVTMAVTILNSHLILANMIPIILLVFAACEAALGLSLLVMVSNTYGVDHVQNLNLLQC
+#=GR sp|Q401Y8|NU4LM_ROUAE/1-98        PP 899***********************************************************************************************
+sp|O21333|NU4LM_DASNO/1-98                MPSIYLNIIMAFSIAMVGVLVYRSHMMSSLLCLEGMMLSLFILSTLMILSMHFTMAMMMPIILMVFAACEAAVGLALLVMVSNTYGLDHVQNLNLLQC
+#=GR sp|O21333|NU4LM_DASNO/1-98        PP 899***********************************************************************************************
+sp|Q9TA21|NU4LM_LOXAF/1-98                MPYIYMNITLAFVISLIGTLMYRSHLMSSLLCLEGMMLSLFTLNALLSLNMNFTLSTTVPLILLVFAACEAAVGLALLVMISNTYGLDYVQNLNLLQC
+#=GR sp|Q9TA21|NU4LM_LOXAF/1-98        PP 899***********************************************************************************************
+sp|Q8W9M8|NU4LM_DUGDU/1-98                MPFIYINILLAFFISFIGLLMYRSHLMSSLLCLEGMMLSLYILGTLLCLNMHFTLSAMIPMILLVFAACEAAVGLALLVMVSNTYGLDHVQNLNLLQC
+#=GR sp|Q8W9M8|NU4LM_DUGDU/1-98        PP 899***********************************************************************************************
+sp|Q9XJY3|NU4LM_MACMR/1-98                MTPTYMNIMLAFTISLLGMLIYRSHLMASLLCLEGMMMSLFIMTTLIALNTRSPLINIMPIILLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XJY3|NU4LM_MACMR/1-98        PP 7899**********************************************************************************************
+sp|Q70RU1|NU4LM_PLAMN/1-98                MSLINMNLMLAFTMSLTGLLMYRHHLMSALLCLEGMMLSLFTLTTLTILNTHFTLTNMIPIILLVFAACEAAIGLALLVMISSTYGTDYVQSLNLLQC
+#=GR sp|Q70RU1|NU4LM_PLAMN/1-98        PP 899***********************************************************************************************
+sp|Q8HC89|NU4LM_HAPAU/1-98                MPSISTNITLAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILSLHFTTSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q8HC89|NU4LM_HAPAU/1-98        PP 889***********************************************************************************************
+sp|Q9XL62|NU4LM_MACOC/1-98                MIPTYMNIMLAFTISLLGMLIYRSHLMASLLCLEGMMMSLFIMTTLIALNTRSPLTNIMPIILLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XL62|NU4LM_MACOC/1-98        PP 6789**********************************************************************************************
+sp|Q8HC87|NU4LM_PROSS/1-98                MPSISTNIILAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILSLHFTTSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q8HC87|NU4LM_PROSS/1-98        PP 889***********************************************************************************************
+sp|Q94Y87|NU4LM_LEMCA/1-98                MPSISTNIILAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILSLHFTTSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q94Y87|NU4LM_LEMCA/1-98        PP 889***********************************************************************************************
+sp|Q94PA4|NU4LM_MIRCO/1-98                MPSISINITLAFTTALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLIILNVQLTMSFMMPILLLVFAACEAAIGLALLVMISNTYGLDYIQNLNLLQC
+#=GR sp|Q94PA4|NU4LM_MIRCO/1-98        PP 899***********************************************************************************************
+sp|Q95709|NU4LM_HYLLA/1-98                MPLIYMNITLAFAISLLGMLIYRSHLMSSLLCLEGMMLSLFIMSTLMALNTHSLLINIMPVVLLVFAACEAAVGLALLVSISNTYGLDHIHNLNLLQC
+#=GR sp|Q95709|NU4LM_HYLLA/1-98        PP 899***********************************************************************************************
+sp|Q9MES8|NU4LM_PHYMC/1-98                MSLIHMNVMMAFSMSLVGLLMYRSHLMSALLCLEGMALSLFIFTTLTTLNLHFTLANMAPIILLVFTACEAAIGLALLVMISNTYGTDYVQSLNLLQC
+#=GR sp|Q9MES8|NU4LM_PHYMC/1-98        PP 89************************************************************************************************
+sp|Q2I3G6|NU4LM_ELEMA/1-98                MPYIYMNITLAFVISLIGTLMYRSHLMSSLLCLEGMLLSLFTLNALLSLNMNFTLSTMVPLILLVFAACEAAVGLALLVMISNTYGLDYVQNLNLLQC
+#=GR sp|Q2I3G6|NU4LM_ELEMA/1-98        PP 899***********************************************************************************************
+sp|Q7Y8I6|NU4LM_CHRAS/1-98                MSPILINMLLAFTISLIGLLIYRSHMMSSLLCLEGMMLSLFILTSTLALTMHFTLMTMMPIILLVFAACEAAIGLSLLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q7Y8I6|NU4LM_CHRAS/1-98        PP 8899**********************************************************************************************
+sp|Q38PR4|NU4LM_MAMPR/1-98                MPYIYMNITLAFVISLIGTLMYRSHLMSSLLCLEGMMLSLFTLNALLSLNMNFTLSTTVPLILLVFAACEAAVGLALLIMISNTYGLDYVQNLNLLQC
+#=GR sp|Q38PR4|NU4LM_MAMPR/1-98        PP 899***********************************************************************************************
+sp|Q1HV41|NU4LM_ECTAL/1-98                MSLTYMNMLMAFTTSLLGLLMYRSHMMSSLLCLEGMMLSLFVMVTITILNMKFTLASMMPIILLVFAACEAALGLSLLVMVSTIYGMDYVQNLNLLKC
+#=GR sp|Q1HV41|NU4LM_ECTAL/1-98        PP 899**********************************************************************************************9
+sp|Q591P2|NU4LM_MICGI/1-98                MPSISINITLAFTAALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLIILNTQFTMSFIMPILLLVFAACEAAIGLALLVMVSNTYGLDHIQNLNLLQC
+#=GR sp|Q591P2|NU4LM_MICGI/1-98        PP 899***********************************************************************************************
+sp|Q9G6M7|NU4LM_PTEDA/1-98                MALTYMNMALAFTVSLLGLLMYRSHLMSSLLCLEGMMLSLFVTMSLTILNSNLVLASMIPIILLVFAACEAALGLSLLVMVSNTYGVDYVQNLNLLQC
+#=GR sp|Q9G6M7|NU4LM_PTEDA/1-98        PP 8899**********************************************************************************************
+sp|P61795|NU4LM_PONAB/1-98                MPLIYMNITLAFTMSLLGMLVYRSHLMSSLLCLEGMMLSLFIMITLMTLNTHSLLANIMPITMLVFAACEAAVGLALLASISNTYGLDYVNNLNLLQC
+#=GR sp|P61795|NU4LM_PONAB/1-98        PP 899***********************************************************************************************
+sp|P61796|NU4LM_PONPY/1-98                MPLIYMNITLAFTMSLLGMLVYRSHLMSSLLCLEGMMLSLFIMITLMTLNTHSLLANIMPITMLVFAACEAAVGLALLASISNTYGLDYVNNLNLLQC
+#=GR sp|P61796|NU4LM_PONPY/1-98        PP 899***********************************************************************************************
+sp|Q15GS3|NU4LM_SEMEN/1-98                MPIIYMNIMLSFIISLLGMLIYRSHLMSSLLCLEGMMLSLFIMSTLMALNMHFPLANIVPVALLVFAACEAAVGLALLVSISNTYGLDYVHNLSLLQC
+#=GR sp|Q15GS3|NU4LM_SEMEN/1-98        PP 899***********************************************************************************************
+sp|Q9XL66|NU4LM_MACOB/1-98                MIPTYMNIMLAFTISLLGMLTYRSHLMASLLCLEGMMMSLFIMTTLIALNTRSPLTNIMPIILLVFAACEAAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XL66|NU4LM_MACOB/1-98        PP 6789**********************************************************************************************
+sp|Q94Z64|NU4LM_NYCCO/1-98                MPLISTNILLAFITALLGVLIYRSHLMSSLLCLEGMMLSMFILVSLTTMNLHFTLANIAPLILLVFAACEAAVGLALLVMVSNTYGMDYIQNLNLLQC
+#=GR sp|Q94Z64|NU4LM_NYCCO/1-98        PP 899***********************************************************************************************
+sp|Q7YEL1|NU4LM_AOTTR/1-98                MPFIYINVLLAYFMSLLGLLIYRSHLMSSLLCLEGMMLSLFIMATLMTLNMHLTLMYMMPIVLLVFAACEAAVGLALLVLISNLYGLDYVQNLNLLQC
+#=GR sp|Q7YEL1|NU4LM_AOTTR/1-98        PP 899***********************************************************************************************
+sp|Q7I5M1|NU4LM_RHIMO/1-98                MALIYTNTLLAFTISLLGLLLYRSHLMSSLLCLEGMMLSMFVMVAVMILNTHLTTSSMMPIVLLVFAACEAALGLSLLVMVSNTYGIDHVQNLNLLQC
+#=GR sp|Q7I5M1|NU4LM_RHIMO/1-98        PP 899***********************************************************************************************
+sp|Q94N24|NU4LM_RHIPI/1-98                MALIYTNTLLAFTISLLGLLLYRSHLMSSLLCLEGMMLSMFVMVAVMILNTHLTTSSMMPIVLLVFAACEAALGLSLLVMVSNTYGIDHVQNLNLLQC
+#=GR sp|Q94N24|NU4LM_RHIPI/1-98        PP 899***********************************************************************************************
+sp|Q591M6|NU4LM_MICSI/1-98                MPSISININLAFATALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLTILNMQFTMSFTMPILLLVFAACEAAIGLALLVMVSNNYGLDYIQNLNLLQC
+#=GR sp|Q591M6|NU4LM_MICSI/1-98        PP 899***********************************************************************************************
+sp|Q8LWT4|NU4LM_MANTE/1-98                MSLVHINVMLAFIISLIGMLMYRSHLMSSLLCLEGMMLSLFTMMAITVLNINFTLASMTPIILLVFAACEAALGLSLLVLVSNTHGTDYVQNLNLLQC
+#=GR sp|Q8LWT4|NU4LM_MANTE/1-98        PP 899***********************************************************************************************
+sp|Q94XZ5|NU4LM_EULCO/1-98                MPSISTNIILAFITALLGMLIFRSHLMSSLLCLEGMMLSMFILSTLTILNLYFTTSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q94XZ5|NU4LM_EULCO/1-98        PP 889***********************************************************************************************
+sp|Q15GP7|NU4LM_PREME/1-98                MPIIYMNIMLAFTISLLGMLTYRSHLMSSLLCLEGMMLSLFIMSTLMALNMHFPLANIVPIALLVFAACEAAVGLSLLISISNTYGLDHIHNLSLLQC
+#=GR sp|Q15GP7|NU4LM_PREME/1-98        PP 899***********************************************************************************************
+sp|A8DQK8|NU4LM_AVACL/1-98                MTPIFTNIILAFATAFLGTLIFRSHLMSSLLCLEGMMLSLFILSTLIILNMHLTVSFMMPILLLVFAACEAAIGLALLVMVSNTYGLDYIKNLNLLQC
+#=GR sp|A8DQK8|NU4LM_AVACL/1-98        PP 8899**********************************************************************************************
+sp|A8DQI8|NU4LM_AVAUN/1-98                MPPIFANIILAFATAFLGTLIFRSHLMSSLLCLEGMMLSMFILSTLIILNMHLTVSFMMPILLLVFAACEAAIGLALLVMVSNTYGLDYIKNLNLLQC
+#=GR sp|A8DQI8|NU4LM_AVAUN/1-98        PP 78899*********************************************************************************************
+sp|Q15GM1|NU4LM_PILBA/1-98                MPIIYMNITLAFIISLLGMLVYRSHLMSSLLCLEGMMLSLFMMSTLMALNMHFPLANIMPIALLVFAACEAAVGLALLVSISNMYGLDHIHNLNLLQC
+#=GR sp|Q15GM1|NU4LM_PILBA/1-98        PP 899***********************************************************************************************
+sp|Q5BU77|NU4LM_COLGU/1-98                MPIIYMNIMLAFTISLLGMLIYRSHLMSSLLCLEGMMLSLFIMNTLMALNMHSPLTNIVPITLLVFAACEAAVGLALLVSISSTYGLDHIQNLSLLQC
+#=GR sp|Q5BU77|NU4LM_COLGU/1-98        PP 899***********************************************************************************************
+sp|Q15GR0|NU4LM_NASLA/1-98                MPIIYTNIVLAFMISLLGMLIYRSHLMSSLLCLEGMMLSLFMMSTLMALNMHFPLANIVPIALLVFAACEAAVGLALLISISNTYGLDHIHNLNLLQC
+#=GR sp|Q15GR0|NU4LM_NASLA/1-98        PP 899***********************************************************************************************
+sp|Q58F73|NU4LM_CHODI/1-98                MPSTYINILLAFTMALLGLLLYRSHMMSSLLCLEGLMLALFILSTLMALNTHHTLSAVLPIVLMVFAACEAALGLALLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q58F73|NU4LM_CHODI/1-98        PP 8899**********************************************************************************************
+sp|Q9G3S8|NU4LM_PTESA/1-98                MALTYMNMALAFTVSLLGLLMYRSHLMSSLLCLEGMMLSLFVTMALTILNSNLVLASMIPIILLVFAACEAALGLSLLVMVSNTYGVDHVQNLNLLQC
+#=GR sp|Q9G3S8|NU4LM_PTESA/1-98        PP 8899**********************************************************************************************
+sp|Q591Y8|NU4LM_MICSM/1-98                MPSISININLAFAVALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLIILNLQFTMSFIMPILLLVFAACEAAIGLALLVMVSNNYGLDYIQNLNLLQC
+#=GR sp|Q591Y8|NU4LM_MICSM/1-98        PP 899***********************************************************************************************
+sp|Q5G7X0|NU4LM_CRORS/1-98                MSLVYMNTALAFSISMLGLLMYRAHLMSSLLCLEGMMLSLFTLGAITILTTHFTLANMLPIVLLVFAACEAAVGLSLLVMVSNTYGADFVQNLNLLQC
+#=GR sp|Q5G7X0|NU4LM_CRORS/1-98        PP 89************************************************************************************************
+sp|Q7J3C3|NU4LM_MACFA/1-98                MTPTYMNIMLAFTISLLGMLTYRSHLVASLLCLEGMMMSLFIMATLIASNTHFPLVNIMPIILLVFAACETAVGLALLISISNTYGLDYVHNLNLLQC
+#=GR sp|Q7J3C3|NU4LM_MACFA/1-98        PP 7899**********************************************************************************************
+sp|Q05F77|NU4LM_CHEME/1-98                MLSISMNMTLAFTTALLGMLMFRSHLMSSLLCLEGMMLSMFILSTLLILNMQYTITFMMPILLLVFAACEAAIGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q05F77|NU4LM_CHEME/1-98        PP 7789**********************************************************************************************
+sp|Q9G385|NU4LM_ECHTE/1-98                MPVIYINLIAAFFMAFMGLLIYRSHLMSSLLCLEGMMLSLFILNSTLALSMHFTLYSMMPIILLVFAACEAALGLSLLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q9G385|NU4LM_ECHTE/1-98        PP 899***********************************************************************************************
+sp|Q591V2|NU4LM_MICJO/1-98                MPSISININLAFAAAMLGMLMFRSHMMSSLLCLEGMMLSMFILSTLTILNMQFTMSFTMPILLLVFAACEAAIGLALLVMVSNNYGLDYIQNLNLLQC
+#=GR sp|Q591V2|NU4LM_MICJO/1-98        PP 899***********************************************************************************************
+sp|Q1AL67|NU4LM_CHLSB/1-98                MSPIFMNITLAFTISLLGMLVYRSHLMASLLCLEGMMMSLFIMIALMASNAHSPLTNIMPIILLVFAACETAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q1AL67|NU4LM_CHLSB/1-98        PP 899***********************************************************************************************
+sp|Q9XK21|NU4LM_MACHE/1-98                MIPTYMNIMLAFTISLLGMLTYRSHLVASLLCLEGMMMSLFIMATLIASNTHFPLINIMPIILLVFAACEAAVGLALLISISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XK21|NU4LM_MACHE/1-98        PP 6789**********************************************************************************************
+sp|Q9XL48|NU4LM_MACNR/1-98                MIPTYMNIMLAFTISLLGMLTYRSHLVASLLCLEGMMMSLFIMATLMASNTHFPLINIMPIILLVFAACEAAVGLALLISISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XL48|NU4LM_MACNR/1-98        PP 6789**********************************************************************************************
+sp|P41301|NU4LM_BALMU/1-98                MTLIHMNVLMAFSMSLVGLLMYRSHLMSALLCLEGMMLSLFVLAALTILNSHFTLANMMPIILLVFAAYVAAIGLALLVMVSNTYGTDYVQSLNLLQC
+#=GR sp|P41301|NU4LM_BALMU/1-98        PP 899***********************************************************************************************
+sp|Q05F85|NU4LM_AVAOC/1-98                MPPIFTNVILAFATAFLGTLIFRSHLMSSLLCLEGMMLSLFILSTLIILNMHLTVSFMMPILLLVFAACEAAIGLALLVMVSNTYGLDHIKNLNLLQC
+#=GR sp|Q05F85|NU4LM_AVAOC/1-98        PP 7889**********************************************************************************************
+sp|Q8HBG1|NU4LM_VARVV/1-98                MPSIFINIILAFIIALLGMLIFRSHLMSSLLCLESMMLSMFILSTLTILSLHLTMSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q8HBG1|NU4LM_VARVV/1-98        PP 899***********************************************************************************************
+sp|Q8HBG2|NU4LM_VARRB/1-98                MPSIFINIILAFIIALLGMLIFRSHLMSSLLCLESMMLSMFILSTLTILSLHLTMSFMMPILLLVFAACEAAVGLALLVTVSNTYGLDYIQNLNLLQC
+#=GR sp|Q8HBG2|NU4LM_VARRB/1-98        PP 899***********************************************************************************************
+sp|Q591Y0|NU4LM_MICMI/1-98                MPSISININLAFAAALLGMLMFRSHMMSSLLCLEGMMLSMFTLSTLTILNMQFTMSFTMPILLLVFAACEAAIGLALLVMVSNNYGLDYIQNLNLLQC
+#=GR sp|Q591Y0|NU4LM_MICMI/1-98        PP 899***********************************************************************************************
+sp|Q05EQ4|NU4LM_LEPMS/1-98                MPSISINITLAFTMALTGMLVFRSHLMSSLLCLEGMMLSMFILSILFIMNMHFTVSFIMPILLLVLAACEAAIGLALLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q05EQ4|NU4LM_LEPMS/1-98        PP 899***********************************************************************************************
+sp|Q9XL45|NU4LM_MACNG/1-98                MIPTYMNIMLAFTISLLGMLTYRSHLVASLLCLEGMMMSLFIMTTLIASNTHSPLINIMPIILLVFAACEAAVGLALLISISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XL45|NU4LM_MACNG/1-98        PP 6789**********************************************************************************************
+sp|Q955T4|NU4LM_ALLTR/1-98                MPSISINIILAFAAALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLIISNTQLTMSFMMPIMLLVFSACEAAIGLALLVMVSNTYGLDYIQNLNLLKC
+#=GR sp|Q955T4|NU4LM_ALLTR/1-98        PP 899**********************************************************************************************9
+sp|Q6IYH0|NU4LM_MACMU/1-98                MTLTYMNIMLAFAISLLGMLTYRSHLVASLLCLEGMMMSLFIMATLIASNTHFPLINIMPIILLVFAACETAVGLALLISISNTYGLDYVHNLNLLQC
+#=GR sp|Q6IYH0|NU4LM_MACMU/1-98        PP 899***********************************************************************************************
+sp|Q953J9|NU4LM_OCHCO/1-98                MSITTLNIMVAFTMALLGMFTYRSHLMSSLLCLEGMMLSLFMLATIVSLNMNFTISFMFPVILLVFAACEAAVGLALLVMVSNTYGMDYIHNLNLLQC
+#=GR sp|Q953J9|NU4LM_OCHCO/1-98        PP 8999**********************************************************************************************
+sp|Q94Q33|NU4LM_MICRA/1-98                MLSISININLAFAAALLGMLMFRSHMMSSLLCLEGMMLSMFILSTLIILNMQFTMSFTMPILLLVFAACEAAIGLALLVMVSNNYGLDYIQNLNLLQC
+#=GR sp|Q94Q33|NU4LM_MICRA/1-98        PP 7789**********************************************************************************************
+sp|Q9B8T9|NU4LM_AVALA/1-98                MPSIFTNIILAFATALLGTLVFRSHLMSSLLCLEGMMLSLFTLSTLIILNMHLTMSFMMPILLLVFAACEAAIGLALLVMVSNTYGLDYIKNLSLLQC
+#=GR sp|Q9B8T9|NU4LM_AVALA/1-98        PP 889***********************************************************************************************
+sp|Q94YC5|NU4LM_PIPAB/1-98                MSLTYFNVMLAFTMSFLGLLMYRSHLMSSLLCLEGLMLSLFVLVTITILITHSTLNSMLPIILLVFAACEAALGLSLLVAVSNTYGLDHVQNLNLLKC
+#=GR sp|Q94YC5|NU4LM_PIPAB/1-98        PP 899**********************************************************************************************9
+sp|Q8LX57|NU4LM_GALVR/1-98                MPPIYINIILAYTASLVGLLMYRSHFMSSLLCLEGMMLSLFILATILSLNLHFTLSFTLPIILLIFAGCETAVGLALLVMISDIYGLDHVQNLNLLQC
+#=GR sp|Q8LX57|NU4LM_GALVR/1-98        PP 889***********************************************************************************************
+sp|Q70UT9|NU4LM_OCHPR/1-98                MSITTLNIMVAFMMALLGMFVYRSHLMSSLLCLEGMMLSLFMLATIVSLNMNFTISFMFPVILLVFAACEAAVGLALLIMVSNTYGMDYIHNLNLLQC
+#=GR sp|Q70UT9|NU4LM_OCHPR/1-98        PP 8999**********************************************************************************************
+sp|Q94ZL2|NU4LM_CEBAL/1-98                MPFIYINTALAYSMSLLGLLIYRSHLMSSLLCLEGMMLSLFIMMTTMTLNMHLMLMYMLPIILLVFAACEAAVGLALLILISNLYGLDYVQNLNLLQC
+#=GR sp|Q94ZL2|NU4LM_CEBAL/1-98        PP 899***********************************************************************************************
+sp|Q94NY9|NU4LM_DAUMA/1-98                MPLISINLSLAFTTALLGVLMFRSHLMSSLLCLEGTMLSMFILTTLSTLNLHYNLSSTLPIILLVFAACEAAAGLALLVTVSNTYGLDYVQNLNLLQC
+#=GR sp|Q94NY9|NU4LM_DAUMA/1-98        PP 899***********************************************************************************************
+sp|Q50DL2|NU4LM_CHLAE/1-98                MSPIFINITLAFTISLLGMLVYRSHLMASLLCLEGMMMSLFITIALMASNTHSPLINIMPITLLVFAACETAVGLALLVSISNTYGLDYIHNLNLLQC
+#=GR sp|Q50DL2|NU4LM_CHLAE/1-98        PP 899***********************************************************************************************
+sp|O21783|NU4LM_CALLC/1-98                MTQASTNILLAFFFSLLGTLIFRSHLMSTLLCLEGMMLTLFIMSTMTALNSQSTVMYTIPIVMLVFAACEAAIGLALLAMISNTYGTDYVQNLNLLQC
+#=GR sp|O21783|NU4LM_CALLC/1-98        PP 78899*********************************************************************************************
+sp|Q7GF83|NU4LM_CALMU/1-98                MTQASTNILLAFFFSLLGTLIFRSHLMSTLLCLEGMMLTLFIMSTMTALNSQSTVMYTIPIVMLVFAACEAAIGLALLAMISNTYGTDYVQNLNLLQC
+#=GR sp|Q7GF83|NU4LM_CALMU/1-98        PP 78899*********************************************************************************************
+sp|Q9ZXX6|NU4LM_PAPHA/1-98                MTPTHMNITLAFTISLLGMLIYRSHLMASLLCLEGMMMSLFIMTAVMASNAHSPLINIMPIIMLVFAACEAAVGLALLVSISNTYGLDHINNLSLLQC
+#=GR sp|Q9ZXX6|NU4LM_PAPHA/1-98        PP 7889**********************************************************************************************
+sp|Q00GF0|NU4LM_MICMM/1-98                MPSISININLAFAAALLGMLMFRSHMMSSLLCLEGMMLSMFTLSTLIILNLQLTMSFTMPILLLVFAACEAAIGLALLVTVSNNYGLDYIQNLNLLQC
+#=GR sp|Q00GF0|NU4LM_MICMM/1-98        PP 899***********************************************************************************************
+sp|Q9XL36|NU4LM_MACSY/1-98                MIPTYMNIMLAFTISLLGMLTYRSHLVASLLCLEGMTMSLFIMTALIASNTHSPLINIMPIILLVFAACEAAVGLALLISISNTYGLDYIHNLNLLQC
+#=GR sp|Q9XL36|NU4LM_MACSY/1-98        PP 6789**********************************************************************************************
+sp|O21558|NU4LM_NEPAB/1-98                MSPIYINLMMAFIFSLLGTLLFRSHLMSTLLCLEGMMLSLFIMVTSSALNTQSMITYVIPITMLVFGACEAAIGLALLVMISNTYGTDYVQNLNLLQC
+#=GR sp|O21558|NU4LM_NEPAB/1-98        PP 899***********************************************************************************************
+sp|O21514|NU4LM_PHOSU/1-98                MMMAVLNISLAFIFSLLGTLMFRSHLMSTLLCLEGMMLTLFIITTITSLNSHSMVMYPIPIVILVFAACEAAVGLALLVKVSNTYGSDYVQNLNLLQC
+#=GR sp|O21514|NU4LM_PHOSU/1-98        PP 78899*********************************************************************************************
+sp|P03903|NU4LM_MOUSE/1-98                MPSTFFNLTMAFSLSLLGTLMFRSHLMSTLLCLEGMVLSLFIMTSVTSLNSNSMSSMPIPITILVFAACEAAVGLALLVKVSNTYGTDYVQNLNLLQC
+#=GR sp|P03903|NU4LM_MOUSE/1-98        PP 78899*********************************************************************************************
+sp|Q00HT4|NU4LM_LEPSL/1-98                MPSISTNIILAFTAALTGMLVFRSHLMSSLLCLEGMMLSMFILSTLTIMNLHSTMSFMMPILLLVFAACEAAIGLALLVMMSNTYGLDLIQNLSLLQC
+#=GR sp|Q00HT4|NU4LM_LEPSL/1-98        PP 889***********************************************************************************************
+sp|Q953H3|NU4LM_MICKK/1-98                MSPAVLNITMAFTFSLLGTLMFRSHLMSTLLCLEGMMLSLFMLATITPLNTHSMIMFPIPIAILVFAACEAAVGLALLAKISNTYGSDFVQNLNLLQC
+#=GR sp|Q953H3|NU4LM_MICKK/1-98        PP 77889*********************************************************************************************
+sp|Q9G3R5|NU4LM_CHATU/1-98                MSLTYLNIMLAFSTSLLGLLMYRSHLMSSLLCLEGLVLSLFVLTTLMVLTINLTLTNLLPIILLVFAACEAALGLSLLVVVSNTYGVDYVQNLNLLKC
+#=GR sp|Q9G3R5|NU4LM_CHATU/1-98        PP 899**********************************************************************************************9
+sp|O21517|NU4LM_OXYRU/1-98                MTLTTMNILLAFFFSLLGTLIFRSHLMSTLLCLEGMMLSLFIMTTITALDTQSMVMYTIPITTLVFAACEAAVGLALLTMVSNTYGTDHVQNLNLLQC
+#=GR sp|O21517|NU4LM_OXYRU/1-98        PP 8999**********************************************************************************************
+sp|Q00GQ9|NU4LM_LEPSH/1-98                MPSISTNITLAFTIALTGMLVFRSHLMSSLLCLEGMMLAMFILSILFIMNLHYTVSFIMPILLLVLAACEAAIGLALLVMVSNTYGLDHIQNLNLLQC
+#=GR sp|Q00GQ9|NU4LM_LEPSH/1-98        PP 889***********************************************************************************************
+sp|P05507|NU4LM_RAT/1-98                  MTSAFLNLTMAFTLSLLGTFMFRSHLMSTLLCLEGMMLSLFVMTSTSTLNSNSMISMTIPITILVFAACEAAVGLALLVKISNTYGTDYVQNLNLLQC
+#=GR sp|P05507|NU4LM_RAT/1-98          PP 78899*********************************************************************************************
+sp|O21520|NU4LM_MICPE/1-98                MTPAVFNITLAFSFSLLGTLMFRSHLMSTLLCLEGMMLSPFILATITPLNTHSMIMFPIPIVILVFAACEAAVGLALLAKISNTYGSDFVHNLNLLQC
+#=GR sp|O21520|NU4LM_MICPE/1-98        PP 677899********************************************************************************************
+sp|Q58F86|NU4LM_BRATR/1-98                MPFIYINILLALTTALLGLLLFRSHMMSSLLCLEGLMLSLFIMSALTTLGTHHTLSITMPIILMVFAACETALGLALLVTISNIYGSDYVQNLNLLQC
+#=GR sp|Q58F86|NU4LM_BRATR/1-98        PP 899***********************************************************************************************
+sp|Q1MWD9|NU4LM_PHAVS/1-98                MTSINLNLTVAFSLALAGVLIYRSHLMSTLLCLEGMMLSLFIMMALLISHFHMFSTSMMPIILLVFSACEAGVGLALLVKISNNYGNDYVQNLNLLQC
+#=GR sp|Q1MWD9|NU4LM_PHAVS/1-98        PP 899***********************************************************************************************
+sp|Q953L2|NU4LM_ECHGY/1-98                MQMTMINMILAFIMATTGLLMFRSHFMSSLLCLEGMMLSIFILMSISTLNFNNSLAMMFPLVLLVFAACEAAIGLSLLVKISNTYGTDYVQNLNLLQC
+#=GR sp|Q953L2|NU4LM_ECHGY/1-98        PP 899***********************************************************************************************
+sp|Q70XG4|NU4LM_THYEL/1-98                MASINLNIIMAFIMALMGVLIYRSHLMSTLLCLEGMMLSLFILVTLLISQSHMLTTSMMPLILLVFSACEAGVGLALLVTISTTYGNDHVQNLNLLQC
+#=GR sp|Q70XG4|NU4LM_THYEL/1-98        PP 889***********************************************************************************************
+sp|O21535|NU4LM_NYCSU/1-98                MTLVMFNITIAFTLSLLGTLMFRTHLMSTLLCLEGMMLCLFIMAVITSLDTHPMIMYPIPIIILVFAACEAAVGLALLAMVSSTYGTDYVQNLNLLQC
+#=GR sp|O21535|NU4LM_NYCSU/1-98        PP 899***********************************************************************************************
+sp|Q8LWU8|NU4LM_MACPR/1-98                MSLMTMNILLAFFISLMGMMMYRSHIMSSLLCLESMMLSLFMLATVLTLDMSFITMTIIPMTLLVFAACEAAIGLSLLVMVSNTYGLDYVQNLNLLQC
+#=GR sp|Q8LWU8|NU4LM_MACPR/1-98        PP 899***********************************************************************************************
+sp|Q5QS06|NU4LM_POTTR/1-98                MSSINLNLIMAFSLALMGVLIYRSHLMSTLLCLEGMMLSLFILMALLISHFHMFSASMAPLILLVFSACEAGVGLALLVKTSNNYGNDYVQNLNLLQC
+#=GR sp|Q5QS06|NU4LM_POTTR/1-98        PP 899***********************************************************************************************
+sp|Q952R8|NU4LM_TRIVU/1-98                MTSINLNLTVAFSLALAGVLIYRSHLMSTLLCLEGMMLSLFVMMALLISHFHMFSTSMAPIILLVFSACEAGVGLALLVKTSNNYGNDYVQNLNLLQC
+#=GR sp|Q952R8|NU4LM_TRIVU/1-98        PP 899***********************************************************************************************
+sp|Q65CI5|NU4LM_MONDO/1-98                MEQINLNMITAFTIALMGVLTYRSHLMSTLLCLEGMMLSLFILMVLLISHSHMVSMSMAPLILLVFSACEAGVGLALLVTISHTYGNDYVQNLNLLQC
+#=GR sp|Q65CI5|NU4LM_MONDO/1-98        PP 889***********************************************************************************************
+sp|Q1MWH8|NU4LM_DACTR/1-98                MTSINLNLTMAFSLALTGVLVYRSHLMSTLLCLEGMMLSLFILMALLISHSHMFSVSMAPLILLVFSACEAGVGLALLVKISTNYGNDYVQNLNLLQC
+#=GR sp|Q1MWH8|NU4LM_DACTR/1-98        PP 899***********************************************************************************************
+sp|Q7Y8G0|NU4LM_HEMAU/1-98                MSIVYMNVMLAFMIALIGTLLYRHHLMSSLMCLEGMMLAMYIFISLISLNMHFTTMYMVPLIILVFAACEAALGLALLVKMFNYYGNDYVQNLNLLKC
+#=GR sp|Q7Y8G0|NU4LM_HEMAU/1-98        PP 899**********************************************************************************************9
+sp|Q5QS19|NU4LM_PERGU/1-98                MAPINLNLILAFSLALLGVLIYRTHLMSTLLCLEGMMLSLFILMTLLISHFHMYSMAMAPLILLVFSACEAGVGLALLVKISTSYGNDYVQNLNLLQC
+#=GR sp|Q5QS19|NU4LM_PERGU/1-98        PP 7889**********************************************************************************************
+sp|O21567|NU4LM_SIGHI/1-98                MISSTTNIILAFMFSLLGTFMFRSHLMSTLLCLEGMMLSLFILTAFSSLSSQSMIMYSLPIVILVFAACEAAIGLALLAMISSTYGTDYVQNLNLLQC
+#=GR sp|O21567|NU4LM_SIGHI/1-98        PP 566789********************************************************************************************
+sp|P92667|NU4LM_MACRO/1-98                MMSISLNLTMAFLLALAGVLIYRSHLMSTLLCLEGMMLSLFILMALLISHFHMFSASMAPLILLVFSACEAGVGLALLVKTSNNYGNDYVQNLNLLQC
+#=GR sp|P92667|NU4LM_MACRO/1-98        PP 7899**********************************************************************************************
+sp|Q08GM0|NU4LM_LAGFA/1-98                MMSINLNLIMAFSLALAGVLIYRSHLMSTLLCLEGMMLSLFILMALIISHFHMFSTSMAPLILLVFSACEAGVGLALLVKTSSNYGNDYVQNLNLLQC
+#=GR sp|Q08GM0|NU4LM_LAGFA/1-98        PP 7899**********************************************************************************************
+sp|Q8W9B6|NU4LM_VOMUR/1-98                MTSISLNLIMAFSLALAGVLIYRSHLMSTLLCLEGMMLSLFILMALLISHFHMLSVSMAPLILLVFSACEAGVGLALLVKTSTDYGNDYVQNLNLLQC
+#=GR sp|Q8W9B6|NU4LM_VOMUR/1-98        PP 899***********************************************************************************************
+sp|Q9B2G1|NU4LM_ISOMA/1-98                MAPINLNLILAFSLALLGVLIYRTHLMSTLLCLEGMMLSLFILMTLLISHFHMYSMSMAPLILLVFSACEAGVGLALLVKISTSHGNDYVQNLNLLQC
+#=GR sp|Q9B2G1|NU4LM_ISOMA/1-98        PP 7889**********************************************************************************************
+sp|Q32UT4|NU4LM_DASHA/1-98                MLAINLNLTVAFMLALTGVLVYRSHLMSTLLCLEGMMLSLFILMTLLIVHFHMFSMSMAPLILLVFSACEAGVGLALLVKISSTHGNDYVQNLNLLQC
+#=GR sp|Q32UT4|NU4LM_DASHA/1-98        PP 67899*********************************************************************************************
+sp|P41307|NU4LM_DIDVI/1-98                MVLIKLNIIVAFMLALSGVLIYRSHLMSTLLCLEGMMLSLFIFMAAMITHFHMFSISMMPLILLVFSACEAGVGLALLVSISNTYGNDQVQNLNLLQC
+#=GR sp|P41307|NU4LM_DIDVI/1-98        PP 7899**********************************************************************************************
+sp|Q1MWF2|NU4LM_LAGHI/1-98                MMSINLNLIMAFLLALAGVLIYRSHLMSTLLCLEGMMLSLFILMALLISHFHMFSASMAPLILLVFSACEAGVGLALLVKTSSNYGNDYVQNLNLLQC
+#=GR sp|Q1MWF2|NU4LM_LAGHI/1-98        PP 7899**********************************************************************************************
+sp|Q5QS71|NU4LM_TARRO/1-98                MTPLNINLTMAFFLALAGVLIYRSHLMSTLLCLEGMMLSLFILLSLLISHFHMLSSSMAPLILLVFSACEAGVGLALLVKMSSNYGNDYVQNLNLLQC
+#=GR sp|Q5QS71|NU4LM_TARRO/1-98        PP 78899*********************************************************************************************
+sp|Q5QS84|NU4LM_SMIDO/1-98                MLSINLNLIIAFLLALMGVLIYRSHLMSTLLCLEGMMLSLFILMTLLITHFHMFSMAMTPLILLVFSACEAAIGLALLVKISATHGSDHVQNLNLLQC
+#=GR sp|Q5QS84|NU4LM_SMIDO/1-98        PP 7789**********************************************************************************************
+#=GC PP_cons                              899***********************************************************************************************
+#=GC RF                                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//
