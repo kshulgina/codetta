@@ -1,6 +1,5 @@
 # Codetta v1.1
 
-WARNING: this branch is under active development, use at your own risk.
 
 ## Description
 
@@ -21,6 +20,7 @@ the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/
 If you encounter any problems in the installation or usage of Codetta, please 
 leave a Github issue or email me at shulgina@g.harvard.edu
 
+
 ## Download and setup
 
 Codetta was developed for Python versions 3.5+ on Linux and MacOS. Required 
@@ -38,6 +38,7 @@ Codetta additionally requires:
 install gzip`. For Linux, you'll have to use your system's package management 
 tool.
 
+
 ## Setting up a profile HMM database
 
 Codetta aligns the input sequence to a database of profile HMM models of proteins. 
@@ -53,42 +54,9 @@ disk space)
 	rm Pfam-A_enone.tar.gz
 	cd ..
 
-If you want to build your own custom profile HMM database, this will be described in 
-the next section. 
+If you want to build your own custom profile HMM database, this will be described in a
+later section. 
 
-### Building a custom profile HMM database
-
-Pfam domains are expected to align to about ~50% of coding sequence. If you're focused
-on a specific clade, you could increase the proportion of aligned sequence by using a 
-customized profile HMM database. Starting from a set of multiple sequence alignments 
-of expected genes in the organism of interest, you can build a custom profile HMM
-database.
-
-In this example, we will build a profile HMM database tailored for metazoan 
-mitochondria which have only 13 protein coding genes. In the 
-`codetta\examples\mito-db\` directory, you can find multiple sequence alignment files 
-in Stockholm format for each of the 13 genes*.  
-
-The first step is to use `hmmbuild` to create profile HMMs from each of the 
-alignment files.
-
-	cd examples/custom-db/
-	ls metazoan_mito*.msa | xargs -I {} hmmbuild --enone {}.hmm {}
-
-Then we concatenate all of these `.hmm` files into a single database and 
-finally run `hmmpress` to finish
-
-	cat metazoan_mito*.hmm > metazoan_mito_proteins.hmm
-	hmmpress metazoan_mito_proteins.hmm
-	mv metazoan_mito_proteins.hmm* ../../resources/.
-
-At the end, the profile HMM database is moved into the resources directory, 
-where Codetta expects to find all profile HMM databases. When running a Codetta 
-analysis, you will have to specify the custom profile HMM database with the 
-`-p` option.
-
-*These alignments were created by searching the human mitochondrial protein 
-sequences against SwissProt with `jackhmmer`
 
 ## Usage
 
@@ -191,6 +159,7 @@ a file to which a one-line summary of the results will be appended to.
 
 See the full list of options with `./codetta.py --help`
 
+
 ### Now that you're comfortable...
 
 The basic usage of Codetta is to use `codetta.py`, which rolls the three main steps of 
@@ -218,6 +187,7 @@ run `codetta_align.py` and `codetta_summary.py` once and then `codetta_infer.py`
 times with different parameters.
 - You want to parallelize the computationally expensive alignment step on a computing 
 cluster. See the next section.
+
 
 ### Parallelizing the alignment step on a computing cluster 
 
@@ -251,6 +221,42 @@ If your cluster uses a different job scheduler, you will have to manually
 modify the job array template file and the code in `codetta.py` (`hmmscan_jobs` 
 function) that writes and sends the job array file.
 
+
+### Building a custom profile HMM database
+
+Pfam domains are expected to align to about ~50% of coding sequence. If you're focused
+on a specific clade, you could increase the proportion of aligned sequence by using a 
+customized profile HMM database. Starting from a set of multiple sequence alignments 
+of expected genes in the organism of interest, you can build a custom profile HMM
+database.
+
+In this example, we will build a profile HMM database tailored for metazoan 
+mitochondria which have only 13 protein coding genes. In the 
+`codetta\examples\mito-db\` directory, you can find multiple sequence alignment files 
+in Stockholm format for each of the 13 genes*.  
+
+The first step is to use `hmmbuild` to create profile HMMs from each of the 
+alignment files.
+
+	cd examples/custom-db/
+	ls metazoan_mito*.msa | xargs -I {} hmmbuild --enone {}.hmm {}
+
+Then we concatenate all of these `.hmm` files into a single database and 
+finally run `hmmpress` to finish
+
+	cat metazoan_mito*.hmm > metazoan_mito_proteins.hmm
+	hmmpress metazoan_mito_proteins.hmm
+	mv metazoan_mito_proteins.hmm* ../../resources/.
+
+At the end, the profile HMM database is moved into the resources directory, 
+where Codetta expects to find all profile HMM databases. When running a Codetta 
+analysis, you will have to specify the custom profile HMM database with  
+`-p [name of profile HMM db]`.
+
+*These alignments were created by searching the human mitochondrial protein 
+sequences against SwissProt with `jackhmmer`
+
+
 ### Bonus: downloading nucleotide sequences from GenBank
 
 We have also provided a simple program for a downloading FASTA file from 
@@ -276,6 +282,7 @@ _Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1 by
 
 Notice the argument `c` specifying that this is a nucleotide 
 database accession.
+
 
 ### Summary, with one more example
 
