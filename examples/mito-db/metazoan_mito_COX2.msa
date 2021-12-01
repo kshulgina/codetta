@@ -1,5 +1,5 @@
 # STOCKHOLM 1.0
-#=GF ID NC_012920.1_prot_YP_003024029.1_4-i5
+#=GF ID COX2
 #=GF AU jackhmmer (HMMER 3.2.1)
 
 #=GS sp|P48660|COX2_HORSE/1-224        DE [subseq from] Cytochrome c oxidase subunit 2 OS=Equus caballus OX=9796 GN=MT-CO2 PE=3 SV=1

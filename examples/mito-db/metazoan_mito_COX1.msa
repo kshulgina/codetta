@@ -1,5 +1,5 @@
 # STOCKHOLM 1.0
-#=GF ID NC_012920.1_prot_YP_003024028.1_3-i2
+#=GF ID COX1
 #=GF AU jackhmmer (HMMER 3.2.1)
 
 #=GS sp|O79876|COX1_PIG/1-511          DE [subseq from] Cytochrome c oxidase subunit 1 OS=Sus scrofa OX=9823 GN=MT-CO1 PE=3 SV=2
