@@ -4,6 +4,10 @@
 
 # check that Codetta required Python packages are present
 python check_requirements.py
+if [ $? -ne 0 ]
+then
+    exit
+fi
 
 # untar HMMER distribution
 tar xf hmmer.tar.gz
@@ -19,9 +23,6 @@ make install
 echo Installing local Easel
 cd easel; make install 
 cd ../..
-
-# download Pfam database built with --enone option
-# TBD
 
 # clean up
 # rm hmmer-3.3.2.tar.gz 
