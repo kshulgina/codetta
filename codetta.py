@@ -315,10 +315,14 @@ class GeneticCode:
     
     def processing_genome(self):
         """
-        Breaks nucleotide sequences in to pieces <100,000 nt and creates esl-sfetch index
+        Reads in input nucleotide sequence line by line and simultaneously 1) breaks nucleotide 
+        sequences in to pieces <100,000 nt, 2) creates a preliminary translation and esl-sfetch index 
+        and 3) writes hmmscan scripts, which are launched at the end.
         """
+        
+        ## Checking that genome sequence is OK
         print('Reading in sequences from %s' % self.genome_path)
-
+        
         # if genome file does not exist
         if not os.path.isfile(self.genome_path):
             sys.exit('ERROR: Input FASTA file does not exist.')
@@ -326,22 +330,50 @@ class GeneticCode:
         # check that sequence file satisfies FASTA format
         if not validate_fasta(self.genome_path):
             sys.exit('ERROR: Input sequence file is not in FASTA format')
+                
+        ## Checking that profile HMM database has been pressed
+        print('Profile HMM database used is %s' % self.profiles)
         
-        ## Now, break any sequences that are >100,000 nt in half
+        if not os.path.exists('%s/%s.h3m' % (self.resource_dir, self.profiles)):
+            sys.exit("ERROR: profile HMM database has not been pressed with hmmpress")
+        
+        ## Initializing sequence pieces and preliminary translation files, temp directory
         sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
-        
-        # initialize pieces file
+        preliminary_translation_file = '%s.preliminary_translation.faa' % self.align_output
+                
+        # initialize sequence pieces file
+        print('Sequences (broken into pieces <100,000 nt) will be written to %s' % sequence_pieces_file)
         try:
             with open(sequence_pieces_file, 'w') as gpf:
                 pass
         except FileNotFoundError:
             sys.exit('ERROR: could not open file path %s for writing' % sequence_pieces_file)
+        
+        # initialize the preliminary translation file
+        print('Preliminary translation will be written to %s' % preliminary_translation_file)
+        try:
+            with open(preliminary_translation_file, 'w') as ptf:
+                pass
+        except FileNotFoundError:
+            sys.exit('ERROR: could not open file path %s for writing' % preliminary_translation_file)
+                
+        # make a temporary files directory if it does not already exist
+        print('All temp files will be written to %s/' % self.scratch_dir)
+        if not os.path.exists(self.scratch_dir):
+            os.makedirs(self.scratch_dir)
 
-        # open sequence file, read sequences in as FASTA, and break into genome pieces
-        print('Breaking into pieces shorter than 100,000 nt; writing to %s' % sequence_pieces_file)
+        
+        ## Initializing variables to keep track for # of hmmscan commands per script
+        len_analyzed = 0
+        n_hmm = 0
+        shell_count = 0
+        indices_to_analyze = list()
+        
+        ## Main business: Read input sequence file in as FASTA, and break into genome pieces to process
         with open(self.genome_path) as f:
-            n_piece = 0
-            total_len = 0
+            n_piece = 0         # keeping track of number of resulting sequences (split if too long)
+            
+            # read in all lines corresponding to a single input sequence
             for header, seq_lines in itertools.groupby(f, lambda l: l.startswith(">")):
                 if header == True:
                     continue
@@ -349,7 +381,7 @@ class GeneticCode:
                 seqs = list()
                 seqs.append(fasta_string)
                 
-                # if piece is longer than 100,000 nts, split into two even pieces
+                # if input sequence is longer than 100,000 nts, split into two even pieces
                 while sum(np.array([len(a) for a in seqs]) > 100000) > 0:
                     long_inds = np.where(np.array([len(a) for a in seqs]) > 100000)[0]
                     for li in long_inds:
@@ -357,76 +389,68 @@ class GeneticCode:
                         seqs[li] = firstpart
                         seqs.append(secondpart)
                 
-                # write to file
+                # go through resulting sequences: write each to sequence file, preliminary translation 
+                # file and chuck together for hmmscan jobs
                 for seq in seqs:
+                    # write to sequence file
                     with open(sequence_pieces_file, 'a') as gpf:
                         gpf.write('>piece_%i\n' % n_piece)
                         gpf.write(seq + '\n')
                     
+                    ## write preliminary 6-frame translation
+                    dna = [seq, seq[1:], seq[2:], 
+                           reverse_complement(seq), 
+                           reverse_complement(seq[:-1]), 
+                           reverse_complement(seq[:-2])]
+                    
+                    # translate each fragment, turn in-frame stop codons into X
+                    prot = [replace_stop(translate(dnas, gencode)) for dnas in dna]
+                    
+                    # step through each of six frames and write to file
+                    for i in range(6):
+                        with open(preliminary_translation_file, 'a') as ptf:
+                            ptf.write('>piece_%i_%i\n'  % (n_piece, i))
+                            ptf.write(prot[i] + '\n')
+                        
+                        ## This part groups together some number of translated sequences for hmmscan script
+                        # add this index to current hmmscan script
+                        indices_to_analyze.append('%i_%i' % (n_piece, i))
+                        
+                        # increment sequence length and n sequences of current grouping
+                        seq_frame_len = len(prot[i])
+                        len_analyzed += seq_frame_len
+                        n_hmm += 1
+
+                        # if length or num sequences are big enough, write an hmmscan script
+                        if len_analyzed > 2000000 or n_hmm > 2000:
+
+                            # copy template batch script and add hmmscan commands
+                            shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
+                            seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
+                            with open(seq_names_file, 'w') as snf:
+                                for indices_str in indices_to_analyze:
+                                    snf.write('piece_%s\n' % indices_str)
+                            with open(shell_script, 'w') as batch_file:
+                                batch_file.write('#!/bin/bash\n\n')
+                                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                                        (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
+                            
+                            # reset for next hmmscan script
+                            indices_to_analyze = list()
+                            len_analyzed = 0
+                            n_hmm = 0
+                            shell_count += 1
+                    
                     n_piece += 1
-                total_len += len(fasta_string)
-        
-        # create esl-sfetch SSI index of sequence_pieces file
-        with open(os.devnull, "w") as f:
-            pieces_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_dir, sequence_pieces_file)
-            p = Popen(pieces_index_cmd, shell=True, stdout=f, stderr=f)
         
         self.npieces = n_piece
-    
-    def create_preliminary_translation(self):
-        """
-        Creates preliminary 6-frame SGC translation of nucleotide sequence, previously broken into pieces.
-        """
-        sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
-        preliminary_translation_file = '%s.preliminary_translation.faa' % self.align_output
         
-        # if processing_genome wasn't run before this, then the number of sequence pieces wasn't set
-        if self.npieces == None:
-            if os.path.isfile(sequence_pieces_file + '.ssi'):
-                p = Popen('grep ">" %s | wc' % sequence_pieces_file, shell=True, stdout=PIPE)
-                self.npieces = int(p.communicate()[0].decode().split()[0])
-        
-        print('Creating six-frame preliminary translation; writing to %s' % preliminary_translation_file)
-        
-        # initialize the preliminary translation file
-        try:
-            with open(preliminary_translation_file, 'w') as ptf:
-                pass
-        except FileNotFoundError:
-            sys.exit('ERROR: could not open file path %s for writing' % preliminary_translation_file)
-        
-        # iterate through all sequence pieces and create preliminary 6-frame translation
-        with open(sequence_pieces_file, 'r') as gpf:
-            for x in range(self.npieces):
-                # read in piece DNA sequence
-                seq_piece_name = gpf.readline().rstrip()
-                piece = gpf.readline().rstrip()
-                
-                # check that the correct file was read in
-                if int(seq_piece_name.split('piece_')[1]) != x:
-                    raise TypeError('Unexpected genome piece is being compared')
-                
-                # get all 6 frames
-                dna = [piece, piece[1:], piece[2:], 
-                       reverse_complement(piece), 
-                       reverse_complement(piece[:-1]), 
-                       reverse_complement(piece[:-2])]
-                
-                # translate each fragment, turn in-frame stop codons into X
-                prot = [replace_stop(translate(dnas, gencode)) for dnas in dna]
-                
-                # step through each of six frames and write to file
-                for i in range(6):
-                    with open(preliminary_translation_file, 'a') as ptf:
-                        ptf.write('>piece_%i_%i\n'  % (x, i))
-                        ptf.write(prot[i] + '\n')
-        
-        # create esl-sfetch SSI index
+        # create esl-sfetch SSI index for preliminary translations (hmmscan uses this)
         with open(os.devnull, "w") as f:
             prelim_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_dir, preliminary_translation_file)
             p = Popen(prelim_index_cmd, shell=True, stdout=f, stderr=f)
         
-        ## checking that translation length is as expected
+        ## checking that preliminary translation length is as expected
         # get pieces file length
         pieces_len_cmd = 'grep -v ">" %s | tr -d "\n" | wc' % (sequence_pieces_file)
         p = Popen(pieces_len_cmd, shell=True, stdout=PIPE)
@@ -442,87 +466,19 @@ class GeneticCode:
         expected_len = 2*pieces_len - 4*self.npieces
         if expected_len != transl_len:
             raise TypeError('Preliminary translation is not of expected length')
-    
-    def hmmscan_jobs(self):
-        """
-        Runs hmmscan jobs locally to align the entire profile HMM database to 6-frame genome translation.
-        If adapting code to run on computing cluster, see commented-out code at the bottom of function.
-        """
-        preliminary_translation_file = '%s.preliminary_translation.faa' % self.align_output
-        
-        # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
-        if self.npieces == None:
-            if os.path.isfile(preliminary_translation_file + '.ssi'):
-                p = Popen('grep ">" %s | wc' % preliminary_translation_file, shell=True, stdout=PIPE)
-                self.npieces = int(p.communicate()[0].decode().split()[0]) / 6
-                if self.npieces != int(self.npieces):
-                    raise TypeError('Number of sequences in preliminary translation is not divisible by 6')     
-        
-        print('Beginning to align preliminary translation to profile HMM database %s' % self.profiles)
-        
-        # check that profile HMM database has been pressed
-        if not os.path.exists('%s/%s.h3m' % (self.resource_dir, self.profiles)):
-            sys.exit("ERROR: profile HMM database has not been pressed with hmmpress")
-        
-        print('All temp files will be written to %s/' % self.scratch_dir)
-        
-        # make a temporary files directory if it does not already exist
-        if not os.path.exists(self.scratch_dir):
-            os.makedirs(self.scratch_dir)
-        
-        # make set of all possible hmm_output file suffixes
-        file_suffixes = ['%i_%i' % (j, i) for j in range(self.npieces) for i in range(6)]
-        
-        # to keep track of how many jobs are sent off, to chuck every some number of hmmscan calls together
-        len_analyzed = 0
-        n_hmm = 0
-        shell_count = 0
-        # keep track of names of files to be queried in hmmscan
-        indices_to_analyze = list()
-        
-        print('Writing shell scripts to process hmmscan jobs')
-        
-        # iterate through unanalyzed preliminary translation fragments
-        for suffix in file_suffixes:
-            indices_to_analyze.append(suffix)
-            
-            # get length of this sequence piece
-            length_cmd = '%s/esl-sfetch %s "piece_%s" | wc' % (self.hmmer_dir, preliminary_translation_file, suffix)
-            p = Popen(length_cmd, shell=True, stdout=PIPE)
-            output_l = p.communicate()[0].decode()
-            piece_len = int(output_l.split()[2])
-            len_analyzed += piece_len
-            n_hmm += 1
-            
-            if len_analyzed > 2000000 or n_hmm > 2000:
-                # copy template batch script and add hmmscan commands
-                shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
-                seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
-                with open(seq_names_file, 'w') as snf:
-                    for indices_str in indices_to_analyze:
-                        snf.write('piece_%s\n' % indices_str)
-                with open(shell_script, 'w') as batch_file:
-                    batch_file.write('#!/bin/bash\n\n')
-                    batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
-                            (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
 
-                # reset 
-                indices_to_analyze = list()
-                len_analyzed = 0
-                n_hmm = 0
-                shell_count += 1
-        
-        # add remaining hmmscan commands to batch script 
-        shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
-        seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
-        with open(seq_names_file, 'w') as snf:
-            for indices_str in indices_to_analyze:
-                snf.write('piece_%s\n' % indices_str)
-        with open(shell_script, 'w') as batch_file:
-            batch_file.write('#!/bin/bash\n\n')
-            batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
-                (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
-        shell_count += 1
+        # add remaining hmmscan commands to batch script
+        if len(indices_to_analyze) > 0:
+            shell_script = '%s/hmmscan_%s.sh' % (self.scratch_dir, shell_count)
+            seq_names_file = '%s/seq_names_%s.txt' % (self.scratch_dir, shell_count)
+            with open(seq_names_file, 'w') as snf:
+                for indices_str in indices_to_analyze:
+                    snf.write('piece_%s\n' % indices_str)
+            with open(shell_script, 'w') as batch_file:
+                batch_file.write('#!/bin/bash\n\n')
+                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                    (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
+            shell_count += 1
         
         # Run hmmscan shell scripts one at a time
         if self.parallelize_hmmscan == None:
@@ -603,12 +559,12 @@ class GeneticCode:
         position within profile HMM, genome piece, frame, position, codon at that position
         """
         sequence_pieces_file = '%s.sequence_pieces.fna' % self.align_output
-        if not os.path.isfile(sequence_pieces_file) or not os.path.isfile(sequence_pieces_file + '.ssi'):
+        if not os.path.isfile(sequence_pieces_file):
             sys.exit('ERROR: sequence_pieces file (generated by codetta_align) cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions)')
         
         # if processing_genome wasnt run before this, then the number of sequence pieces wasn't set
         if self.npieces == None:
-            if os.path.isfile(sequence_pieces_file + '.ssi'):
+            if os.path.isfile(sequence_pieces_file):
                 p = Popen('grep ">" %s | wc' % sequence_pieces_file, shell=True, stdout=PIPE)
                 self.npieces = int(p.communicate()[0].decode().split()[0])
         
@@ -964,8 +920,6 @@ def main():
     # do codetta align
     print('\nSTEP 1-- codetta_align. Aligning profile HMM database to input nucleotide sequence')
     gc.processing_genome()
-    gc.create_preliminary_translation()
-    gc.hmmscan_jobs()
     
     # do codetta summary
     print('\nSTEP 2-- codetta_summary. Summarizing alignments')
