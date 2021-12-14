@@ -232,13 +232,13 @@ database.
 
 In this example, we will build a profile HMM database tailored for metazoan 
 mitochondria which have only 13 protein coding genes. In the 
-`examples\mito-db\` directory, you can find multiple sequence alignment files 
+`examples/mito-db/` directory, you can find multiple sequence alignment files 
 in Stockholm format for each of the 13 genes. *  
 
 The first step is to use `hmmbuild` to create profile HMMs from each of the 
 alignment files.
 
-	cd examples/custom-db/
+	cd examples/mito-db/
 	ls metazoan_mito*.msa | xargs -I {} hmmbuild --enone {}.hmm {}
 
 Then we concatenate all of these `.hmm` files into a single database and 
