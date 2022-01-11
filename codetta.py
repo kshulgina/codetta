@@ -432,7 +432,7 @@ class GeneticCode:
                                     snf.write('piece_%s\n' % indices_str)
                             with open(shell_script, 'w') as batch_file:
                                 batch_file.write('#!/bin/bash\n\n')
-                                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --nobias --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
                                         (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
                             
                             # reset for next hmmscan script
@@ -476,7 +476,7 @@ class GeneticCode:
                     snf.write('piece_%s\n' % indices_str)
             with open(shell_script, 'w') as batch_file:
                 batch_file.write('#!/bin/bash\n\n')
-                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
+                batch_file.write('%s/esl-sfetch -f %s %s | %s/hmmscan --nobias --textw 100000 -o %s/hmm_output_%s %s/%s -\n' % 
                     (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
             shell_count += 1
         
