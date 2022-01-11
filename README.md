@@ -8,7 +8,7 @@ organism from nucleotide sequence data.
 
 The analysis consists of three steps:
 
-1. Align the input nucleotide sequence a database of profile Hidden Markov 
+1. Align the input nucleotide sequence to a database of profile Hidden Markov 
 models (HMMs) of proteins (such as the Pfam database)
 2. Summarize the resulting alignments
 3. Infer the genetic code from the alignment summary file
@@ -143,11 +143,11 @@ You might choose to change some parameters of the analysis. Some commonly used o
 
 - Use the `-p` argument to specify a different profile HMM database. Note that the database 
 must be located in the `resources/` directory.
-- Use `-m -t -v -u -y` to change which groups of problematic Pfam domains are excluded. For 
+- Use `-m -t -v -u -y` to change which groups of problematic Pfam domains are included. For 
 instance, if you're analyzing a mitochondrial genome you may want to use `-m`  to include 
 Pfams commonly found in mitochondrial genomes. Likewise, use the `-v` and `-t` flags for 
 viral genomes, and the `-u` and `-y` flags if you want to include selenocysteine and 
-pyrrolysine-containing domains, respectively.
+pyrrolysine-containing domains, respectively. By default, all of these domains are excluded.
 - You can specify your own name for the inference output file with the `--inference_output` 
 argument.
 - Use `-e` to change the profile HMM hit e-value threshold (default is 1e-10). Use `-r` 
@@ -185,7 +185,7 @@ You might want to do this if:
 having to re-align the profile HMMs to your input sequence. In this case, you would 
 run `codetta_align.py` and `codetta_summary.py` once and then `codetta_infer.py` several
 times with different parameters.
-- You want to parallelize the computationally expensive alignment step on a computing 
+- You want to parallelize the computationally intensive alignment step on a computing 
 cluster. See the next section.
 
 
@@ -218,7 +218,7 @@ Make sure to wait for the SLURM jobs to finish before proceeding to
 `codetta_summary`. That's it!
 
 If your cluster uses a different job scheduler, you will have to manually 
-modify the job array template file and the code in `codetta.py` (`hmmscan_jobs` 
+modify the job array template file and the code in `codetta.py` (`processing_genome` 
 function) that writes and sends the job array file.
 
 
@@ -227,11 +227,11 @@ function) that writes and sends the job array file.
 Pfam domains are expected to align to about ~50% of coding sequence. If you're focused
 on a specific clade, you could increase the proportion of aligned sequence by using a 
 customized profile HMM database. Starting from a set of multiple sequence alignments 
-of expected genes in the organism of interest, you can build a custom profile HMM
+of expected proteins in the organism of interest, you can build a custom profile HMM
 database.
 
 In this example, we will build a profile HMM database tailored for metazoan 
-mitochondria which have only 13 protein coding genes. In the 
+mitochondria which have only 13 protein-coding genes. In the 
 `examples/mito-db/` directory, you can find multiple sequence alignment files 
 in Stockholm format for each of the 13 genes. *  
 
