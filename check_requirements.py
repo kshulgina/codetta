@@ -9,8 +9,8 @@ if not (sys.version_info.major==3 and sys.version_info.minor >= 5):
 
 # if required package cannot be found, then a DistributionNotFound or VersionConflict error
 print('Checking for required Python packages')
-pkg_resources.require(['numpy>=1.18', 'scipy>=1.4'])
+pkg_resources.require(['numpy>=1.15', 'scipy>=0.19'])
 try:
-    pkg_resources.require(['numpy>=1.18', 'scipy>=1.4'])
+    pkg_resources.require(['numpy>=1.15', 'scipy>=0.19'])
 except pkg_resources.VersionConflict:
     sys.exit(1)
