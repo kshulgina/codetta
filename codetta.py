@@ -524,7 +524,7 @@ class GeneticCode:
             of.write('# Analysis arguments\n')
             of.write('alignment_prefix   %s\n' % self.align_output)
             of.write('profile_database   %s\n' % self.profiles)
-            of.write('output_summary     %s\n' % self.summary_file)
+            of.write('results_summary    %s\n' % self.summary_file)
             of.write('evalue_threshold   %s\n' % str(self.e_value_threshold))
             of.write('prob_threshold     %s\n' % str(self.probability_threshold))
             of.write('max_fraction       %s\n' % str(self.max_fraction))

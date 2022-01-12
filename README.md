@@ -114,7 +114,7 @@ This file contains a detailed summary of the genetic code inference results:
 	# Analysis arguments
 	alignment_prefix   examples/GCA_000442605.1.fna
 	profile_database   Pfam-A_enone.hmm
-	output_summary     None
+	results_summary    None
 	evalue_threshold   1e-10
 	prob_threshold     0.9999
 	max_fraction       0.01
