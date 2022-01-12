@@ -85,7 +85,17 @@ def initialize_emissions_dict(resource_dir, profile_db):
     # load dictionary if it exists
     global emissions
     hmm_dictionary_file = '%s/%s.emissions_dict.p' % (resource_dir, profile_db)
-    if os.path.isfile(hmm_dictionary_file):
+
+    # get time of file creation to update emissions file if profile has been changed
+    try:
+        dict_time = int(datetime.datetime.fromtimestamp(os.path.getmtime(hmm_dictionary_file)).strftime("%Y%m%d%H%M%S%f"))
+        hmm_time = int(datetime.datetime.fromtimestamp(os.path.getmtime('%s/%s' % (resource_dir, profile_db))).strftime("%Y%m%d%H%M%S%f"))
+    except FileNotFoundError:
+        dict_time = 0
+        hmm_time = 1
+
+    # load emissions if pickled file exists already
+    if os.path.isfile(hmm_dictionary_file) and dict_time >= hmm_time:
         with open(hmm_dictionary_file, 'rb') as fp:
             emissions = pickle.load(fp)
     # make sure profile HMM database file is in the expected location
@@ -128,7 +138,7 @@ def initialize_emissions_dict(resource_dir, profile_db):
         with open(hmm_dictionary_file, 'wb') as fp:
             pickle.dump(emissions, fp, protocol=2)
     
-    # if profile databse is Pfam, then remove list of bad Pfam domains
+    # if profile database is Pfam, then remove list of bad Pfam domains
     if profile_db == 'Pfam-A_enone.hmm':
         if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
             sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
