@@ -239,13 +239,13 @@ The first step is to use `hmmbuild` to create profile HMMs from each of the
 alignment files.
 
 	cd examples/mito-db/
-	ls metazoan_mito*.msa | xargs -I {} hmmbuild --enone {}.hmm {}
+	ls metazoan_mito*.msa | xargs -I {} ../../hmmer-3.3.2/bin/hmmbuild --enone {}.hmm {}
 
 Then we concatenate all of these `.hmm` files into a single database and 
 finally run `hmmpress` to finish
 
 	cat metazoan_mito*.hmm > metazoan_mito_proteins.hmm
-	hmmpress metazoan_mito_proteins.hmm
+	../../hmmer-3.3.2/bin/hmmpress metazoan_mito_proteins.hmm
 	mv metazoan_mito_proteins.hmm* ../../resources/.
 
 At the end, the profile HMM database is moved into the resources directory, 
