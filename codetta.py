@@ -459,6 +459,7 @@ class GeneticCode:
         with open(os.devnull, "w") as f:
             prelim_index_cmd = '%s/esl-sfetch --index %s' % (self.hmmer_dir, preliminary_translation_file)
             p = Popen(prelim_index_cmd, shell=True, stdout=f, stderr=f)
+            p.wait()
         
         ## checking that preliminary translation length is as expected
         # get pieces file length
