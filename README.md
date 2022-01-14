@@ -99,7 +99,7 @@ Codetta steps is executing.
 
 At the end, the inferred genetic code is printed 
 
-	Genetic code: FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTT?NNKKS?RRVVVVAAAADDEEGGGG
+	Genetic code: FFLLSSSSYY??CCWWL?L?PPPPHHQQ????I?IMTTT?NNKKSSRRV?VVAAAADDEEGGGG
 
 This corresponds to the inferred translation of each of the 64 codons, in order 
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
@@ -122,22 +122,21 @@ This file contains a detailed summary of the genetic code inference results:
 	#
 	# Codon inferences                      Consensus columns
 	# codon   inference  std code  diff?    N aligned  N used
-	TTT       F          F         N        433        433       
-	TTC       F          F         N        36         36        
-	TTA       L          L         N        572        572       
-	TTG       L          L         N        77         77        
-	TCT       S          S         N        257        257    
+	TTT       F          F         N        546        546       
+	TTC       F          F         N        41         41        
+	TTA       L          L         N        712        712       
+	TTG       L          L         N        87         87        
+	TCT       S          S         N        306        306   
 	...
-	GGA       G          G         N        236        236       
-	GGG       G          G         N        60         60                               
+	GGA       G          G         N        267        267       
+	GGG       G          G         N        66         66        
 	#
 	# Log decoding probabilities
-	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G)   ...
-	TTT         -1015.4800   -1150.8584   -1756.1719   -1531.7520       0.0000   -1670.3149 ...  
-	...
+	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G) ...   
+	TTT         -1301.6631   -1465.3643   -2182.8130   -1914.5273       0.0000   -2091.3867 ...
 	#
 	# Final genetic code inference
-	FFLLSSSSYY??CCW?L?L?PPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
+	FFLLSSSSYY??CCWWL?L?PPPPHHQQ????I?IMTTT?NNKKSSRRV?VVAAAADDEEGGGG
 
 You might choose to change some parameters of the analysis. Some commonly used options are
 
@@ -276,9 +275,9 @@ This will download a FASTA file containing the GCA_000442605.1 sequence into
 database accession and not a nucleotide accession (which would be `c`).
 
 We can download the mitochondrial genome of the green algae 
-_Pycnococcus provasolii_, which is under NCBI nucleotide accession GQ497137.1 by
+_Pycnococcus provasolii_, which is under NCBI nucleotide accession NC_013935.1 by
 
-	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
+	./codetta_download.py NC_013935.1 c --sequence_file examples/NC_013935.1.fna
 
 Notice the argument `c` specifying that this is a nucleotide 
 database accession.
@@ -289,16 +288,16 @@ database accession.
 Now let's pull it all together by predicting the genetic code of the 
 _P. provasolii_ mitochondrial genome:
 
-	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
-	./codetta.py examples/GQ497137.1.fna -m
+	./codetta_download.py NC_013935.1 c --sequence_file examples/NC_013935.1.fna
+	./codetta.py examples/NC_013935.1.fna -m
 
 Notice how we specified the `-m` argument to indicate that we do not want to 
 exclude Pfam domains associated with mitochondrial genomes. 
 
 Alternatively, we could also run the same analysis as 
 
-	./codetta_download.py GQ497137.1 c --sequence_file examples/GQ497137.1.fna
-	./codetta_align.py examples/GQ497137.1.fna --align_output examples/Pprovasolii_mito
+	./codetta_download.py NC_013935.1 c --sequence_file examples/NC_013935.1.fna
+	./codetta_align.py examples/NC_013935.1.fna --align_output examples/Pprovasolii_mito
 	./codetta_summary.py examples/Pprovasolii_mito
 	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
@@ -309,7 +308,7 @@ and the `--inference_output` argument to write the inference output file
 
 The output genetic code is:
 
-	FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
+	FF??SSSSYY??CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	
 Comparing to the standard genetic code (below), you can see that two codons 
 have alternative meanings: the stop codon UGA is now tryptophan codon and the 
@@ -317,7 +316,7 @@ isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?)
 due to few aligned Pfam consensus columns (look at the inference output file 
 for more detail).
 
-	P mt code : FF??S?SSYY??CCWWLLLLP?PPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
+	P mt code : FF??SSSSYY??CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	std code  : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 	                          ^                   ^
 
