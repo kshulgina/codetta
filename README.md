@@ -30,7 +30,7 @@ Once inside the Codetta directory, run the setup script
 	
 	./setup.sh
 
-This will check Python package requirements and set up a local version of HMMER.
+This will check Python package requirements and set up a local version of HMMER. Note that on MacOS, you'll need XCode installed so that HMMER can compile.
 
 Codetta additionally requires:
 
