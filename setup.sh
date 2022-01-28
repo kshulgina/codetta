@@ -30,12 +30,35 @@ tar xf hmmer.tar.gz
 echo Installing local HMMER
 cd hmmer-3.3.2
 pwd | xargs -I {} ./configure --prefix={}
+if [ $? -ne 0 ]
+then
+    'ERROR with HMMER installation'
+    exit
+fi
+
 make
+if [ $? -ne 0 ]
+then
+    'ERROR with HMMER installation'
+    exit
+fi
+
 make install
+if [ $? -ne 0 ]
+then
+    'ERROR with HMMER installation'
+    exit
+fi
 
 # compile Easel
 echo Installing local Easel
 cd easel; make install 
+if [ $? -ne 0 ]
+then
+    'ERROR with Easel installation'
+    exit
+fi
+
 cd ../..
 
 # clean up
