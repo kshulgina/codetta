@@ -30,13 +30,9 @@ Once inside the Codetta directory, run the setup script
 	
 	./setup.sh
 
-This will check Python package requirements and set up a local version of HMMER. Note that on MacOS, you'll need XCode installed so that HMMER can compile.
-
-Codetta additionally requires:
-
-- `wget` and `gzip`: on Mac, use install commands `brew install wget` and `brew 
-install gzip`. For Linux, you'll have to use your system's package management 
-tool.
+This script will check Codetta requirements and set up a local version of HMMER. If you are missing 
+`wget` or `gzip`, on MacOS, you can use `brew install`. (For Linux, you'll have to use your system's 
+package management tool.) Note that on MacOS, you'll also need XCode installed so that HMMER can compile.
 
 
 ## Setting up a profile HMM database
