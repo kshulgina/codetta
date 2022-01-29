@@ -41,7 +41,7 @@ Codetta aligns the input sequence to a database of profile HMM models of protein
 
 By default, Codetta will use the Pfam database. You can download a version of 
 Pfam 35.0 specially built for Codetta from our website. From the `codetta` directory, 
-use this command to download and uncompress it (note: this will take about 3 Gb of 
+use these commands to download and uncompress it (note: this will take about 3 Gb of 
 disk space)
 
 	cd resources/
@@ -81,7 +81,9 @@ For any of these programs, type `./[program name] --help` for complete usage det
 The simplest way to run Codetta is by using the `codetta.py` program. 
 
 This program performs the three analysis steps in order. All you have 
-to do is specify a nucleotide sequence input file. This file should contain nucleotide sequences from a single organism in FASTA format. This can be a genome, transcriptome, collection of genes, etc.
+to do is specify a nucleotide sequence input file. This file should contain 
+nucleotide sequences from a single organism in FASTA format. This can be a 
+genome, transcriptome, collection of genes, etc.
 
 In the `examples/` directory, you will find the file `GCA_000442605.1.fna`
  which contains the genome of the bacterium _Nasuia deltocephalinicola_.
@@ -91,10 +93,15 @@ We can predict the genetic code of this bacterium simply by running
 	./codetta.py examples/GCA_000442605.1.fna
 
 You will see outputs written to the terminal indicating that each of the three 
-Codetta steps is executing. The process will generate five files in the directory
+Codetta steps is executing. Codetta will create five files in the directory
 containing the input sequence file.
 
-At the end, the inferred genetic code is printed 
+- Processed sequence file: `examples/GCA_000442605.1.fna.sequence_pieces.fna`
+- Preliminary translation file + ssi index: `examples/GCA_000442605.1.fna.preliminary_translation.faa`
+- Alignment summary file: `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.hmmscan_summary.txt`
+- Inference output: `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`
+
+At the end, the inferred genetic code is printed to the terminal
 
 	Genetic code: FFLLSSSSYY??CCWWL?L?PPPPHHQQ????I?IMTTT?NNKKSSRRV?VVAAAADDEEGGGG
 
@@ -102,10 +109,10 @@ This corresponds to the inferred translation of each of the 64 codons, in order
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
 1st base through UCAG).
 
-The ?s correspond to codons that had no inferred amino acid meaning-- this is the expected 
-inference for stop codons (since Codetta does not explicitly predict stop codons), and could 
-also mean that there was insufficient or ambiguous information about the codon to make a 
-confident inference.
+The ?s correspond to codons that had no inferred amino acid meaning-- this means 
+that there was insufficient or ambiguous information about the codon to make a 
+confident inference. This is also the expected inference for stop codons (since 
+Codetta does not explicitly predict stop codons).
 
 A detailed summary of the analysis can be found at 
 `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
@@ -227,11 +234,12 @@ function) that writes and sends the job array file.
 
 ### Building a custom profile HMM database
 
-Pfam domains are expected to align to about ~50% of coding sequence. If you're focused
-on a specific clade, you could increase the proportion of aligned sequence by using a 
-customized profile HMM database. Starting from a set of multiple sequence alignments 
-of expected proteins in the organism of interest, you can build a custom profile HMM
-database.
+Pfam domains are expected to align to 
+[about ~50% of coding sequence](https://pubmed.ncbi.nlm.nih.gov/30357350/). If 
+you're focused on a specific clade, you could increase the proportion of aligned 
+sequence by using a customized profile HMM database. Starting from a set of 
+multiple sequence alignments of expected proteins in the organism of interest, 
+you can build a custom profile HMM database.
 
 In this example, we will build a profile HMM database tailored for metazoan 
 mitochondria which have only 13 protein-coding genes. In the 
