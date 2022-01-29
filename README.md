@@ -13,7 +13,7 @@ models (HMMs) of proteins (such as the Pfam database)
 2. Summarize the resulting alignments
 3. Infer the genetic code from the alignment summary file
 
-If you are looking to reproduce results from 
+A detailed explanation of the underlying probability model can be found in [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402). If you are looking to reproduce results from 
 [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402), please follow 
 the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
 
@@ -81,7 +81,7 @@ For any of these programs, type `./[program name] --help` for complete usage det
 The simplest way to run Codetta is by using the `codetta.py` program. 
 
 This program performs the three analysis steps in order. All you have 
-to do is specify an input nucleotide sequence file.
+to do is specify a nucleotide sequence input file. This file should contain nucleotide sequences from a single organism in FASTA format. This can be a genome, transcriptome, collection of genes, etc.
 
 In the `examples/` directory, you will find the file `GCA_000442605.1.fna`
  which contains the genome of the bacterium _Nasuia deltocephalinicola_.
@@ -91,7 +91,8 @@ We can predict the genetic code of this bacterium simply by running
 	./codetta.py examples/GCA_000442605.1.fna
 
 You will see outputs written to the terminal indicating that each of the three 
-Codetta steps is executing. 
+Codetta steps is executing. The process will generate five files in the directory
+containing the input sequence file.
 
 At the end, the inferred genetic code is printed 
 
@@ -99,7 +100,12 @@ At the end, the inferred genetic code is printed
 
 This corresponds to the inferred translation of each of the 64 codons, in order 
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
-1st base through UCAG). 
+1st base through UCAG).
+
+The ?s correspond to codons that had no inferred amino acid meaning-- this is the expected 
+inference for stop codons (since Codetta does not explicitly predict stop codons), and could 
+also mean that there was insufficient or ambiguous information about the codon to make a 
+confident inference.
 
 A detailed summary of the analysis can be found at 
 `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
@@ -138,11 +144,13 @@ You might choose to change some parameters of the analysis. Some commonly used o
 
 - Use the `-p` argument to specify a different profile HMM database. Note that the database 
 must be located in the `resources/` directory.
-- Use `-m -t -v -u -y` to change which groups of problematic Pfam domains are included. For 
+- The `excluded_pfams` line in the results file refers to which groups of problematic Pfam 
+domains are excluded from the analysis (`m` mitochondrial, `t` transposon and mobile genetic 
+element, `v` viral, `u` selenocysteine-containing, and `y` pyrrolysine-containing). By 
+default, all of these groups are excluded. Use `-m -t -v -u -y` to include groups. For 
 instance, if you're analyzing a mitochondrial genome you may want to use `-m`  to include 
 Pfams commonly found in mitochondrial genomes. Likewise, use the `-v` and `-t` flags for 
-viral genomes, and the `-u` and `-y` flags if you want to include selenocysteine and 
-pyrrolysine-containing domains, respectively. By default, all of these domains are excluded.
+viral genomes. 
 - You can specify your own name for the inference output file with the `--inference_output` 
 argument.
 - Use `-e` to change the profile HMM hit e-value threshold (default is 1e-10). Use `-r` 
