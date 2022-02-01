@@ -16,8 +16,8 @@ models (HMMs) of proteins (such as the Pfam database)
 A detailed explanation of the underlying probability model can be found in 
 [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402). If you 
 are looking to reproduce results from Shulgina & Eddy (2021), please follow 
-the README for [Codetta v1.0]
-(https://github.com/kshulgina/codetta/releases/tag/v1.0).
+the README for 
+[Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
 
 If you encounter any problems in the installation or usage of Codetta, please 
 leave a Github issue or email me at shulgina@g.harvard.edu
@@ -115,7 +115,7 @@ At the end, the inferred genetic code is printed to the terminal
 	Genetic code: FFLLSSSSYY??CCWWL?LLPPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
 This corresponds to the inferred translation of each of the 64 codons, in 
-order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, 
+order of 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, 
 then 1st base through UCAG).
 
 The ?s correspond to codons that had no inferred amino acid meaning-- this 
