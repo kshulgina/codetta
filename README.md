@@ -363,6 +363,3 @@ This alternative genetic code in _Pycnococcus_ mitochondria is summarized in
 
 
 
-
-
-
