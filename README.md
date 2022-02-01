@@ -303,7 +303,8 @@ genome assembly accession by
 	./codetta_download.py GCA_014211875.1 a --sequence_file examples/GCA_014211875.1.fna
 
 This will download a FASTA file containing the GCA_014211875.1 sequence into 
-`examples/GCA_014211875.1.fna`. The argument `a` specifies that this is an assembly database accession and not a nucleotide accession (which would be 
+`examples/GCA_014211875.1.fna`. The argument `a` specifies that this is an 
+assembly database accession and not a nucleotide accession (which would be 
 `c`).
 
 We can download the mitochondrial genome of the green algae 
