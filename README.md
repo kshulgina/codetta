@@ -86,25 +86,25 @@ genome, transcriptome, collection of genes, etc.
 
 Make sure you have first set up a profile HMM database (see above)!
 
-In the `examples/` directory, you will find the file `GCA_000442605.1.fna`
+In the `examples/` directory, you will find the file `GCA_014211875.1.fna`
  which contains the genome of the bacterium _Nasuia deltocephalinicola_.
 
 We can predict the genetic code of this bacterium simply by running
 
-	./codetta.py examples/GCA_000442605.1.fna
+	./codetta.py examples/GCA_014211875.1.fna
 
 You will see outputs written to the terminal indicating that each of the three 
 Codetta steps is executing. Codetta will create five files in the directory
 containing the input sequence file.
 
-- Processed sequence file: `examples/GCA_000442605.1.fna.sequence_pieces.fna`
-- Preliminary translation file + ssi index: `examples/GCA_000442605.1.fna.preliminary_translation.faa`
-- Alignment output file: `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.alignment_output.txt`
-- Inference output file: `examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`
+- Processed sequence file: `examples/GCA_014211875.1.fna.sequence_pieces.fna`
+- Preliminary translation file + ssi index: `examples/GCA_014211875.1.fna.preliminary_translation.faa`
+- Alignment output file: `examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.alignment_output.txt`
+- Inference output file: `examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`
 
 At the end, the inferred genetic code is printed to the terminal
 
-	Genetic code: FFLLSSSSYY??CCWWL?L?PPPPHHQQ????I?IMTTT?NNKKSSRRV?VVAAAADDEEGGGG
+	Genetic code: FFLLSSSSYY??CCWWL?LLPPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
 This corresponds to the inferred translation of each of the 64 codons, in order 
 from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
@@ -116,7 +116,7 @@ confident inference. This is also the expected inference for stop codons (since
 Codetta does not explicitly predict stop codons).
 
 A detailed overview of the analysis can be found at 
-`examples/GCA_000442605.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
+`examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
 The long file extension specifies the inference parameters. You can specify your own 
 (simpler) name for the inference output file using the `--inference_output` argument.
 
@@ -124,7 +124,7 @@ The long file extension specifies the inference parameters. You can specify your
 This file contains a detailed overview of the genetic code inference results:
 
 	# Analysis arguments
-	alignment_prefix   examples/GCA_000442605.1.fna
+	alignment_prefix   examples/GCA_014211875.1.fna
 	profile_database   Pfam-A_enone.hmm
 	results_summary    None
 	evalue_threshold   1e-10
@@ -135,20 +135,21 @@ This file contains a detailed overview of the genetic code inference results:
 	# Codon inferences                      Consensus columns
 	# codon   inference  std code  diff?    N aligned  N used
 	TTT       F          F         N        546        546       
-	TTC       F          F         N        41         41        
-	TTA       L          L         N        712        712       
-	TTG       L          L         N        87         87        
-	TCT       S          S         N        306        306   
+	TTC       F          F         N        48         48        
+	TTA       L          L         N        703        703       
+	TTG       L          L         N        82         82        
+	TCT       S          S         N        307        307      
 	...
-	GGA       G          G         N        267        267       
-	GGG       G          G         N        66         66        
+	GGA       G          G         N        248        248       
+	GGG       G          G         N        73         72        
 	#
 	# Log decoding probabilities
-	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G) ...   
-	TTT         -1301.6631   -1465.3643   -2182.8130   -1914.5273       0.0000   -2091.3867 ...
+	# codon      logP(A)      logP(C)      logP(D)      logP(E)      logP(F)      logP(G)     ...
+	TTT         -1250.3530   -1453.8418   -2107.4121   -1850.9243       0.0000   -2034.8423   ...
+	...
 	#
 	# Final genetic code inference
-	FFLLSSSSYY??CCWWL?L?PPPPHHQQ????I?IMTTT?NNKKSSRRV?VVAAAADDEEGGGG
+	FFLLSSSSYY??CCWWL?LLPPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
 You might choose to change some parameters of the analysis. Some commonly used options are
 
@@ -184,13 +185,13 @@ can use the programs `codetta_align.py`, `codetta_summary.py`, and `codetta_infe
 
 The example in the previous section
 
-	./codetta.py examples/GCA_000442605.1.fna
+	./codetta.py examples/GCA_014211875.1.fna
 
 can be also run by breaking the steps up as
 
-	./codetta_align.py examples/GCA_000442605.1.fna
-	./codetta_summary.py examples/GCA_000442605.1.fna
-	./codetta_infer.py examples/GCA_000442605.1.fna
+	./codetta_align.py examples/GCA_014211875.1.fna
+	./codetta_summary.py examples/GCA_014211875.1.fna
+	./codetta_infer.py examples/GCA_014211875.1.fna
 	
 You might want to do this if:
 
@@ -283,10 +284,10 @@ GenBank
 We can download the _Nasuia deltocephalinicola_ genome using the Genbank 
 genome assembly accession by
 
-	./codetta_download.py GCA_000442605.1 a --sequence_file examples/GCA_000442605.1.fna
+	./codetta_download.py GCA_014211875.1 a --sequence_file examples/GCA_014211875.1.fna
 
-This will download a FASTA file containing the GCA_000442605.1 sequence into 
-`examples/GCA_000442605.1.fna`. The argument `a` specifies that this is an assembly 
+This will download a FASTA file containing the GCA_014211875.1 sequence into 
+`examples/GCA_014211875.1.fna`. The argument `a` specifies that this is an assembly 
 database accession and not a nucleotide accession (which would be `c`).
 
 We can download the mitochondrial genome of the green algae 
