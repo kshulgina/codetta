@@ -10,11 +10,9 @@ def argument_parsing():
                         type=str, choices=['a', 'c'])
     
     # remaining arguments all are set optionally, otherwise default values
-    parser.add_argument('--prefix', help='specify prefix of where to download the FASTA file (ie [PREFIX].fna). This can include \
-                                          a path. (default: [IDENTIFIER].fna)')
+    parser.add_argument('--sequence_file', help='specify where to download the FASTA file. This can include a path. (default: [IDENTIFIER].fna)')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--hmmer_directory', help='directory where HMMER and Easel executables can be found (default: [script dir]/hmmer-3.1b2/bin)', type=str)
-
+    
     return parser.parse_args()
 
 def main():
@@ -25,12 +23,11 @@ def main():
         args.resource_directory = os.path.join(os.path.dirname(__file__), 'resources')
     args.resource_directory = os.path.normpath(args.resource_directory)
     
-    if args.hmmer_directory == None:
-        args.hmmer_directory = os.path.join(os.path.dirname(__file__), 'hmmer-3.1b2/bin')
-    args.hmmer_directory = os.path.normpath(args.hmmer_directory)
-    
     # initialize genetic code with command line args and download genome
-    initialize_globals(args.resource_directory)
+    args.parallelize_hmmscan = None
+    args.align_output = None
+    args.inference_output = None
+    args.profiles = 'Pfam-A_enone.hmm'
     args.results_summary = None
     args.evalue = None
     args.probability_threshold = None
@@ -40,10 +37,12 @@ def main():
     args.viral_pfams = None
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
+    initialize_globals()
     gc = GeneticCode(args)
     
     # infer genetic code
     gc.get_genome()
+    print('Done.')
 
 
 if __name__ == "__main__":

@@ -1,0 +1,903 @@
+# STOCKHOLM 1.0
+#=GF ID COX3
+#=GF AU jackhmmer (HMMER 3.2.1)
+
+#=GS sp|O48316|COX3_GAZSU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella subgutturosa OX=59529 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47702|COX3_ANTCE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Antilope cervicapra OX=59525 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47709|COX3_GAZLE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella leptoceros OX=69303 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47706|COX3_EUDTH/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Eudorcas thomsonii OX=69308 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47708|COX3_GAZCU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella cuvieri OX=69301 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47705|COX3_EUDRU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Eudorcas rufifrons OX=69304 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47695|COX3_OUROU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ourebia ourebi OX=59536 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47692|COX3_PELCP/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pelea capreolus OX=59552 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47701|COX3_ANTMR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Antidorcas marsupialis OX=59523 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47700|COX3_LITWA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Litocranius walleri OX=69311 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P00415|COX3_BOVIN/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Bos taurus OX=9913 GN=MT-CO3 PE=1 SV=2
+#=GS sp|P68531|COX3_GAZBE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella bennettii OX=69300 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P68532|COX3_GAZGA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella gazella OX=69302 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47693|COX3_CEPNA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Cephalophus natalensis OX=69299 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q576B8|COX3_BOSIN/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Bos indicus OX=9915 GN=MT-CO3 PE=3 SV=2
+#=GS sp|P68299|COX3_GAZDO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella dorcas OX=37751 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P68300|COX3_GAZSP/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella spekei OX=69307 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q96065|COX3_RHIUN/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Rhinoceros unicornis OX=9809 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47694|COX3_DAMLU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Damaliscus lunatus OX=9929 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47699|COX3_MADGU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Madoqua guentheri OX=66433 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47698|COX3_NEOMO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Neotragus moschatus OX=66442 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47691|COX3_AEPME/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Aepyceros melampus OX=9897 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P68088|COX3_NANGR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Nanger granti OX=27591 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P68089|COX3_NANSO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Nanger soemmerringii OX=69306 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q35916|COX3_PIG/1-261          DE [subseq from] Cytochrome c oxidase subunit 3 OS=Sus scrofa OX=9823 GN=MT-CO3 PE=3 SV=2
+#=GS sp|O48374|COX3_NANDA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Nanger dama OX=67940 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47685|COX3_TRAIM/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tragelaphus imberbis OX=9947 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47690|COX3_SYNCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Syncerus caffer OX=9970 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P38597|COX3_HALGR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Halichoerus grypus OX=9711 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P15952|COX3_CYPCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Cyprinus carpio OX=7962 GN=mt-co3 PE=2 SV=2
+#=GS sp|O03201|COX3_CERSI/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ceratotherium simum OX=9807 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q00529|COX3_PHOVI/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Phoca vitulina OX=9720 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P41295|COX3_BALMU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Balaenoptera musculus OX=9771 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P24989|COX3_BALPH/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Balaenoptera physalus OX=9770 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q5Y4Q4|COX3_BOSMU/1-260        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Bos mutus grunniens OX=30521 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q96133|COX3_CARAU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Carassius auratus OX=7957 GN=mt-co3 PE=2 SV=2
+#=GS sp|O47688|COX3_TRASP/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tragelaphus spekii OX=69298 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47687|COX3_TRASR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tragelaphus scriptus OX=66440 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47696|COX3_RAPCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Raphicerus campestris OX=59544 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47697|COX3_RAPME/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Raphicerus melanotis OX=66435 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47689|COX3_TRAST/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tragelaphus strepsiceros OX=9946 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P92481|COX3_EQUAS/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Equus asinus OX=9793 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O21619|COX3_SHEEP/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ovis aries OX=9940 GN=MT-CO3 PE=1 SV=2
+#=GS sp|P48661|COX3_HORSE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Equus caballus OX=9796 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47710|COX3_GAZSA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gazella saudiya OX=69305 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47686|COX3_TRAOR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tragelaphus oryx OX=9945 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P34198|COX3_FORLA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Formosania lacustris OX=7980 GN=mt-co3 PE=3 SV=2
+#=GS sp|P41312|COX3_DIDVI/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Didelphis virginiana OX=9267 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q8W9N0|COX3_DUGDU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dugong dugon OX=29137 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O79433|COX3_RABIT/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oryctolagus cuniculus OX=9986 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9ZZ48|COX3_SQUAC/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Squalus acanthias OX=7797 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P92665|COX3_MACRO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Macropus robustus OX=9319 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P48892|COX3_FELCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Felis catus OX=9685 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O79407|COX3_SCYCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Scyliorhinus canicula OX=7830 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9ZZY5|COX3_HIPAM/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Hippopotamus amphibius OX=9833 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q36455|COX3_ORNAN/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ornithorhynchus anatinus OX=9258 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9ZZ61|COX3_CANLF/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Canis lupus familiaris OX=9615 GN=MT-CO3 PE=3 SV=3
+#=GS sp|P20684|COX3_ONCCL/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oncorhynchus clarkii OX=30962 GN=mt-co3 PE=3 SV=1
+#=GS sp|P05505|COX3_RAT/1-261          DE [subseq from] Cytochrome c oxidase subunit 3 OS=Rattus norvegicus OX=10116 GN=Mtco3 PE=1 SV=5
+#=GS sp|Q9T9W8|COX3_PANPA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pan paniscus OX=9597 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q1HK97|COX3_CANLU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Canis lupus OX=9612 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P69217|COX3_ONCMA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oncorhynchus masou OX=8020 GN=mt-co3 PE=3 SV=1
+#=GS sp|P69218|COX3_ONCNE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oncorhynchus nerka OX=8023 GN=mt-co3 PE=3 SV=1
+#=GS sp|P48172|COX3_ONCMY/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oncorhynchus mykiss OX=8022 GN=mt-co3 PE=3 SV=1
+#=GS sp|Q36860|COX3_SALSA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Salmo salar OX=8030 GN=mt-co3 PE=3 SV=2
+#=GS sp|P00414|COX3_HUMAN/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Homo sapiens OX=9606 GN=MT-CO3 PE=1 SV=2
+#=GS sp|Q8W9G7|COX3_TACAC/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tachyglossus aculeatus aculeatus OX=49271 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9T9Y6|COX3_GORGO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gorilla gorilla gorilla OX=9595 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P00416|COX3_MOUSE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Mus musculus OX=10090 GN=mt-Co3 PE=1 SV=2
+#=GS sp|Q4JQI1|COX3_TETNG/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Tetraodon nigroviridis OX=99883 GN=mt-co3 PE=3 SV=1
+#=GS sp|Q9T9V9|COX3_PANTR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pan troglodytes OX=9598 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O21331|COX3_DASNO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dasypus novemcinctus OX=9361 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P55777|COX3_GADMO/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gadus morhua OX=8049 GN=mt-co3 PE=3 SV=1
+#=GS sp|Q8LX26|COX3_LEMCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Lemur catta OX=9447 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9MIY4|COX3_DANRE/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Danio rerio OX=7955 GN=mt-co3 PE=3 SV=1
+#=GS sp|Q95707|COX3_HYLLA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Hylobates lar OX=9580 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O03170|COX3_LATCH/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Latimeria chalumnae OX=7897 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q38PR6|COX3_MAMPR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Mammuthus primigenius OX=37349 GN=MT-CO3 PE=3 SV=2
+#=GS sp|P00419|COX3_XENLA/1-260        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Xenopus laevis OX=8355 GN=mt-co3 PE=3 SV=1
+#=GS sp|P92696|COX3_PONAB/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pongo abelii OX=9601 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q2I3F5|COX3_LOXAF/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Loxodonta africana OX=9785 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q35539|COX3_PETMA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Petromyzon marinus OX=7757 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q2I3G8|COX3_ELEMA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Elephas maximus OX=9783 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q95914|COX3_POLOR/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Polypterus ornatipinnis OX=49895 GN=mt-co3 PE=3 SV=1
+#=GS sp|Q9ZXX8|COX3_PAPHA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Papio hamadryas OX=9557 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O79676|COX3_PELSU/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pelomedusa subrufa OX=44522 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q9T9X6|COX3_PONPY/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pongo pygmaeus OX=9600 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q8SEW8|COX3_COTJA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Coturnix japonica OX=93934 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O21403|COX3_STRCA/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Struthio camelus OX=8801 GN=MT-CO3 PE=3 SV=2
+#=GS sp|P18945|COX3_CHICK/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Gallus gallus OX=9031 GN=MT-CO3 PE=3 SV=1
+#=GS sp|P34842|COX3_ANOGA/3-262        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Anopheles gambiae OX=7165 GN=COIII PE=3 SV=1
+#=GS sp|P15953|COX3_WHEAT/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Triticum aestivum OX=4565 GN=COX3 PE=2 SV=2
+#=GS sp|B0FWD1|COX3_AEDAE/3-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Aedes aegypti OX=7159 GN=mt:CoIII PE=3 SV=1
+#=GS sp|P92514|COX3_ARATH/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Arabidopsis thaliana OX=3702 GN=COX3 PE=2 SV=2
+#=GS sp|O63915|COX3_MYXGL/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Myxine glutinosa OX=7769 GN=MT-CO3 PE=3 SV=1
+#=GS sp|Q33824|COX3_PATPE/3-260        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Patiria pectinifera OX=7594 GN=COIII PE=3 SV=2
+#=GS sp|P25003|COX3_PISOC/3-260        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pisaster ochraceus OX=7612 GN=COIII PE=3 SV=1
+#=GS sp|P14574|COX3_LOCMI/6-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Locusta migratoria OX=7004 GN=COIII PE=3 SV=1
+#=GS sp|P69215|COX3_BRALA/5-262        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Branchiostoma lanceolatum OX=7740 GN=COIII PE=3 SV=1
+#=GS sp|P69216|COX3_BRAFL/5-262        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Branchiostoma floridae OX=7739 GN=COIII PE=3 SV=1
+#=GS sp|P33508|COX3_ANOQU/4-262        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Anopheles quadrimaculatus OX=7166 GN=COIII PE=3 SV=1
+#=GS sp|P00417|COX3_DROME/3-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Drosophila melanogaster OX=7227 GN=mt:CoIII PE=3 SV=1
+#=GS sp|P12702|COX3_PARLI/2-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Paracentrotus lividus OX=7656 GN=COIII PE=3 SV=1
+#=GS sp|P00418|COX3_DROYA/3-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Drosophila yakuba OX=7245 GN=mt:CoIII PE=3 SV=1
+#=GS sp|O79552|COX3_LYCSM/1-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Lycodon semicarinatus OX=56549 GN=MT-CO3 PE=3 SV=1
+#=GS sp|O47491|COX3_METSE/6-262        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Metridium senile OX=6116 GN=COIII PE=3 SV=1
+#=GS sp|P26858|COX3_MARPO/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Marchantia polymorpha OX=3197 GN=COX3 PE=3 SV=2
+#=GS sp|Q37620|COX3_PROWI/2-260        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Prototheca wickerhamii OX=3111 GN=COX3 PE=3 SV=1
+#=GS sp|O47475|COX3_HETBL/4-259        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Heterololigo bleekeri OX=1423826 GN=COIII PE=3 SV=1
+#=GS sp|Q34943|COX3_LUMTE/3-259        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Lumbricus terrestris OX=6398 GN=COIII PE=3 SV=1
+#=GS sp|P48872|COX3_CHOCR/11-270       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Chondrus crispus OX=2769 GN=COX3 PE=3 SV=1
+#=GS sp|P14853|COX3_SOYBN/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Glycine max OX=3847 GN=COX3 PE=2 SV=1
+#=GS sp|P15546|COX3_STRPU/4-259        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Strongylocentrotus purpuratus OX=7668 GN=COIII PE=3 SV=1
+#=GS sp|P08745|COX3_OENBE/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oenothera berteroana OX=3950 GN=COX3 PE=3 SV=2
+#=GS sp|P14852|COX3_ORYSI/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Oryza sativa subsp. indica OX=39946 GN=COX3 PE=3 SV=2
+#=GS sp|Q03227|COX3_VICFA/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Vicia faba OX=3906 GN=COX3 PE=3 SV=1
+#=GS sp|Q36952|COX3_AEGCO/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Aegilops columnaris OX=4493 GN=COX3 PE=3 SV=1
+#=GS sp|P09138|COX3_MAIZE/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Zea mays OX=4577 GN=COX3 PE=2 SV=2
+#=GS sp|P32808|COX3_HELAN/4-263        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Helianthus annuus OX=4232 GN=COX3 PE=3 SV=1
+#=GS sp|Q37600|COX3_PYLLI/8-267        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Pylaiella littoralis OX=2885 GN=COX3 PE=3 SV=1
+#=GS sp|P80441|COX3_RHIST/22-280       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Rhizopus stolonifer OX=4846 GN=COX3 PE=3 SV=1
+#=GS sp|P80439|COX3_ALLMA/12-272       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Allomyces macrogynus OX=28583 GN=COX3 PE=3 SV=1
+#=GS sp|Q02654|COX3_PODAN/9-269        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Podospora anserina (strain S / ATCC MYA-4624 / DSM 980 / FGSC 10383) OX=515849 GN=COIII PE=3 SV=1
+#=GS sp|P00421|COX3_EMEND/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Emericella nidulans OX=162425 GN=cox3 PE=3 SV=1
+#=GS sp|P48891|COX3_ALBCA/2-259        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Albinaria caerulea OX=42349 GN=COIII PE=3 SV=1
+#=GS sp|Q95840|COX3_MAGGR/9-269        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Magnaporthe grisea OX=148305 GN=COX3 PE=3 SV=1
+#=GS sp|Q0H8X4|COX3_USTMA/10-275       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ustilago maydis (strain 521 / FGSC 9021) OX=237631 GN=COX3 PE=3 SV=1
+#=GS sp|P00422|COX3_NEUCR/9-269        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987) OX=367110 GN=cox-3 PE=1 SV=1
+#=GS sp|O99822|COX3_RHISA/4-257        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Rhipicephalus sanguineus OX=34632 GN=COIII PE=3 SV=1
+#=GS sp|Q36309|COX3_ARTSF/3-256        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Artemia franciscana OX=6661 GN=COIII PE=3 SV=1
+#=GS sp|P48873|COX3_CYACA/10-269       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Cyanidium caldarium OX=2771 GN=COX3 PE=3 SV=1
+#=GS sp|Q92J29|COX3_RICCN/14-283       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Rickettsia conorii (strain ATCC VR-613 / Malish 7) OX=272944 GN=ctaE PE=3 SV=2
+#=GS sp|Q36837|COX3_TRIRU/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Trichophyton rubrum OX=5551 GN=COXIII PE=3 SV=1
+#=GS sp|Q1RHH9|COX3_RICBR/8-277        DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Rickettsia bellii (strain RML369-C) OX=336407 GN=ctaE PE=3 SV=1
+#=GS sp|Q4UKK0|COX3_RICFE/9-278        DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Rickettsia felis (strain ATCC VR-1525 / URRWXCal2) OX=315456 GN=ctaE PE=3 SV=1
+#=GS sp|Q9B6D8|COX3_YARLI/8-267        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Yarrowia lipolytica (strain CLIB 122 / E 150) OX=284591 GN=COX3 PE=3 SV=1
+#=GS sp|Q9ZDX3|COX3_RICPR/9-278        DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Rickettsia prowazekii (strain Madrid E) OX=272947 GN=ctaE PE=3 SV=1
+#=GS sp|P06030|COX3_PARDE/4-273        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Paracoccus denitrificans OX=266 GN=ctaE PE=1 SV=3
+#=GS sp|Q37374|COX3_ACACA/41-199       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Acanthamoeba castellanii OX=5755 GN=COX3 PE=3 SV=1
+#=GS sp|Q37374|COX3_ACACA/220-322      DE [subseq from] Cytochrome c oxidase subunit 3 OS=Acanthamoeba castellanii OX=5755 GN=COX3 PE=3 SV=1
+#=GS sp|A6H4Q3|COX3_VANPO/10-269       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Vanderwaltozyma polyspora (strain ATCC 22028 / DSM 70294) OX=436907 GN=COX3 PE=3 SV=1
+#=GS sp|Q9XLX0|COX3_LACK1/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Lachancea kluyveri (strain ATCC 58438 / CBS 3082 / BCRC 21498 / NBRC 1685 / JCM 7257 / NCYC 543 / NRRL Y-12651) OX=226302 GN=COX3 PE=3 SV=1
+#=GS sp|Q85Q96|COX3_CANGA/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Candida glabrata (strain ATCC 2001 / CBS 138 / JCM 3761 / NBRC 0622 / NRRL Y-65) OX=284593 GN=COX3 PE=3 SV=1
+#=GS sp|P00420|COX3_YEAST/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) OX=559292 GN=COX3 PE=1 SV=3
+#=GS sp|P48874|COX3_WICCA/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Wickerhamomyces canadensis OX=1156965 GN=COX3 PE=3 SV=2
+#=GS sp|Q9B1P9|COX3_CANAL/10-269       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Candida albicans (strain SC5314 / ATCC MYA-2876) OX=237561 GN=COX3A PE=3 SV=2
+#=GS sp|Q9XLW9|COX3_KLULA/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Kluyveromyces lactis (strain ATCC 8585 / CBS 2359 / DSM 70799 / NBRC 1267 / NRRL Y-1140 / WM37) OX=284590 GN=COX3 PE=3 SV=2
+#=GS sp|Q75G34|COX3_ASHGO/9-268        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ashbya gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) OX=284811 GN=COX3 PE=3 SV=1
+#=GS sp|P14575|COX3_SCHPO/7-269        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Schizosaccharomyces pombe (strain 972 / ATCC 24843) OX=284812 GN=cox3 PE=3 SV=4
+#=GS sp|Q34214|COX3_CANPA/10-269       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Candida parapsilosis OX=5480 GN=COX3 PE=3 SV=1
+#=GS sp|A9RAG9|COX3_DEBHA/10-268       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Debaryomyces hansenii (strain ATCC 36239 / CBS 767 / JCM 1990 / NBRC 0083 / IGC 2968) OX=284592 GN=COX3 PE=3 SV=1
+#=GS sp|P34843|COX3_APILI/2-257        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Apis mellifera ligustica OX=7469 GN=COIII PE=3 SV=1
+#=GS sp|P14058|COX3_SCHCO/8-266        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Schizophyllum commune OX=5334 GN=COIII PE=3 SV=2
+#=GS sp|P41775|COX3_MYTED/8-261        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Mytilus edulis OX=6550 GN=COIII PE=3 SV=1
+#=GS sp|P24879|COX3_ASCSU/3-254        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Ascaris suum OX=6253 GN=COIII PE=3 SV=2
+#=GS sp|Q35242|COX3_ENTDO/2-203        DE [subseq from] Cytochrome c oxidase subunit 3 (Fragment) OS=Enteroctopus dofleini OX=267067 GN=COIII PE=3 SV=1
+#=GS sp|P24891|COX3_CAEEL/3-254        DE [subseq from] Cytochrome c oxidase subunit 3 OS=Caenorhabditis elegans OX=6239 GN=ctc-3 PE=3 SV=3
+#=GS sp|O21049|COX3_DICDI/58-220       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dictyostelium discoideum OX=44689 GN=cox3 PE=3 SV=1
+#=GS sp|O21049|COX3_DICDI/304-434      DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dictyostelium discoideum OX=44689 GN=cox3 PE=3 SV=1
+#=GS sp|Q2LCP9|COX3_DICCI/58-220       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dictyostelium citrinum OX=361072 GN=cox3 PE=3 SV=1
+#=GS sp|Q2LCP9|COX3_DICCI/300-430      DE [subseq from] Cytochrome c oxidase subunit 3 OS=Dictyostelium citrinum OX=361072 GN=cox3 PE=3 SV=1
+#=GS sp|Q35826|COX3_SPOFR/1-146        DE [subseq from] Cytochrome c oxidase subunit 3 (Fragment) OS=Spodoptera frugiperda OX=7108 GN=COIII PE=2 SV=1
+#=GS sp|Q5YZ19|COX3_NOCFA/12-201       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Nocardia farcinica (strain IFM 10152) OX=247156 GN=ctaE PE=3 SV=1
+#=GS sp|P63857|COX3_MYCBO/12-201       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Mycobacterium bovis (strain ATCC BAA-935 / AF2122/97) OX=233413 GN=ctaE PE=3 SV=1
+#=GS sp|P9WP66|COX3_MYCTO/12-201       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Mycobacterium tuberculosis (strain CDC 1551 / Oshkosh) OX=83331 GN=ctaE PE=3 SV=1
+#=GS sp|P9WP67|COX3_MYCTU/12-201       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv) OX=83332 GN=ctaE PE=1 SV=1
+#=GS sp|Q06475|COX3_SYNY3/25-232       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Synechocystis sp. (strain PCC 6803 / Kazusa) OX=1111708 GN=ctaE PE=3 SV=2
+#=GS sp|Q73YM3|COX3_MYCPA/12-201       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Mycolicibacterium paratuberculosis (strain ATCC BAA-968 / K-10) OX=262316 GN=ctaE PE=3 SV=1
+#=GS sp|O69582|COX3_MYCLE/12-200       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Mycobacterium leprae (strain TN) OX=272631 GN=ctaE PE=3 SV=1
+#=GS sp|Q9AEL8|COX3_CORGL/18-203       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Corynebacterium glutamicum (strain ATCC 13032 / DSM 20300 / BCRC 11384 / JCM 1318 / LMG 3730 / NCIMB 10025) OX=196627 GN=ctaE PE=1 SV=1
+#=GS sp|P50677|COX3_THEVL/12-198       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Thermosynechococcus vulcanus OX=32053 GN=ctaE PE=3 SV=1
+#=GS sp|Q8FNQ9|COX3_COREF/18-203       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Corynebacterium efficiens (strain DSM 44549 / YS-314 / AJ 12310 / JCM 11189 / NBRC 100395) OX=196164 GN=ctaE PE=3 SV=2
+#=GS sp|Q6NGA0|COX3_CORDI/18-203       DE [subseq from] Cytochrome c oxidase subunit 3 OS=Corynebacterium diphtheriae (strain ATCC 700971 / NCTC 13129 / Biotype gravis) OX=257309 GN=ctaE PE=3 SV=1
+#=GS sp|P98005|COX13_THET8/548-791     DE [subseq from] Cytochrome c oxidase polypeptide I+III OS=Thermus thermophilus (strain HB8 / ATCC 27634 / DSM 579) OX=300852 GN=caaA PE=1 SV=1
+#=GS sp|Q82AK5|COX3_STRAW/12-204       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Streptomyces avermitilis (strain ATCC 31267 / DSM 46492 / JCM 5070 / NBRC 14893 / NCIMB 12804 / NRRL 8165 / MA-4680) OX=227882 GN=ctaE PE=3 SV=1
+#=GS sp|Q9X809|COX3_STRCO/12-204       DE [subseq from] Probable cytochrome c oxidase subunit 3 OS=Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145) OX=100226 GN=ctaE PE=3 SV=1
+#=GS sp|Q33845|COX3_ARTSA/3-115        DE [subseq from] Cytochrome c oxidase subunit 3 (Fragment) OS=Artemia salina OX=85549 GN=COIII PE=3 SV=1
+#=GS sp|Q33752|COX3_ARBLI/2-109        DE [subseq from] Cytochrome c oxidase subunit 3 (Fragment) OS=Arbacia lixula OX=7640 GN=COIII PE=3 SV=1
+
+NC_012920.1_prot_YP_003024032.1_7         MTHQSHAYHMVKPSPWPLTGALSALLMTSGLAMWFHFH-------SMT--------LLMLGLLTNTLTMYQWWRDVTRESTYQGHHTPPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+sp|O48316|COX3_GAZSU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O48316|COX3_GAZSU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47702|COX3_ANTCE/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47702|COX3_ANTCE/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47709|COX3_GAZLE/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVVRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47709|COX3_GAZLE/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47706|COX3_EUDTH/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STI--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47706|COX3_EUDTH/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47708|COX3_GAZCU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVVRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47708|COX3_GAZCU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47705|COX3_EUDRU/1-261                MTRQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STI--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47705|COX3_EUDRU/1-261        PP 688***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47695|COX3_OUROU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47695|COX3_OUROU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47692|COX3_PELCP/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPSVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47692|COX3_PELCP/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47701|COX3_ANTMR/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SMT--------LLTLGLTTNMLTMYQWWRDIIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47701|COX3_ANTMR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47700|COX3_LITWA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47700|COX3_LITWA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00415|COX3_BOVIN/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SMT--------LLMIGLTTNMLTMYQWWRDVIRESTFQGHHTPAVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGDRK-HMLQ-ALFIT
+#=GR sp|P00415|COX3_BOVIN/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68531|COX3_GAZBE/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68531|COX3_GAZBE/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68532|COX3_GAZGA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68532|COX3_GAZGA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47693|COX3_CEPNA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STA--------LLMLGLTTNMLTMYQWWRDIVRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47693|COX3_CEPNA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q576B8|COX3_BOSIN/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SMT--------LLMIGLTTNMLTMYQWWRDVIRESTFQGHHTPAVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGDRK-HMLQ-ALFIT
+#=GR sp|Q576B8|COX3_BOSIN/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68299|COX3_GAZDO/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVVRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68299|COX3_GAZDO/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68300|COX3_GAZSP/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVVRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68300|COX3_GAZSP/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q96065|COX3_RHIUN/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLVMWFHYN-------STL--------LLTLGLTTNLLTMYQWWRDIIRESTFQGHHTPAVQ-KGLR-YGMILFIISEVFFFSGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPMEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|Q96065|COX3_RHIUN/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47694|COX3_DAMLU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SMT--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTSAVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47694|COX3_DAMLU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47699|COX3_MADGU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STT--------LLTLGLTTNMLTMYQWWRDVIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-PMLQ-ALFIT
+#=GR sp|O47699|COX3_MADGU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47698|COX3_NEOMO/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------SVT--------LLTLGLTTNMLTMYQWWRDIIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIS--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47698|COX3_NEOMO/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47691|COX3_AEPME/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STI--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47691|COX3_AEPME/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68088|COX3_NANGR/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SVA--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68088|COX3_NANGR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P68089|COX3_NANSO/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SVA--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|P68089|COX3_NANSO/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q35916|COX3_PIG/1-261                  MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SML--------LLSLGLLTNTLTMYQWWRDIIRESTFQGHHTSVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSILLASGVSITWAHHS-LMEGDRK-HMIQ-ALSIT
+#=GR sp|Q35916|COX3_PIG/1-261          PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O48374|COX3_NANDA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SVA--------LLTLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O48374|COX3_NANDA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47685|COX3_TRAIM/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHYN-------STI--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGDRN-HMLQ-ALFIT
+#=GR sp|O47685|COX3_TRAIM/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47690|COX3_SYNCA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STA--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRS-HMLQ-ALFIT
+#=GR sp|O47690|COX3_SYNCA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P38597|COX3_HALGR/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SMY--------LLMLGLTTNTLTMYQWWRDIVRESTFQGHHTPIVQ-KGLR-YGMILFIVSEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIT--PLNPMEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|P38597|COX3_HALGR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P15952|COX3_CYPCA/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLMTSGLAIWFHFH-------STT--------LMTLGLILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIT--PLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QAIQ-SLALT
+#=GR sp|P15952|COX3_CYPCA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O03201|COX3_CERSI/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHYN-------SML--------LLTLGLMTNLLTMYQWWRDIVRESTFQGHHTLVVQ-KGLR-YGMILFIISEVFFFSGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPMEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|O03201|COX3_CERSI/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q00529|COX3_PHOVI/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SMY--------LLMLGLTTNTLTMYQWWRDIVRESTFQGHHTPIVQ-KGLR-YGMILFIVSEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIT--PLNPMEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|Q00529|COX3_PHOVI/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P41295|COX3_BALMU/1-261                MTHQTHSYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SMI--------LLTLGLSTNILTMYQWWRDIIRESTFQGHHTPTVQ-KGLR-YGMILFIVSEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|P41295|COX3_BALMU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P24989|COX3_BALPH/1-261                MTHQTHSYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------SML--------LLTLGLSTNILTMYQWWRDIIRESTFQGHHTPTVQ-KGLR-YGMILFIVSEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIR--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|P24989|COX3_BALPH/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q5Y4Q4|COX3_BOSMU/1-260                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------STA--------LLMIGLTTNMLTMYQWWRDIIRESTFQGHHTPAVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGDRN-HMLQ-ALFIT
+#=GR sp|Q5Y4Q4|COX3_BOSMU/1-260        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q96133|COX3_CARAU/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLMTSGLAIWFHFH-------STT--------LMTLGLILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIT--PLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QAIQ-SLALT
+#=GR sp|Q96133|COX3_CARAU/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47688|COX3_TRASP/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SMI--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLDPLEVPLLNTSVLLASGVSITWAHHS-LMEGHRN-HMLQ-ALFIT
+#=GR sp|O47688|COX3_TRASP/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47687|COX3_TRASR/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------SMI--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGHRN-HMLQ-ALFIT
+#=GR sp|O47687|COX3_TRASR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47696|COX3_RAPCA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------STI--------LLMIGLTTNTLTMYQWWRDVIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRY-PMLQ-ALFIT
+#=GR sp|O47696|COX3_RAPCA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47697|COX3_RAPME/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------STI--------LLMIGLTTNTLTMYQWWRDVIRESTFQGHHTPTVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRY-PMLQ-ALFIT
+#=GR sp|O47697|COX3_RAPME/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47689|COX3_TRAST/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLTMWFHFN-------STI--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGHRN-HMLQ-ALFIT
+#=GR sp|O47689|COX3_TRAST/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P92481|COX3_EQUAS/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------STL--------LLALGLLTNILTMYQWWRDIIRESTFQGHHTSIVQ-KGLR-YGMILFIISEVFFFSGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-NMLQ-GLFIT
+#=GR sp|P92481|COX3_EQUAS/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O21619|COX3_SHEEP/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHFN-------STA--------LLTLGLTTNMLTMYQWWRDVIRESTFQGHHTPAVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRY-HMLQ-ALFIT
+#=GR sp|O21619|COX3_SHEEP/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48661|COX3_HORSE/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------STL--------LLAMGLLTNILTMYQWWRDIIRESTFQGHHTSIVQ-KGLR-YGMILFIISEVFFFSGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-NMLQ-GLFIT
+#=GR sp|P48661|COX3_HORSE/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47710|COX3_GAZSA/1-261                MTHQTHACHMVNPSPWPLTGALSGLLMTSGLIMWFHFN-------STT--------LLMLGLTTNMLTMYQWWRDVIRESTFQGHHTPNVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMLQ-ALFIT
+#=GR sp|O47710|COX3_GAZSA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47686|COX3_TRAOR/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTFGLIMWFHFN-------STA--------LLMLGLTTNMLTMYQWWRDIIRESTFQGHHTPVVQ-KGLR-YGMILFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGHRN-HMLQ-ALFIT
+#=GR sp|O47686|COX3_TRAOR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P34198|COX3_FORLA/1-261                MAHQAHAYHMVDPSPWPLTGAIGALFLTSGLAIWFHFQ-------SVT--------LLTLGLILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIT--PLDPFEVPLLNTAVLLASGVTVTWAHHS-LMEGARK-QAIQ-ALALT
+#=GR sp|P34198|COX3_FORLA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P41312|COX3_DIDVI/1-261                MTHQTHAYHMVNPSPWPLTGALSALLLTSGLIMWFHYN-------SST--------LMFMGLTTMLLTMYQWWRDIIREGTFQGHHTPVVQ-KGLR-YGMILFILSEVFFFIGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSILLASGVSITWAHHS-LMEGNRK-QMIQ-ALLIT
+#=GR sp|P41312|COX3_DIDVI/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q8W9N0|COX3_DUGDU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLVMWFHYH-------STI--------LVLLGLLTNILTMYQWWRDVVREGTFQGHHTPTVQ-KGLR-YGMVLFIISEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLDPMEVPLLNTSVLLASGVTITWAHHS-LMEGNRK-QMLQ-ALFIT
+#=GR sp|Q8W9N0|COX3_DUGDU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O79433|COX3_RABIT/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------SPS--------LLLIGLVTNTLTMYQWWRDIVREGTFQGHHTPIVQ-KGLR-YGMILFIISEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-NMQQ-ALAIT
+#=GR sp|O79433|COX3_RABIT/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9ZZ48|COX3_SQUAC/1-261                MAHQAHAYHMVDPSPWPLTGAVAALLMTSGLAVWFHFH-------SMY--------LLYLGLTLLLLTMVQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIY--PLDPFEVPLLNTAVLLASGVTVTWAHHS-LMEGNRK-EAIQ-ALTLT
+#=GR sp|Q9ZZ48|COX3_SQUAC/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P92665|COX3_MACRO/1-261                MTHQTHAYHMVNPSPWPLTGALSALLLTSGLIMWFHFN-------SFL--------LVIIGLTCMLLTMYQWWRDIVREGTFQGHHTPVVQ-KGLR-YGMVLFIVSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTSILLASGVSITWAHHS-LMEGNRK-QMIQ-ALSIT
+#=GR sp|P92665|COX3_MACRO/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48892|COX3_FELCA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHYN-------LTL--------LLTLGMTTNLLTMYQWWRDIIRESTFQGHHTPIVQ-KGLR-YGMILFIISEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGII--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|P48892|COX3_FELCA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O79407|COX3_SCYCA/1-261                MAHQAHPYHMVDPSPWPLTGATAALLMTSGLAIWFHFH-------SLL--------LLYLGLTLLLLTMIQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFIVSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLDPFEVPLLNTAVLLASGVTVTWAHHG-LMEGNRK-EAIQ-ALTLT
+#=GR sp|O79407|COX3_SCYCA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9ZZY5|COX3_HIPAM/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMSSGLTMWFHFN-------SLI--------LLTTGLVTNILTMYQWWRDVIRESTFQGHHTPVVQ-KGLR-YGMVLFIISEVLFFTGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-QMLQ-ALFIT
+#=GR sp|Q9ZZY5|COX3_HIPAM/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q36455|COX3_ORNAN/1-261                MTHQTHAYHMVNPSPWPLTGAMSALLLTSGLIMWFHFN-------SYT--------LLLLGLLTNLISSYQWWRDIVREGTYQGHHTKIVQ-KGLR-YGMILFIISEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIS--PLNPLEVPLLNTSILLASGVSITWAHHS-LMEGNRK-QMLQ-ALTIT
+#=GR sp|Q36455|COX3_ORNAN/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9ZZ61|COX3_CANLF/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHYN-------SMA--------LLTLGFTTNLLTMYQWWRDVIREGTFQGHHTPIVQ-KGLR-YGMVLFIVSEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGII--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|Q9ZZ61|COX3_CANLF/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P20684|COX3_ONCCL/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLLTSGTAVWFHFH-------SLT--------LLTLGNILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HASLAP----TPELG-------GCWPPTGIT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QTIQ-ALTLT
+#=GR sp|P20684|COX3_ONCCL/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P05505|COX3_RAT/1-261                  MTHQTHAYHMVNPSPWPLTGALSALLLTSGLVMWFHYN-------STI--------LLSLGLLTNILTMYQWWRDIIREGTYQGHHTPIVQ-KGLR-YGMILFIVSEVFFFAGFFWAFY-HSSLVP----THDLG-------GCWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRN-HMNQ-ALLIT
+#=GR sp|P05505|COX3_RAT/1-261          PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9T9W8|COX3_PANPA/1-261                MAHQSHAYHMVKPSPWPLTGALSALLMTSGLAMWFHFY-------STT--------LLTLGLLTNTLTMYQWWRDVMRESTYQGHHTPPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+#=GR sp|Q9T9W8|COX3_PANPA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q1HK97|COX3_CANLU/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLIMWFHYN-------SMS--------LLTLGFTTNLLTMYQWWRDVIREGTFQGHHTPIVQ-KGLR-YGMVLFIVSEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGII--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGNRK-HMLQ-ALFIT
+#=GR sp|Q1HK97|COX3_CANLU/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P69217|COX3_ONCMA/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLLTSGTAVWFHFH-------SLT--------LLTLGNVLLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HASLAP----TPELG-------GCWPPTGIT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QTIQ-ALTLT
+#=GR sp|P69217|COX3_ONCMA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P69218|COX3_ONCNE/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLLTSGTAVWFHFH-------SLT--------LLTLGNVLLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HASLAP----TPELG-------GCWPPTGIT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QTIQ-ALTLT
+#=GR sp|P69218|COX3_ONCNE/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48172|COX3_ONCMY/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLLTSGTAVWFHFH-------SLT--------LLTLGNILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HASLAP----TPELG-------GCWPPAGIT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QTIQ-ALTLT
+#=GR sp|P48172|COX3_ONCMY/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q36860|COX3_SALSA/1-261                MAHQAHAYHMVDPSPWPLTGAIAALLLTSGTAVWFHFH-------SLT--------LLTMGNILLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLSP----TPELG-------GCWPPTGII--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QTIQ-ALTLT
+#=GR sp|Q36860|COX3_SALSA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00414|COX3_HUMAN/1-261                MTHQSHAYHMVKPSPWPLTGALSALLMTSGLAMWFHFH-------SMT--------LLMLGLLTNTLTMYQWWRDVTRESTYQGHHTPPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+#=GR sp|P00414|COX3_HUMAN/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q8W9G7|COX3_TACAC/1-261                MTHQTHAYHMVNPSPWPLTGALSALLLTSGLMMWFHFN-------NPT--------LLVLGLLTNLISSYQWWRDIVREGTYQGHHTKVVQ-KGLR-YGMVLFIISEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIS--PLNPLEVPLLNTSILLASGVSITWSHHS-LMEGNRK-QMIQ-ALMIT
+#=GR sp|Q8W9G7|COX3_TACAC/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9T9Y6|COX3_GORGO/1-261                MIHQSHAYHMVKPSPWPLTGALSALLMTSGLAMWFHFH-------STT--------LLMLGLLTNMLTMYQWWRDVMRESTYQGHHTLPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------AHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+#=GR sp|Q9T9Y6|COX3_GORGO/1-261        PP 679***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00416|COX3_MOUSE/1-261                MTHQTHAYHMVNPSPWPLTGAFSALLLTSGLVMWFHYN-------SIT--------LLTLGLLTNILTMYQWWRDVIREGTYQGHHTPIVQ-KGLR-YGMILFIVSEVFFFAGFFWAFY-HSSLVP----THDLG-------GCWPPTGIS--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGKRN-HMNQ-ALLIT
+#=GR sp|P00416|COX3_MOUSE/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q4JQI1|COX3_TETNG/1-261                MAHQAHAYHMVDPSPWPLTGAVAALLLTSGLAIWFPFN-------SLI--------LLTLGLVLLLLTMYQWWRDIVREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGIV--PLNPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QAIH-SLTLT
+#=GR sp|Q4JQI1|COX3_TETNG/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9T9V9|COX3_PANTR/1-261                MTHQSHAYHMVKPSPWPLTGALSALLMTSGLAMWFHFY-------STT--------LLTLGLLTNTLTMYQWWRDVMREGTYQGHHTPPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+#=GR sp|Q9T9V9|COX3_PANTR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O21331|COX3_DASNO/1-261                MTHQTHAYHTVNPSPWPLTGALSALLMTSGLIMWFHFN-------SPL--------LLVLGLTTNFLTMYQWWRDIIRESTFQGHHTTIVQ-KGLR-YGMILFIVSEVFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIN--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMEGHRK-HMLQ-ALFIT
+#=GR sp|O21331|COX3_DASNO/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P55777|COX3_GADMO/1-261                MTHQAHAYHMVDPSPWPLTGAVAALLMTSGLAVWFHFH-------STT--------LMALGTVLLLLTMYQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HASLAP----TPELG-------GCWPPTGIT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-IMEGERK-QAIH-SLTLT
+#=GR sp|P55777|COX3_GADMO/1-261        PP 799***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q8LX26|COX3_LEMCA/1-261                MTHQTHAYHMVNPSPWPLTGALSALLMTSGLAMWFHFN-------SSM--------LLSLGMLTNLLTMYQWWRDIVREGTFQGHHTSIVQ-KGLR-YGMVLFIISEIFFFAGFFWAFY-HSSLAP----TPELG-------GCWPPTGIH--PLNPLEVPLLNTAVLLASGVSITWAHHS-LMEGNRV-QMLQ-ALLIT
+#=GR sp|Q8LX26|COX3_LEMCA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9MIY4|COX3_DANRE/1-261                MAHQAHAYHMVDPSPWPLTGAVAALLMSSGLAIWFHLH-------SMT--------LIVLGMILLILTMIQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GCWPPTGLT--TLDPFEVPLLNTAVLLASGVTVTWAHHS-LMEGERK-QAIQ-SLALT
+#=GR sp|Q9MIY4|COX3_DANRE/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q95707|COX3_HYLLA/1-261                MTHQSHAYHMVKPSPWPLTGALSALLLTSGLAMWFHFH-------STT--------LLTLSMLTNALTMFQWWRDVVREGTYQGHHTMPVQ-KGLR-YGMVLFITSEIFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRN-QMIQ-ALLIT
+#=GR sp|Q95707|COX3_HYLLA/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O03170|COX3_LATCH/1-261                MAHQAHAYHMVDPSPWPITGATAALLVTSGLAAWFHFN-------SMI--------LILMGLTLLLLTMYQWWRDIIRESTFQGHHTLPVQ-KSLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GLWPPTGIT--PLDPFEVPLLNTAVLLASGITVTWAHHS-LMEGQRK-EAIQ-SLFIT
+#=GR sp|O03170|COX3_LATCH/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q38PR6|COX3_MAMPR/1-261                MTHQTHAYHMVDPSPWPLTGALSALLMTSGLTMWFHYH-------SVV--------LLFLGLMTNTLTMFQWWRDVVREGTFQGHHTPVVQ-EGLR-YGMILFITSEVLFFTGFFWAFY-HSSLAP----TPELG-------SYWPPVGVY--PLNPLEVPLLNTSVLLASGVTITWAHHS-LMEGNRK-NMLQ-ALLIT
+#=GR sp|Q38PR6|COX3_MAMPR/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00419|COX3_XENLA/1-260                MAHQAHAYHMVDPSPWPLTGAVAALLLTSGLAMWFHFG-------SMI--------LLTLGLITMVLTMIQWWRDVIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFIGFFWAFY-NSSLAP----TYELG-------ECWPPTGIT--PLNPFEVPLLNTAVLLASGVTVTWAHHS-IMHGDRK-EAIQ-SLTLT
+#=GR sp|P00419|COX3_XENLA/1-260        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P92696|COX3_PONAB/1-261                MAHQSHAYHMVKPSPWPLTGALSALLTTSGLTMWFHFH-------STT--------LLLTGLLTNALTMYQWWRDVVRESTYQGHHTLPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGII--PLNPLEVPLLNTSVLLASGVSITWAHHS-LMENNRT-QMIQ-ALLIT
+#=GR sp|P92696|COX3_PONAB/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q2I3F5|COX3_LOXAF/1-261                MTHQTHAYHMVDPSPWPLTGALSALLMTSGLTMWFHYH-------SVT--------LLLLGLTTNILTMFQWWRDVVREGTFQGHHTPVVQ-ESLR-YGMILFITSEVLFFTGFFWAFY-HSSLAP----TPELG-------SYWPPVGVY--PLNPLEVPLLNTSVLLASGVTITWAHHS-LMEGNRK-NMLQ-ALLIT
+#=GR sp|Q2I3F5|COX3_LOXAF/1-261        PP 79************************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q35539|COX3_PETMA/1-261                MSHQAHAYHMVDPSPWPLTGAGAALLMTSGLAMWFHKN-------SCI--------LMTLGLILMLLTMYQWWRDIVREGTFLGHHTSPVQ-QGLR-YGMILFIISEVCFFAGFFWAFY-HASLAP----TPELG-------LTWPPTGIN--PLNPFEVPLLNTAVLLASGVSVTWAHHS-ITEKNRT-ETTQ-ALTLT
+#=GR sp|Q35539|COX3_PETMA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q2I3G8|COX3_ELEMA/1-261                MTHQMHAYHMVDPSPWPLTGALSALLMTSGLTMWFHYH-------SVI--------LLLLGLTTNILTMFQWWRDVVREGTFQGHHTPIVQ-ESLR-YGMILFITSEVLFFTGFFWAFY-HSSLAP----TPELG-------SYWPPVGVY--PLNPLEVPLLNTSVLLASGVTITWAHHS-LMEGSRK-NMLQ-ALLIT
+#=GR sp|Q2I3G8|COX3_ELEMA/1-261        PP 799***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q95914|COX3_POLOR/1-261                MAHQAHAYHMVDPSPWPLTGAVAALLLTSGLAVWFHFK-------SLT--------LLAMGLLLMILTMIQWWRDIIREGTFQGHHTPPVQ-KGLR-YGMILFITSEVFFFLGFFWAFY-HSSLAP----TPELG-------GIWPPTGIT--PLDPFEVPLLNTAVLLASGVTVTWTHHS-LMEGKRT-EATQ-ALTLT
+#=GR sp|Q95914|COX3_POLOR/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9ZXX8|COX3_PAPHA/1-261                MTHQLHAYHMVKPSPWPLTGALSAFLLTSGLIMWFHFY-------STA--------LLTLGLLTNVLTMYQWWRDIIRESTYQGHHTTPVQ-KSLR-YGMTLFIISEVFFFAGFFWAFY-HSSLAP----TPRLG-------CHWPPTGIT--PLNPLEVPLLNTSVLLASGVTITWAHHS-LMNGNRK-QTIQ-ALLIT
+#=GR sp|Q9ZXX8|COX3_PAPHA/1-261        PP 799***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O79676|COX3_PELSU/1-261                MTNQLHPFHMTNPSPWPLTGATAALLMTSGLIMWFHYN-------SSQ--------LIMLGLLIMLLTLTQWWRDIVRESTFQGHHTPSVQ-NNLR-YGMILFITSEILFFTGFFWAFY-HSSLSP----TAELG-------NIWPPTGIT--PLNPFEVPLLNTAVLLASGVTITWAHHS-LMEGNRP-QTLQ-ALTLT
+#=GR sp|O79676|COX3_PELSU/1-261        PP 6899**********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9T9X6|COX3_PONPY/1-261                MVHQSHAYHMLKPSPWPLTGALSALLMTSGLAMWFHFH-------STT--------LLLTGMLTNALTMYQWWRDVVRESTYQGHHTLPVQ-KGLR-YGMILFITSEVFFFAGFFWAFY-HSSLAP----TPQLG-------GHWPPTGIT--PLNPLEVPLLNTAVLLASGVSITWAHHS-LMENNRT-QMIQ-ALLIT
+#=GR sp|Q9T9X6|COX3_PONPY/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q8SEW8|COX3_COTJA/1-261                MAHQAHSYHMVDPSPWPIFGAITALLTTSGLIMWFHYN-------SIA--------LLTAGLLSMLLVMIQWWRDVVRESTFQGHHTPTVQ-KGLR-YGMILFITSEAFFFLGFFWAFF-HSSLAP----TPELG-------GQWPPTGIK--PLNPLEVPLLNTAILLASGVTVTWAHHS-ITEGNRK-QAIH-ALTLT
+#=GR sp|Q8SEW8|COX3_COTJA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O21403|COX3_STRCA/1-261                MAHQAHSYHMVDPSPWPIFGATAALLTTSGLIMWFHYN-------SLY--------LLTLGLLSMFLVMIQWWRDIVRESTFQGHHTPTVQ-KGLR-YGMILFITSEAFFFLGFFWAFF-HSSLAP----TPELG-------AQWPPTGIN--PLNPLEVPLLNTAILLASGVTVTWAHHS-ITESNRK-QAIH-ALSLT
+#=GR sp|O21403|COX3_STRCA/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P18945|COX3_CHICK/1-261                MAHQAHSYHMVDPSPWPIFGAAAALLTTSGLIMWFHYS-------STT--------LLTMGLLSMLLVMLQWWRDVVRESTFQGHHTPTVQ-KGLR-YGMILFITSEAFFFLGFFWAFF-HSSLAP----TPELG-------GQWPPTGVK--PLNPLEVPLLNTAILLASGVTVTWAHHS-ITEGNRK-QAIH-ALTLT
+#=GR sp|P18945|COX3_CHICK/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P34842|COX3_ANOGA/3-262                -THANHPFHLVDYSPWPLTGAIGAMTTVSGLVQWFHQY-------TMT--------LFILGNVITILTMYQWWRDISREGTFQGLHTFPVT-IGLR-WGMILFIVSEVFFFISFFWAFF-HSSLSP----TIELG-------MTWPPVGIA--AFNPFQIPLLNTAILLASGVTVTWAHHA-LMEGNHS-QATQ-GLFFT
+#=GR sp|P34842|COX3_ANOGA/3-262        PP .5789*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P15953|COX3_WHEAT/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFILYTMFVWWRDVLRESTLEGHHTKAVQ-LGLR-YGFILFIVSEVMFFFAFFWAFF-HSSLAP----TVEIG-------GIWPPKGIG--VLDPWEIPLLNTLILLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P15953|COX3_WHEAT/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|B0FWD1|COX3_AEDAE/3-261                -THANHPFHLVDYSPWPLTGAIGAMTTVTGLVQWFHQY-------DNT--------LFLLGNIITMLTMYQWWRDISREGTFQGLHTIPVT-LGLR-WGMILFIISEVFFFISFFWAFF-HSSLSP----TIELG-------MVWPPIGIE--PFNPFQIPLLNTAILLASGVTVTWAHHS-LMENNHT-QTIQ-SLFFT
+#=GR sp|B0FWD1|COX3_AEDAE/3-261        PP .5789*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P92514|COX3_ARATH/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAR--------LLSLGLIFILYTMFVWWRDVLRESTLEGHHTKVVQ-LGLR-YGFILFIVSEVMFFFAFFWAFF-HSSLAP----AVEIG-------GIWPPKGIE--VLDPWEIPFLNTLILLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P92514|COX3_ARATH/4-263        PP ..699********************************97.....7789........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O63915|COX3_MYXGL/1-261                MTKQMHAFHMVNPSPWPLTGAASAFMLTSGLAMWFHKH-------SNT--------LIFLSMILMLLTMYQWWRDITREGTFQGHHTSLVQ-KSLR-YGMILFIVSEVCFFFGFFWTFY-HSSLSP----SPDLG-------MMWPPKGVI--PLDPFEIPLLNTAILLGSGVSVTWAHHS-LMEKTHK-DMVI-SLSIT
+#=GR sp|O63915|COX3_MYXGL/1-261        PP 689***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q33824|COX3_PATPE/3-260                ---HQHPYHLVDQSPWPLTGAISALMMTSGLILWFHTN-------SNH--------LLLAGTILLLLTVINWWRDVIREATFQGSHTLPVN-TGLR-YGMILFITSEVCFFFAFFWAFF-HSSLAP----TVELG-------VSWPPTGIS--PINPFLVPLLNTAVLLSSGVTVTWAHHS-ILTQNRT-EAIQ-GLFLT
+#=GR sp|Q33824|COX3_PATPE/3-260        PP ...78*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P25003|COX3_PISOC/3-260                ---HQHPYHLVDQSPWPLTGAISALMMTSGLILWFHIN-------STI--------LFILGTVLLVLTIINWWRDIIREATFQGFHTLSVS-NGLR-YGMILFITSEVCLFFAFFWAFF-HSSLAP----TIELG-------VSWPPTGIT--PINPFLVPLLNTAVLLSSGVTVTWAHHS-ILSGNRV-EAIQ-SLTLT
+#=GR sp|P25003|COX3_PISOC/3-260        PP ...78*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P14574|COX3_LOCMI/6-263                ---NNHPFHMVDYSPWPLTGAIGAMILTSGMTKWFHTF-------NMN--------LLMIGMTVIVLTMIQWWRDVVREGTFQGLHTKLVS-KGLR-WGMILFIASEVLFFASFFWAFF-NSSLAP----TIELG-------MKWPPMGIQ--PFNPIQIPLLNTAILLASGVTITWAHHS-IMECNHS-QALQ-GLFFT
+#=GR sp|P14574|COX3_LOCMI/6-263        PP ...79*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P69215|COX3_BRALA/5-262                ---QPHPWHLVEPSPWPLVGGSAAFTLTVGLVMWFHYN-------SIS--------LMILGLVMIVATMIQWWRDVIREATFQGCHTSYVL-SGLR-RGMVLFIVSEVFFFLAFFWAFF-HSSLAP----TVELG-------VTWPPVGVH--PLNAFAVPLLNTAVLLSSGVTVTWAHHA-LMEGKRT-EAIQ-SLAIT
+#=GR sp|P69215|COX3_BRALA/5-262        PP ...78*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P69216|COX3_BRAFL/5-262                ---QPHPWHLVEPSPWPLVGGSAAFTLTVGLVMWFHYN-------SIS--------LMILGLVMIVATMIQWWRDVIREATFQGCHTSYVL-SGLR-RGMVLFIVSEVFFFLAFFWAFF-HSSLAP----TVELG-------VTWPPVGVH--PLNAFAVPLLNTAVLLSSGVTVTWAHHA-LMEGKRT-EAIQ-SLAIT
+#=GR sp|P69216|COX3_BRAFL/5-262        PP ...78*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P33508|COX3_ANOQU/4-262                --HANHPFHLVDYSPWPLTGAIGAMTTVSGLVQWFHQY-------TMT--------LFILGNIITILTMYQWWRDISREGTFQGLHTFPVT-IGLR-WGMILFIVSEIFFFISFFWAFF-HSSLSP----TIELG-------MTWPPVGII--AFNPFQIPLLNTAILLASGVTVTWAHHA-LMESNHS-QATQ-GLFFT
+#=GR sp|P33508|COX3_ANOQU/4-262        PP ..789*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00417|COX3_DROME/3-261                -THSNHPFHLVDYSPWPLTGAIGAMTTVSGMVKWFHQY-------DIS--------LFVLGNIITILTVYQWWRDVSREGTYQGLHTYAVT-IGLR-WGMILFILSEVLFFVSFFWAFF-HSSLSP----AIELG-------ASWPPMGII--SFNPFQIPLLNTAILLASGVTVTWAHHS-LMENNHS-QTTQ-GLFFT
+#=GR sp|P00417|COX3_DROME/3-261        PP .5889*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P12702|COX3_PARLI/2-261                -MAHQHPYYLVEQSPWPLTGAISGLMMNLGLVLWFHTG-------NII--------LLFTGLLLLILTLVNWWRDIVREATFQGSHTAIVE-NGLR-YPMILFITSEVCFFFAFFWAFF-HSSLAP----AVEIG-------VTWPPSGIT--PLNPFLVPLLNTAVLLSSGVTITWSHHS-ILAGNRN-EAIQ-ALFLT
+#=GR sp|P12702|COX3_PARLI/2-261        PP .5789*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00418|COX3_DROYA/3-261                -THSNHPFHLVDYSPWPLTGAIGAMTTVSGMVKWFHQY-------DIS--------LFLLGNIITILTVYQWWRDVSREGTYQGLHTYAVT-IGLR-WGMILFILSEVLFFVSFFWAFF-HSSLSP----AIELG-------ASWPPMGII--SFNPFQIPLLNTAILLASGVTVTWAHHS-LMESNHS-QTTQ-GLFFT
+#=GR sp|P00418|COX3_DROYA/3-261        PP .5889*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O79552|COX3_LYCSM/1-261                MTHQLHQYHLVDPSPWPLTGAMGSLLLASGLAVWFHTN-------NTM--------LLKFGLLTLLLTMFQWWRDIIRESTYQGHHTSGVQ-KNMR-YGMILFITSEVFFFLGFFWALY-HVSLVP----TPELG-------AEWPPIGIT--PLNPMEVPLLNTAVLLSSGATITWSHHT-MMKGNKK-EATH-ALMLT
+#=GR sp|O79552|COX3_LYCSM/1-261        PP 799***********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47491|COX3_METSE/6-262                ----YHPYHLVDPSPWPYVGACGALFITVGSVVYFHYS-------QTW--------VLLMGAITLSLTMIVWWRDVIREATFQGLHTMVVK-QGLK-YGMLLFILSEVLFFFSFFWAFF-HSSIAP----NIELG-------AVWPPQGIN--PLNPFSVPLLNTAVLLSSGATVTWAHHA-LISGKKT-EAIN-GLTIT
+#=GR sp|O47491|COX3_METSE/6-262        PP ....59********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P26858|COX3_MARPO/4-263                --SQKHPFHLVDPSPWPLLGSLGALASTIGGVMYMHSFT-----GGGT--------LLCLGLGMILYTMFVWWRDVIRESTYEGHHTFVVQ-LGLR-YGIILFIVSEVMFFLAFFWAFF-HSSLAP----TVEIG-------AIWPPKGIS--VLDPWGIPFLNTLILLSSGAAVTWAHHA-ILAGLKQ-QAVY-ALIAT
+#=GR sp|P26858|COX3_MARPO/4-263        PP ..699********************************97.....7789........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q37620|COX3_PROWI/2-260                ---RKHPFHLVDPSPWPLLASFAAFLSTTGGVMYMHAYS-----GGGL--------LLAIGQLSLFYVMYVWWRDVIREGTYQGHHTNPVQ-VGLR-YGMLLFILSEIMFFFAFFWAFF-HSSLAP----TIEIG-------AVWPPKGIQ--VLNPWEIPFLNTIILLTSGASVTWAHHA-ILAGNRK-QGII-SLAIT
+#=GR sp|Q37620|COX3_PROWI/2-260        PP ...79*********************************6.....6668........999********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O47475|COX3_HETBL/4-259                -----NPFHLVEYSPWPLTGSLGAMFLTVGLTSWFHNH-------GFI--------TMLLGLFLVLMTMFQWWRDIIRESTFQGYHTMKVS-LGMR-MGMVLFITSEICFFFAFFWAYF-HSSLAP----NTDIG-------ASWPPLHIN--PLNPFQIPLLNTAILLASGVTVTWAHHS-LMGGNHA-EATQ-SMVLT
+#=GR sp|O47475|COX3_HETBL/4-259        PP .....79*******************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q34943|COX3_LUMTE/3-259                ----RQPFHLVEYSPWPLTSSIGAFTLAIGLASWFHNH-------GFL--------CLTLAAFLIIVSMIQWWRDVVREGTYMGHHTSLVT-TGLR-WGMILFITSEVMFFLAFFWAFF-HSSLSP----TPEIG-------CSWPPTGIH--PLNPFSVPLLNTAVLLASGVTVTWAHHS-LMSGKRI-DATQ-ALILT
+#=GR sp|Q34943|COX3_LUMTE/3-259        PP ....579*******************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48872|COX3_CHOCR/11-270               --VQRHPFHLVDPSPWPFVASLCAFSCAIGGVMYMHAYV-----NGSF--------ILSISFFCLLLVMFTWWRDVIRESTFEGHHTGIVQ-QGLR-FGVILFIISEILFFFAFFWAFF-HSSLAP----TIEIG-------SIWPPKGIN--VLNPWEIPFLNTLILLLSGCTVTWCHHS-LVSNLRN-QSVL-SLFLT
+#=GR sp|P48872|COX3_CHOCR/11-270       PP ..79*********************************97.....6779........999********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P14853|COX3_SOYBN/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFILYTMFVWWRDVLRESTLEGHHTKVVQ-LGPR-YGSIPFIVSEVMFLFAFFWASS-HSSLAP----TVEIG-------GIWPPLGIW--VLDPWEIPFLNTPILLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P14853|COX3_SOYBN/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P15546|COX3_STRPU/4-259                ----QHPYHLVDQSPWPLDGAFSGLMMTSGNVLWFHTQ-------KTN--------LTLVGFLLLITNMVNWWRDIIRKANFQGSHTAIVN-KGMR-YGMILFITSEVCFFFAFFWAFF-HSSLAP----SVEIG-------VAWPPSGIT--PLNPFLVPLLNTGVLLSSGVTLSWSHHS-ILAGNRT-ESIQ-ALFLT
+#=GR sp|P15546|COX3_STRPU/4-259        PP ....7*********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P08745|COX3_OENBE/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHPFQ-----GGAT--------LLSLGLIFLLYTMFVWWRDVLRESTLEGHHTKVVQ-LGLR-YGSILFIVSEVMFLFAFFWASS-HSSLAP----TVEIG-------GIWPPKGIG--VLDPWEIPFLNTPILLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P08745|COX3_OENBE/4-263        PP ..699*******************************997.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P14852|COX3_ORYSI/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFLLYTMFVWWRDVLRESTLEGHHTKAVQ-LGPR-YGSILFIVSEVMFLFAFFWASS-HSSLAP----TVEIG-------GIWPPKGIG--VLDPWEIPLLNTPILPSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P14852|COX3_ORYSI/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q03227|COX3_VICFA/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFILYTMFVWWRDVLRESTLEGHHTKVVQ-LGPR-YGSISFIVSEVMFLFAFFRASS-HSSLAP----TVEIG-------GIWPPKGIG--VLDPREIPFLNTPILLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|Q03227|COX3_VICFA/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q36952|COX3_AEGCO/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFLLYTMFVWWRDVLRESTLEGHHTKAVQ-LGPR-YGSILFIVSEVMFLFAFFWASS-HSSLAP----TVEIG-------GIWPPKGIG--VLDPWEIPLLNTPILPSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|Q36952|COX3_AEGCO/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P09138|COX3_MAIZE/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFLLYTMFVWWRDVLRESTLEGHHTKAVQ-LGPR-YGSILFIVSEVMSFFLFFWASS-HSSLAP----TVEIG-------GIWPPKGIG--VLDPWEIPLLNTPILPSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P09138|COX3_MAIZE/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P32808|COX3_HELAN/4-263                --SQRHSYHLVDPSPWPISGSLGALATTVGGVMYMHSFQ-----GGAT--------LLSLGLIFILYTMFVWWRDVLRESTLEGHHTKVVQ-LGPR-YGFILFIVSEVMFLFALFRASS-HSSLAP----TVEIG-------GIWPPKGIA--VLDPREIPFLNTPIPLSSGAAVTWAHHA-ILAGKEK-RAVY-ALVAT
+#=GR sp|P32808|COX3_HELAN/4-263        PP ..699********************************97.....7899........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q37600|COX3_PYLLI/8-267                --IQRHPFHLVDPSPWPLVAALGGLSLTFGGVLFMHNYE-----GGGE--------LLCLGFFTILYVMFTWWRDVIREALFEGQHTLAVQ-QGLR-MGMILFIVSEIMFFFAFFWAFF-TSSISP----VFNIG-------GVWPPTDVV--AISPWGLPFLNTILLLSSGASVTWAHHA-IVGGLKK-EAMQ-GLSVT
+#=GR sp|Q37600|COX3_PYLLI/8-267        PP ..699*********************************7.....6678........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P80441|COX3_RHIST/22-280               --VQAHPFHLVEASPWPIAVSFSLLVVTLSGVMTFQGYS-----NGLF--------LLTLGFISLVSTMTLWFKDISREGTFQGHHTFAVQ-KGLS-LGFVLFVVSEVFFFISIFWAFF-HSALAP----TVELG-------AHWPPAGIE--TLNPWEVPLLNTVILLSSGATVTYAHHA-N-PSNRA-GVIY-GLIAT
+#=GR sp|P80441|COX3_RHIST/22-280       PP ..699********************************95.....4568........999********************************.****.**********************.******....*****.......*********..***************************8.6.67889.****.*****
+sp|P80439|COX3_ALLMA/12-272               --FQVHPYHLVEPSPWPLGASVACLILTLGGVMKFHGFA-----AGDI--------GLPLGLILVLASMLLWWRDVIREATYQGHHTKTVK-YGIT-LGVVLFIVSEILLFFSLFWAFF-HSSLAP----SVELG-------STWPPVGIE--PLNPFEVPLLNTIILLTSGCTITVSHAK-IISGDRG-ATIL-YLILT
+#=GR sp|P80439|COX3_ALLMA/12-272       PP ..689********************************96.....6679........9**********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q02654|COX3_PODAN/9-269                --FQDHPFHLVSPSPWPLYTSVSLLNLATSAALSMHNFN-----NSYY--------LFFISLILVISSMAFWFRDIISEATLLGDHTLAVQ-KGLN-LGVILFIVSEALFFLAIFWAFF-HSSLTP----TVELG-------SQWPPIGIE--PINPFELPLLNTVILLSSGATVTYAHHS-LIHGERK-GALY-GSIIT
+#=GR sp|Q02654|COX3_PODAN/9-269        PP ..699*******************************997.....6789........9**********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00421|COX3_EMEND/9-268                --FQNHPFHLVSPSPWPLFTSISLFILTTATVLFMHGFE-----GFQY--------LVPVAVINVMYVMGLWFRDVISEGTYLGNHTNAVQ-KGLN-LGVGLFIISEVFFFLAIFWAFF-HSAISP----SVELG-------AQWPPLGIQ--GINPFELPLLNTIILLSSGVTITYAHHS-LIQGNRK-GALY-GTVVT
+#=GR sp|P00421|COX3_EMEND/9-268        PP ..69*********************************97.....6678........999********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48891|COX3_ALBCA/2-259                ---QKTPFHLVEYSPWPLLVSLSLTSMPLGLIYYIRFG-------SIY--------LLLYGMLLTSIIAYMWWRDIVREATYQGHHTTYVV-KGLK-LGMALFILSEVCFFFAFFWAYF-HSSLAP----SIEIG-------SVWPPIGIT--VLNVFQVPLLNTSVLLLSGVSITWAHHA-LTEGKYY-STLS-GLFFT
+#=GR sp|P48891|COX3_ALBCA/2-259        PP ...899********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q95840|COX3_MAGGR/9-269                --FQDHPFHLVSPSLWPLYTSISLLVLTSNAALAMHNFA-----NGHY--------SVYLGLILVISSMSFWFRDVITEGSFLGDHTLAVQ-KGLN-LGVILFIVSEALFFMAIFWAFF-HSALTP----TVELG-------GQWPPIGIE--PINPFELPLLNTVILLSSGATVTYAHHS-IIGRNRE-GALY-GSVAT
+#=GR sp|Q95840|COX3_MAGGR/9-269        PP ..699*******************************997.....6789........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q0H8X4|COX3_USTMA/10-275               --FQFQPFHLVTPSPWPLLTSFALLILTSAAVMYFNGYANPLGGSGAL--------LVGIGLATTVAAMALWFRDVVAEGTFLGDHTILVQ-KGIT-MGVALFIISEVFFFISVFWAFF-HSSLSP----TVELG-------AQWPPVGIA--TINPFELPLLNTILLLSSGATVTYAHHS-VIEGNRR-GAIL-GTLMT
+#=GR sp|Q0H8X4|COX3_USTMA/10-275       PP ..57899******************************95444443345........999********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00422|COX3_NEUCR/9-269                --FQDHPFHLVSPSPWPLNTSVCLLNLTTTGALSMHNFN-----NIHY--------LYYIALIGLVSAMFLWFRDIISEGTFLGDHTLAVQ-RGLN-LGIILFIVSEALFFLAIFWAFF-HSALTP----TVELG-------AQWPPIGIE--PVNPFELPLLNTVILLSSGATITYAHHA-LIKGERE-GALY-GSIAT
+#=GR sp|P00422|COX3_NEUCR/9-269        PP ..699*******************************995.....4457........899********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|O99822|COX3_RHISA/4-257                -----HPFHLVEKSPWPITSSISALSLTLGFVSYFQNL-------SMY--------LILLAVLMITISSFQWWRDISREGSFQGFHTHWVL-NGLK-MGMILFILSEVFFFVSFFWAFF-HSSLSP----NIEIG-------SQWPPKGIY--PFNPFEIPLLNSTILISSGITVTWSHHA-IMNKNYI-SALN-SLLIT
+#=GR sp|O99822|COX3_RHISA/4-257        PP .....9********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q36309|COX3_ARTSF/3-256                --QLNHPYHLVNISPWPLATGMGAFAMTSGLVKWFHSF-------DSM--------LFFTGINNNHICFDQWWRDVSREATFQGMHSTKVG-FGLR-WGMILFIISEVFFFVSFFWGFF-HSSLSP----NIEVG-------ALWPPSEVE--S---FLSALLNTSILLASGVTVTWAHHA-LMENNFD-QCLQ-GLLFT
+#=GR sp|Q36309|COX3_ARTSF/3-256        PP ..568*********************************.......***........***********************************.****.**********************.******....*****.......******887..7...779*********************.*******.****.*****
+sp|P48873|COX3_CYACA/10-269               ---QRYPFHLVDPSPWPFVASFSALIILLGGVLYFHTYQ-----GSLV--------ILFFGIFFLLLIIFVWWRDVVRESTFEGNHTTMVQ-LGMR-YGIMLFIFSEVILFIAFFWAFF-HNSLIP----ALETG-------VVWPPKGIQ--FFSPWDIPFLNTIILLLSGCAVTWSHNC-IISGFRR-QAIF-SLILT
+#=GR sp|P48873|COX3_CYACA/10-269       PP ...899********************************8.....8889........9**********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q92J29|COX3_RICCN/14-283               --TKSHLFHIVDPSPWPVLTSFALLLLVIGGVSFMHGYK-----FNIY--------ILSAGIISVGYCLYSWWRDIVKEGIVEHQHTSPVR-KGLQ-IGMALFILTEIVFFGVFFASFF-KSSLSP----VGLLDGVWVVKQGIWPPPTIK--TFEPFDIPFINTLILLLSGTTVTWAHYA-LEEKNQK-DCVT-ALALT
+#=GR sp|Q92J29|COX3_RICCN/14-283       PP ..689********************************97.....7889........99*********************************.****.**********************.******....98888777777799*******..****************************.*******.****.*****
+sp|Q36837|COX3_TRIRU/9-268                --FQSHPYHLVWPSPWPFYNSLSLFILTTSGVLTMHGFS-----NMYI--------ILFIAFINLVWCMTLWFRDIISEGTYLGNHTNAVQ-RGLN-LGVGLFIASEALFFLAIFWTFF-HSSLSP----NVELG-------AQWPPLGIK--AIDPFELPLLNNIILLSSGVTVNSNYHS-LIQGNRK-GALY-GLVAT
+#=GR sp|Q36837|COX3_TRIRU/9-268        PP ..699********************************95.....3345........8899*******************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q1RHH9|COX3_RICBR/8-277                --TKSHLFHIVDPSPWPILTSFALLILVAGGVSFMHSYK-----FNHY--------ILAFGVISVAYCLYSWWRDVIKEGIIDHSHTEPVR-HGLR-IGMALFILTEIMFFGVFFASFF-KSSLSP----VGLLDGVWVIKQGVWPPPNIK--VFDPFDIPFINTLILLLSGTTVTWAHYA-LEERNQK-DCVT-ALGLT
+#=GR sp|Q1RHH9|COX3_RICBR/8-277        PP ..799********************************98.....7889........***********************************.****.**********************.******....88888777777799*******..****************************.*******.****.*****
+sp|Q4UKK0|COX3_RICFE/9-278                --TKSHLFHIVDPSPWPVLTSFALLLLVIGGVSFMHGYK-----FNIY--------ILSAGVISVGYCLYSWWRDVVKEGIVEHQHTSPVR-KGLQ-IGMALFILTEIVFFGVFFASFF-KSSLSP----VGLLDGVWVVKQGIWPPPTIK--TFDPFDIPFINTLILLLSGTTVTWAHYA-LEEKNQK-DCVT-ALALT
+#=GR sp|Q4UKK0|COX3_RICFE/9-278        PP ..589********************************97.....7889........99*********************************.****.**********************.******....98888777777799*******..****************************.*******.****.*****
+sp|Q9B6D8|COX3_YARLI/8-267                --FQVHPFHLVAPSPWPILVSFSVMSIMLTLVFNMHGFM-----HNNY--------WVVFSAIVAIMTMALWFRDIISEATYLGDHTLAVR-KGLN-IGFILFVVSELFFFIAIFWAFF-HSAMAP----TIELG-------GVWPPVGIE--AIGPSELPLLNTILLLCSGATLTWSHHA-LLGGNRF-NTLL-GLILT
+#=GR sp|Q9B6D8|COX3_YARLI/8-267        PP ..689*******************************998.....899*........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9ZDX3|COX3_RICPR/9-278                --TKSHLFHIVNPSPWPILTSFALLLLVIGGISSMHGYK-----FNMY--------ILSAGVISVIYCLYSWWRDVVQEGIVEHQHTSPVR-KGLK-IGMVLFILTETVFFSVFFASFL-KSSISP----VGILDGVWVVKQGIWPPPTIK--TFDPFDIPFINTLILLLSGTTITGAHYA-LEEKNQK-DCVT-ALAFT
+#=GR sp|Q9ZDX3|COX3_RICPR/9-278        PP ..689********************************98.....8899........9**********************************.****.**********************.******....98888777777799*******..****************************.*******.****.*****
+sp|P06030|COX3_PARDE/4-273                --VKNHDYQILPPSIWPFFGAIGAFVMLTGAVAWMKGI-------TFFGLPVEGPWMFLIGLVGVLYVMFGWWADVVNEGE-TGEHTPVVR-IGLQ-YGFILFIMSEVMFFVAWFWAFI-KNALYPMGPDSPIKD-------GVWPPEGIV--TFDPWHLPLINTLILLLSGVAVTWAHHAFVLEGDRK-TTIN-GLIVA
+#=GR sp|P06030|COX3_PARDE/4-273        PP ..689*********************************.......8888888888899**********************9.6********.****.**********************.******777778899.......*********..***************************9789*****.****.*****
+sp|Q37374|COX3_ACACA/41-199               --NQKHSFHIVTRSPWPLYSSIAALMFTFGLVMHMHNYF-----YGNL--------LSLAGFFLILLMMFVWWRDVIRESTFSGYHTKKVQ-QGLR-LGVILFIISEVMFFFSFFWAFF-HASLSP----SVVLG-------SVWPPLGIN--VLNPLKIPLLNTLILLLSGLTVTWSHHV-IRDKSWQ-KF--------
+#=GR sp|Q37374|COX3_ACACA/41-199       PP ..599********************************98.....7788........89999******************************.****.**********************.******....*****.......*********..****************************.*999877.65........
+sp|Q37374|COX3_ACACA/220-322              -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------CAF-ALFLT
+#=GR sp|Q37374|COX3_ACACA/220-322      PP ...............................................................................................................................................................................................667.99***
+sp|A6H4Q3|COX3_VANPO/10-269               --HQQFPFHLVNPSPWPIVVSFSLLSLALSLGLTMHGYI-----GEMY--------LVNLALLVVLGSGVLWFRDIIAEATYLGDHTAAVR-KGIN-IGFLLFVLSEVLIFSALFWSYF-HSAMSP----DVTLG-------ACWPPVGIT--AVQPTELPLLNTIILLASGATVTYSHHA-LIQGNRK-NSLS-GLLIT
+#=GR sp|A6H4Q3|COX3_VANPO/10-269       PP ..89**********************************9.....999*........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9XLX0|COX3_LACK1/9-268                --HQQFPFHLVAPSPWPIVVSFSLLSLALSLALAMHGYI-----GNMN--------LVWLALFVLTSSATLWFRDIIAEATYLGDHTIAVR-KGIN-LGFLLFVVSEVLIFAGLFWAYF-HSAMSP----TIELG-------GVWPPVGIE--AVQPTELPLLNTIILLASGATVTYSHHA-LIQGNRK-DALS-GLFIT
+#=GR sp|Q9XLX0|COX3_LACK1/9-268        PP ..89**********************************9.....9999........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q85Q96|COX3_CANGA/9-268                --HQQYPYHMVLPSPWPMLLSFALLSLTLSLGLTMHGYI-----GNMN--------LVYLALLVVTLTSVFWFRDVIAEATYLGDHTIAVR-KGIN-LGFLLFVLSEVLIFAGLFWAYF-HSAMSP----DIVLG-------ASWPPVGIQ--AVQPTELPLLNTIILLSSGATITYSHHA-LICRNRN-KALS-GLFIT
+#=GR sp|Q85Q96|COX3_CANGA/9-268        PP ..89**********************************9.....9999........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P00420|COX3_YEAST/9-268                --HQQHPFHMVMPSPWPIVVSFALLSLALSTALTMHGYI-----GNMN--------MVYLALFVLLTSSILWFRDIVAEATYLGDHTMAVR-KGIN-LGFLMFVLSEVLIFAGLFWAYF-HSAMSP----DVTLG-------ACWPPVGIE--AVQPTELPLLNTIILLSSGATVTYSHHA-LIAGNRN-KALS-GLLIT
+#=GR sp|P00420|COX3_YEAST/9-268        PP ..89**********************************9.....9999........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P48874|COX3_WICCA/9-268                --HQLFPFHLVSPSPWPITVSFALMSFALSLGLTMHGYI-----VGNS--------VLFTSIILVLYSMTMWFRDIIAEGTYLGDHTLAVR-KGLN-YGFLLFVVSEILIFAGIFWAYF-HSAMSP----AIEIG-------GVWPPVGIT--AIGATELPLLNTIILLASGATITYSHHA-TIEGNRN-HALN-GLFIT
+#=GR sp|P48874|COX3_WICCA/9-268        PP ..7899*******************************98.....8889........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9B1P9|COX3_CANAL/10-269               ---QLHPFHLVGPSPWPIFTSFSLMDLALSLGLTAHGYI-----ASIW--------PIFLAIIAVLYSMTLWFKDIIAESTYLGDHTLAVK-RGLN-QGFLLFVVSEILIFASLFWAYL-HSALNP----TMDLG-------MQWPPVGIP--TISPAELPLLNTIILLASGVTVTYAHHA-LINGNRT-NTLY-GFTYT
+#=GR sp|Q9B1P9|COX3_CANAL/10-269       PP ...78********************************98.....7888........9**********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q9XLW9|COX3_KLULA/9-268                --HQQFPFHLVAPSPWPIVVSFALMSLALSLALTMHGYI-----GHMY--------LIYLSILTVTLSATLWFRDIIAEATYLGDHTIAVR-KGIN-LGFLLFVVSEILIFAALFWAYF-HSAMSP----NIELG-------GVWPPVGIQ--AVQPTELPLLNTIILLSSGATITYSHHG-LVGGNRK-NALS-GLLIT
+#=GR sp|Q9XLW9|COX3_KLULA/9-268        PP ..89**********************************9.....999*........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|Q75G34|COX3_ASHGO/9-268                --FQQFPFHLVTPSPWPIVTSFSLLGLTLTLAFTMHGII-----GNIY--------PLLLSLLVVLLTMTLWFRDIVAETTYLGDHTLAVR-KGIN-LGFTLFVVSEVLIFASLFWAYF-HSAMSP----DITLG-------NVWPPVGIE--AVQPTELPLLNTIILLASGTTITYSHHG-LIEGNRK-HALS-GLTIT
+#=GR sp|Q75G34|COX3_ASHGO/9-268        PP ..699********************************99.....9999........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P14575|COX3_SCHPO/7-269                --FQGHPYHIVSASPWPFFLSVVLFFNCLAATLYLHGYK-----HSSV--------FFGISFLGLLATMYLWFRDMSTEANIHGAHTKAVT-KGLK-IGFMLFLISETFLFASIFWAFF-HSSLSP----TFELG-------AVWPPVGIADKTIDPLEVPLLNTVILLTSGASLTYAHYS-LIARNRE-NALK-GLYMT
+#=GR sp|P14575|COX3_SCHPO/7-269        PP ..689********************************96.....6667........888889999**************************.****.**********************.******....*****.......*******95449***************************.*******.****.*****
+sp|Q34214|COX3_CANPA/10-269               ---QLHPFHLVGPSPWPIFTSFSLMDLAFSIALNSHGYM-----ANNF--------YIILSIITVLYSMTLWFKDIIAESTYLGDHTIAVK-RGLN-QGFLLFVVSEILIFASLFWAYL-HSAVNP----TMDLG-------MSWPPVGID--VISPAELPLLNTIILLASGVTITYAHHA-LINGNRA-NTLY-GFIYS
+#=GR sp|Q34214|COX3_CANPA/10-269       PP ...78********************************98.....8899........9**********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|A9RAG9|COX3_DEBHA/10-268               ---QLHPFHLVGPSPWPMFTSFSLMNLALSLGLTAHGYM-----NNNM--------FMLLSTMTVLYSMTLWFKDIMAESTYLGDHTVAVK-RGLM-QGFLMFVVSEMLMFSSLFWAFL-HSALNP----TVEMG-------MSWPPAGME--AISAAELPLLNTMILLASGVTMTYAHHA-LMNGNRQ-NTLY-GFAYS
+#=GR sp|A9RAG9|COX3_DEBHA/10-268       PP ...88*******************************998.....7889........99*********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P34843|COX3_APILI/2-257                --KKNFPFHMVTNSPWPIILSFSFMNTLISTVIWIYSS-------ISM--------FMILNFINSILIMMLWFRDIIRESTFQGMHSMFIT-NFLK-FSMILFILSELMFFISFFWTFF-HSSISP----NIEIN-------MTWPPKNIK--FFNPMEIPLLNSFILVSSGFTVTLSHYY-LIINNLK-LSKS-YLLLT
+#=GR sp|P34843|COX3_APILI/2-257        PP ..5899********************************.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P14058|COX3_SCHCO/8-266                ---QSFSAHLVQHSPWPILVSFSLFNLAIGTVLTMHGYS-----HSST--------TFDLGLAVTVGSILLWTRDIVIEGSFLGDHTKQVQ-EGLI-IGFILFIISEVFAFISVFWAYF-HSALSP----AVELG-------STWPPVGII--PLDTFSLPLFNTIILLSSGAFVTYGHHA-IFSGKRL-DSII-GLFLT
+#=GR sp|P14058|COX3_SCHCO/8-266        PP ...78999*****************************97.....7789........99*********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P41775|COX3_MYTED/8-261                ------RYYVPGPSPWPFFVAISANGMAVGLILWLHRT------PSFL--------LMGMSLVCMLLSTFSWWRDLIREGDI-GFHTRFVI-KSFR-DCVALFILSEVMFFFTFFWTFF-HNALSP----SCELG-------MRWPPPGIR--TPNPSSTSLFETGLLISSGLFVTQAHKS-MRLKDYDVGPFI-GLVVT
+#=GR sp|P41775|COX3_MYTED/8-261        PP ......69999***************************......9999........99**********************97.9*******.****.**********************.******....*****.......*********..****************************.*99998747788.*****
+sp|P24879|COX3_ASCSU/3-254                -----HNFHILSLSSYPILIFCSSLGFTSSLVVFFKNG-------IFG--------GLLFCLFSIFLVSFAWGKDIVMEG-LSGYHNFFVM-DGFK-FGVLVFIFSEFMFFFGIFWTFF-DAALVP----AHDVG-------GVWSPIGMH--LVNPFGVPLLNTIILLSSGVSVTWAHYS-LLSNK---GCAN-SLMLT
+#=GR sp|P24879|COX3_ASCSU/3-254        PP .....99*******************************.......***........************************.59********.****.**********************.******....*****.......*********..****************************.*9876...9***.*****
+sp|Q35242|COX3_ENTDO/2-203                ---------------------------TTGLSSWFHNY-------GNL--------LLMLGFLLMIMTMIQWWRDIIRESTFQGFHTTKVY-NGLR-WGMMLFIVSEICFFFAFFWAYF-HSSLAP----NTDIG-------ACWPPINIY--PLNPFQIPLLNTAILLSSGVSVTWAHHS-LMSNKLN-PAIH-SMTIT
+#=GR sp|Q35242|COX3_ENTDO/2-203        PP ...........................7899*******.......***........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+sp|P24891|COX3_CAEEL/3-254                -----HNFHILSLSSYAYNLFFASAGMLSSLVMFFKFG-------LYE--------LFIFTLFSVLFISFAWGKDIAMEG-LSGYHNFFVM-DGFK-FGVILFVFSEFMFFFCIFCTFF-DAALVP----VHELG-------ETWSPFGMH--LVNPFGVPLLNTIILLSSGVTVTWAHHS-LLSNK---SCTN-SMILT
+#=GR sp|P24891|COX3_CAEEL/3-254        PP .....99*******************************.......***........***********************9.59********.****.**********************.******....*****.......*********..****************************.*9986...899*.*****
+sp|O21049|COX3_DICDI/58-220               --MKRHPFHIVRGTVAPLAVTLPLGFFVL--NYFGVIS-------SKL--------GLLIALSSFIGGLVIWTISIIFDSLYDQQHTYEVK-RGLV-MGMMMFIISEVMFFFSFFWSYF-YISLSP----NIAIG-------CVWPPYGLT--VYSYMGLPLLNTVLLLLSGAILTDGYTI-LTEQKAV-HEKN-EKVLA
+#=GR sp|O21049|COX3_DICDI/58-220       PP ..689*****************9999987..5666777.......999........9**********************************.****.**********************.******....*****.......*********..****************************.*****99.9888.88777
+sp|O21049|COX3_DICDI/304-434              -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------VIEYALIT-IYLKKRN-KVIKTRLYFT
+#=GR sp|O21049|COX3_DICDI/304-434      PP .............................................................................................................................................................................699*****.*******.*99979****
+sp|Q2LCP9|COX3_DICCI/58-220               --VKRHPYHIVRGTIAPLAVTLPLAFFVL--NYFGVIS-------SKI--------GFVIALSSFIGGLTIWAISIVFDSLYDQQHTYEVK-RGLV-MGMMMFIISEIMFFFSFFWSYF-YISLSP----NIAIG-------CVWPPYGLT--VYSYMGLPLLNTVLLLLSGAILTDGYTI-LTEQKAV-HENN-EKVIA
+#=GR sp|Q2LCP9|COX3_DICCI/58-220       PP ..689*****************9999987..5667777.......999........9**********************************.****.**********************.******....*****.......*********..****************************.*****99.9999.98888
+sp|Q2LCP9|COX3_DICCI/300-430              -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------VIEYALIT-IFLKKRN-KVIKTRLYFT
+#=GR sp|Q2LCP9|COX3_DICCI/300-430      PP .............................................................................................................................................................................699*****.*******.*99979****
+sp|Q35826|COX3_SPOFR/1-146                -----------------------------------------------------------------------------------------------------------------------------------------------MWPPTSIT--PFNPFQIPLLNTIILISSGVSVTWAHHA-IMENNNS-QMTQ-GLFIT
+#=GR sp|Q35826|COX3_SPOFR/1-146        PP ...............................................................................................................................................6*******..****************************.*******.****.*****
+sp|Q5YZ19|COX3_NOCFA/12-201               --------------------------------------------------------------------------------ITQRVHSLNRP-NMVS-VGTIIWLSSELMFFAGLFAMYF-VAR--------AQAN-------GNWPPEPTE--LNLKLAVPV--TAVLVASSFTCQMGVFA-AEKGDVF-GLRR-WYFIT
+#=GR sp|Q5YZ19|COX3_NOCFA/12-201       PP ................................................................................67999******.****.**********************.*95........789*.......*********..*88888888..*****************.*******.****.*****
+sp|P63857|COX3_MYCBO/12-201               --------------------------------------------------------------------------------ITSRVHSLNRP-NMVS-VGTIVWLSSELMFFAGLFAFYF-SAR--------AQAG-------GNWPPPPTE--LNLYQAVPV--TLVLIASSFTCQMGVFA-AERGDIF-GLRR-WYVIT
+#=GR sp|P63857|COX3_MYCBO/12-201       PP ................................................................................56889******.****.**********************.995........789*.......*********..*9999***9..*****************.*******.****.*****
+sp|P9WP66|COX3_MYCTO/12-201               --------------------------------------------------------------------------------ITSRVHSLNRP-NMVS-VGTIVWLSSELMFFAGLFAFYF-SAR--------AQAG-------GNWPPPPTE--LNLYQAVPV--TLVLIASSFTCQMGVFA-AERGDIF-GLRR-WYVIT
+#=GR sp|P9WP66|COX3_MYCTO/12-201       PP ................................................................................56889******.****.**********************.995........789*.......*********..*9999***9..*****************.*******.****.*****
+sp|P9WP67|COX3_MYCTU/12-201               --------------------------------------------------------------------------------ITSRVHSLNRP-NMVS-VGTIVWLSSELMFFAGLFAFYF-SAR--------AQAG-------GNWPPPPTE--LNLYQAVPV--TLVLIASSFTCQMGVFA-AERGDIF-GLRR-WYVIT
+#=GR sp|P9WP67|COX3_MYCTU/12-201       PP ................................................................................56889******.****.**********************.995........789*.......*********..*9999***9..*****************.*******.****.*****
+sp|Q06475|COX3_SYNY3/25-232               -------------------------------------------------------------LIVSPMQTTALSSDLNSTYTPGEAHGHHGH-PDLRMFGVVLFLVAESAIFLGLFTAYLIYRSVMP-----------------AWPPEGTP--ELE-LLLPGVNSIILISSSFVMHKGQAA-IRNNDNA-GLQK-WFGIT
+#=GR sp|Q06475|COX3_SYNY3/25-232       PP .............................................................555566667778899999999999*99999.888747********************85677887.................8*******..*98.99**********************.*******.****.*****
+sp|Q73YM3|COX3_MYCPA/12-201               --------------------------------------------------------------------------------ITSRVHSLNRP-NMVS-VGTIVWLSSELMFFAGLFAMYF-TAR--------AQSG-------GKWPPPPTE--LNLYQAVPV--TLVLIASSFTCQMGVFA-AERGDVF-GLRR-WYVIT
+#=GR sp|Q73YM3|COX3_MYCPA/12-201       PP ................................................................................56889******.****.**********************.*95........789*.......*********..*9999***9..*****************.*******.****.*****
+sp|O69582|COX3_MYCLE/12-200               --------------------------------------------------------------------------------ITSRVHSLNRP-NMVS-VGTVVWLSSELMFFAGLFAMYF-TAR--------AQAG-------GKWPPS-TE--LNLYQAVPV--TLVLIASSFTCQMGVFS-AERGDVF-GLRR-WYVIT
+#=GR sp|O69582|COX3_MYCLE/12-200       PP ................................................................................67889******.****.**********************.*95........789*.......*****9.56..666789999..*****************.*******.****.*****
+sp|Q9AEL8|COX3_CORGL/18-203               --------------------------------------------------------------------------------------ALNRP-NMVS-VGTIVFLSQELMFFAGLFAMYF-VSRAN------GLAN-------GSWGEQT-D--HLN-VPYALLITVILVSSSVTCQFGVFA-AERGDVY-GLRK-WFLVT
+#=GR sp|Q9AEL8|COX3_CORGL/18-203       PP ......................................................................................56788.9***.**********************.**855......8999.......****985.5..555.999*********************.*******.****.*****
+sp|P50677|COX3_THEVL/12-198               ---------------------------------------------------------------------------------IAVDHAHEHP-DFRV-LGLLVFLISESLMFGGLFAAYL-LLR---------GMH-------EQWPPEGTE--V--ELFVPTINTLILISSSFVIHYGDVA-IKKDDVR-GMRK-WYWIT
+#=GR sp|P50677|COX3_THEVL/12-198       PP .................................................................................6779******.****.**********************.995.........789.......*********..9..79***********************.*******.****.*****
+sp|Q8FNQ9|COX3_COREF/18-203               --------------------------------------------------------------------------------------ALNRP-NMVS-VGTIVFLSQELMFFAGLFAMYF-VSRAN------GLAN-------GSWAEQ-TD--YLN-VPYALAITVILVSSSVTCQFGVFA-AERGDVY-GLRK-WFLIT
+#=GR sp|Q8FNQ9|COX3_COREF/18-203       PP ......................................................................................56788.9***.**********************.**855......8999.......****88.45..555.8888999*****************.*******.****.*****
+sp|Q6NGA0|COX3_CORDI/18-203               --------------------------------------------------------------------------------------ALNRP-NMVS-VGTIVFLSQELMFFAGLFAMYF-TSRAN------GIGN-------GSWKE-GAH--HLN-VPYALVITIILISSSVTAQFGVFA-AERGDVF-GVRR-WFSLT
+#=GR sp|Q6NGA0|COX3_CORDI/18-203       PP ......................................................................................66788.9***.**********************.**865......7888.......99985.677..777.999*********************.*******.****.*****
+sp|P98005|COX13_THET8/548-791             ------HIHLPNSSFWPFYSAATLFAFFVAVAALPVPN-------VWM--------WVFLAL--FAYGLVRWALED-EYSHPVEHHTVTGK-SNAW-MGMAWFIVSEVGLFAILIAGYL-YLRLS---------G-------AATPPEERP--A---LWLALLNTFLLVSSSFTVHFAHHD-LRRGRFN-PFRF-GLLVT
+#=GR sp|P98005|COX13_THET8/548-791     PP ......58******************************.......*99........999998..78999****998.788999********.****.**********************.***99.........9.......99****888..7...88**********************.*******.****.*****
+sp|Q82AK5|COX3_STRAW/12-204               ---------------------------------------------------------------------------------TGHAHPSVNRPNLTS-VGTIIWLSSELMFFAALFAMYF-TLR-------SVTGP-------EHWKEMASH--L--NFPFSATNTTILVLSSLTCQLGVFA-AERGDVK-KLRM-WFIVT
+#=GR sp|Q82AK5|COX3_STRAW/12-204       PP .................................................................................344565555427788.**********************.997.......78999.......****99776..6..59999********************.*******.****.*****
+sp|Q9X809|COX3_STRCO/12-204               ---------------------------------------------------------------------------------TGHAHPSVNRPNLTS-VGTIIWLSSELMFFAALFAMYF-TLR-------SVTGP-------DFWSEK-AD--ALN-IPFSATNTTILVLSSLTCQLGVFA-AERGDVK-KLRM-WFIVT
+#=GR sp|Q9X809|COX3_STRCO/12-204       PP .................................................................................344565555427788.**********************.997.......78999.......9**988.56..666.88999*******************.*******.****.*****
+sp|Q33845|COX3_ARTSA/3-115                ----------------------------------------------------------------------------------------------------------------------------------------------------------------ALLNTSILLRSGVTVTWAHHA-LMENNFD-QCLQ-GLLFT
+#=GR sp|Q33845|COX3_ARTSA/3-115        PP ................................................................................................................................................................79*******************.*******.****.*****
+sp|Q33752|COX3_ARBLI/2-109                -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------GNRT-EAVQ-ALFLT
+#=GR sp|Q33752|COX3_ARBLI/2-109        PP .........................................................................................................................................................................................799*.****.*****
+#=GC PP_cons                              7999**********************************.......99*........***********************************.****.**********************.******....*****.......*********..****************************.*******.****.*****
+#=GC RF                                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.......xxx........xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx.xxxxxxxxxxxxxxxxxxxxxx.xxxxxx....xxxxx.......xxxxxxxxx..xxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxxx.xxxx.xxxxx
+
+NC_012920.1_prot_YP_003024032.1_7         ILLGLYFTLLQASEYFES----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICFIRQLM-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+sp|O48316|COX3_GAZSU/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O48316|COX3_GAZSU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47702|COX3_ANTCE/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47702|COX3_ANTCE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47709|COX3_GAZLE/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47709|COX3_GAZLE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47706|COX3_EUDTH/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47706|COX3_EUDTH/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47708|COX3_GAZCU/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47708|COX3_GAZCU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47705|COX3_EUDRU/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47705|COX3_EUDRU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47695|COX3_OUROU/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47695|COX3_OUROU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47692|COX3_PELCP/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47692|COX3_PELCP/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47701|COX3_ANTMR/1-261                ISLGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47701|COX3_ANTMR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47700|COX3_LITWA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47700|COX3_LITWA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P00415|COX3_BOVIN/1-261                ITLGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P00415|COX3_BOVIN/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68531|COX3_GAZBE/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68531|COX3_GAZBE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68532|COX3_GAZGA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68532|COX3_GAZGA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47693|COX3_CEPNA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47693|COX3_CEPNA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q576B8|COX3_BOSIN/1-261                ITLGIYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q576B8|COX3_BOSIN/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68299|COX3_GAZDO/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68299|COX3_GAZDO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68300|COX3_GAZSP/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68300|COX3_GAZSP/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q96065|COX3_RHIUN/1-261                ISLGIYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFLRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q96065|COX3_RHIUN/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47694|COX3_DAMLU/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------ST--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47694|COX3_DAMLU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47699|COX3_MADGU/1-261                IALGIYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47699|COX3_MADGU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47698|COX3_NEOMO/1-261                IALGVYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47698|COX3_NEOMO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47691|COX3_AEPME/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47691|COX3_AEPME/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68088|COX3_NANGR/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68088|COX3_NANGR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P68089|COX3_NANSO/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P68089|COX3_NANSO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q35916|COX3_PIG/1-261                  IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q35916|COX3_PIG/1-261          PP ******************....****************************************.****...........**..******************************8
+sp|O48374|COX3_NANDA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O48374|COX3_NANDA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47685|COX3_TRAIM/1-261                IALGIYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47685|COX3_TRAIM/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47690|COX3_SYNCA/1-261                ITLGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47690|COX3_SYNCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P38597|COX3_HALGR/1-261                ISLGVYFTLLQASEYYET----PFTISDGIYGSTFFMATGFHGLHVIIGSTFLIVCFMRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P38597|COX3_HALGR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P15952|COX3_CYPCA/1-261                ILLGLYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQIQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P15952|COX3_CYPCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O03201|COX3_CERSI/1-261                ISLGVYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLIVCFLRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O03201|COX3_CERSI/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q00529|COX3_PHOVI/1-261                ISLGIYFTLLQASEYYET----PFTISDGIYGSTFFMATGFHGLHVIIGSTFLIVCFVRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q00529|COX3_PHOVI/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P41295|COX3_BALMU/1-261                IALGLYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLIVCFLRQVK-FHFT-----------SN--HHFGFERAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P41295|COX3_BALMU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P24989|COX3_BALPH/1-261                IALGLYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLIVCFLRQVK-FHFT-----------SN--HHFGFERAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P24989|COX3_BALPH/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q5Y4Q4|COX3_BOSMU/1-260                ITLGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWG-
+#=GR sp|Q5Y4Q4|COX3_BOSMU/1-260        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q96133|COX3_CARAU/1-261                ILLGFYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQIQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q96133|COX3_CARAU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47688|COX3_TRASP/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGTTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47688|COX3_TRASP/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47687|COX3_TRASR/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47687|COX3_TRASR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47696|COX3_RAPCA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47696|COX3_RAPCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47697|COX3_RAPME/1-261                IALGVYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47697|COX3_RAPME/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47689|COX3_TRAST/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47689|COX3_TRAST/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P92481|COX3_EQUAS/1-261                ISLGVYFTLLQASEYYEA----SFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFLRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P92481|COX3_EQUAS/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O21619|COX3_SHEEP/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYMSIYWWGS
+#=GR sp|O21619|COX3_SHEEP/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P48661|COX3_HORSE/1-261                ISLGVYFTLLQASEYYEA----SFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFLRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P48661|COX3_HORSE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47710|COX3_GAZSA/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47710|COX3_GAZSA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47686|COX3_TRAOR/1-261                IALGVYFTLLQASEYYEA----PFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFFRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O47686|COX3_TRAOR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P34198|COX3_FORLA/1-261                IILGVYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSSFLAVCLLRQIQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P34198|COX3_FORLA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P41312|COX3_DIDVI/1-261                ISLGLYFTILQAMEYYEA----SFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCLLRQLF-YHFT-----------ST--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P41312|COX3_DIDVI/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q8W9N0|COX3_DUGDU/1-261                ISLGIYFTLLQASEYHEA----SFSISDGIYGSTFFMATGFHGLHVIIGSTFLAVCFLRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q8W9N0|COX3_DUGDU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O79433|COX3_RABIT/1-261                ILLGIYFTLLQASEYYET----SFTISDGVYGSTFFMATGFHGLHVIIGSTFLTVCLLRQFN-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O79433|COX3_RABIT/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9ZZ48|COX3_SQUAC/1-261                VLLGFYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLMVCLLRQIQ-YHFT-----------SE--HHFGFERAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9ZZ48|COX3_SQUAC/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P92665|COX3_MACRO/1-261                ILLGIYFTILQASEYYES----SFTISDGVYGSTFFVATGFHGLHVIIGTTFLIVCLLRQFN-FHFT-----------ST--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P92665|COX3_MACRO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P48892|COX3_FELCA/1-261                ISLGVYFTLLQASEYYET----SFTISDGVYGSTFFMATGFHGLHVIIGSTFLIVCFLRQLK-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P48892|COX3_FELCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O79407|COX3_SCYCA/1-261                IILGVYFTALQAMEYYEA----PFTIADGVYGTTFFVATGFHGLHVIIGSTFLAVCLLRQVL-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O79407|COX3_SCYCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9ZZY5|COX3_HIPAM/1-261                IALGVYFTLLQASEYHEA----SFTISDGVYGSTFFVATGFHGLHVIIGSTFLIVCFLRQLK-FHFT-----------SD--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9ZZY5|COX3_HIPAM/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q36455|COX3_ORNAN/1-261                IALGLYFTALQAMEYYEA----SFTISDGVYGSTFFVATGFHGLHVIIGTTFLITCLVRQTL-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q36455|COX3_ORNAN/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9ZZ61|COX3_CANLF/1-261                ISLGVYFTLLQASEYYET----SFTISDGVYGSTFFMATGFHGLHVIIGSTFLIVCFLRQLY-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9ZZ61|COX3_CANLF/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P20684|COX3_ONCCL/1-261                ILLGFYFTFLQGMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQVQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P20684|COX3_ONCCL/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P05505|COX3_RAT/1-261                  ILLGLYFTILQASEYFET----SFSISDGIYGSTFFMATGFHGLHVIIGSTFLIVCLLRQLK-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P05505|COX3_RAT/1-261          PP ******************....****************************************.****...........**..******************************8
+sp|Q9T9W8|COX3_PANPA/1-261                ILLGLYFTLLQASEYFES----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICLIRQLM-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9T9W8|COX3_PANPA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q1HK97|COX3_CANLU/1-261                ISLGVYFTLLQASEYYET----SFTISDGVYGSTFFMATGFHGLHVIIGSTFLIVCFLRQLY-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q1HK97|COX3_CANLU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P69217|COX3_ONCMA/1-261                ILLGFYFTFLQGMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQVQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P69217|COX3_ONCMA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P69218|COX3_ONCNE/1-261                ILLGFYFTFLQGMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQVQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P69218|COX3_ONCNE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P48172|COX3_ONCMY/1-261                ILLGFYFTFLQGMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQVQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P48172|COX3_ONCMY/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q36860|COX3_SALSA/1-261                ILLGFYFTFLQGMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAICLLRQIQ-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q36860|COX3_SALSA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P00414|COX3_HUMAN/1-261                ILLGLYFTLLQASEYFES----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICFIRQLM-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P00414|COX3_HUMAN/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q8W9G7|COX3_TACAC/1-261                IALGLYFTALQAMEYYES----SFTISDGVYGSTFFVATGFHGLHVIIGTTFLITCLLRQLL-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q8W9G7|COX3_TACAC/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9T9Y6|COX3_GORGO/1-261                ILLGLYFTLLQASEYFEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICLIRQLM-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9T9Y6|COX3_GORGO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P00416|COX3_MOUSE/1-261                IMLGLYFTILQASEYFET----SFSISDGIYGSTFFMATGFHGLHVIIGSTFLIVCLLRQLK-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P00416|COX3_MOUSE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q4JQI1|COX3_TETNG/1-261                ILLGFYFTFLQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAICLLRQIR-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYISIYWWGS
+#=GR sp|Q4JQI1|COX3_TETNG/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9T9V9|COX3_PANTR/1-261                ILLGLYFTLLQASEYFES----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICLIRQLM-FHFT-----------SK--HHFGFQAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9T9V9|COX3_PANTR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O21331|COX3_DASNO/1-261                IALGVYFTLLQASEYYEA----PFTISDGIYGSTFFVATGFHGLHVIIGSSFLIVCFMRQLK-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O21331|COX3_DASNO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P55777|COX3_GADMO/1-261                ILLGFYFTFLQGLEYYDA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQIR-YHFT-----------SE--HHFGFEAAAWYWHFVDVVWLFLYISIYWWGS
+#=GR sp|P55777|COX3_GADMO/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q8LX26|COX3_LEMCA/1-261                ITLGLYFTLLQASEYFET----SFTISDGVYGSTFFMATGFHGLHVIIGSTFLTVCFFRQLS-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q8LX26|COX3_LEMCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9MIY4|COX3_DANRE/1-261                ILLGLYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSTFLAVCLLRQVL-FHFT-----------SD--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9MIY4|COX3_DANRE/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q95707|COX3_HYLLA/1-261                ILLGIYFTLLQISEYFEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLTICLIRQLL-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q95707|COX3_HYLLA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O03170|COX3_LATCH/1-261                VLLGLYFTALQATEYYES----PFTIADGAYGSTFFVATGFHGLHVIIGSTFLIVCLVRQTQ-YHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|O03170|COX3_LATCH/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q38PR6|COX3_MAMPR/1-261                ILLGVYFTLLQMFEYYEA----SFTISDGIYGSTFFVTTGFHGLHVIIGSTFLLTCFIRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYLSIYWWGS
+#=GR sp|Q38PR6|COX3_MAMPR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P00419|COX3_XENLA/1-260                ILLGLYFTALQAMEYYEA----PFTIADGVYGSTFFVATGFHGLHVIIGSLFLSVCLLRQIQ-YHFT-----------SK--HHFGFEA-AWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P00419|COX3_XENLA/1-260        PP ******************....****************************************.****...........**..*****96.6*********************8
+sp|P92696|COX3_PONAB/1-261                ILLGIYFTLLQASEYIEA----PFTISDGIYGSTFFMATGFHGLHVIIGSTFLTVCLARQLL-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|P92696|COX3_PONAB/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q2I3F5|COX3_LOXAF/1-261                ILLGVYFTLLQMFEYYEA----SFTISDGIYGSTFFVTTGFHGLHVIIGSTFLLTCFIRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYLSIYWWGS
+#=GR sp|Q2I3F5|COX3_LOXAF/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q35539|COX3_PETMA/1-261                VLLGLYFTALQIMEYYET----PFTMADGVYGSTFFVATGFHGLHVIIGSLFLLTCLLRHLQ-YHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYISIYWWGS
+#=GR sp|Q35539|COX3_PETMA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q2I3G8|COX3_ELEMA/1-261                ILLGVYFTLLQMFEYYEA----SFTISDGIYGSTFFVTTGFHGLHVIIGSTFLLICFIRQLK-FHFT-----------SN--HHFGFEAAAWYWHFVDVVWLFLYLSIYWWGS
+#=GR sp|Q2I3G8|COX3_ELEMA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q95914|COX3_POLOR/1-261                ILLGLYFTALQAMEYYEA----PFTIADGVYGTTFFVATGFHGLHVIIGSTFLAGCLLRQIL-YHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q95914|COX3_POLOR/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9ZXX8|COX3_PAPHA/1-261                ILLGTYFTLVQISEYFEA----PFTISDGIYGSTFFVATGFHGLHVIIGSTFLLICLIRQLF-YHFT-----------PS--HHFGFEAAAWYWHFVDVIWLFLYISIYWWGS
+#=GR sp|Q9ZXX8|COX3_PAPHA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O79676|COX3_PELSU/1-261                IILGTYFTILQAMEYFEA----SFTIADSIYGSTFFVATGFHGLHVIIGSTFLIVCLMRQLK-YHFT-----------SH--HHFGFEAAAWYWHFVDVIWLFLYLSIYWWGS
+#=GR sp|O79676|COX3_PELSU/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q9T9X6|COX3_PONPY/1-261                ILLGIYFTLLQASEYIEA----PFTISDGIYGSTFFMTTGFHGLHVIIGSTFLTVCLSCQLL-FHFT-----------SK--HHFGFEAAAWYWHFVDVVWLFLYVSIYWWGS
+#=GR sp|Q9T9X6|COX3_PONPY/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q8SEW8|COX3_COTJA/1-261                ILLGFYFTALQAMEYHEA----SFSIADSVYGSTFFVATGFHGLHVIIGSSFLTICLLRLIK-FHFT-----------SN--HHFGFEAAAWYWHFVDIIWLFLYMSMYWWGS
+#=GR sp|Q8SEW8|COX3_COTJA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O21403|COX3_STRCA/1-261                IILGFYFTALQAMEYHEA----SFSIADGVYGSTFFVATGFHGLHVIIGSSFLTVCLLRLIK-FHFT-----------TN--HHFGFEAAAWYWHFVDVIWLFLYMSIYWWGS
+#=GR sp|O21403|COX3_STRCA/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P18945|COX3_CHICK/1-261                ILLGFYFTALQAMEYHEA----SFSIADSVYGSTFFVATGFHGLHVIIGSSFLTVCLLRLIK-FHFT-----------PN--HHFGFEAAAWYWHFVDIIWLFLYMSMYWWGS
+#=GR sp|P18945|COX3_CHICK/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|P34842|COX3_ANOGA/3-262                IVLGVYFTILQAYEYIEA----PFTIADAVYGSTFYMATGFHGLHVLIGTTFLLICFLRHIN-YHFS-----------KN--HHFGFEAAAWYWHFVDVVWLFLYITIYWWGS
+#=GR sp|P34842|COX3_ANOGA/3-262        PP ******************....****************************************.****...........**..******************************8
+sp|P15953|COX3_WHEAT/4-263                VLLALVFTGFQGMEYYQA----PFTISDSIYGSTFFLATGFHGFHVIIGTLFLIVCGIRQYL-GQMT-----------KK--HHVGFEAAAWYWHFVDVVWLFLFVSIYWWG-
+#=GR sp|P15953|COX3_WHEAT/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|B0FWD1|COX3_AEDAE/3-261                VLLGIYFSILQAYEYIEA----PFTIADNVYGSTFFVATGFHGLHVLIGTSFLLICLFRHMN-CHFS-----------SS--HHFGFEAAAWYWHFVDVVWLFLYISIYWWG-
+#=GR sp|B0FWD1|COX3_AEDAE/3-261        PP ******************....****************************************.****...........**..*****************************9.
+sp|P92514|COX3_ARATH/4-263                VLLALVFTGFQGMEYYQA----PFTISDSIYGSTFFLATGFHGFHVIIGTLFLIICGIRQYL-GHLT-----------KE--HHVGFEAAAWYWHFVDVVWLFLFVSIYWWG-
+#=GR sp|P92514|COX3_ARATH/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|O63915|COX3_MYXGL/1-261                IILGIYFTLLQGMEYFNS----TFNISDNAYGSTFFVATGFHGGHVIIGTLFLTVCLLRQLM-FHFT-----------SS--HHFGFEAAAWYWHFVDVVWLFLFISIYWWGS
+#=GR sp|O63915|COX3_MYXGL/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|Q33824|COX3_PATPE/3-260                VILGIYFTGLQAWEYYDS----PFTIADSVYGSSFFVATGFHGLHVLIGTTFLFICFLRLIT-FHFS-----------NN--HHFGFEAAAWYWHFVDVVWLFLYICICWWGS
+#=GR sp|Q33824|COX3_PATPE/3-260        PP ******************....****************************************.****...........**..******************************8
+sp|P25003|COX3_PISOC/3-260                VFLGVYFTILQAWEYFDS----PFTIADSVYGSTFFVATGFHGLHVLIGTAFLAVCLLRLYN-FHFS-----------NH--HHFGFEAASWYWHFVDVVWLFLYICIYWWGS
+#=GR sp|P25003|COX3_PISOC/3-260        PP ******************....****************************************.****...........**..******************************8
+sp|P14574|COX3_LOCMI/6-263                VMLGFYFTLLQMYEYWEA----PFTIADAVYGSTFFVATGFHGLHVIIGTTFLLTCLIRHMM-NQFS-----------SN--HHFGFEAAAWYWHFVDVVWLFLYLSIYWWGS
+#=GR sp|P14574|COX3_LOCMI/6-263        PP ******************....****************************************.****...........**..******************************8
+sp|P69215|COX3_BRALA/5-262                VMLGLYFTGLQAWEYYEA----PFTIADSVYGSTFFVATGFHGLHVIIGSTFLMVCLGRQVF-YHYT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVCIYWWGS
+#=GR sp|P69215|COX3_BRALA/5-262        PP ******************....****************************************.****...........**..******************************8
+sp|P69216|COX3_BRAFL/5-262                VMLGLYFTGLQAWEYYEA----PFTIADSVYGSTFFVATGFHGLHVIIGSTFLMVCLGRQVF-YHYT-----------SS--HHFGFEAAAWYWHFVDVVWLFLYVCIYWWGS
+#=GR sp|P69216|COX3_BRAFL/5-262        PP ******************....****************************************.****...........**..******************************8
+sp|P33508|COX3_ANOQU/4-262                IVLGIYFSILQAYEYIEA----PFTIADAVYGSTFYMATGFHGLHVLIGTTFLLICFLRHIN-FHFS-----------KN--HHFGFEAAAWYWHFVDVVWLFLYISIYWWGS
+#=GR sp|P33508|COX3_ANOQU/4-262        PP ******************....****************************************.****...........**..******************************8
+sp|P00417|COX3_DROME/3-261                VLLGIYFTILQAYEYIEA----PFTIADSIYGSTFFMATGFHGIHVLIGTTFLLVCLLRHLN-NHFS-----------KN--HHFGFEAAAWYWHFVDVVWLFLYITIYWWG-
+#=GR sp|P00417|COX3_DROME/3-261        PP ******************....****************************************.****...........**..*****************************9.
+sp|P12702|COX3_PARLI/2-261                VVLGIYFTILQAWEYIDA----PFTIADSVYGSTFFVATGFHGLHVIIGTTFLLVCLIRLSG-HHFS-----------TH--HHFGFEAAAWYWHFVDVVWLFLYVCIYWWGS
+#=GR sp|P12702|COX3_PARLI/2-261        PP ******************....****************************************.****...........**..******************************8
+sp|P00418|COX3_DROYA/3-261                VLLGIYFTILQAYEYIEA----PFTIADSVYGSTFYMATGFHGVHVLIGTTFLLVCLLRHLN-NHFS-----------KN--HHFGFEAAAWYWHFVDVVWLFLYITIYWWG-
+#=GR sp|P00418|COX3_DROYA/3-261        PP ******************....****************************************.****...........**..*****************************9.
+sp|O79552|COX3_LYCSM/1-261                IILGAYFTALQLSEYMET----PFTIADSVYGSLFFVATGFHGLHVMIGTSFLMVCALRLAK-HHFT-----------IT--HHFGYEAAIWYWHFVDIVWLFLYISVYWWGS
+#=GR sp|O79552|COX3_LYCSM/1-261        PP ******************....****************************************.****...........**..******************************8
+sp|O47491|COX3_METSE/6-262                VVLGLIFTGLQAMEYYEA----PFAISDSVYGSTFFVATGFHGMHVIIGTTFLAVCLARLVY-HQFT-----------RH--HHLGFEAASWYWHFVDVVWLFLYICIYWWGS
+#=GR sp|O47491|COX3_METSE/6-262        PP ******************....****************************************.****...........**..******************************8
+sp|P26858|COX3_MARPO/4-263                VFLALVFTGFQGIEYIEA----PFTISDGIYGSTFFLATGFHGFHVIIGTIFLIICGIRQYL-GHFT-----------PK--HHFGFEAAAFYWHFVDVVWLFLFVSIYWWG-
+#=GR sp|P26858|COX3_MARPO/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q37620|COX3_PROWI/2-260                VLLAVIFTGFQALEYLEA----PFTISDGIYGSTFYLATGFHGFHVIIGTIFIAVCLFRLVL-HHFS-----------KS--HHLGFEAAAWYWHMVDVVWLFLFVCIYYWG-
+#=GR sp|Q37620|COX3_PROWI/2-260        PP ******************....****************************************.****...........**..*****************************9.
+sp|O47475|COX3_HETBL/4-259                VILGGYFTLLQAEEYMEA----PFSIADSVYGATFFVATGFHGLHVIIGSVFLLICLFRMLI-HHFS-----------TN--HHFGFEAAAWYWHFVDVVWLILYTCIYWWGS
+#=GR sp|O47475|COX3_HETBL/4-259        PP ******************....****************************************.****...........**..******************************8
+sp|Q34943|COX3_LUMTE/3-259                VCLGAYFTFLQAGEYMAA----PFSIADSVYGTTFFVATGFHGLHVLIGSSFLAICLARTWS-HHFS-----------AG--HHFGFEAAAWYWHFVDVVWICLYLCIYWWGS
+#=GR sp|Q34943|COX3_LUMTE/3-259        PP ******************....****************************************.****...........**..******************************8
+sp|P48872|COX3_CHOCR/11-270               IVLAIVFTTFQAYEYSMA----DFRLSDGIYGSTFYMATGFHGFHVLVGTISLAVCLIRLLQ-YQLT-----------QQ--HHFGFESAAWYWHFVDVVWLFLFVSIYWWG-
+#=GR sp|P48872|COX3_CHOCR/11-270       PP ******************....****************************************.****...........**..*****************************9.
+sp|P14853|COX3_SOYBN/4-263                VSLALVFTGFQGMEYYQA----PFTISDSIYGSTFFLATGFHGFHVIIGTLFLIICGIRQYL-GHLT-----------KE--HHVGFEAAAWYWHFVDVVWLFLFVSIYWWG-
+#=GR sp|P14853|COX3_SOYBN/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|P15546|COX3_STRPU/4-259                VALGSYFTALQAWEYIDA----PFTIADSVYGSTFFVATGFHGLQVIIGTTFLMVCLFRTAG-RHFS-----------TH--HHFGFEAAAWYWHFVDVVWFVLYWLIYWWG-
+#=GR sp|P15546|COX3_STRPU/4-259        PP ******************....****************************************.****...........**..*****************************9.
+sp|P08745|COX3_OENBE/4-263                VSLAIVFTGFQGMEYYQA----PPTISDSIYGSTFYLATGFHGFHVIIGTLFSIICGIRQYL-GHLT-----------KE--HHVGFEAAAWYWHFVDVVRLFLFVSIYWWG-
+#=GR sp|P08745|COX3_OENBE/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|P14852|COX3_ORYSI/4-263                VLLALVSTGFQGMEYYQA----PSTISDSIYGSTFFLATGFHGFHVIIGTLFLIVCGIRQYL-GHLT-----------KK--HHVGFEAAAWYWHFVDVVRLFPFVSIYWWG-
+#=GR sp|P14852|COX3_ORYSI/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q03227|COX3_VICFA/4-263                VSLALVFTGFQGMEYYQA----PFTISDSIYGSTFFLATGFHGFHVIIGTLFLIICGIRQYL-GQMT-----------KE--HHVGFEAAAWYWHFVDVVRLFPFVSIYWWG-
+#=GR sp|Q03227|COX3_VICFA/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q36952|COX3_AEGCO/4-263                VSLALVSTGFQGMEYYQA----PSTISDSIYGSTFFLATGFHGFHVIIGTLFLIVCGIRQYL-GLMT-----------KK--HHVGFEAAAWYWHFVDVVRLFPFVSIYWWG-
+#=GR sp|Q36952|COX3_AEGCO/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|P09138|COX3_MAIZE/4-263                VLLALVSTGFQGMEYYQA----PSTISDSIYGSTFLLATGFHGFHVIIGTLFLIVCGIRQYL-GHLT-----------KK--HHVGFEAAAWYWHFVDVVRLFPFVSIYWWG-
+#=GR sp|P09138|COX3_MAIZE/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|P32808|COX3_HELAN/4-263                VSLALVFTAFQGMEYYQA----PSTISDSIYGSTFFLATGFHGFHVIIGTLFSIVCGIRQYL-GHLT-----------KE--HHVGFEAAAWYWHFVDVVRLFPFVSIYWWG-
+#=GR sp|P32808|COX3_HELAN/4-263        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q37600|COX3_PYLLI/8-267                LAFAIAFTAMQGFEYSGA----PFGMSDGVYGSVFYMATGFHGFHVIIGTIFLFICTIRLYL-SHFS-----------CQ--HHFGFEAAAWYWHFVDVVWLFLFLTIYWWG-
+#=GR sp|Q37600|COX3_PYLLI/8-267        PP ******************....****************************************.****...........**..*****************************9.
+sp|P80441|COX3_RHIST/22-280               IVLATVFTGFQGFEYYNA----PFTFSDGVYGSTFYMATGFHGIHVLVGTIFLTVGLFRVLS-YHLT-----------DH--HHLGFEQAILYWHFVDVVWLFLFISVYWWG-
+#=GR sp|P80441|COX3_RHIST/22-280       PP ******************....****************************************.****...........**..*****************************9.
+sp|P80439|COX3_ALLMA/12-272               ILLAWMFLGLQWVEYVNA----PFTIADSVYGSTFFVATGFHGLHVMIGTIFLTVSLNRILS-YHLT-----------SG--HHLGYEAAIWYWHVVDVIWLFLYVSVYYWGS
+#=GR sp|P80439|COX3_ALLMA/12-272       PP ******************....****************************************.****...........**..******************************8
+sp|Q02654|COX3_PODAN/9-269                ILLAIIFTVFQGVEYNVS----SFTISDGAFGTCFYFGTGFHGFHVIIGTIFLAVALWRIFA-YHLT-----------DN--HHVGFEGGILYWHFVDVVWLFLYVSIYYWGS
+#=GR sp|Q02654|COX3_PODAN/9-269        PP ******************....****************************************.****...........**..******************************8
+sp|P00421|COX3_EMEND/9-268                ILLAIVFTFFQGVEYTVS----SFTISDSVYGSCFYFGTGFHGLHVIIGTAFLAVGLWRLAA-YHLT-----------DH--HHLGYESGILYWHFVDVVWLFLYISVYYWG-
+#=GR sp|P00421|COX3_EMEND/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|P48891|COX3_ALBCA/2-259                VLLGVYFLMLQYGEYNET----SFSIADGVYGSTFFMATGFHGLHVMVGTLFLFVNLVRTYY-YHFS-----------TT--HHVGFLAAAWYWHFVDVVWLFLYISIYWWGS
+#=GR sp|P48891|COX3_ALBCA/2-259        PP ******************....****************************************.****...........**..******************************8
+sp|Q95840|COX3_MAGGR/9-269                VLLAIVFTGFQGVEYSVS----SFTISDGAFGTCFYFGTGFHGLHVIIGTIFLLVALWRIFA-YHLT-----------DN--HHLGFEAGILYWHFVDVVWLFLYISIYYWGS
+#=GR sp|Q95840|COX3_MAGGR/9-269        PP ******************....****************************************.****...........**..******************************8
+sp|Q0H8X4|COX3_USTMA/10-275               LIFAVLFTICQGIEYLNA----GFTIADGVFGSTFFFSTGFHGVHVIIGTLFIAVAFFRMLS-YHLT-----------DH--HHLGFEASILYWHFVDVVWLFLFISVYWWGS
+#=GR sp|Q0H8X4|COX3_USTMA/10-275       PP ******************....****************************************.****...........**..******************************8
+sp|P00422|COX3_NEUCR/9-269                ILLAIIFTGFQGVEYSVS----SFTISDGAFGTCFFFSTGFHGIHVIIGTIFLAVALWRIFA-YHLT-----------DN--HHVGFEGGILYWHFVDVVWLFLYISVYYWGS
+#=GR sp|P00422|COX3_NEUCR/9-269        PP ******************....****************************************.****...........**..******************************8
+sp|O99822|COX3_RHISA/4-257                ILLGVAFTMFQGFEYFQA----QFKISDGIFGSTFFMTTGFHGLHVLIGSIFLLVSYFRIKN-QLIS-----------SD--HFFGFEASAWYWHFVDVVWLFLFTFMYWW--
+#=GR sp|O99822|COX3_RHISA/4-257        PP ******************....****************************************.****...........**..*****************************..
+sp|Q36309|COX3_ARTSF/3-256                VLLGLYFSFLQGLEYMEA----SFTIADSIYGSTFFLATGFHGLHVLIGTIFLMICILRHAK-CYFS------------Q--HHFGFEAAAWYWHFVDVVWLFLYLSIYWWG-
+#=GR sp|Q36309|COX3_ARTSF/3-256        PP ******************....****************************************.*997............7..9****************************9.
+sp|P48873|COX3_CYACA/10-269               IGLALIFTIFQIYEYAIA----SFHLSDGAYGSTFFMITGLHGFHVIVGTFFLFVCMFRLVQ-YHFT-----------MQ--HHYGFEAATWYWHFVDVVWLFLFVSIYWWGS
+#=GR sp|P48873|COX3_CYACA/10-269       PP ******************....****************************************.****...........**..******************************8
+sp|Q92J29|COX3_RICCN/14-283               ILLGIFFTTMQAYEYYHA----AFKFTDGIYASNFYLATGFHGAHVIIGTIFLIICYFRAKR-GDFT-----------TEGNGHLGFECAAWYWHFVDVVWLFLFTFVYIFGS
+#=GR sp|Q92J29|COX3_RICCN/14-283       PP ******************....****************************************.****...........75448*****************************8
+sp|Q36837|COX3_TRIRU/9-268                ILLAIVFTIFQGIEYSVS----SFTISDGVYGSCFYFSTGFHGFHVLIGTAFLSVGLWRLLG-YHLT-----------DH--HHLGYESGILYWHFVDVVWLILYVCIYFWG-
+#=GR sp|Q36837|COX3_TRIRU/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q1RHH9|COX3_RICBR/8-277                IILGIFFTCMQAYEYYHA----AFKFTDGIYPSNFYLATGFHGAHVIIGTIFLIVCCFRARR-GDFAI---------KNN--GHLGFEFAAWYWHFVDVVWLFLFTFVYIFGS
+#=GR sp|Q1RHH9|COX3_RICBR/8-277        PP ******************....****************************************.88865.........588..9*****************************8
+sp|Q4UKK0|COX3_RICFE/9-278                ILLGIFFTTMQAYEYYHA----AFKFTDGIYASNFYLATGFHGAHVIIGTIFLIVCYFRAKR-GDFT-----------TEGNGHLGFEFAAWYWHFVDVVWLFLFTFVYIFGS
+#=GR sp|Q4UKK0|COX3_RICFE/9-278        PP ******************....****************************************.****...........75448*****************************8
+sp|Q9B6D8|COX3_YARLI/8-267                IALAVTFMICQYMEYSNA----PFTISDGIFGSVFYFGTGFHGLHIIIGIIMLGVSLWRIYT-YQLT-----------NN--HHVGYETSILYYHFVDVVWLFLYIVFYWWG-
+#=GR sp|Q9B6D8|COX3_YARLI/8-267        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q9ZDX3|COX3_RICPR/9-278                IVLGIFFTLMQVYEYYHA----EFKFTDGIYASNFYLATGFHGAHVVIGTIFLIVCYFRAKR-GDFT-----------TEGNGHLGFEFAAWYWHFVDVVWLFLFTFVYILGS
+#=GR sp|Q9ZDX3|COX3_RICPR/9-278        PP ******************....****************************************.****...........75448***************************997
+sp|P06030|COX3_PARDE/4-273                VILGVCFTGLQAYEYSHA----AFGLADTVYAGAFYMATGFHGAHVIIGTIFLFVCLIRLLK-GQMT-----------QK--QHVGFEAAAWYWHFVDVVWLFLFVVIYIWG-
+#=GR sp|P06030|COX3_PARDE/4-273        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q37374|COX3_ACACA/41-199               -----------------------------------------------------------------------------------------------------------------
+#=GR sp|Q37374|COX3_ACACA/41-199       PP .................................................................................................................
+sp|Q37374|COX3_ACACA/220-322              VFLGLEFTVWQGYEYYKA----SFYIYDGVYGSTFYMTTGLHGLHVIIGTLFLIVCFFRLID-LHFI-----------YN--HHFGYEAAIWYWHFVDVVWIFLFLSIYCWGS
+#=GR sp|Q37374|COX3_ACACA/220-322      PP ******************....****************************************.****...........**..******************************8
+sp|A6H4Q3|COX3_VANPO/10-269               TWLIIIFVICQYIEYTNA----TFTISDGVYGSVFFAGTGLHFLHMVMLAIMLAVCYWRLRN-YHLT-----------NS--HHVGYETTIIYLHVLDVIWLFLYIVFYWWG-
+#=GR sp|A6H4Q3|COX3_VANPO/10-269       PP ******************....****************************************.****...........**..*****************************9.
+sp|Q9XLX0|COX3_LACK1/9-268                TWLIIIFVICQYIEYTNA----TFTISDGVYGSVFYAGTGLHFLHMVMLATMLAINYWRLRN-YHLT-----------SS--HHVGYETTVIYLHVLDIIWLFLYIVFYWWG-
+#=GR sp|Q9XLX0|COX3_LACK1/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q85Q96|COX3_CANGA/9-268                IWLIIIFVTCQYIEYTNA----AFTISDGVYGSVFYAGTGLHFLHMVMLAVMLIICYWRMRT-YQFT-----------ST--HHVGFETTILYCHVLDIIWLFLYIVFYWWG-
+#=GR sp|Q85Q96|COX3_CANGA/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|P00420|COX3_YEAST/9-268                FWLIVIFVTCQYIEYTNA----AFTISDGVYGSVFYAGTGLHFLHMVMLAAMLGVNYWRMRN-YHLT-----------AG--HHVGYETTIIYTHVLDVIWLFLYVVFYWWG-
+#=GR sp|P00420|COX3_YEAST/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|P48874|COX3_WICCA/9-268                LWLIVIFVVCQYIEYTNA----PFTISDGVYGSVFFAGTGLHFLHMGMLIIMLAVCYWRMRQ-YHFT-----------TG--HHVNYETTILYLHVLDVIWLFLYIVMYWWG-
+#=GR sp|P48874|COX3_WICCA/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q9B1P9|COX3_CANAL/10-269               TILIALFVYFQYLEYSYA----GFTLSDGVYGSTFFSLTGLHGLHMIMLTIMLMICTWRVYN-YDFT-----------NT--SHVGAETTILYLHVLDVIWLFIYIIVYWWGS
+#=GR sp|Q9B1P9|COX3_CANAL/10-269       PP ******************....****************************************.****...........**..******************************8
+sp|Q9XLW9|COX3_KLULA/9-268                FWLIVIFVTCQYIEYTNA----TFTITDGVYGSVFYAGTGLHFLHMVMLAAMLGINYWRLRN-YHLT-----------AT--HHVGYETTVLYCHILDIIWLFLYIVFYWWG-
+#=GR sp|Q9XLW9|COX3_KLULA/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q75G34|COX3_ASHGO/9-268                FWLIVTFVLCQYIEYSNT----SFTITDGIYGSVFFAGTGLHFLHMVMLTIMLGINYWRMRN-YHLT-----------ST--HHVGYETTTIYLHVLDIIWLALYICFYWWG-
+#=GR sp|Q75G34|COX3_ASHGO/9-268        PP ******************....****************************************.****...........**..*****************************9.
+sp|P14575|COX3_SCHPO/7-269                IALSFLFLGGQAYEYWNA----PFTISDSVYGASFYFATGLHGIHIIVGTILLLAATYNIYT-YHLT-----------NT--HHNGFECGIYYWHFCDVVWLFLYLTIYIWGS
+#=GR sp|P14575|COX3_SCHPO/7-269        PP ******************....****************************************.****...........**..******************************8
+sp|Q34214|COX3_CANPA/10-269               TLLIALFVMFQFLEYKYA----GFTITDGVYGSTFYSLTGLHGLHMIMLTIMLVICTWRVYN-YDFT-----------NT--SHVGAETTILYLHVLDVIWLFIYIIVYWWGS
+#=GR sp|Q34214|COX3_CANPA/10-269       PP ******************....****************************************.****...........**..******************************8
+sp|A9RAG9|COX3_DEBHA/10-268               TLLMVLFVMFQGLEYTYA----GFTITDGVYGSTFFALTGLHGLHMMMLIMMLAMCTMRVYN-YDFT-----------NT--SHVGAETTILYLHVLDVMWLFMYMIVYWWG-
+#=GR sp|A9RAG9|COX3_DEBHA/10-268       PP ******************....****************************************.****...........**..*****************************9.
+sp|P34843|COX3_APILI/2-257                ILLGIYFTILQTIEYSNS----FFCFNDSIYGSIFFMATGFHGLHVLIGSIFLLISLYRMMN-IHFS-----------NM--HNMNFELAIWYWHFVDVIWLFLYTFIYL---
+#=GR sp|P34843|COX3_APILI/2-257        PP ******************....****************************************.****...........**..***************************7...
+sp|P14058|COX3_SCHCO/8-266                VALALIFSYFQAFEYIHA----GFSMSDSVFGTVFFASTGLHGIHVMLGTLFLFVSFLRQVN-YQTT-----------KE--HNIGLETSILYWHFVDLVWLFLFLVVYFWG-
+#=GR sp|P14058|COX3_SCHCO/8-266        PP ******************....****************************************.****...........**..*****************************9.
+sp|P41775|COX3_MYTED/8-261                IVCGTVFFLVQLREYYWN----SYTIADSVYGSVFYLLTGFHGMHVVVGTIWLMVSLVRLWR-GEFS-----------SQ--RHFGFEACIWYWHFVDVVWVALWCLVYVW--
+#=GR sp|P41775|COX3_MYTED/8-261        PP ******************....****************************************.****...........**..****************************9..
+sp|P24879|COX3_ASCSU/3-254                CILAVYFTGIQLMEYKEA----SFSISDGIFGSIFYLSTGFHGVHVLFGGLFLFFNLLRLLM-SHFN-----------YN--HHLGLEFAIIYWHFVDVVWLFLFVFVYWWS-
+#=GR sp|P24879|COX3_ASCSU/3-254        PP ******************....****************************************.****...........**..*****************************6.
+sp|Q35242|COX3_ENTDO/2-203                ITLGFYFTFLQMMEYIEA----SFSISDSIYGSTFFVATGFHGLHVIIGSTFLFMCLIRIIM-NHFS-----------S----------------------------------
+#=GR sp|Q35242|COX3_ENTDO/2-203        PP ******************....****************************************.***8...........7..................................
+sp|P24891|COX3_CAEEL/3-254                CLLAAYFTGIQLMEYMEA----SFSIADGVFGSIFYLSTGFHGIHVLCGGLFLAFNFLRLLK-NHFN-----------YN--HHLGLEFAILYWHFVDVVWLFLFVFVYWWS-
+#=GR sp|P24891|COX3_CAEEL/3-254        PP ******************....****************************************.****...........**..*****************************6.
+sp|O21049|COX3_DICDI/58-220               V----------------------------------------------------------------------------------------------------------------
+#=GR sp|O21049|COX3_DICDI/58-220       PP 6................................................................................................................
+sp|O21049|COX3_DICDI/304-434              LLCAVVFLACQGYEYFFA----PFSMNDGIYGSLFFLLTGFHGFHVLVGSILIGIITIRFIV-GNFNLLNVGTNFQIYKN--KSTGFACTLFYWHFVDIVWIFLYIVIYWWGS
+#=GR sp|O21049|COX3_DICDI/304-434      PP ******************....****************************************.*****************..******************************8
+sp|Q2LCP9|COX3_DICCI/58-220               V----------------------------------------------------------------------------------------------------------------
+#=GR sp|Q2LCP9|COX3_DICCI/58-220       PP 7................................................................................................................
+sp|Q2LCP9|COX3_DICCI/300-430              LVCAVVFLFCQGYEYYFA----PFSMNDGIYGSLFFLLTGFHGFHVLVGSILIGIITIRFIV-GNFDLLNVGTKFQIFKN--KSTGFACTLFYWHFVDIVWIFLYIVIYWWGS
+#=GR sp|Q2LCP9|COX3_DICCI/300-430      PP ******************....****************************************.*****************..******************************8
+sp|Q35826|COX3_SPOFR/1-146                IILGIYFTILQAYEYFEA----PFTIADSIYGSTFFMATGFHGLHVIIGTLFLLICLIRHLN-NHFS-----------SN--HHFGFEAAAWYWHFVDVVWLFLYISIYWWG-
+#=GR sp|Q35826|COX3_SPOFR/1-146        PP ******************....****************************************.****...........**..*****************************9.
+sp|Q5YZ19|COX3_NOCFA/12-201               LLMGAFFVAGQGYEYYHLV-HEGTSISSSAYGSVFYITTGFHGLHVIGGLIAFVFLLIRTKV-SKFT-----------PA--QATAAIVVSYYWHFVDIVWIGLFATIYF---
+#=GR sp|Q5YZ19|COX3_NOCFA/12-201       PP ****************998.8899**************************************.****...........**..***************************8...
+sp|P63857|COX3_MYCBO/12-201               FLMGLFFVLGQAYEYRNLM-SHGTSIPSSAYGSVFYLATGFHGLHVTGGLIAFIFLLVRTGM-SKFT-----------PA--QATASIVVSYYWHFVDIVWIALFTVIYF---
+#=GR sp|P63857|COX3_MYCBO/12-201       PP ***************9988.7799**************************************.****...........**..***************************8...
+sp|P9WP66|COX3_MYCTO/12-201               FLMGLFFVLGQAYEYRNLM-SHGTSIPSSAYGSVFYLATGFHGLHVTGGLIAFIFLLVRTGM-SKFT-----------PA--QATASIVVSYYWHFVDIVWIALFTVIYF---
+#=GR sp|P9WP66|COX3_MYCTO/12-201       PP ***************9988.7799**************************************.****...........**..***************************8...
+sp|P9WP67|COX3_MYCTU/12-201               FLMGLFFVLGQAYEYRNLM-SHGTSIPSSAYGSVFYLATGFHGLHVTGGLIAFIFLLVRTGM-SKFT-----------PA--QATASIVVSYYWHFVDIVWIALFTVIYF---
+#=GR sp|P9WP67|COX3_MYCTU/12-201       PP ***************9988.7799**************************************.****...........**..***************************8...
+sp|Q06475|COX3_SYNY3/25-232               AAMGIIFLAGQMYEYFHL----EMGLTTNLFASCFYVLTGFHGLHVTFGLLLILSVLWRSRQPGHYS-----------RT--SHFGVEAAELYWHFVDVVWIVLFILVYL---
+#=GR sp|Q06475|COX3_SYNY3/25-232       PP ******************....***************************************99****...........**..***************************7...
+sp|Q73YM3|COX3_MYCPA/12-201               FLMGLFFVLGQGYEYYHLM-GHGTTIPGSAYGSVFYLATGFHDLHVTGGLVAFIFLLARTAM-SKFT-----------PA--QATASIVVSYYWHFVDIVWIALFTVIYF---
+#=GR sp|Q73YM3|COX3_MYCPA/12-201       PP *****************99.989***************************************.****...........**..***************************8...
+sp|O69582|COX3_MYCLE/12-200               LLMGLFFVLGQGYEYYHLI-THGTTIPSSAYGSVFYLATGFHGLHVTGGLIAFIFLLARTTM-SKFT-----------PA--QATASIVVSYYWHFVDIVWIALFTVIYF---
+#=GR sp|O69582|COX3_MYCLE/12-200       PP *****************98.8899**************************************.****...........**..***************************8...
+sp|Q9AEL8|COX3_CORGL/18-203               IILGSIFVIGQGYEYITLV-GHGLTIQSSVYGSAFFITTGFHALHVIAGVMAFVVVLMRIHK-SKFT-----------PA--QATAAMVVSYYWHFVDVVWIGLFITIYF---
+#=GR sp|Q9AEL8|COX3_CORGL/18-203       PP *****************99.989***************************************.****...........**..***************************8...
+sp|P50677|COX3_THEVL/12-198               AAMGAVFLGGQVYEYLTL----GYGLRTNVFANCFYVMTGFHGLHVFIGILLILGVIWRSRRPGHYN-----------AQ--KHTGVAMAEIYWHFVDVIWIILFTLLYIL--
+#=GR sp|P50677|COX3_THEVL/12-198       PP ******************....**************************************999****...........**..***************************85..
+sp|Q8FNQ9|COX3_COREF/18-203               IILGSIFVIGQAYEYFTLV-GHGLSIQSSVYGSAFYITTGFHAAHVIAGVIAFVVVLMRIQK-AKFT-----------PA--QATAAMVVSYYWHFVDVVWIGLFITIYF---
+#=GR sp|Q8FNQ9|COX3_COREF/18-203       PP *****************99.989***************************************.****...........**..***************************8...
+sp|Q6NGA0|COX3_CORDI/18-203               ILLGAIFLVGQAYEYFHLV-EHGMTIQSSVYGSSFFITTGFHAAHVLAGALAFVVVLLRLSK-SKFT-----------PA--QATAAMVVSYYWHFVDVVWIGLFITIYF---
+#=GR sp|Q6NGA0|COX3_CORDI/18-203       PP ****************998.889***************************************.****...........**..***************************8...
+sp|P98005|COX13_THET8/548-791             IILGVLFFLVQSWEFYQFY--HHSSWQENLWTAAFFTIVGLHGLHVVIGGFGLILAYLQALR-GKIT-----------LH--NHGTLEAASMYWHLVDAVWLVIVTIFYVW--
+#=GR sp|P98005|COX13_THET8/548-791     PP ****************998..899**************************************.****...........**..****************************9..
+sp|Q82AK5|COX3_STRAW/12-204               FIMGAIFIGGQVFEYTELVKKDGLSLSSDPYGSVFYLTTGFHGLHVTGGLIAFLLVLGRTYAARRFT-----------HE--QATAAIVVSYYWHFVDVVWIGLFATIYM---
+#=GR sp|Q82AK5|COX3_STRAW/12-204       PP *****************999999*************************************98789**...........**..***************************8...
+sp|Q9X809|COX3_STRCO/12-204               FVMGAIFIGGQVFEYTELVKHEGISLSSDPYGSAFYLTTGFHGLHVTGGLIAFLLVLGRTYAARRFT-----------HE--QATAAIVVSYYWHFVDVVWIGLFATIYL---
+#=GR sp|Q9X809|COX3_STRCO/12-204       PP ****************9988889*************************************98789**...........**..***************************7...
+sp|Q33845|COX3_ARTSA/3-115                VLLGLYFSFLQGLEYMEA----SFTIADSIYGSTFFLATGFHGLHVLIGTIFLMICILRHLS-ATFS------------Q--HHFGFEAAAWYWH------------------
+#=GR sp|Q33845|COX3_ARTSA/3-115        PP ******************....****************************************.***8............7..9************..................
+sp|Q33752|COX3_ARBLI/2-109                VALGIYFTILQAWEYYDS----PFTIADSVYGSTFFVATGFHGLHVINSTTFLLVCLFRLIN-FHFS-----------AH--HHFGFEAAAWYWDFVDVVVAFSLYMHIWWGS
+#=GR sp|Q33752|COX3_ARBLI/2-109        PP ******************....****************************************.****...........**..*********************9999999998
+#=GC PP_cons                              ******************....****************************************.****...........**..******************************8
+#=GC RF                                   xxxxxxxxxxxxxxxxxx....xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxx...........xx..xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//

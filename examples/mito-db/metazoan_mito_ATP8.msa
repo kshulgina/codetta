@@ -1,0 +1,351 @@
+# STOCKHOLM 1.0
+#=GF ID ATP8
+#=GF AU jackhmmer (HMMER 3.2.1)
+
+#=GS sp|P48663|ATP8_HORSE/1-67         DE [subseq from] ATP synthase protein 8 OS=Equus caballus OX=9796 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P92479|ATP8_EQUAS/1-67         DE [subseq from] ATP synthase protein 8 OS=Equus asinus OX=9793 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9ZZY7|ATP8_HIPAM/1-68         DE [subseq from] ATP synthase protein 8 OS=Hippopotamus amphibius OX=9833 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q3L6Z3|ATP8_CANLU/1-67         DE [subseq from] ATP synthase protein 8 OS=Canis lupus OX=9612 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9ZZ63|ATP8_CANLF/1-67         DE [subseq from] ATP synthase protein 8 OS=Canis lupus familiaris OX=9615 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P48896|ATP8_FELCA/1-67         DE [subseq from] ATP synthase protein 8 OS=Felis catus OX=9685 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MJB2|ATP8_TALEU/1-67         DE [subseq from] ATP synthase protein 8 OS=Talpa europaea OX=9375 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q94NW9|ATP8_FELSL/1-67         DE [subseq from] ATP synthase protein 8 OS=Felis silvestris lybica OX=61377 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MEV6|ATP8_SCIVU/1-66         DE [subseq from] ATP synthase protein 8 OS=Sciurus vulgaris OX=55149 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q8LX28|ATP8_LEMCA/1-68         DE [subseq from] ATP synthase protein 8 OS=Lemur catta OX=9447 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O78751|ATP8_SHEEP/1-65         DE [subseq from] ATP synthase protein 8 OS=Ovis aries OX=9940 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q96063|ATP8_RHIUN/1-67         DE [subseq from] ATP synthase protein 8 OS=Rhinoceros unicornis OX=9809 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q00522|ATP8_PHOVI/1-67         DE [subseq from] ATP synthase protein 8 OS=Phoca vitulina OX=9720 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q35914|ATP8_PIG/1-66           DE [subseq from] ATP synthase protein 8 OS=Sus scrofa OX=9823 GN=MT-ATP8 PE=1 SV=2
+#=GS sp|Q9MEI6|ATP8_VICPA/1-67         DE [subseq from] ATP synthase protein 8 OS=Vicugna pacos OX=30538 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O03199|ATP8_CERSI/1-68         DE [subseq from] ATP synthase protein 8 OS=Ceratotherium simum OX=9807 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P11608|ATP8_RAT/1-67           DE [subseq from] ATP synthase protein 8 OS=Rattus norvegicus OX=10116 GN=Mt-atp8 PE=1 SV=2
+#=GS sp|O99598|ATP8_ARTJA/1-66         DE [subseq from] ATP synthase protein 8 OS=Artibeus jamaicensis OX=9417 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P03930|ATP8_MOUSE/1-67         DE [subseq from] ATP synthase protein 8 OS=Mus musculus OX=10090 GN=Mtatp8 PE=1 SV=1
+#=GS sp|Q6EMS7|ATP8_BOSIN/1-65         DE [subseq from] ATP synthase protein 8 OS=Bos indicus OX=9915 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P03929|ATP8_BOVIN/1-65         DE [subseq from] ATP synthase protein 8 OS=Bos taurus OX=9913 GN=MT-ATP8 PE=1 SV=1
+#=GS sp|Q5Y4Q6|ATP8_BOSMU/1-65         DE [subseq from] ATP synthase protein 8 OS=Bos mutus grunniens OX=30521 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P38592|ATP8_HALGR/1-67         DE [subseq from] ATP synthase protein 8 OS=Halichoerus grypus OX=9711 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9XMI9|ATP8_ORYAF/1-66         DE [subseq from] ATP synthase protein 8 OS=Orycteropus afer OX=9818 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MQJ9|ATP8_CEREH/1-66         DE [subseq from] ATP synthase protein 8 OS=Cervus elaphus hippelaphus OX=46360 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q3L6W9|ATP8_AILFU/1-66         DE [subseq from] ATP synthase protein 8 OS=Ailurus fulgens OX=9649 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q34801|ATP8_SYMSY/1-68         DE [subseq from] ATP synthase protein 8 OS=Symphalangus syndactylus OX=9590 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q35647|ATP8_PANTR/1-68         DE [subseq from] ATP synthase protein 8 OS=Pan troglodytes OX=9598 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9TEG7|ATP8_CAVPO/1-66         DE [subseq from] ATP synthase protein 8 OS=Cavia porcellus OX=10141 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P24949|ATP8_MICPE/1-67         DE [subseq from] ATP synthase protein 8 OS=Microtus pennsylvanicus OX=10058 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q95705|ATP8_HYLLA/1-67         DE [subseq from] ATP synthase protein 8 OS=Hylobates lar OX=9580 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q35587|ATP8_PANPA/1-68         DE [subseq from] ATP synthase protein 8 OS=Pan paniscus OX=9597 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O79431|ATP8_RABIT/1-66         DE [subseq from] ATP synthase protein 8 OS=Oryctolagus cuniculus OX=9986 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MQK2|ATP8_CAPII/1-64         DE [subseq from] ATP synthase protein 8 OS=Capra ibex ibex OX=80420 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P03928|ATP8_HUMAN/1-68         DE [subseq from] ATP synthase protein 8 OS=Homo sapiens OX=9606 GN=MT-ATP8 PE=1 SV=1
+#=GS sp|P14414|ATP8_CRIGR/1-66         DE [subseq from] ATP synthase protein 8 OS=Cricetulus griseus OX=10029 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q32643|ATP8_CAPHI/1-64         DE [subseq from] ATP synthase protein 8 OS=Capra hircus OX=9925 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q34571|ATP8_GORGO/1-68         DE [subseq from] ATP synthase protein 8 OS=Gorilla gorilla gorilla OX=9595 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O21329|ATP8_DASNO/1-66         DE [subseq from] ATP synthase protein 8 OS=Dasypus novemcinctus OX=9361 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9ZXY0|ATP8_PAPHA/1-68         DE [subseq from] ATP synthase protein 8 OS=Papio hamadryas OX=9557 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q8W9N2|ATP8_DUGDU/1-67         DE [subseq from] ATP synthase protein 8 OS=Dugong dugon OX=29137 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q8HG02|ATP8_ALOSA/1-66         DE [subseq from] ATP synthase protein 8 OS=Alouatta sara OX=121123 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q8HFZ6|ATP8_ALOGU/1-66         DE [subseq from] ATP synthase protein 8 OS=Alouatta guariba OX=182256 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P24947|ATP8_BALPH/1-62         DE [subseq from] ATP synthase protein 8 OS=Balaenoptera physalus OX=9770 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P41292|ATP8_BALMU/1-62         DE [subseq from] ATP synthase protein 8 OS=Balaenoptera musculus OX=9771 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O63902|ATP8_GLIGL/1-66         DE [subseq from] ATP synthase protein 8 OS=Glis glis OX=41261 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q35584|ATP8_PONPY/1-67         DE [subseq from] ATP synthase protein 8 OS=Pongo pygmaeus OX=9600 GN=MT-ATP8 PE=3 SV=2
+#=GS sp|Q36453|ATP8_ORNAN/1-69         DE [subseq from] ATP synthase protein 8 OS=Ornithorhynchus anatinus OX=9258 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P41314|ATP8_DIDVI/1-68         DE [subseq from] ATP synthase protein 8 OS=Didelphis virginiana OX=9267 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MET2|ATP8_PHYMC/1-62         DE [subseq from] ATP synthase protein 8 OS=Physeter macrocephalus OX=9755 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P92694|ATP8_PONAB/1-67         DE [subseq from] ATP synthase protein 8 OS=Pongo abelii OX=9601 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P92663|ATP8_MACRO/1-67         DE [subseq from] ATP synthase protein 8 OS=Macropus robustus OX=9319 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9XPI2|ATP8_CHEMY/1-61         DE [subseq from] ATP synthase protein 8 OS=Chelonia mydas OX=8469 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9XN35|ATP8_SALFO/1-54         DE [subseq from] ATP synthase protein 8 OS=Salvelinus fontinalis OX=8038 GN=mt-atp8 PE=3 SV=1
+#=GS sp|P68528|ATP8_ONCMY/1-54         DE [subseq from] ATP synthase protein 8 OS=Oncorhynchus mykiss OX=8022 GN=mt-atp8 PE=3 SV=1
+#=GS sp|P68529|ATP8_SALSA/1-54         DE [subseq from] ATP synthase protein 8 OS=Salmo salar OX=8030 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q9TBJ9|ATP8_CHAPE/1-55         DE [subseq from] ATP synthase protein 8 OS=Chaetura pelagica OX=8897 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9XN27|ATP8_SALAL/1-54         DE [subseq from] ATP synthase protein 8 OS=Salvelinus alpinus OX=8036 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q38PR8|ATP8_MAMPR/1-65         DE [subseq from] ATP synthase protein 8 OS=Mammuthus primigenius OX=37349 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MDB7|ATP8_COLPA/1-55         DE [subseq from] ATP synthase protein 8 OS=Columbina passerina OX=111974 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q2I3H0|ATP8_ELEMA/1-65         DE [subseq from] ATP synthase protein 8 OS=Elephas maximus OX=9783 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9TA25|ATP8_LOXAF/1-65         DE [subseq from] ATP synthase protein 8 OS=Loxodonta africana OX=9785 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9ZZ50|ATP8_SQUAC/1-55         DE [subseq from] ATP synthase protein 8 OS=Squalus acanthias OX=7797 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P03931|ATP8_XENLA/1-55         DE [subseq from] ATP synthase protein 8 OS=Xenopus laevis OX=8355 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q9TBI6|ATP8_CORCN/1-55         DE [subseq from] ATP synthase protein 8 OS=Corythaixoides concolor OX=103956 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9T9D5|ATP8_PAROL/1-54         DE [subseq from] ATP synthase protein 8 OS=Paralichthys olivaceus OX=8255 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q9ME31|ATP8_VIRAL/1-55         DE [subseq from] ATP synthase protein 8 OS=Vireo altiloquus OX=34956 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O79405|ATP8_SCYCA/1-54         DE [subseq from] ATP synthase protein 8 OS=Scyliorhinus canicula OX=7830 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O78683|ATP8_CARAU/1-54         DE [subseq from] ATP synthase protein 8 OS=Carassius auratus OX=7957 GN=mt-atp8 PE=3 SV=1
+#=GS sp|P24948|ATP8_CYPCA/1-54         DE [subseq from] ATP synthase protein 8 OS=Cyprinus carpio OX=7962 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q9XKZ5|ATP8_AYTAM/1-55         DE [subseq from] ATP synthase protein 8 OS=Aythya americana OX=30385 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P15996|ATP8_GADMO/1-54         DE [subseq from] ATP synthase protein 8 OS=Gadus morhua OX=8049 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q4JQI3|ATP8_TETNG/1-54         DE [subseq from] ATP synthase protein 8 OS=Tetraodon nigroviridis OX=99883 GN=mt-atp8 PE=3 SV=1
+#=GS sp|P50655|ATP8_ANAPL/1-55         DE [subseq from] ATP synthase protein 8 OS=Anas platyrhynchos OX=8839 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P50682|ATP8_COTJA/1-55         DE [subseq from] ATP synthase protein 8 OS=Coturnix japonica OX=93934 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O79396|ATP8_RHEAM/1-55         DE [subseq from] ATP synthase protein 8 OS=Rhea americana OX=8797 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9TBI5|ATP8_OPIHO/1-55         DE [subseq from] ATP synthase protein 8 OS=Opisthocomus hoazin OX=30419 GN=MT-ATP8 PE=3 SV=2
+#=GS sp|Q9TBJ1|ATP8_GUIGU/1-55         DE [subseq from] ATP synthase protein 8 OS=Guira guira OX=30392 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9TBI7|ATP8_CORCR/1-55         DE [subseq from] ATP synthase protein 8 OS=Corythaeola cristata OX=103954 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9TBI8|ATP8_MUSVO/1-55         DE [subseq from] ATP synthase protein 8 OS=Musophaga violacea OX=103959 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P34190|ATP8_FORLA/1-54         DE [subseq from] ATP synthase protein 8 OS=Formosania lacustris OX=7980 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q9MDJ1|ATP8_LOXNO/1-55         DE [subseq from] ATP synthase protein 8 OS=Loxigilla noctis OX=111865 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O79674|ATP8_PELSU/1-55         DE [subseq from] ATP synthase protein 8 OS=Pelomedusa subrufa OX=44522 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P14093|ATP8_CHICK/1-54         DE [subseq from] ATP synthase protein 8 OS=Gallus gallus OX=9031 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O21401|ATP8_STRCA/1-55         DE [subseq from] ATP synthase protein 8 OS=Struthio camelus OX=8801 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MIY6|ATP8_DANRE/1-54         DE [subseq from] ATP synthase protein 8 OS=Danio rerio OX=7955 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q35416|ATP8_PRODO/1-54         DE [subseq from] ATP synthase protein 8 OS=Protopterus dolloi OX=27779 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O03168|ATP8_LATCH/1-54         DE [subseq from] ATP synthase protein 8 OS=Latimeria chalumnae OX=7897 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q36362|ATP8_DICLA/1-54         DE [subseq from] ATP synthase protein 8 OS=Dicentrarchus labrax OX=13489 GN=mt-atp8 PE=3 SV=1
+#=GS sp|Q35537|ATP8_PETMA/1-54         DE [subseq from] ATP synthase protein 8 OS=Petromyzon marinus OX=7757 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|O47871|ATP8_ALLMI/1-53         DE [subseq from] ATP synthase protein 8 OS=Alligator mississippiensis OX=8496 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|B0FWC9|ATP8_AEDAE/1-53         DE [subseq from] ATP synthase protein 8 OS=Aedes aegypti OX=7159 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|Q5JCK6|ATP8_AEDAL/1-53         DE [subseq from] ATP synthase protein 8 OS=Aedes albopictus OX=7160 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|Q9MGM1|ATP8_DROSE/1-53         DE [subseq from] ATP synthase protein 8 OS=Drosophila sechellia OX=7238 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|P50270|ATP8_DROSI/1-53         DE [subseq from] ATP synthase protein 8 OS=Drosophila simulans OX=7240 GN=mt:ATPase8 PE=3 SV=3
+#=GS sp|P84344|ATP8_DROMA/1-53         DE [subseq from] ATP synthase protein 8 OS=Drosophila mauritiana OX=7226 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|P84345|ATP8_DROME/1-53         DE [subseq from] ATP synthase protein 8 OS=Drosophila melanogaster OX=7227 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|P03933|ATP8_DROYA/1-53         DE [subseq from] ATP synthase protein 8 OS=Drosophila yakuba OX=7245 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|O21003|ATP8_BRALA/1-54         DE [subseq from] ATP synthase protein 8 OS=Branchiostoma lanceolatum OX=7740 GN=MT-ATP8 PE=3 SV=2
+#=GS sp|O47427|ATP8_BRAFL/1-54         DE [subseq from] ATP synthase protein 8 OS=Branchiostoma floridae OX=7739 GN=MTATP8 PE=3 SV=1
+#=GS sp|Q95912|ATP8_POLOR/1-54         DE [subseq from] ATP synthase protein 8 OS=Polypterus ornatipinnis OX=49895 GN=mt-atp8 PE=3 SV=1
+#=GS sp|P33506|ATP8_ANOQU/1-53         DE [subseq from] ATP synthase protein 8 OS=Anopheles quadrimaculatus OX=7166 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|Q9TA07|ATP8_LAMFL/1-54         DE [subseq from] ATP synthase protein 8 OS=Lampetra fluviatilis OX=7748 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P34836|ATP8_ANOGA/1-53         DE [subseq from] ATP synthase protein 8 OS=Anopheles gambiae OX=7165 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|Q9MFP7|ATP8_COLHO/1-54         DE [subseq from] ATP synthase protein 8 OS=Cochliomyia hominivorax OX=115425 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9XMN9|ATP8_CERCA/1-53         DE [subseq from] ATP synthase protein 8 OS=Ceratitis capitata OX=7213 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|P12697|ATP8_PARLI/1-53         DE [subseq from] ATP synthase protein 8 OS=Paracentrotus lividus OX=7656 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P14570|ATP8_LOCMI/1-52         DE [subseq from] ATP synthase protein 8 OS=Locusta migratoria OX=7004 GN=MT-ATP8 PE=3 SV=2
+#=GS sp|O63913|ATP8_MYXGL/1-54         DE [subseq from] ATP synthase protein 8 OS=Myxine glutinosa OX=7769 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q33822|ATP8_PATPE/1-53         DE [subseq from] ATP synthase protein 8 OS=Patiria pectinifera OX=7594 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|P15997|ATP8_STRPU/1-54         DE [subseq from] ATP synthase protein 8 OS=Strongylocentrotus purpuratus OX=7668 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9ME79|ATP8_BOMMO/1-53         DE [subseq from] ATP synthase protein 8 OS=Bombyx mori OX=7091 GN=mt:ATPase8 PE=3 SV=1
+#=GS sp|Q9MGD7|ATP8_PENMO/1-52         DE [subseq from] ATP synthase protein 8 OS=Penaeus monodon OX=6687 GN=MT-ATP8 PE=3 SV=1
+#=GS sp|Q9MJC0|ATP8_ARBLI/1-53         DE [subseq from] ATP synthase protein 8 OS=Arbacia lixula OX=7640 GN=MT-ATP8 PE=3 SV=2
+
+NC_012920.1_prot_YP_003024030.1_5         MPQLNTTVWPTMITPMLLTLFLITQLKMLN-TNYHLP-PSP-KPMKMKNYNKPWEPKWTKICSLHSLPPQS
+sp|P48663|ATP8_HORSE/1-67                 MPQLDTSTWFINIVSMILTLFIVFQLKISK-HSYPTH-PEV-KTTKMTKHSAPWESKWTKIYSPLSLPQQ-
+#=GR sp|P48663|ATP8_HORSE/1-67         PP ******************************.******.***.**************************98.
+sp|P92479|ATP8_EQUAS/1-67                 MPQLDTSTWFINIVSMILTLFIVFQLKISK-HSYPMH-PEA-KTTKMAKRLTPWESKWTKIYSPLSLPQQ-
+#=GR sp|P92479|ATP8_EQUAS/1-67         PP ******************************.******.***.**************************98.
+sp|Q9ZZY7|ATP8_HIPAM/1-68                 MPQLDTSTWFTTILSMFLTLFIIFQLKISK-HTYHPN-PET-TLPMTQKQPTPWETKWTKIYSPLSLPLQS
+#=GR sp|Q9ZZY7|ATP8_HIPAM/1-68         PP ******************************.******.***.***************************97
+sp|Q3L6Z3|ATP8_CANLU/1-67                 MPQLDTSTWFIMIFSMFLTLFILFQLKISN-HYYPEN-PMT-KSAKIAGQHNPWENKWTKIYSLLSLPPQ-
+#=GR sp|Q3L6Z3|ATP8_CANLU/1-67         PP ******************************.******.***.**************************98.
+sp|Q9ZZ63|ATP8_CANLF/1-67                 MPQLDTSTWFIMIFSMFLTLFILFQLKISN-HYYPEN-PMT-KSAKIAGQHNPWENKWTKIYSLLSLPPQ-
+#=GR sp|Q9ZZ63|ATP8_CANLF/1-67         PP ******************************.******.***.**************************98.
+sp|P48896|ATP8_FELCA/1-67                 MPQLDTSTWSITIMSMIMTLFIVFQLKISK-YLYPSN-PEP-KSMTTLKQRNPWEKKWTKIYSPLSLPQQ-
+#=GR sp|P48896|ATP8_FELCA/1-67         PP ******************************.******.***.**************************98.
+sp|Q9MJB2|ATP8_TALEU/1-67                 MPQLDTSTWFTTILATITTLFILFQLKISK-YIYPSS-PEL-KSMKSLKHNTPWETKWTKIYSPLSLPLQ-
+#=GR sp|Q9MJB2|ATP8_TALEU/1-67         PP ******************************.******.***.**************************98.
+sp|Q94NW9|ATP8_FELSL/1-67                 MPQLDTSTWSITIMSMIMTLFIVFQLKISK-YLYPSN-PEP-KSMTTLKQLNPWEKKWTKIYSPLSLPQQ-
+#=GR sp|Q94NW9|ATP8_FELSL/1-67         PP ******************************.******.***.**************************98.
+sp|Q9MEV6|ATP8_SCIVU/1-66                 MPQLDTSTWFITIISMILALFMLFQSKIAN-HSYYSN-PSH-KDMKPTTHSTPWEKKWTKIYLPLSLPL--
+#=GR sp|Q9MEV6|ATP8_SCIVU/1-66         PP ******************************.******.***.*************************96..
+sp|Q8LX28|ATP8_LEMCA/1-68                 MPQLDTSTWLITILSMILTLLIVFQLKISK-FNYPLN-PTM-KNINKDLYTNPWETKWTKIYLPLSLPQQS
+#=GR sp|Q8LX28|ATP8_LEMCA/1-68         PP ******************************.******.***.***************************97
+sp|O78751|ATP8_SHEEP/1-65                 MPQLDTSTWLTMILSMFLVLFIIFQLKISK-HNFYHN-PEL-MTTKTPKQNTPWETKWTKIYLPLSLP---
+#=GR sp|O78751|ATP8_SHEEP/1-65         PP ******************************.******.***.*************************9...
+sp|Q96063|ATP8_RHIUN/1-67                 MPQLDTSTWFITITSMTITLFIMFQLKLSK-HSYPSN-PEL-KPINTSMHTTPWESKWTKIYSPLSLPQQ-
+#=GR sp|Q96063|ATP8_RHIUN/1-67         PP ******************************.******.***.**************************98.
+sp|Q00522|ATP8_PHOVI/1-67                 MPQLDTSTWLIMILSMILTLFITFQLKVSK-HYFPTN-PEP-KHTPLLKNSAPWEEKWTKIYSPLSLPLQ-
+#=GR sp|Q00522|ATP8_PHOVI/1-67         PP ******************************.******.***.**************************98.
+sp|Q35914|ATP8_PIG/1-66                   MPQLDTSTWFITITSMIMTLFILFQLKISN-YSYPAS-PES-IELKTQKHSTPWEMKWTKIYLPLLLPP--
+#=GR sp|Q35914|ATP8_PIG/1-66           PP ******************************.******.***.************************996..
+sp|Q9MEI6|ATP8_VICPA/1-67                 MPQLDTSTWFITILSMLMTLFILFQLKLSK-HIYYPT-PEP-KFSKTHKQNTPWETKWKKIYLPLLLPQQ-
+#=GR sp|Q9MEI6|ATP8_VICPA/1-67         PP ******************************.******.***.**************************98.
+sp|O03199|ATP8_CERSI/1-68                 MPQLDTSTWSITIVSMIITLFIMFQLKLSK-YSYPSS-PEL-KLTKTPTHTTPWESKWTKTYLPLSLPQQS
+#=GR sp|O03199|ATP8_CERSI/1-68         PP ******************************.******.***.***************************97
+sp|P11608|ATP8_RAT/1-67                   MPQLDTSTWFITIISSMATLFILFQLKISS-QTFPAP-PSP-KTMATEKTNNPWESKWTKTYLPLSLPPQ-
+#=GR sp|P11608|ATP8_RAT/1-67           PP ******************************.******.***.**************************98.
+sp|O99598|ATP8_ARTJA/1-66                 MPQLDTSTWFITILATILTLFIIMQLKIST-YYYHSN-PEP-KTTKMTKSLIPWEIKWTKIYSPLSLPL--
+#=GR sp|O99598|ATP8_ARTJA/1-66         PP ******************************.******.***.*************************96..
+sp|P03930|ATP8_MOUSE/1-67                 MPQLDTSTWFITIISSMITLFILFQLKVSS-QTFPLA-PSP-KSLTTMKVKTPWELKWTKIYLPHSLPQQ-
+#=GR sp|P03930|ATP8_MOUSE/1-67         PP ******************************.******.***.**************************98.
+sp|Q6EMS7|ATP8_BOSIN/1-65                 MPQLDTSTWLTMILSMFLTLFIIFQLKISK-HNFYHN-PEL-TPTKMLKQNTPWEAKWTKIYLPLLLP---
+#=GR sp|Q6EMS7|ATP8_BOSIN/1-65         PP ******************************.******.***.***********************998...
+sp|P03929|ATP8_BOVIN/1-65                 MPQLDTSTWLTMILSMFLTLFIIFQLKVSK-HNFYHN-PEL-TPTKMLKQNTPWETKWTKIYLPLLLP---
+#=GR sp|P03929|ATP8_BOVIN/1-65         PP ******************************.******.***.***********************998...
+sp|Q5Y4Q6|ATP8_BOSMU/1-65                 MPQLDTSTWLTMILSMFLTLFIIFQLKISK-HNFYYN-PEL-TSTKMLKQNTPWETKWTKIYLPLLLP---
+#=GR sp|Q5Y4Q6|ATP8_BOSMU/1-65         PP ******************************.******.***.***********************998...
+sp|P38592|ATP8_HALGR/1-67                 MPQLDTSTWLIMISSMILTLFITFHLKVSK-HYFPTN-PEP-KHTLLLKNSAPWEEKWTKIYSPLSLPLQ-
+#=GR sp|P38592|ATP8_HALGR/1-67         PP ******************************.******.***.**************************98.
+sp|Q9XMI9|ATP8_ORYAF/1-66                 MPQLDTTPWFITILSMIITLFILFQSNMSK-YLYPLE-PQP-KTLKTQLYNAPWETKWTKIYLPHSLHL--
+#=GR sp|Q9XMI9|ATP8_ORYAF/1-66         PP ******************************.******.***.*************************86..
+sp|Q9MQJ9|ATP8_CEREH/1-66                 MPQLDTSTWLMMIMSMFLALFIIFQLKISK-HNFHFN-PEL-TLTKTQKQKTPWETKWTKIYLPLLLPQ--
+#=GR sp|Q9MQJ9|ATP8_CEREH/1-66         PP ******************************.******.***.************************996..
+sp|Q3L6W9|ATP8_AILFU/1-66                 MPQLDTSTWSITITSVVLTLFIMFQLKILK-SSFPNN-PEP-KSTPMLKTSMPWEKKWTKIYLPLSLPQ--
+#=GR sp|Q3L6W9|ATP8_AILFU/1-66         PP ******************************.******.***.**************************8..
+sp|Q34801|ATP8_SYMSY/1-68                 MPQLNTTVWPTIITSMLLTLFLLMQLKTLN-MYYHPP-ASP-KLMNIKPHNNPWEHKWTKIYSLHSLPLQS
+#=GR sp|Q34801|ATP8_SYMSY/1-68         PP ******************************.******.***.***************************97
+sp|Q35647|ATP8_PANTR/1-68                 MPQLNTAVWPTMITPMLLTLFLVTQLKMLN-SNYHLP-PSP-KPMKMKNYNKPWEPKWTKIYSLHSLPPQS
+#=GR sp|Q35647|ATP8_PANTR/1-68         PP ******************************.******.***.***************************97
+sp|Q9TEG7|ATP8_CAVPO/1-66                 MPQLDTSTWFTVILSMIISLFMLLQLKISS-HSFYLD-PKT-MSLKTTKHNLPWENKWTKTYLPLSLHL--
+#=GR sp|Q9TEG7|ATP8_CAVPO/1-66         PP ******************************.******.***.************************986..
+sp|P24949|ATP8_MICPE/1-67                 MPQLDTSTWFTTVLSTTITLFILMQLKISL-HNFPQT-PSV-KSIKYMKTDNPWESKWTKIYSPLSLPLQ-
+#=GR sp|P24949|ATP8_MICPE/1-67         PP ******************************.******.***.**************************98.
+sp|Q95705|ATP8_HYLLA/1-67                 MPQLNTTVWPTIIMSMLLALFLLMQLKTLN-THYHPP-ASP-KLTNIKPHNNPWEHKWTKIYSLHSLPPQ-
+#=GR sp|Q95705|ATP8_HYLLA/1-67         PP ******************************.******.***.**************************98.
+sp|Q35587|ATP8_PANPA/1-68                 MPQLNTAVWPTTITPMLLTLFLITQLKMLN-SNYHLP-PSP-KPMKMKNYNKPWEPKWTKICSLHSLPPQS
+#=GR sp|Q35587|ATP8_PANPA/1-68         PP ******************************.******.***.***************************97
+sp|O79431|ATP8_RABIT/1-66                 MPQLDTSTWFTTIVAMILSLFILMQLKFHK-YTYPMN-PVL-KALESTSFPCPWETKWTKIYSPLSLPQ--
+#=GR sp|O79431|ATP8_RABIT/1-66         PP ******************************.******.***.**************************8..
+sp|Q9MQK2|ATP8_CAPII/1-64                 MPQLDTSTWLTTILSMFLALFIIFQLKISK-HNFYHN-PEL-T-TKVLKQNTPWETKWTKIYLPLLLP---
+#=GR sp|Q9MQK2|ATP8_CAPII/1-64         PP ******************************.******.**9.7.667777***************998...
+sp|P03928|ATP8_HUMAN/1-68                 MPQLNTTVWPTMITPMLLTLFLITQLKMLN-TNYHLP-PSP-KPMKMKNYNKPWEPKWTKICSLHSLPPQS
+#=GR sp|P03928|ATP8_HUMAN/1-68         PP ******************************.******.***.***************************97
+sp|P14414|ATP8_CRIGR/1-66                 MPQLDTSTWFTTVLASSITLFILMQLKISF-HDLHKK-PSN-KYLKLFKPTNPWEQKWTKIYSPLSLPQ--
+#=GR sp|P14414|ATP8_CRIGR/1-66         PP ******************************.******.***.**************************7..
+sp|Q32643|ATP8_CAPHI/1-64                 MPQLDTSTWLTTILSMFLALFIIFQLKISK-YDFYHN-PEL-T-AKMLKHNTPWETKWTKIYLPLLLP---
+#=GR sp|Q32643|ATP8_CAPHI/1-64         PP ******************************.******.*99.7.778888***************998...
+sp|Q34571|ATP8_GORGO/1-68                 MPQLNTTVWPTMIAPMLLTLFLITQLKVLN-TNYHLP-PLP-KTMKMKNFCKPWEPKWTKIYSLHSLPPQS
+#=GR sp|Q34571|ATP8_GORGO/1-68         PP ******************************.******.***.***************************97
+sp|O21329|ATP8_DASNO/1-66                 MPQLDTSTWFITIVSMLLSLFILMQLKFIK-FSSFST-PCP-TTMEKTKHLTPWEMKWTKTYLPHSLPL--
+#=GR sp|O21329|ATP8_DASNO/1-66         PP ******************************.******.***.*************************95..
+sp|Q9ZXY0|ATP8_PAPHA/1-68                 MPQLDTSTWFTIIMAMLPTLYLITQLKLLS-MNYYQP-PLT-KNPNLQTHNTCWRPKWTKTYLPHSQPQQS
+#=GR sp|Q9ZXY0|ATP8_PAPHA/1-68         PP ******************************.******.***.***************************97
+sp|Q8W9N2|ATP8_DUGDU/1-67                 MPQLDTTTWFITILSMLITLFILFQTKLLN-YTYPLN-ALP-ISPNVTNHLTPWKMKWTKTYLPLSLPLQ-
+#=GR sp|Q8W9N2|ATP8_DUGDU/1-67         PP ******************************.******.***.**************************98.
+sp|Q8HG02|ATP8_ALOSA/1-66                 MPQLDMSPWPMVIMSMILTLFYITQLKMLN-FTFYNT-PSS-KLSMPHKHKTTWELKWTKIYLPPSMYQ--
+#=GR sp|Q8HG02|ATP8_ALOSA/1-66         PP ******************************.******.***.*************************96..
+sp|Q8HFZ6|ATP8_ALOGU/1-66                 MPQLDMSPWPMVIMSMILTLFYITQLKMLN-FTFHTT-PSS-KLTMSHKHKTTWELKWTKIYLPPSTYQ--
+#=GR sp|Q8HFZ6|ATP8_ALOGU/1-66         PP ******************************.******.***.************************996..
+sp|P24947|ATP8_BALPH/1-62                 MPQLDTSMWLLTILSMLLTLFVLFQLKISK-HSYSPN-PKL-AHTKTQKQQAPWNTTWTKIYLPL------
+#=GR sp|P24947|ATP8_BALPH/1-62         PP ******************************.******.***.**********************7......
+sp|P41292|ATP8_BALMU/1-62                 MPQLDTSTWLLTILSMLLTLFVLFQLKISK-HSYSPN-PKL-VPTKTQKQQTPWNITWTKIYLPL------
+#=GR sp|P41292|ATP8_BALMU/1-62         PP ******************************.******.***.**********************7......
+sp|O63902|ATP8_GLIGL/1-66                 MPQLDTSTWFTTILSTSFSIIHRLQLKLTT-HIFSPN-PTP-KDLKTLKHHNPWDKKWTKSYLPLSLHQ--
+#=GR sp|O63902|ATP8_GLIGL/1-66         PP ******************************.******.***.*************************97..
+sp|Q35584|ATP8_PONPY/1-67                 MPQLNTTTWLTIITPTLLALFLITQLKLLN-SHLHPP-TPP-KFTKTKPHAKPWELKWTKIYSPHSLPPQ-
+#=GR sp|Q35584|ATP8_PONPY/1-67         PP ******************************.******.***.**************************98.
+sp|Q36453|ATP8_ORNAN/1-69                 MPQLDTSTWYTTILLMILAIFCIFQLKMIK-HLYMNV-PLILNQELFIKHQTPWHSKWTKIYLPPSLLLQS
+#=GR sp|Q36453|ATP8_ORNAN/1-69         PP ******************************.******.987466778999******************996
+sp|P41314|ATP8_DIDVI/1-68                 MPQLNTSTWTLTISLMIISLFCIYQLKMMNQTLIQIT-PST-EQSKLTKHTLPWEKKWTKIYLPHSSHQQ-
+#=GR sp|P41314|ATP8_DIDVI/1-68         PP ******************************778899*.***.**************************98.
+sp|Q9MET2|ATP8_PHYMC/1-62                 MPQLDTSTWFLTILSVMLTLFTLLQPKISM-HLYTPN-PKP-MPTKTQKQHSPWNTAWTKIYLPL------
+#=GR sp|Q9MET2|ATP8_PHYMC/1-62         PP ******************************.******.***.**********************7......
+sp|P92694|ATP8_PONAB/1-67                 MPQLNTTTWPTIITPMLLALFLITQLKLLN-SHLHPP-TPP-KFTKPKLHAKPWGPKWTKVYLPHSLPPQ-
+#=GR sp|P92694|ATP8_PONAB/1-67         PP ******************************.******.***.**************************98.
+sp|P92663|ATP8_MACRO/1-67                 MPQLDTSTWLLTITLMILALFCIYQSKMINQTMISIP-PQD-KKVIKPTTQLPWESKWTKIYLPHSSPL--
+#=GR sp|P92663|ATP8_MACRO/1-67         PP *****************************96777889.999.9999********************996..
+sp|Q9XPI2|ATP8_CHEMY/1-61                 MPQLNPAPWFMILSSTWLIYTIILQPKILS-HLPTNN-PTN-KNNKINT--NSWTWPWTQHSSTNS-----
+#=GR sp|Q9XPI2|ATP8_CHEMY/1-61         PP ******************************.******.***.*****99..*********999876.....
+sp|Q9XN35|ATP8_SALFO/1-54                 MPQLNPAPWFAILVFSWLVFLTVIPPKVLG-HTFTNE-PTS-QSTEKTK-PEPWNWPW-------------
+#=GR sp|Q9XN35|ATP8_SALFO/1-54         PP ******************************.******.***.*******.********.............
+sp|P68528|ATP8_ONCMY/1-54                 MPQLNPAPWFAILVFSWLVFLTVIPPKVLG-HTFTNE-PTS-QSTEKAK-PEPWNWPW-------------
+#=GR sp|P68528|ATP8_ONCMY/1-54         PP ******************************.******.***.*******.********.............
+sp|P68529|ATP8_SALSA/1-54                 MPQLNPAPWFAILVFSWLVFLTVIPPKVLG-HTFTNE-PTS-QSTEKAK-PEPWNWPW-------------
+#=GR sp|P68529|ATP8_SALSA/1-54         PP ******************************.******.***.*******.********.............
+sp|Q9TBJ9|ATP8_CHAPE/1-55                 MPQLNPNPWFFIMLLSWLTFSLIIQPKLLS-FTPTNP-PSN-KTTTHTK-TTPWTWPWT------------
+#=GR sp|Q9TBJ9|ATP8_CHAPE/1-55         PP ******************************.******.***.*999999.********9............
+sp|Q9XN27|ATP8_SALAL/1-54                 MPQLNPAPWFAILVFSWLVFLTVIPPKVLG-HIFTNE-PTS-QSTEKTK-PEPWNWPW-------------
+#=GR sp|Q9XN27|ATP8_SALAL/1-54         PP ******************************.******.***.*******.********.............
+sp|Q38PR8|ATP8_MAMPR/1-65                 MERMDIIIWLLAVVIVLTTLMIFLHLKTLK-IIRLLF-PVS-KELSKKSCVFPWKKKWTKNYPPSSMY---
+#=GR sp|Q38PR8|ATP8_MAMPR/1-65         PP 9*****************************.******.***.*************************8...
+sp|Q9MDB7|ATP8_COLPA/1-55                 MPQLNPSPWFFIMLTTWLTFSLIIQPKLLS-FTPTNP-PSN-KISTTTK-TTPWTWPWT------------
+#=GR sp|Q9MDB7|ATP8_COLPA/1-55         PP ******************************.******.***.*999999.********9............
+sp|Q2I3H0|ATP8_ELEMA/1-65                 MERMDIIIWLLAVVIVLTTLMIFLHLKTLK-IIRLLF-PIS-KELSKKSCVFPWKKKWTKNYPPSSMY---
+#=GR sp|Q2I3H0|ATP8_ELEMA/1-65         PP 9*****************************.******.***.*************************8...
+sp|Q9TA25|ATP8_LOXAF/1-65                 MERMDIIIWLLAVVIVLTTLMIFLHLKTLK-IIRLLF-PIS-KELSKKSCVFPWKKKWTKNYPPSSMY---
+#=GR sp|Q9TA25|ATP8_LOXAF/1-65         PP 9*****************************.******.***.*************************8...
+sp|Q9ZZ50|ATP8_SQUAC/1-55                 MPQLNPHPWFAILVFSWIFFLVILPKKVMT-HLFNNN-PTA-KSAEKPK-PEPWNWPWT------------
+#=GR sp|Q9ZZ50|ATP8_SQUAC/1-55         PP ******************************.******.***.*******.********9............
+sp|P03931|ATP8_XENLA/1-55                 MPQLNPGPWFLILIFSWLVLLTFIPPKVLK-HKAFNE-PTT-QTTEKSK-PNPWNWPWT------------
+#=GR sp|P03931|ATP8_XENLA/1-55         PP ******************************.******.***.*****99.********9............
+sp|Q9TBI6|ATP8_CORCN/1-55                 MPQLNPNPWFYIMLMSWLTFSLIIQPKLLS-FTSANP-PSN-KTSTTTR-TLPWTWPWT------------
+#=GR sp|Q9TBI6|ATP8_CORCN/1-55         PP ******************************.******.***.*999999.********9............
+sp|Q9T9D5|ATP8_PAROL/1-54                 MPQLNPAPWFMILVFSWMVFLTIIPPKVLA-HTFPNE-PTP-QSTQKPK-TESWNWPW-------------
+#=GR sp|Q9T9D5|ATP8_PAROL/1-54         PP ******************************.******.***.*******.********.............
+sp|Q9ME31|ATP8_VIRAL/1-55                 MPQLNPNPWFFIMIISWLTYSMIIQPKILS-FTSTNP-PAR-KEPTTNT-TTPWNWPWT------------
+#=GR sp|Q9ME31|ATP8_VIRAL/1-55         PP ******************************.******.***.******9.********9............
+sp|O79405|ATP8_SCYCA/1-54                 MPQLNPSPWFIILLFSWVIFMVILPNKVMN-HLFNNE-PAL-KSTEKSK-PDPWNWPW-------------
+#=GR sp|O79405|ATP8_SCYCA/1-54         PP ******************************.******.***.*******.********.............
+sp|O78683|ATP8_CARAU/1-54                 MPQLNPGPWFAILVFSWLVFLTIIPTKILS-HISPNE-PTP-VSAEKHK-TESWDWPW-------------
+#=GR sp|O78683|ATP8_CARAU/1-54         PP ******************************.******.***.*******.********.............
+sp|P24948|ATP8_CYPCA/1-54                 MPQLNPGPWFAILVFSWLIFLTIIPTKILS-HISPNE-PTP-VSAEKHK-TESWDWPW-------------
+#=GR sp|P24948|ATP8_CYPCA/1-54         PP ******************************.******.***.*******.********.............
+sp|Q9XKZ5|ATP8_AYTAM/1-55                 MPQLNPAPWFSIMIMTWLTLALLIQPKLLT-FTTTNP-PSS-KPSLTTK-PTPWAWPWT------------
+#=GR sp|Q9XKZ5|ATP8_AYTAM/1-55         PP ******************************.******.***.*****99.********9............
+sp|P15996|ATP8_GADMO/1-54                 MPQLNPAPWFMIFMFTWAIFLTILPPKVMA-HTFPNE-PSP-QGMTTPK-TAPWNWPW-------------
+#=GR sp|P15996|ATP8_GADMO/1-54         PP ******************************.******.***.*******.********.............
+sp|Q4JQI3|ATP8_TETNG/1-54                 MPQLNPSPWFAIMVFSWFVFLIFLPPKIMA-HTFPNE-PTA-QSTQTLK-TKSWTWPW-------------
+#=GR sp|Q4JQI3|ATP8_TETNG/1-54         PP ******************************.******.***.*******.********.............
+sp|P50655|ATP8_ANAPL/1-55                 MPQLNPAPWFSIMVMTWLTLALLIQPKLLT-FTTTNP-PSK-KPSLITK-PTPWAWPWT------------
+#=GR sp|P50655|ATP8_ANAPL/1-55         PP ******************************.******.***.*******.********9............
+sp|P50682|ATP8_COTJA/1-55                 MPQLNPAPWFMIMLMTWFTYSLLIQPKLLS-FTSMNT-PSN-KTTSTTK-PTPWTWPWT------------
+#=GR sp|P50682|ATP8_COTJA/1-55         PP ******************************.******.***.*******.********9............
+sp|O79396|ATP8_RHEAM/1-55                 MPQLNPNPWFFIMIMSWAVFLLLIQPKLLS-FTHTNL-PSN-KPLSTPN-PTPWTWPWT------------
+#=GR sp|O79396|ATP8_RHEAM/1-55         PP ******************************.******.***.*******.********9............
+sp|Q9TBI5|ATP8_OPIHO/1-55                 MPQLNPTPWFPIMMLSWLIFSLIIQPKLLL-FTPTNP-PSN-KTTTTTR-SNPWTWPWT------------
+#=GR sp|Q9TBI5|ATP8_OPIHO/1-55         PP ******************************.******.***.*999999.********9............
+sp|Q9TBJ1|ATP8_GUIGU/1-55                 MPQLNPNPWFFTMLTTWLTFLLLIQPKLLS-FIMTNP-PIN-KSSKHTK-TPSWTWPWT------------
+#=GR sp|Q9TBJ1|ATP8_GUIGU/1-55         PP ******************************.******.***.******9.********9............
+sp|Q9TBI7|ATP8_CORCR/1-55                 MPQLNPNPWLFIMLMSWLTFSLIIQPKLLP-FTPINP-PSN-KTPTTTK-TSPWTWPWT------------
+#=GR sp|Q9TBI7|ATP8_CORCR/1-55         PP ******************************.******.***.*******.********9............
+sp|Q9TBI8|ATP8_MUSVO/1-55                 MPQLNPNPWFYIMLMSWLTFSLIIQPELLS-FTLTNP-LSN-KTSTTTR-SSPWTWPWT------------
+#=GR sp|Q9TBI8|ATP8_MUSVO/1-55         PP ******************************.******.***.*999999.********9............
+sp|P34190|ATP8_FORLA/1-54                 MPQLNPAPWFTILVFSWMIFLAIIPTKVMG-HTSPND-SSP-LSTEKHK-TESWDWPW-------------
+#=GR sp|P34190|ATP8_FORLA/1-54         PP ******************************.******.***.*******.********.............
+sp|Q9MDJ1|ATP8_LOXNO/1-55                 MPQLNPHPWFFIMLASWLTFSLIIQPKLLT-FVTMNP-PSN-KPPIAPS-TTPWTWPWT------------
+#=GR sp|Q9MDJ1|ATP8_LOXNO/1-55         PP ******************************.******.***.*999999.********9............
+sp|O79674|ATP8_PELSU/1-55                 MPQLNPHPWFSIFITSWLILIIILLPKIKS-HIPNNS-PTN-KKNMLTT-PMPWTWPWT------------
+#=GR sp|O79674|ATP8_PELSU/1-55         PP ******************************.******.***.*999999.********9............
+sp|P14093|ATP8_CHICK/1-54                 MPQLNPNPWFSIMLLTWFTFSLLIQPKLLS-FTLTNN-PAN-KITTTKP--TPWTWPWT------------
+#=GR sp|P14093|ATP8_CHICK/1-54         PP ******************************.******.***.*877776..*******9............
+sp|O21401|ATP8_STRCA/1-55                 MPQLNPNPWLFIMFMSWTVFLFLMQPKLTS-FISTNS-PSN-KNKTTLT-PTPWTWPWT------------
+#=GR sp|O21401|ATP8_STRCA/1-55         PP ******************************.******.***.*999999.********9............
+sp|Q9MIY6|ATP8_DANRE/1-54                 MPQLNPKPWFMILFFSWVIFLTIIPTKIIN-HIQPND-PTQ-VDAKEHK-NDTWNWPW-------------
+#=GR sp|Q9MIY6|ATP8_DANRE/1-54         PP ******************************.******.***.*******.********.............
+sp|Q35416|ATP8_PRODO/1-54                 MPQLNPGPWFNILLISWLTFLLILLPKILS-HKTNNC-PTP-QSQDKLF-LPPWNWPW-------------
+#=GR sp|Q35416|ATP8_PRODO/1-54         PP ******************************.******.***.**99999.********.............
+sp|O03168|ATP8_LATCH/1-54                 MPQLNPSPWLLILLFSWLIFLTMLPSKTQL-HTFPNM-PST-QNMCKQE-PEPWTWPW-------------
+#=GR sp|O03168|ATP8_LATCH/1-54         PP ******************************.******.***.***9999.********.............
+sp|Q36362|ATP8_DICLA/1-54                 MPQLLPTPWFTIFIYAWMVLLAVIPLKILS-YVYPNH-NYL-RGLQKPS-EHSWFWPW-------------
+#=GR sp|Q36362|ATP8_DICLA/1-54         PP ******************************.******.***.*******.********.............
+sp|Q35537|ATP8_PETMA/1-54                 MPQLDPAPWFSMLTVSWLIIFLLIMPTILF-YQPQNT-IST-KQVTKPK-QSTWTWPW-------------
+#=GR sp|Q35537|ATP8_PETMA/1-54         PP ******************************.******.***.*******.9*******.............
+sp|O47871|ATP8_ALLMI/1-53                 MPQLNPEPWLTTFLIVWISLIVILQPKIAS-LMLTSS-PTP-YKAMTIK---TWPWPWT------------
+#=GR sp|O47871|ATP8_ALLMI/1-53         PP ******************************.******.***.9888888...8*****9............
+sp|B0FWC9|ATP8_AEDAE/1-53                 MPQMAPISWLTLFFVFSITLVIFNIKNYFC-FSYNST-ETS-QNLNIKQHKLNWKW---------------
+#=GR sp|B0FWC9|ATP8_AEDAE/1-53         PP ******************************.******.***.************99...............
+sp|Q5JCK6|ATP8_AEDAL/1-53                 MPQMAPISWLTLFFIFSITLVIFNMKNYFC-FFYNSN-ESC-QNLNIKQYKLNWKW---------------
+#=GR sp|Q5JCK6|ATP8_AEDAL/1-53         PP ******************************.******.***.************99...............
+sp|Q9MGM1|ATP8_DROSE/1-53                 MPQMAPISWLLLFIIFSITFILFCSINYYS-YTPNSP-KSN-ELKNINLNSMNWKW---------------
+#=GR sp|Q9MGM1|ATP8_DROSE/1-53         PP ******************************.******.***.************99...............
+sp|P50270|ATP8_DROSI/1-53                 MPQMAPISWLLLFIIFSITFILFCSINYYS-YMPNSP-KSN-ELKNINLNSMNWKW---------------
+#=GR sp|P50270|ATP8_DROSI/1-53         PP ******************************.******.***.************99...............
+sp|P84344|ATP8_DROMA/1-53                 MPQMAPISWLLLFIIFSITFILFCSINYYS-YMPNSP-KSN-ELKNINLNSMNWKW---------------
+#=GR sp|P84344|ATP8_DROMA/1-53         PP ******************************.******.***.************99...............
+sp|P84345|ATP8_DROME/1-53                 MPQMAPISWLLLFIIFSITFILFCSINYYS-YMPNSP-KSN-ELKNINLNSMNWKW---------------
+#=GR sp|P84345|ATP8_DROME/1-53         PP ******************************.******.***.************99...............
+sp|P03933|ATP8_DROYA/1-53                 MPQMAPISWLLLFIVFSITFILFCSINYYS-YMPTSP-KSN-ELKNINLNSMNWKW---------------
+#=GR sp|P03933|ATP8_DROYA/1-53         PP ******************************.******.***.************99...............
+sp|O21003|ATP8_BRALA/1-54                 MPQLNPIPWVFLFFLVWLVLGFLGLQKFTSVVTTTLD-DSS-EEVEVKSKEYSWPW---------------
+#=GR sp|O21003|ATP8_BRALA/1-54         PP ****************************997889999.9**.*******9999987...............
+sp|O47427|ATP8_BRAFL/1-54                 MPQLNPIPWVFLFFLVWLVLGFLGLQKFTSIVTTTLD-DSS-EEVEVKSKEYSWPW---------------
+#=GR sp|O47427|ATP8_BRAFL/1-54         PP ****************************997888999.99*.*******9999987...............
+sp|Q95912|ATP8_POLOR/1-54                 MPQLNPNPWFTILIFTWAVFLTILPNKVTS-HKMPNE-LLT-KDPSNLL-TEIWYWPW-------------
+#=GR sp|Q95912|ATP8_POLOR/1-54         PP ******************************.******.***.**99999.9*******.............
+sp|P33506|ATP8_ANOQU/1-53                 MPQMAPINWLILFFIFSITLVIFNILNYFC-FSYTPM-KTS-QSLNIKFNKLNWKW---------------
+#=GR sp|P33506|ATP8_ANOQU/1-53         PP ******************************.******.***.************99...............
+sp|Q9TA07|ATP8_LAMFL/1-54                 MPQLEPAPWFSMLTVSWLIILLLIMPTIMF-YQTQNT-VSA-QQATKPK-QPTWTWPW-------------
+#=GR sp|Q9TA07|ATP8_LAMFL/1-54         PP ******************************.******.***.*******.99******.............
+sp|P34836|ATP8_ANOGA/1-53                 MPQMAPINWLILFIVFSITLVVFNILNYFC-FFYTPL-KTS-QSLNIKFNKLNWKW---------------
+#=GR sp|P34836|ATP8_ANOGA/1-53         PP ******************************.******.***.************99...............
+sp|Q9MFP7|ATP8_COLHO/1-54                 MPQMAPIGWLSLFIIFSIAFVIFNMMNYYS-YTPSMP-KSE-LINKTQS-TNSLNWKW-------------
+#=GR sp|Q9MFP7|ATP8_COLHO/1-54         PP ******************************.******.*99.9999999.99*****9.............
+sp|Q9XMN9|ATP8_CERCA/1-53                 MPQMAPIGWLSLFIIFSLTFILFSMMNYYS-TIPQSP-KSQ-ILKKSQTNSMNWKW---------------
+#=GR sp|Q9XMN9|ATP8_CERCA/1-53         PP ******************************.******.***.*******9999998...............
+sp|P12697|ATP8_PARLI/1-53                 MPQLDFTWWIINFFIIWTAILLTLVILVNN-KTAQNL-TTT-DSLQIEKNSTNWQW---------------
+#=GR sp|P12697|ATP8_PARLI/1-53         PP ******************************.******.***.*************9...............
+sp|P14570|ATP8_LOCMI/1-52                 MPQMSPMMWFSLFIMFSMTMMLFNQLNFFS-YKPNKI-MSS-N-NKIKKKNINWMW---------------
+#=GR sp|P14570|ATP8_LOCMI/1-52         PP ******************************.**9999.998.7.556666****99...............
+sp|O63913|ATP8_MYXGL/1-54                 MPQLNPSPWLLMALSLWVCFPL-MMLSLSS-FLPLTL-KTS-LPSTLKSSPNPWILPW-------------
+#=GR sp|O63913|ATP8_MYXGL/1-54         PP ******************9987.889****.******.***.****************.............
+sp|Q33822|ATP8_PATPE/1-53                 MPQLNLAWWLLNFFLGWTSLLVIFIILLNT-SITNNT-ANT-STTTNTTPNLNWTW---------------
+#=GR sp|Q33822|ATP8_PATPE/1-53         PP **************************9999.999999.999.99999999999999...............
+sp|P15997|ATP8_STRPU/1-54                 MPQLEFAWWIVNFSLIWASVLIVISLLLNS-FPPNSAGQSS-SSLTLNKTTTNWQW---------------
+#=GR sp|P15997|ATP8_STRPU/1-54         PP ****************************99.9999872566.888999999***99...............
+sp|Q9ME79|ATP8_BOMMO/1-53                 MPQMMPINWIFFLFFFICIFLIFNIMNYFI-YEKKMH-LIN-KFNQKKKLTFNWKW---------------
+#=GR sp|Q9ME79|ATP8_BOMMO/1-53         PP ******************************.******.***.*******8888877...............
+sp|Q9MGD7|ATP8_PENMO/1-52                 MPQMAPLLWLNLFLMFSATFVMFIVLNYFI-KVPSKI--EK-SSSQLQKMEMTWKW---------------
+#=GR sp|Q9MGD7|ATP8_PENMO/1-52         PP ***************************986.665554..55.56777777999998...............
+sp|Q9MJC0|ATP8_ARBLI/1-53                 MPQLEFTWWIINFFIVWTADFTLLIVLSIP-NLSTPT-TLS-KQLDINKSHVTWQW---------------
+#=GR sp|Q9MJC0|ATP8_ARBLI/1-53         PP ******************977777777777.777788.888.999****9*****9...............
+#=GC PP_cons                              ******************************.******.***.*************************9887
+#=GC RF                                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.xxxxxx.xxx.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//
