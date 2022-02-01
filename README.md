@@ -3,8 +3,8 @@
 
 ## Description
 
-Codetta is a Python program for predicting the genetic code (codon table) of an 
-organism from nucleotide sequence data.   
+Codetta is a Python program for predicting the genetic code (codon table) of 
+an organism from nucleotide sequence data.   
 
 The analysis consists of three steps:
 
@@ -13,8 +13,11 @@ models (HMMs) of proteins (such as the Pfam database)
 2. Collate the resulting alignments into a single output file
 3. Infer the genetic code from the alignment output file
 
-A detailed explanation of the underlying probability model can be found in [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402). If you are looking to reproduce results from Shulgina & Eddy (2021), please follow 
-the README for [Codetta v1.0](https://github.com/kshulgina/codetta/releases/tag/v1.0).
+A detailed explanation of the underlying probability model can be found in 
+[Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402). If you 
+are looking to reproduce results from Shulgina & Eddy (2021), please follow 
+the README for [Codetta v1.0]
+(https://github.com/kshulgina/codetta/releases/tag/v1.0).
 
 If you encounter any problems in the installation or usage of Codetta, please 
 leave a Github issue or email me at shulgina@g.harvard.edu
@@ -29,9 +32,11 @@ Once inside the Codetta directory, run the setup script
 	
 	./setup.sh
 
-This script will check Codetta requirements and set up a local version of HMMER. If you are missing 
-`wget` or `gzip`, on MacOS, you can use `brew install`. (For Linux, you'll have to use your system's 
-package management tool.) Note that on MacOS, you'll also need XCode installed so that HMMER can compile.
+This script will check Codetta requirements and set up a local version of 
+HMMER. If you are missing `wget` or `gzip`, on MacOS, you can use 
+`brew install`. (For Linux, you'll have to use your system's package 
+management tool.) Note that on MacOS, you'll also need XCode installed so 
+that HMMER can compile.
 
 
 ## Setting up a profile HMM database
@@ -39,9 +44,9 @@ package management tool.) Note that on MacOS, you'll also need XCode installed s
 Codetta aligns the input sequence to a database of protein profile HMMs. 
 
 By default, Codetta will use the Pfam database. You can download a version of 
-Pfam 35.0 specially built for Codetta from our website. From the `codetta` directory, 
-use these commands to download and uncompress it (note: this will take about 3 Gb of 
-disk space)
+Pfam 35.0 specially built for Codetta from our website. From the `codetta`
+directory, use these commands to download and uncompress it (note: this will
+ take about 3 Gb of disk space)
 
 	cd resources/
 	wget http://eddylab.org/publications/Shulgina21/Pfam-A_enone.tar.gz
@@ -49,29 +54,29 @@ disk space)
 	rm Pfam-A_enone.tar.gz
 	cd ..
 
-If you want to build your own custom profile HMM database, this is be described in a
-later section. 
+If you want to build your own custom profile HMM database, this is be described in a later section. 
 
 
 ## Usage
 
-The program `codetta.py` rolls the three main analysis steps into a single script. 
-Usage for `codetta.py` is
+The program `codetta.py` rolls the three main analysis steps into a single 
+script. Usage for `codetta.py` is
 
 	./codetta.py [input sequence file] [optional arguments]
 
 The three steps can also be run separately using the programs:
 
 - `codetta_align.py`: Align profile HMMs to the input nucleotide sequence.
-- `codetta_summary.py`: Summarize profile HMM alignments into an alignment output 
-file.
+- `codetta_summary.py`: Summarize profile HMM alignments into an alignment 
+output file.
 - `codetta_infer.py`: Infer the genetic code from the alignment output file.
 
 General usage for these programs is
 
 	./[program name] [input file or prefix] [optional arguments]
 
-For any of these programs, type `./[program name] --help` for complete usage details.
+For any of these programs, type `./[program name] --help` for complete usage 
+details.
 
 
 ## Tutorials
@@ -79,8 +84,8 @@ For any of these programs, type `./[program name] --help` for complete usage det
 
 The simplest way to run Codetta is by using the `codetta.py` program. 
 
-This program performs the three analysis steps in order. All you have 
-to do is specify a nucleotide sequence input file. This file should contain 
+This program performs the three analysis steps in order. All you have to do 
+is specify a nucleotide sequence input file. This file should contain 
 nucleotide sequences from a single organism in FASTA format. This can be a 
 genome, transcriptome, collection of genes, etc.
 
@@ -93,32 +98,36 @@ We can predict the genetic code of this bacterium simply by running
 
 	./codetta.py examples/GCA_014211875.1.fna
 
-You will see outputs written to the terminal indicating that each of the three 
-Codetta steps is executing. Codetta will create five files in the directory
-containing the input sequence file.
+You will see outputs written to the terminal indicating that each of the 
+three Codetta steps is executing. Codetta will create five files in the 
+directory containing the input sequence file.
 
 - Processed sequence file: `examples/GCA_014211875.1.fna.sequence_pieces.fna`
-- Preliminary translation file + ssi index: `examples/GCA_014211875.1.fna.preliminary_translation.faa`
-- Alignment output file: `examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.alignment_output.txt`
-- Inference output file: `examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`
+- Preliminary translation file + ssi index: 
+`examples/GCA_014211875.1.fna.preliminary_translation.faa`
+- Alignment output file: 
+`examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.alignment_output.txt`
+- Inference output file: 
+`examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`
 
 At the end, the inferred genetic code is printed to the terminal
 
 	Genetic code: FFLLSSSSYY??CCWWL?LLPPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-This corresponds to the inferred translation of each of the 64 codons, in order 
-from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, then 
-1st base through UCAG).
+This corresponds to the inferred translation of each of the 64 codons, in 
+order from 'UUU, UUC, UUA, UUG, UCU, UCC, ..., GGA, GGG' (iterating 3rd, 2nd, 
+then 1st base through UCAG).
 
-The ?s correspond to codons that had no inferred amino acid meaning-- this means 
-that there was insufficient or ambiguous information about the codon to make a 
-confident inference. This is also the expected inference for stop codons (since 
-Codetta does not explicitly predict stop codons).
+The ?s correspond to codons that had no inferred amino acid meaning-- this 
+means that there was insufficient or ambiguous information about the codon to 
+make a confident inference. This is also the expected inference for stop 
+codons (since Codetta does not explicitly predict stop codons).
 
 A detailed overview of the analysis can be found at 
 `examples/GCA_014211875.1.fna.Pfam-A_enone.hmm.1e-10_0.9999_0.01_excl-mtvuy.genetic_code.out`. 
-The long file extension specifies the inference parameters. You can specify your own 
-(simpler) name for the inference output file using the `--inference_output` argument.
+The long file extension specifies the inference parameters. You can specify 
+your own (simpler) name for the inference output file using the 
+`--inference_output` argument.
 
 
 This file contains a detailed overview of the genetic code inference results:
@@ -151,37 +160,42 @@ This file contains a detailed overview of the genetic code inference results:
 	# Final genetic code inference
 	FFLLSSSSYY??CCWWL?LLPPPPHHQQ????I?IMTTTTNNKKSSRRVVVVAAAADDEEGGGG
 
-You might choose to change some parameters of the analysis. Some commonly used options are
+You might choose to change some parameters of the analysis. Some commonly 
+used options are
 
-- Use the `-p` argument to specify a different profile HMM database. Note that the database 
-must be located in the `resources/` directory.
-- The `excluded_pfams` line in the above output file refers to which groups of problematic Pfam 
-domains are excluded from the analysis (`m` mitochondrial, `t` transposon and other mobile genetic 
-element, `v` viral, `u` selenocysteine-containing, and `y` pyrrolysine-containing). By 
-default, all of these groups are excluded. Use `-m -t -v -u -y` to include these groups. For 
-instance, if you're analyzing a mitochondrial genome you will want to use `-m`  to include 
-Pfams commonly found in mitochondrial genomes. Likewise, use the `-v` and `-t` flags when analyzing a 
-viral genome. 
-- You can specify your own name for the inference output file with the `--inference_output` 
-argument.
-- Use `-e` to change the profile HMM hit e-value threshold (default is 1e-10). Use `-r` 
-to change the probability threshold to call an amino acid meaning for a codon (default 
-is 0.9999). Use `-f` to change the maximum fraction of observations for a codon coming 
-from a single profile HMM position (default is 0.01).
-- If you're running several Codetta analyses, you can use `--results_summary` to specify 
-a file to which a one-line summary of the results will be appended to.
+- Use the `-p` argument to specify a different profile HMM database. Note 
+that the database must be located in the `resources/` directory.
+- The `excluded_pfams` line in the above output file refers to which groups 
+of problematic Pfam domains are excluded from the analysis (`m` 
+mitochondrial, `t` transposon and other mobile genetic element, `v` viral, `u`
+ selenocysteine-containing, and `y` pyrrolysine-containing). By default, all 
+of these groups are excluded. Use `-m -t -v -u -y` to include these groups. 
+For instance, if you're analyzing a mitochondrial genome you will want to use 
+`-m`  to include Pfams commonly found in mitochondrial genomes. Likewise, use 
+the `-v` and `-t` flags when analyzing a viral genome. 
+- You can specify your own name for the inference output file with the 
+`--inference_output` argument.
+- Use `-e` to change the profile HMM hit e-value threshold (default is 
+1e-10). Use `-r` to change the probability threshold to call an amino acid 
+meaning for a codon (default is 0.9999). Use `-f` to change the maximum 
+fraction of observations for a codon coming from a single profile HMM 
+position (default is 0.01).
+- If you're running several Codetta analyses, you can use `--results_summary` 
+to specify a file to which a one-line summary of the results will be appended 
+to.
 
 See the full list of options with `./codetta.py --help`
 
 
 ### Now that you're comfortable...
 
-The basic usage of Codetta is to use `codetta.py`, which rolls the three main steps of 
-the analysis into a single program. See the "Starting out..." section above for an 
-example and description of the output.
+The basic usage of Codetta is to use `codetta.py`, which rolls the three main 
+steps of the analysis into a single program. See the "Starting out..." 
+section above for an example and description of the output.
 
-If, for any reason, you want to run the three Codetta analysis steps separately, you
-can use the programs `codetta_align.py`, `codetta_summary.py`, and `codetta_infer.py`.
+If, for any reason, you want to run the three Codetta analysis steps 
+separately, you can use the programs `codetta_align.py`, `codetta_summary.py`
+, and `codetta_infer.py`.
 
 The example in the previous section
 
@@ -195,20 +209,22 @@ can be also run by breaking the steps up as
 	
 You might want to do this if:
 
-- You want to infer the genetic code multiple times using different parameters without 
-having to re-align the profile HMMs to your input sequence. In this case, you would 
-run `codetta_align.py` and `codetta_summary.py` once and then `codetta_infer.py` several
-times with different parameters.
-- You want to parallelize the computationally intensive alignment step on a computing 
-cluster. See the next section.
+- You want to infer the genetic code multiple times using different 
+parameters without having to re-align the profile HMMs to your input 
+sequence. In this case, you would run `codetta_align.py` and 
+`codetta_summary.py` once and then `codetta_infer.py` several times with 
+different parameters.
+- You want to parallelize the computationally intensive alignment step on a 
+computing cluster. See the next section.
 
 
 ### Parallelizing the alignment step on a computing cluster 
 
-Codetta is default set up to run locally. However, the `codetta_align` step can 
-start to take a long time for longer genomes. For instance, a 4 Mb bacterial genome takes 
-about 10 minutes on a MacBook Pro. If you're analyzing a large genome or many 
-sequences, we recommended parallelizing the `codetta_align` step on a computing cluster.
+Codetta is default set up to run locally. However, the `codetta_align` step 
+can start to take a long time for longer genomes. For instance, a 4 Mb 
+bacterial genome takes about 10 minutes on a MacBook Pro. If you're analyzing 
+a large genome or many sequences, we recommended parallelizing the 
+`codetta_align` step on a computing cluster.
 
 This is simple for clusters using a SLURM job scheduler. Install Codetta 
 following the usual steps. Then, manually edit the 
@@ -226,24 +242,24 @@ computing cluster. The `template_jobarray.sh` file looks like this:
 You'll probably only need to specify a partition name.
 
 Then, when you run the `codetta_align` step, add the argument 
-`--parallelize_hmmscan 's'`. This will cause the `hmmscan` jobs to be sent as a 
-SLURM job array to the specified partition instead of being executed locally. 
-Make sure to wait for the SLURM jobs to finish before proceeding to 
+`--parallelize_hmmscan 's'`. This will cause the `hmmscan` jobs to be sent as 
+a SLURM job array to the specified partition instead of being executed 
+locally. Make sure to wait for the SLURM jobs to finish before proceeding to 
 `codetta_summary`. That's it!
 
 If your cluster uses a different job scheduler, you will have to manually 
-modify the job array template file and the code in `codetta.py` (`processing_genome` 
-function) that writes and sends the job array file.
+modify the job array template file and the code in `codetta.py` 
+(`processing_genome` function) that writes and sends the job array file.
 
 
 ### Building a custom profile HMM database
 
 Pfam domains are expected to align to 
-[about ~50% of coding sequence](https://pubmed.ncbi.nlm.nih.gov/30357350/). If 
-you're focused on a specific clade, you could increase the proportion of aligned 
-sequence by using a customized profile HMM database. Starting from a set of 
-multiple sequence alignments of expected proteins in the organism of interest, 
-you can build a custom profile HMM database.
+[about ~50% of coding sequence](https://pubmed.ncbi.nlm.nih.gov/30357350/). 
+If you're focused on a specific clade, you could increase the proportion of 
+aligned sequence by using a customized profile HMM database. Starting from a 
+set of multiple sequence alignments of expected proteins in the organism of 
+interest, you can build a custom profile HMM database.
 
 In this example, we will build a profile HMM database tailored for metazoan 
 mitochondria which have only 13 protein-coding genes. In the 
@@ -264,8 +280,8 @@ finally run `hmmpress` to finish
 	mv metazoan_mito_proteins.hmm* ../../resources/.
 
 At the end, the profile HMM database is moved into the resources directory, 
-where Codetta expects to find all profile HMM databases. When running a Codetta 
-analysis, you will have to specify the custom profile HMM database 
+where Codetta expects to find all profile HMM databases. When running a 
+Codetta analysis, you will have to specify the custom profile HMM database 
 with `-p [name of profile HMM db]`.
 
 *These alignments were created by searching the human mitochondrial protein 
@@ -287,16 +303,17 @@ genome assembly accession by
 	./codetta_download.py GCA_014211875.1 a --sequence_file examples/GCA_014211875.1.fna
 
 This will download a FASTA file containing the GCA_014211875.1 sequence into 
-`examples/GCA_014211875.1.fna`. The argument `a` specifies that this is an assembly 
-database accession and not a nucleotide accession (which would be `c`).
+`examples/GCA_014211875.1.fna`. The argument `a` specifies that this is an assembly database accession and not a nucleotide accession (which would be 
+`c`).
 
 We can download the mitochondrial genome of the green algae 
-_Pycnococcus provasolii_, which is under NCBI nucleotide accession NC_013935.1 by
+_Pycnococcus provasolii_, which is under NCBI nucleotide accession 
+NC_013935.1 by
 
 	./codetta_download.py NC_013935.1 c --sequence_file examples/NC_013935.1.fna
 
-Notice the argument `c` specifying that this is a nucleotide 
-database accession.
+Notice the argument `c` specifying that this is a nucleotide database 
+accession.
 
 
 ### Summary, with one more example
@@ -317,10 +334,10 @@ Alternatively, we could also run the same analysis as
 	./codetta_summary.py examples/Pprovasolii_mito
 	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
-Here we are also showing how to use the `--align_output` argument to write the 
-alignment output files with the more informative prefix `Pprovasolii_mito` 
-and the `--inference_output` argument to write the inference output file 
-`examples/Pprovasolii_mito_Pfam_genetic_code.out`.
+Here we are also showing how to use the `--align_output` argument to write 
+the alignment output files with the more informative prefix `Pprovasolii_mito`
+ and the `--inference_output` argument to write the inference output file 
+ `examples/Pprovasolii_mito_Pfam_genetic_code.out`.
 
 The output genetic code is:
 
@@ -328,9 +345,9 @@ The output genetic code is:
 	
 Comparing to the standard genetic code (below), you can see that two codons 
 have alternative meanings: the stop codon UGA is now tryptophan codon and the 
-isoleucine codon AUA is now a methionine codon. Some codons are uninferred (?) 
-due to few aligned Pfam consensus columns (look at the inference output file 
-for more detail).
+isoleucine codon AUA is now a methionine codon. Some codons are uninferred 
+(?) due to few aligned Pfam consensus columns (look at the inference output 
+file for more detail).
 
 	P mt code : FF??SSSSYY??CCWWLLLLPPPPHHQQRRRRIIMMTTTTNNKKSSR?V?VVAAAADDEEGGGG
 	std code  : FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG
