@@ -284,7 +284,7 @@ where Codetta expects to find all profile HMM databases. When running a
 Codetta analysis, you will have to specify the custom profile HMM database 
 with `-p [name of profile HMM db]`.
 
-*These alignments were created by searching the human mitochondrial protein 
+\*These alignments were created by searching the human mitochondrial protein 
 sequences against SwissProt with `jackhmmer`
 
 
