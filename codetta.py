@@ -304,7 +304,7 @@ class GeneticCode:
             sys.exit('ERROR: [--inference_output] is not a valid file path!')
 
         self.scratch_dir = '%s.%s.temp_files' % (self.align_output, self.profiles)
-        self.alignment_summary = '%s.%s.hmmscan_summary.txt' % (self.align_output, self.profiles)
+        self.alignment_output = '%s.%s.alignment_output.txt' % (self.align_output, self.profiles)
     
     def get_genome(self):
         """
@@ -562,7 +562,7 @@ class GeneticCode:
         """
         Once hmmscan jobs are complete, this function will read them in, process them 
         to figure out which profile HMM columns have aligned to what codons in the sequence, 
-        and then write these results to the intermediate summary file. Positions are not
+        and then write these results to the ialignment output file. Positions are not
         filtered at this step except for poorly aligned positions and hits with 
         evalues > threshold are excluded.
         
@@ -606,15 +606,15 @@ class GeneticCode:
                 with open(hmm_output_file, 'r') as source_file:
                     dum = concat_file.write(source_file.read()) 
         
-        print('Writing alignment summary file to %s' % self.alignment_summary)
+        print('Writing alignment output file to %s' % self.alignment_output)
         
-        # initialize intermediate hmmscan summary file
-        hmmscan_summary_file = self.alignment_summary + '_unsorted'
+        # initialize alignment output file
+        alignment_output_file = self.alignment_output + '_unsorted'
         try:
-            with open(hmmscan_summary_file, 'w') as hf:
+            with open(alignment_output_file, 'w') as hf:
                 pass
         except FileNotFoundError:
-            sys.exit('ERROR: could not open file path %s for writing' % self.alignment_summary)
+            sys.exit('ERROR: could not open file path %s for writing' % self.alignment_output)
         
         # opening file of all hmm_outputs for reading
         concat_hmm_outputs = open(concat_hmm_output_file, 'r')
@@ -689,21 +689,21 @@ class GeneticCode:
                             lines_to_write.append(cod_line)
                 
                 if len(lines_to_write) > 0:
-                    with open(hmmscan_summary_file, 'a') as hf:
+                    with open(alignment_output_file, 'a') as hf:
                         for line in lines_to_write:
                             dum = hf.write(line)
         
         concat_hmm_outputs.close()
         
         # sort results file using a Unix command
-        with open(self.alignment_summary, 'w') as f:
-            p = Popen('sort -t, -n -k1,1 -k2,2 %s' % (hmmscan_summary_file), shell=True, stdout=f)
+        with open(self.alignment_output, 'w') as f:
+            p = Popen('sort -t, -n -k1,1 -k2,2 %s' % (alignment_output_file), shell=True, stdout=f)
             p.wait()
         
         print('Cleaning up temp files.')
         
         # clean up temporary files and scratch directory
-        p = Popen('rm %s' % (hmmscan_summary_file), shell=True)
+        p = Popen('rm %s' % (alignment_output_file), shell=True)
         p.wait()
         
         p = Popen('find %s -type f -delete ' % self.scratch_dir, shell=True)
@@ -714,12 +714,12 @@ class GeneticCode:
     
     def compute_decoding_probabilities(self):
         """
-        This function will step through the aligned profile HMM columns (in the intermediate summary 
+        This function will step through the aligned profile HMM columns (in the alignment output 
         file) and compute for each codon the likelihood and decoding probability of each model.
         """
-        # hmmscan results summary file
-        if not os.path.isfile(self.alignment_summary):
-            sys.exit('ERROR: alignment summary file cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions) and correct profile HMM database file.')
+        # hmmscan alignment output file
+        if not os.path.isfile(self.alignment_output):
+            sys.exit('ERROR: alignment output file cannot be found. Make sure you provide the correct alignment prefix (do not include file extensions) and correct profile HMM database file.')
         
         # output file
         try:
@@ -731,7 +731,7 @@ class GeneticCode:
         # running sum of all emissions
         totsum = np.zeros(20) - np.inf    # -inf is log(0)
         
-        sum_f = open(self.alignment_summary, 'r')
+        sum_f = open(self.alignment_output, 'r')
         info = sum_f.readline().rstrip().split(',')
         self.original_n_cols = np.zeros(64)
         # iterate through each codon
@@ -817,7 +817,7 @@ class GeneticCode:
                 
                 # check legitimacy of this line
                 if not validate_codon_line(next_line):
-                    raise TypeError('hmmscan summary file has an incorrectly formatted line')
+                    raise TypeError('alignment output file has an incorrectly formatted line')
                 
                 info = next_line.rstrip().split(',')
                 info_codon = info[2]
@@ -933,7 +933,7 @@ def main():
     gc.processing_genome()
     
     # do codetta summary
-    print('\nSTEP 2-- codetta_summary. Summarizing alignments')
+    print('\nSTEP 2-- codetta_summary. Collating alignments into an alignment output file')
     gc.process_hmmscan_results()
 
     # do codetta infer

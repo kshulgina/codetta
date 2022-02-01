@@ -5,8 +5,8 @@ from codetta import *
 def argument_parsing():
     # initialize parser
     parser = argparse.ArgumentParser(description="infer the genetic code of an organism from an intermediate file summarizing profile HMM alignments")
-    parser.add_argument('align_output', help='specify prefix of files created by codetta_align and codetta_summary. This can include a path. Alignment summary file \
-                                              should be located at [ALIGN_OUTPUT].[PROFILES FILE].hmmscan_summary.txt')
+    parser.add_argument('align_output', help='specify prefix of files created by codetta_align and codetta_summary. This can include a path. Alignment output file \
+                                              should be located at [ALIGN_OUTPUT].[PROFILES FILE].alignment_output.txt')
     
     # remaining arguments all are set optionally, otherwise default values
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [align_output].[profiles].[inference parameters].genetic_code.out')
