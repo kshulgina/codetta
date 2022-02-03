@@ -8,10 +8,10 @@ an organism from nucleotide sequence data.
 
 The analysis consists of three steps:
 
-1. Align the input nucleotide sequence to a database of profile Hidden Markov 
-models (HMMs) of proteins (such as the Pfam database)
-2. Collate the resulting alignments into a single output file
-3. Infer the genetic code from the alignment output file
+1. Aligning the input nucleotide sequence to a database of profile Hidden 
+Markov models (HMMs) of proteins (such as the Pfam database)
+2. Collating the resulting alignments into a single output file
+3. Inferring the genetic code from the alignment output file
 
 A detailed explanation of the underlying probability model can be found in 
 [Shulgina & Eddy (2021)](https://elifesciences.org/articles/71402). If you 
@@ -222,9 +222,9 @@ computing cluster. See the next section.
 
 Codetta is default set up to run locally. However, the `codetta_align` step 
 can start to take a long time for longer genomes. For instance, a 4 Mb 
-bacterial genome takes about 10 minutes on a MacBook Pro. If you're analyzing 
-a large genome or many sequences, we recommended parallelizing the 
-`codetta_align` step on a computing cluster.
+bacterial genome takes about 10 minutes on a MacBook Pro (3.5 GHz 
+processor). If you're analyzing a large genome or many sequences, we 
+recommended parallelizing the `codetta_align` step on a computing cluster.
 
 This is simple for clusters using a SLURM job scheduler. Install Codetta 
 following the usual steps. Then, manually edit the 
@@ -358,8 +358,50 @@ This alternative genetic code in _Pycnococcus_ mitochondria is summarized in
 [Noutahi et al (2019)](https://pubmed.ncbi.nlm.nih.gov/30698742/).
 
 
+## Potential sources of error
 
+Occasionally, Codetta will make an incorrect codon inference. This usually
+occurs when an assumption made by the method is broken. 
 
+Common situations to look out for:
+
+- Stop codons erroneously aligning to profile HMMs. A common cause of this are
+pseudogenes that maintain enough homology for profile HMM alignment, but 
+have acquired in-frame stop codons, causing alignment between stop codons and 
+consensus columns of a profile HMM. This may lead to stop codons erroneously 
+inferred to code for an amino acid. This could also occur due to profile HMMs 
+aligning over intron boundaries, and stop codons that are readthrough / 
+frameshifted over (often seen in viruses).
+- The input sequence contaminated by another organism. This can lead to 
+incorrect genetic code prediction if the contaminating organism uses a 
+different genetic code. A common source of such contamination are 
+_Mycoplasma_ bacteria.
+- The input nucleotide sequence not being representative of the mature mRNA
+coding sequence. In some mitochondrial genomes (plants, trypanosomes, etc), 
+there is pervasive mRNA editing such that some codons in the genome are 
+systematically converted to another codon in the mature mRNA. This may lead 
+to incorrect codon inference by Codetta. 
+- The composition of the input sequence significantly deviating from the 
+profile HMMs used. If there is a significant difference in amino acid 
+composition, it may appear that a codon has systematically substituted 
+into sites conserved for another amino acid in the profile HMMs. To Codetta,
+this resembles the signature of codon reassignment, leading to incorrect 
+inferences. A way around this is to use a custom profile HMM database matched 
+for amino acid composition / GC content.
+
+To further validate a predicted genetic code, some approaches are:
+
+- Try predicting the genetic code again with different Codetta parameters 
+or with a different profile HMM database. The predicted genetic code should 
+be robust to such changes.
+- Genes for translational components. Does the genome encode tRNAs / release 
+factors consistent with the predicted genetic code?
+- High-quality multiple sequence alignments of single-copy conserved genes. 
+Does the codon occur at positions where the predicted amino acid occurs in 
+outgroups?
+- Experimental validation. If possible, proteomic mass spectrometry or other 
+methods that show that the predicted amino acid is inserted at codon 
+positions would provide definitive validation.
 
 
 
