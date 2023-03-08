@@ -404,4 +404,12 @@ methods that show that the predicted amino acid is inserted at codon
 positions would provide definitive validation.
 
 
+## How do I cite Codetta?
+
+Y. Shulgina, S. R. Eddy. (2023). Codetta: predicting the genetic code from nucleotide 
+	sequence. **Bioinformatics**, 39:btac802. doi: [10.1093/bioinformatics/btac802](https://doi.org/10.1093/bioinformatics/btac802)
+
+Y. Shulgina, S. R. Eddy. (2021). A computational screen for alternative genetic codes 
+	in over 250,000 genomes. **eLife**, 10:e71402. doi: [10.7554/eLife.71402](https://doi.org/10.7554/eLife.71402)
+
 
