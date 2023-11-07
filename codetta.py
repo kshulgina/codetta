@@ -121,7 +121,10 @@ def initialize_emissions_dict(resource_dir, profile_db):
                     info = line.split()
                 length = int(info[1])
                 em_matrix = np.zeros(shape = (length, 20))
-                for k in range(0, 22):
+                while info[0]!='HMM':
+                    line = f.readline()
+                    info = line.split()
+                for k in range(0, 5):
                     line = f.readline()
                 while line.split()[0] != "//":
                     site = int(line.split()[0])-1
