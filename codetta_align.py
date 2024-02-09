@@ -14,6 +14,7 @@ def argument_parsing():
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster. Specify SLURM (s), and modify template file in resources directory accordingly.', type=str, choices=['s'])
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
+    parser.add_argument('--bad_profiles', help='list of profiles that should be excluded from the analysis', type=str)
         
     return parser.parse_args()
 
@@ -42,7 +43,7 @@ def main():
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
     initialize_globals()
-    initialize_emissions_dict(args.resource_directory, args.profiles)
+    initialize_emissions_dict(args.resource_directory, args.profiles, args.bad_profiles)
     gc = GeneticCode(args)
     
     gc.processing_genome()
