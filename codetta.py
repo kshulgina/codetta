@@ -3,7 +3,8 @@
 import scipy.special
 import argparse
 import os
-from subprocess import call, Popen, PIPE
+from subprocess import call, run, Popen, PIPE, CalledProcessError
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import numpy as np
 import sys
 import random
@@ -36,8 +37,13 @@ def argument_parsing():
     parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    #parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
-    
+    parser.add_argument(
+        '--parallelize_hmmscan',
+        help='parallelize hmmscan jobs [l]ocally or by sending to [s]LURM computing cluster.  Remember to modify the template file in resources directory accordingly. Default: None',
+        nargs="?", choices=['s', 'l'], default=None
+    )
+    parser.add_argument('--nproc', help='number of hmmscan jobs to run in parallel, if parallelizing locally. Note that each hmmscan job uses 2 CPUs.', default=2, type=int)
+
     return parser.parse_args()
 
 def initialize_globals():
@@ -153,6 +159,41 @@ def initialize_emissions_dict(resource_dir, profile_db):
             except KeyError:
                 pass
 
+
+def _exec_script(path):
+    """Chmod and execute shell script, returning True if success"""
+    try:
+        run(['chmod', '777', path], check=True)
+        run([path], check=True)
+        return True
+    except CalledProcessError as err:
+        print('error executing hmmscan shell script: %s' % err)
+        return False
+
+
+def _exec_script_parallel(paths, nproc):
+    """Execute list of shell scripts in parallel
+
+    Parameters
+    ----------
+    paths : list
+        Paths to shell scripts
+    nproc : int
+        Number of processes to run in parallel
+    """
+    with ProcessPoolExecutor(max_workers=nproc) as executor:
+        futures = {
+            executor.submit(_exec_script, path) : path
+            for path in paths
+        }
+        for future in as_completed(futures):
+            path = futures[future]
+            if future.result():
+                print('hmmscan shell script %s executed successfully' % path)
+            else:
+                print('hmmscan shell script %s failed' % path)
+
+
 class GeneticCode:
     """
     Class to store parameters and inference of the genetic code of a set of 
@@ -174,6 +215,7 @@ class GeneticCode:
         self.hmmer_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin'))
         self.identifier = args.identifier
         self.parallelize_hmmscan = args.parallelize_hmmscan
+        self.nproc = args.nproc
         if args.evalue != None and args.evalue < 0:
             sys.exit('ERROR: e-value threshold must be positive')
         else:
@@ -494,14 +536,19 @@ class GeneticCode:
                     (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
             shell_count += 1
         
-        # Run hmmscan shell scripts one at a time
+        # Run hmmscan shell scripts serially
         if self.parallelize_hmmscan == None:
             for shell_i in range(shell_count):
                 print('Running hmmscan shell script %i out of %i' % (shell_i + 1, shell_count))
                 shell_script = '%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i)
                 dum = call(["chmod", "777", shell_script])
                 dum = call([shell_script])
-        # If SLURM parallelization is turned on
+        # Run scripts locally in parallel
+        elif self.parallelize_hmmscan == 'l':
+            print('Running %i hmmscan shell scripts parallelized in %i processes' % (shell_count, self.nproc))
+            shell_scripts = ['%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i) for shell_i in range(shell_count)]
+            _exec_script_parallel(shell_scripts, self.nproc)
+        # Submit jobs to SLURM array
         elif self.parallelize_hmmscan == 's':
             # remember to change the partition name in the resources/template_job_array.sh file!
             print('Submitting a SLURM job array of %i hmmscan jobs' % shell_count)
@@ -926,7 +973,6 @@ def main():
     
     args.identifier = None
     args.download_type = None
-    args.parallelize_hmmscan = None
 
     # initialize genetic code with command line args and download genome
     initialize_globals()
