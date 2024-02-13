@@ -69,7 +69,7 @@ def argument_parsing():
         '--parallelize_hmmscan', nargs="?", choices=['s', 'l'], default=None,
         help='parallelize hmmscan jobs [l]ocally or by sending to [s]LURM computing cluster.  Remember to modify the template file in resources directory accordingly. Default: None')
     parser.add_argument(
-        '--nproc', default=2, type=int,
+        '--njobs', default=2, type=int,
         help='number of hmmscan jobs to run in parallel, if parallelizing locally. Note that each hmmscan job uses 2 CPUs.')
 
     return parser.parse_args()
@@ -201,17 +201,17 @@ def _exec_script(path):
         return False
 
 
-def _exec_script_parallel(paths, nproc):
+def _exec_script_parallel(paths, njobs):
     """Execute list of shell scripts in parallel
 
     Parameters
     ----------
     paths : list
         Paths to shell scripts
-    nproc : int
-        Number of processes to run in parallel
+    jobs : int
+        Number of scripts to run in parallel
     """
-    with ProcessPoolExecutor(max_workers=nproc) as executor:
+    with ProcessPoolExecutor(max_workers=njobs) as executor:
         futures = {
             executor.submit(_exec_script, path) : path
             for path in paths
@@ -245,7 +245,7 @@ class GeneticCode:
         self.hmmer_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin'))
         self.identifier = args.identifier
         self.parallelize_hmmscan = args.parallelize_hmmscan
-        self.nproc = args.nproc
+        self.njobs = args.njobs
         if args.evalue != None and args.evalue < 0:
             sys.exit('ERROR: e-value threshold must be positive')
         else:
@@ -575,9 +575,9 @@ class GeneticCode:
                 dum = call([shell_script])
         # Run scripts locally in parallel
         elif self.parallelize_hmmscan == 'l':
-            print('Running %i hmmscan shell scripts parallelized in %i processes' % (shell_count, self.nproc))
+            print('Running %i hmmscan shell scripts parallelized in batches of %i jobs' % (shell_count, self.njobs))
             shell_scripts = ['%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i) for shell_i in range(shell_count)]
-            _exec_script_parallel(shell_scripts, self.nproc)
+            _exec_script_parallel(shell_scripts, self.njobs)
         # Submit jobs to SLURM array
         elif self.parallelize_hmmscan == 's':
             # remember to change the partition name in the resources/template_job_array.sh file!
