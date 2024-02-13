@@ -3,7 +3,8 @@
 import scipy.special
 import argparse
 import os
-from subprocess import call, Popen, PIPE
+from subprocess import call, run, Popen, PIPE, CalledProcessError
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import numpy as np
 import sys
 import random
@@ -16,29 +17,63 @@ from helper_functions import *
 # silence numpy overflow errors (in np.exp, especially)
 np.seterr(over='ignore')
 
+
 def argument_parsing():
     parser = argparse.ArgumentParser(description="infer genetic code used by an organism from nucleotide sequence")
-    parser.add_argument('sequence_file', help='specify the input nucleotide sequence file in FASTA format.')
-    
+    parser.add_argument(
+        'sequence_file',
+        help='specify the input nucleotide sequence file in FASTA format.')
     # remaining arguments all are set optionally, otherwise default values
-    parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
-    parser.add_argument('-s', '--results_summary', help='file path to append one-line result summary ', type=str, default=None)
+    parser.add_argument(
+        '-p', '--profiles',
+        help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
+    parser.add_argument(
+        '-s', '--results_summary', type=str, default=None,
+        help='file path to append one-line result summary ')
     #parser.add_argument('-i', '--identifier', help='GenBank genome assembly accession or GenBank nucleotide accession', type=str)
     #parser.add_argument('-d', '--download_type', help='specify whether download is for GenBank genome assembly accession (a) or GenBank nucleotide accession (c)', type=str, choices=['a', 'c'])
-    parser.add_argument('-e', '--evalue', help='profile HMM hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
-    parser.add_argument('-r', '--probability_threshold', help='threshold for decoding probabilities (default: 0.9999)', type=float, default=0.9999)
-    parser.add_argument('-f', '--max_fraction', help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)', type=float, default=0.01)
-    parser.add_argument('-m', '--mito_pfams', help='flag to include Pfam domains commonly found in mitochondria', action="store_true", default=False)
-    parser.add_argument('-t', '--transposon_pfams', help='flag to include Pfam domains associated with transposons and other mobile genetic elements', action="store_true", default=False)
-    parser.add_argument('-v', '--viral_pfams', help='flag to include Pfam domains associated with viruses', action="store_true", default=False)
-    parser.add_argument('-u', '--selenocysteine_pfams', help='flag to include Pfam domains known to contain selenocysteine', action="store_true", default=False)
-    parser.add_argument('-y', '--pyrrolysine_pfams', help='flag to include Pfam domains known to contain pyrrolysine', action="store_true", default=False)
-    parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
-    parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
-    parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    #parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
-    
+    parser.add_argument(
+        '-e', '--evalue', type=float, default=1e-10, 
+        help='profile HMM hit e-value threshold (default: 1e-10)')
+    parser.add_argument(
+        '-r', '--probability_threshold', type=float, default=0.9999,
+        help='threshold for decoding probabilities (default: 0.9999)')
+    parser.add_argument(
+        '-f', '--max_fraction', type=float, default=0.01,
+        help='maximum fraction of observations for a codon coming from a single Pfam position (default: 0.01)')
+    parser.add_argument(
+        '-m', '--mito_pfams', action="store_true", default=False,
+        help='flag to include Pfam domains commonly found in mitochondria')
+    parser.add_argument(
+        '-t', '--transposon_pfams', action="store_true", default=False,
+        help='flag to include Pfam domains associated with transposons and other mobile genetic elements')
+    parser.add_argument(
+        '-v', '--viral_pfams', action="store_true", default=False,
+        help='flag to include Pfam domains associated with viruses')
+    parser.add_argument(
+        '-u', '--selenocysteine_pfams', action="store_true", default=False,
+        help='flag to include Pfam domains known to contain selenocysteine')
+    parser.add_argument(
+        '-y', '--pyrrolysine_pfams', action="store_true", default=False,
+        help='flag to include Pfam domains known to contain pyrrolysine')
+    parser.add_argument(
+        '--align_output',
+        help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
+    parser.add_argument(
+        '--inference_output',
+        help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
+    parser.add_argument(
+        '--resource_directory', type=str,
+        help='directory where resource files can be found (default: [script dir]/resources)')
+    parser.add_argument(
+        '--parallelize_hmmscan', nargs="?", choices=['s', 'l'], default=None,
+        help='parallelize hmmscan jobs [l]ocally or by sending to [s]LURM computing cluster.  Remember to modify the template file in resources directory accordingly. Default: None')
+    parser.add_argument(
+        '--njobs', default=2, type=int,
+        help='number of hmmscan jobs to run in parallel, if parallelizing locally. Note that each hmmscan job uses 2 CPUs.')
+
     return parser.parse_args()
+
 
 def initialize_globals():
     # standard genetic code dictionary used for translating nucleotide triplets to amino acids
@@ -79,6 +114,7 @@ def initialize_globals():
     
     global std_gen_code
     std_gen_code = ''.join([gencode[''.join(codon)] for codon in codons]).replace('_', '*')
+
 
 def initialize_emissions_dict(resource_dir, profile_db):
     # dictionary where keys are profile HMM names and values are emission probabilities for every position
@@ -153,6 +189,41 @@ def initialize_emissions_dict(resource_dir, profile_db):
             except KeyError:
                 pass
 
+
+def _exec_script(path):
+    """Chmod and execute shell script, returning True if success"""
+    try:
+        run(['chmod', '777', path], check=True)
+        run([path], check=True)
+        return True
+    except CalledProcessError as err:
+        print('error executing hmmscan shell script: %s' % err)
+        return False
+
+
+def _exec_script_parallel(paths, njobs):
+    """Execute list of shell scripts in parallel
+
+    Parameters
+    ----------
+    paths : list
+        Paths to shell scripts
+    jobs : int
+        Number of scripts to run in parallel
+    """
+    with ProcessPoolExecutor(max_workers=njobs) as executor:
+        futures = {
+            executor.submit(_exec_script, path) : path
+            for path in paths
+        }
+        for future in as_completed(futures):
+            path = futures[future]
+            if future.result():
+                print('hmmscan shell script %s executed successfully' % path)
+            else:
+                print('hmmscan shell script %s failed' % path)
+
+
 class GeneticCode:
     """
     Class to store parameters and inference of the genetic code of a set of 
@@ -174,6 +245,7 @@ class GeneticCode:
         self.hmmer_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin'))
         self.identifier = args.identifier
         self.parallelize_hmmscan = args.parallelize_hmmscan
+        self.njobs = args.njobs
         if args.evalue != None and args.evalue < 0:
             sys.exit('ERROR: e-value threshold must be positive')
         else:
@@ -494,14 +566,19 @@ class GeneticCode:
                     (self.hmmer_dir, preliminary_translation_file, seq_names_file, self.hmmer_dir, self.scratch_dir, shell_count, self.resource_dir, self.profiles))
             shell_count += 1
         
-        # Run hmmscan shell scripts one at a time
+        # Run hmmscan shell scripts serially
         if self.parallelize_hmmscan == None:
             for shell_i in range(shell_count):
                 print('Running hmmscan shell script %i out of %i' % (shell_i + 1, shell_count))
                 shell_script = '%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i)
                 dum = call(["chmod", "777", shell_script])
                 dum = call([shell_script])
-        # If SLURM parallelization is turned on
+        # Run scripts locally in parallel
+        elif self.parallelize_hmmscan == 'l':
+            print('Running %i hmmscan shell scripts parallelized in batches of %i jobs' % (shell_count, self.njobs))
+            shell_scripts = ['%s/hmmscan_%i.sh' % (self.scratch_dir, shell_i) for shell_i in range(shell_count)]
+            _exec_script_parallel(shell_scripts, self.njobs)
+        # Submit jobs to SLURM array
         elif self.parallelize_hmmscan == 's':
             # remember to change the partition name in the resources/template_job_array.sh file!
             print('Submitting a SLURM job array of %i hmmscan jobs' % shell_count)
@@ -926,7 +1003,6 @@ def main():
     
     args.identifier = None
     args.download_type = None
-    args.parallelize_hmmscan = None
 
     # initialize genetic code with command line args and download genome
     initialize_globals()

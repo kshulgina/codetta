@@ -252,6 +252,18 @@ modify the job array template file and the code in `codetta.py`
 (`processing_genome` function) that writes and sends the job array file.
 
 
+### Parallelizing the alignment step in a local machine
+
+If your local machine has sufficient resources, the `codetta_align` step can
+also be parallelized on the local machine. `hmmscan` jobs will be run in
+batches, instead of one by one.
+
+Use the option `--parallelize_hmmscan l` to parallelize locally.
+
+Specify the number of `hmmscan` jobs per batch with `--njobs`. Note that each
+job uses 2 CPUs.
+
+
 ### Building a custom profile HMM database
 
 Pfam domains are expected to align to 
