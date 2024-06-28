@@ -333,7 +333,8 @@ Alternatively, we could also run the same analysis as
 	./codetta_download.py NC_013935.1 c --sequence_file examples/NC_013935.1.fna
 	./codetta_align.py examples/NC_013935.1.fna --align_output examples/Pprovasolii_mito
 	./codetta_summary.py examples/Pprovasolii_mito
-	./codetta_infer.py examples/Pprovasolii_mito -m --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
+	./codetta_infer.py examples/Pprovasolii_mito -m \
+			   --inference_output examples/Pprovasolii_mito_Pfam_genetic_code.out
 
 Here we are also showing how to use the `--align_output` argument to write 
 the alignment output files with the more informative prefix `Pprovasolii_mito`

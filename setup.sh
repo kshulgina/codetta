@@ -3,7 +3,7 @@
 # Yekaterina Shulgina - Nov 2021
 
 # check that Codetta required Python packages are present
-python check_requirements.py
+python3 check_requirements.py
 if [ $? -ne 0 ]
 then
     exit
