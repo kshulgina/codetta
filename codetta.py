@@ -36,6 +36,7 @@ def argument_parsing():
     parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
+    parser.add_argument('--bad_profiles', help='list of profiles that should be excluded from the analysis', type=str)
     #parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
     
     return parser.parse_args()
@@ -80,7 +81,7 @@ def initialize_globals():
     global std_gen_code
     std_gen_code = ''.join([gencode[''.join(codon)] for codon in codons]).replace('_', '*')
 
-def initialize_emissions_dict(resource_dir, profile_db):
+def initialize_emissions_dict(resource_dir, profile_db, bad_profiles_file):
     # dictionary where keys are profile HMM names and values are emission probabilities for every position
     # load dictionary if it exists
     global emissions
@@ -142,14 +143,17 @@ def initialize_emissions_dict(resource_dir, profile_db):
             pickle.dump(emissions, fp, protocol=2)
     
     # if profile database is Pfam, then remove list of bad Pfam domains
-    if profile_db == 'Pfam-A_enone.hmm':
-        if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
-            sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
-        with open("%s/bad_pfams.txt" % resource_dir, "r") as rf:
-            pfam_rem = rf.read().splitlines()
-        for pfam in pfam_rem:
+    if profile_db == 'Pfam-A_enone.hmm' or bad_profiles_file != None:
+        if profile_db == 'Pfam-A_enone.hmm' and bad_profiles_file == None:
+            if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
+                sys.exit('ERROR: bad Pfams file cannot be found in the resource directory')
+            else: 
+                bad_profiles_file = "%s/bad_pfams.txt" % resource_dir
+        with open(bad_profiles_file, "r") as rf:
+            prof_rem = rf.read().splitlines()
+        for prof in prof_rem:
             try:
-                del emissions[pfam]
+                del emissions[prof]
             except KeyError:
                 pass
 
@@ -171,6 +175,7 @@ class GeneticCode:
         self.profiles = args.profiles
         self.summary_file = args.results_summary
         self.resource_dir = args.resource_directory
+        self.bad_profiles_file = args.bad_profiles
         self.hmmer_dir = os.path.normpath(os.path.join(os.path.dirname(__file__), 'hmmer-3.3.2/bin'))
         self.identifier = args.identifier
         self.parallelize_hmmscan = args.parallelize_hmmscan
@@ -930,7 +935,7 @@ def main():
 
     # initialize genetic code with command line args and download genome
     initialize_globals()
-    initialize_emissions_dict(args.resource_directory, args.profiles)
+    initialize_emissions_dict(args.resource_directory, args.profiles, args.bad_profiles)
     gc = GeneticCode(args)
     
     # do codetta align
