@@ -173,6 +173,8 @@ of these groups are excluded. Use `-m -t -v -u -y` to include these groups.
 For instance, if you're analyzing a mitochondrial genome you will want to use 
 `-m`  to include Pfams commonly found in mitochondrial genomes. Likewise, use 
 the `-v` and `-t` flags when analyzing a viral genome. 
+- You can also specify a custom list of profiles to exclude from the analysis 
+using the `--bad_profiles` argument.
 - You can specify your own name for the inference output file with the 
 `--inference_output` argument.
 - Use `-e` to change the profile HMM hit e-value threshold (default is 

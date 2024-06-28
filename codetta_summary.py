@@ -13,7 +13,7 @@ def argument_parsing():
     parser.add_argument('-p', '--profiles', help='profile HMM database file, must be in located in resource directory (default: Pfam-A_enone.hmm)')
     parser.add_argument('-e', '--evalue', help='profile HMM hit e-value threshold (default: 1e-10)', type=float, default=1e-10)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--bad_profiles', help='list of profiles that should be excluded from the analysis', type=str)
+    parser.add_argument('--bad_profiles', help='specify custom file with profiles to exclude from the analysis. (default for Pfam: resources/bad_pfams.txt)', type=str)
         
     return parser.parse_args()
 

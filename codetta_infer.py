@@ -21,7 +21,7 @@ def argument_parsing():
     parser.add_argument('-u', '--selenocysteine_pfams', help='flag to include Pfam domains known to contain selenocysteine', action="store_true", default=False)
     parser.add_argument('-y', '--pyrrolysine_pfams', help='flag to include Pfam domains known to contain pyrrolysine', action="store_true", default=False)
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--bad_profiles', help='list of profiles that should be excluded from the analysis', type=str)
+    parser.add_argument('--bad_profiles', help='specify custom file with profiles to exclude from the analysis. (default for Pfam: resources/bad_pfams.txt)', type=str)
         
     return parser.parse_args()
 

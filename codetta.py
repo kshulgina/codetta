@@ -36,7 +36,7 @@ def argument_parsing():
     parser.add_argument('--align_output', help='prefix for files created by codetta_align and codetta_summary. This can include a path. (default: [SEQUENCE_FILE])')
     parser.add_argument('--inference_output', help='output file for codetta_infer step. Default is [ALIGN_OUTPUT].[PROFILES FILE].[inference parameters].genetic_code.out')
     parser.add_argument('--resource_directory', help='directory where resource files can be found (default: [script dir]/resources)', type=str)
-    parser.add_argument('--bad_profiles', help='list of profiles that should be excluded from the analysis', type=str)
+    parser.add_argument('--bad_profiles', help='specify custom file with profiles to exclude from the analysis. (default for Pfam: resources/bad_pfams.txt)', type=str)
     #parser.add_argument('--parallelize_hmmscan', help='send hmmscan jobs to computing cluster, specify SLURM (s). Remember to modify the template file in resources directory accordingly.', type=str, choices=['s'])
     
     return parser.parse_args()
@@ -142,7 +142,8 @@ def initialize_emissions_dict(resource_dir, profile_db, bad_profiles_file):
         with open(hmm_dictionary_file, 'wb') as fp:
             pickle.dump(emissions, fp, protocol=2)
     
-    # if profile database is Pfam, then remove list of bad Pfam domains
+    # if a custom bad_profiles_file is specified, then remove those profiles
+    # otherwise, if profile database is Pfam, then remove list of bad Pfam domains in bad_pfams.txt
     if profile_db == 'Pfam-A_enone.hmm' or bad_profiles_file != None:
         if profile_db == 'Pfam-A_enone.hmm' and bad_profiles_file == None:
             if not os.path.isfile("%s/bad_pfams.txt" % resource_dir):
