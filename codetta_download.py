@@ -37,6 +37,7 @@ def main():
     args.viral_pfams = None
     args.selenocysteine_pfams = None
     args.pyrrolysine_pfams = None
+    args.bad_profiles = None
     initialize_globals()
     gc = GeneticCode(args)
     
